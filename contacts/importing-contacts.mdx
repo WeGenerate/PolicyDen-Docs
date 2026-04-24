@@ -1,0 +1,106 @@
+---
+title: "Importing contacts"
+description: "Bring a book of business into PolicyDen from a CSV or Excel file."
+keywords: ["import contacts", "CSV import", "Excel import", "book of business migration", "column mapping", "bulk upload", "contact template"]
+---
+
+Use the import tool to load many contacts at once. You upload a CSV or Excel file, map your columns to PolicyDen fields, and PolicyDen creates one contact per row.
+
+<Info>
+  Only admins see the import button. If you don't see an upload icon in the Contacts toolbar, ask your agency admin to run the import for you.
+</Info>
+
+## Before you start
+
+You need:
+
+- A CSV (`.csv`) or Excel (`.xlsx`) file of contacts.
+- One row per contact, plus a header row.
+- Values for every required field on every row (see below).
+
+If you don't have a file yet, download the starter template — it has the exact column headers PolicyDen expects.
+
+## Required fields
+
+Every row must include these six columns:
+
+| Field | Notes |
+| ----- | ----- |
+| **First Name** | Contact's legal first name. |
+| **Last Name** | Contact's legal last name. |
+| **DOB** | Date of birth. Most common date formats are accepted. |
+| **Phone** | The contact's primary phone. |
+| **Medicare Number** | The contact's Medicare Beneficiary Identifier (MBI). |
+| **Agent Email** | The email address of the PolicyDen user the contact should be assigned to. The user must already exist in your agency. |
+
+All other fields are optional.
+
+## Optional fields
+
+You can include any of these system fields, plus any custom fields your agency has defined:
+
+- Email, gender.
+- Physical address: street line 1, street line 2, city, state, county, ZIP code.
+- Mailing address: street line 1, street line 2, city, state, county, ZIP code.
+
+## Run the import
+
+<Steps>
+  <Step title="Open the importer">
+    On the [Contacts page](/contacts/overview), click the upload icon in the toolbar.
+  </Step>
+  <Step title="(Optional) Download the template">
+    On the upload screen, click **Download template** for a CSV with the correct headers.
+  </Step>
+  <Step title="Upload your file">
+    Drag your CSV or Excel file onto the upload zone, or click it to browse. Files can be `.csv` or `.xlsx`.
+  </Step>
+  <Step title="Pick a sheet">
+    If your Excel file has more than one sheet, choose which one to import from.
+  </Step>
+  <Step title="Map your columns">
+    PolicyDen auto-matches columns it recognizes by name. For anything that didn't auto-match, pick the right file column for each PolicyDen field. Every required field needs a mapping before you can continue.
+  </Step>
+  <Step title="Import">
+    Click **Import Contacts**. PolicyDen processes the file and shows you a summary when it's done.
+  </Step>
+</Steps>
+
+## Results
+
+After the import finishes you see:
+
+- **Imported** — how many contacts were created.
+- **Skipped** — rows PolicyDen couldn't import, usually because a required field was missing or the agent email didn't match a user.
+- **Issues** — per-row error messages so you can fix your file and re-upload the bad rows.
+
+Close the dialog with **Done** to return to the Contacts page. The new contacts appear in the list immediately.
+
+<Warning>
+  Duplicate detection on import isn't as strict as the [Add Contact flow](/contacts/creating-contacts). If you're importing a list that might overlap with existing contacts, dedupe the file first.
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A row was skipped">
+    PolicyDen skips a row when a required field is empty or the **Agent Email** doesn't match a user in your agency. Check the **Issues** list after the import for the row and reason, fix your file, and re-upload only the bad rows.
+  </Accordion>
+  <Accordion title="Agent Email isn't recognized">
+    The email in your **Agent Email** column must match an existing user in your agency exactly. Confirm the spelling, and invite the agent under **Agency settings → Users** if they haven't been added yet.
+  </Accordion>
+  <Accordion title="New contacts aren't showing up right away">
+    Large imports are processed in batches, so the full list may not appear at the top of the Contacts page immediately. Refresh after a minute — the rows fill in as each batch finishes.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Set up users" icon="users" href="/settings/users-and-roles">
+    Invite the agents you want to assign contacts to before running an import.
+  </Card>
+  <Card title="Custom fields" icon="sliders-horizontal" href="/customization/custom-fields">
+    Create any extra fields you want to map in from your file.
+  </Card>
+</Columns>

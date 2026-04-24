@@ -1,0 +1,76 @@
+---
+title: "Dashboard overview"
+description: "See sales, renewals, agent and carrier performance, and high-risk policies at a glance."
+mode: "wide"
+keywords: ["dashboard", "sales dashboard", "agency reporting", "renewals", "agent leaderboard", "carrier performance", "at-risk policies"]
+---
+
+The **Dashboard** is your agency's home screen. Open it to see how production is tracking for the current month, spot policies that need attention, and compare agents and carriers against each other.
+
+<Frame>
+  <img src="/images/dashboard-overview.png" alt="Dashboard showing sales, active, at-risk, and canceled stat cards, agent leaderboard, and high-risk sales table" />
+</Frame>
+
+## The date filter
+
+A date range picker sits at the top right of every dashboard. It defaults to the current month and controls every tile, chart, and table on the page. Pick a preset (This Week, This Month, Last Month, This Year) or set a custom range.
+
+<Tip>
+  Percentages on the stat cards compare the selected range to the prior range of the same length.
+</Tip>
+
+## Stat cards
+
+Four tiles summarize the period.
+
+| Tile | What it counts |
+| ---- | -------------- |
+| **Sales** | Total policies sold in the range. |
+| **Active Policies** | Policies in an active state (accepted, issued, placed, or active). |
+| **At Risk Policies** | Policies flagged as withdrawn, rejected, wrong SEP, flagged, or in a future cancellation. |
+| **Canceled Policies** | Policies that were cancelled or had the old policy terminated. |
+
+Each tile shows the total and the change against the prior period. Green means the change is in the right direction — up for Sales and Active, down for At Risk and Canceled.
+
+## Policy chart
+
+Admins see a line chart that plots daily Sales, Active, Canceled, and At Risk policies across the selected range. Use the checkboxes above the chart to show or hide each series. Hover the chart to see exact counts for a given day.
+
+## Performance table
+
+Admins also see a **Performance** table that ranks agents or carriers for the selected range.
+
+<Steps>
+  <Step title="Toggle between Agents and Carriers">
+    The tabs at the top of the table switch the view. Columns stay the same in both modes.
+  </Step>
+  <Step title="Search">
+    Type a name in the search box to narrow the list.
+  </Step>
+  <Step title="Open the live view">
+    On the **Agents** tab, click **Open Live View** to open the leaderboard in a new tab. It's the same ranking, refreshed in real time for wall displays.
+  </Step>
+</Steps>
+
+Columns: **Rank**, **Name**, **Sales**, **Active**, **Canceled**, **At Risk**. Rows sort by total sales by default.
+
+## High risk sales
+
+Any user can see the **High Risk Sales** table at the bottom of the dashboard. It lists policies in the selected range that landed in a risk state so you can follow up before they cancel.
+
+Columns: **Date**, **Contact**, **Agency**, **Carrier**, **Assigned To**, **Status**. Click a contact's name to open the profile. Scroll to load more rows.
+
+## Unpaid invoices banner
+
+Admins with an outstanding balance see an alert at the top of the dashboard. Click it to go to [Billing](/settings/billing) and settle up.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Reports" icon="chart-bar" href="/reports/overview">
+    Slice production data by agency, agent, carrier, SEP, or state.
+  </Card>
+  <Card title="Policies" icon="file-text" href="/policies/overview">
+    Work a specific policy from the list view.
+  </Card>
+</Columns>

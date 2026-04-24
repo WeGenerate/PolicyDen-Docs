@@ -1,34 +1,86 @@
-> **Customize this file**: Tailor this template to your project by noting specific contribution types you're looking for, adding a Code of Conduct, or adjusting the writing guidelines to match your style.
+# Contribute to the PolicyDen docs
 
-# Contribute to the documentation
-
-Thank you for your interest in contributing to our documentation! This guide will help you get started.
+This repo is the source for [docs.policyden.com](https://docs.policyden.com). Pages are MDX, configured by `docs.json`, and deployed through Mintlify on push to `main`.
 
 ## How to contribute
 
-### Option 1: Edit directly on GitHub
+### Edit on GitHub
 
-1. Navigate to the page you want to edit
-2. Click the "Edit this file" button (the pencil icon)
-3. Make your changes and submit a pull request
+1. Navigate to the page in GitHub.
+2. Click the pencil icon to edit.
+3. Open a pull request with your changes.
 
-### Option 2: Local development
+### Local development
 
-1. Fork and clone this repository
-2. Install the Mintlify CLI: `npm i -g mint`
-3. Create a branch for your changes
-4. Make changes
-5. Navigate to the docs directory and run `mint dev`
-6. Preview your changes at `http://localhost:3000`
-7. Commit your changes and submit a pull request
+1. Clone this repo and create a branch.
+2. Install the Mintlify CLI: `npm i -g mint`.
+3. Run `mint dev` from the repo root to preview at `http://localhost:3000`.
+4. Commit your changes and open a pull request.
 
-For more details on local development, see our [development guide](development.mdx).
+## How to add a new page
 
-## Writing guidelines
+1. Confirm the page is already registered in `docs.json` navigation. Only add files whose path is in `docs.json` — pages not in `docs.json` are hidden from the sidebar.
+2. Create the `.mdx` file at the path that matches its entry in `docs.json` (for example, `contacts/creating-contacts` → `contacts/creating-contacts.mdx`).
+3. Add frontmatter with at least `title` and `description`:
+   ```yaml
+   ---
+   title: "Creating contacts"
+   description: "Add a new contact and capture the details you need to follow up."
+   ---
+   ```
+4. Lead with a 1–2 sentence intro that says what the page covers and what the reader will be able to do.
+5. Cross-link related pages using root-relative paths without the extension: `/contacts/overview`, not `../contacts/overview.mdx`.
+6. Run `mint dev` to preview, then `mint broken-links` and `mint validate` before pushing.
 
-- **Use active voice**: "Run the command" not "The command should be run"
-- **Address the reader directly**: Use "you" instead of "the user"
-- **Keep sentences concise**: Aim for one idea per sentence
-- **Lead with the goal**: Start instructions with what the user wants to accomplish
-- **Use consistent terminology**: Don't alternate between synonyms for the same concept
-- **Include examples**: Show, don't just tell
+## Style notes
+
+Keep the voice consistent with the rest of the docs.
+
+- **Second person, active voice.** "You can add a contact." Not "Contacts can be added by users."
+- **Sentence case for headings.** "Managing tasks", not "Managing Tasks".
+- **Bold UI elements on first reference.** Click **Add contact**. Go to **Settings → Profile**.
+- **Monospace code for paths, URLs, config keys, filenames.** `docs.json`, `/contacts/overview`.
+- **Code blocks need a language tag.** ` ```json `, ` ```bash `, ` ```mdx `.
+- **Images need descriptive alt text.** Store images in `/images` and reference them as `/images/filename.png`.
+- **No marketing language.** Skip "powerful", "seamless", "robust", "cutting-edge".
+- **No filler.** Skip "simply", "just", "in order to", "it's important to note".
+- **Use PolicyDen terminology.** PolicyDen (one word, capital P and D). Atlas (the AI assistant). Agents (sales role). Users (anyone with a login).
+
+### Components
+
+Prefer plain prose. Reach for a Mintlify component when it improves scannability:
+
+| Need | Component |
+| ---- | --------- |
+| Sequential steps | `<Steps>` with `<Step title="...">` |
+| Optional details | `<Accordion>` / `<AccordionGroup>` |
+| Parallel options | `<Tabs>` / `<Tab>` |
+| Linked navigation cards | `<Card>` inside `<Columns cols={2}>` |
+| Callouts | `<Note>`, `<Info>`, `<Tip>`, `<Warning>`, `<Check>` |
+
+### What we do not document
+
+- Federal marketplace CMS accounts, MARX, bots and bot runs, reconciliation, the Policy Status Tool, and internal workflows. These are internal surfaces and out of scope for user docs.
+- Implementation details (Laravel controllers, database tables, queues, Vue internals).
+
+If a feature overlaps with one of these, document only the user-facing surface.
+
+## Checks to run before opening a pull request
+
+From the repo root:
+
+```bash
+mint broken-links
+mint validate
+```
+
+- `mint broken-links` — finds broken internal and external links.
+- `mint validate` — strict build validation. Exits non-zero on any error or warning, including OpenAPI spec issues.
+
+Both checks also run automatically on pull requests via `.github/workflows/mint-checks.yml`. A PR that fails either check should be fixed before merging.
+
+## When the product changes
+
+Update the docs in the same pull request as the product change whenever possible. It keeps context fresh and avoids drift.
+
+If you find a page that no longer matches the app, open a PR to fix it or file an issue. Wrong documentation is worse than no documentation.

@@ -1,80 +1,139 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Sign in, set up your profile, and take your first actions in PolicyDen."
+keywords: ["quickstart", "getting started", "sign in", "first contact", "first policy", "onboarding", "new agent"]
 ---
 
-## Get started in three steps
+This guide is for new agents. It walks you through your first session in PolicyDen — from signing in to logging your first contact, policy, and task.
 
-Get your documentation site running locally and make your first customization.
+If you're setting up your agency — inviting users, adding products, or paying a bill — start with [Agency settings overview](/settings/agency-overview) instead.
 
-### Step 1: Set up your local environment
+## Before you start
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+You need:
 
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
+- An invitation email from your agency admin, or an existing PolicyDen login.
+- A modern browser (Chrome, Safari, Firefox, or Edge).
+- Access to your work email, in case you need to verify or reset your password.
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  If you don't have an account yet, ask your agency admin to invite you from **Agency settings → Users**.
 </Note>
+
+## Step 1: Sign in
+
+<Steps>
+  <Step title="Open the app">
+    Go to [app.policyden.com](https://app.policyden.com) and sign in with your email and password.
+  </Step>
+  <Step title="Accept your invite">
+    If this is your first time, click the link in your invitation email and set a password.
+  </Step>
+  <Step title="Pick an agency">
+    If you work with more than one agency, choose the one you want to work in from the agency switcher in the top-left.
+  </Step>
+</Steps>
+
+## Step 2: Set up your profile
+
+Your profile controls how teammates and clients see you.
+
+<Steps>
+  <Step title="Open your profile">
+    Click your avatar in the sidebar and choose **Profile**.
+  </Step>
+  <Step title="Add a photo and contact info">
+    Upload an avatar, confirm your name, work email, and phone. These appear on your signature and in call and SMS logs.
+  </Step>
+  <Step title="Set your password">
+    Under **Password**, set a strong password if you haven't already.
+  </Step>
+</Steps>
+
+See [Your profile](/settings/profile) for every setting you can tune.
+
+## Step 3: Create your first contact
+
+<Steps>
+  <Step title="Go to Contacts">
+    Click **Contacts** in the sidebar.
+  </Step>
+  <Step title="Open the new contact form">
+    Click **Add Contact** in the top-right.
+  </Step>
+  <Step title="Fill in the basics">
+    First name, last name, phone, and email are enough to start. You can add more detail — address, date of birth, Medicare number — later.
+  </Step>
+  <Step title="Save">
+    Click **Save**. PolicyDen opens the contact's profile so you can start working.
+  </Step>
+</Steps>
+
+<Tip>
+  PolicyDen warns you if a contact with the same phone or email already exists, so you don't create duplicates.
+</Tip>
+
+<Frame caption="The Add Contact flow starts by searching for an existing phone number before it lets you create a new record.">
+  <img src="/images/add-contact-modal.png" alt="Add New Contact modal prompting you to search for an existing contact by phone number before creating a new record" />
+</Frame>
+
+Full details in [Creating contacts](/contacts/creating-contacts).
+
+## Step 4: Log a policy
+
+<Steps>
+  <Step title="Open the contact">
+    From the contact's profile, select the **Policies** tab.
+  </Step>
+  <Step title="Add a policy">
+    Click **Add Policy** and choose the product, carrier, and effective date.
+  </Step>
+  <Step title="Save">
+    The policy appears under the contact and on the main **Policies** page.
+  </Step>
+</Steps>
+
+<Frame caption="A saved policy opens into its full profile, with Policy Info and Policy Details cards on the contact.">
+  <img src="/images/policy-profile-expanded.png" alt="Policy profile expanded on a contact showing Policy Info and Policy Details cards with carrier, product, sale date, effective date, and plan number" />
+</Frame>
+
+More in [Policies overview](/policies/overview).
+
+## Step 5: Schedule a follow-up
+
+<Steps>
+  <Step title="Open the Tasks tab on the contact">
+    From the contact's profile, select **Tasks**.
+  </Step>
+  <Step title="Create a task">
+    Click **Add Task**, enter a title and due date, and assign it to yourself or a teammate.
+  </Step>
+  <Step title="See it in your task list">
+    The task shows up on the main **Tasks** page and on the contact's timeline.
+  </Step>
+</Steps>
+
+<Frame caption="The main Tasks page collects every follow-up across your team, filterable by status and assignee.">
+  <img src="/images/tasks-list.png" alt="Tasks list with All, Open, In Progress, Completed, and Canceled status presets and a table of tasks with due dates, priority, status, and assignee" />
+</Frame>
+
+More in [Managing tasks](/tasks/managing-tasks).
+
+## What's next
+
+You've signed in, set up your profile, and created your first contact, policy, and task. From here you can customize the app and bring in the rest of your book.
+
+<Columns cols={2}>
+  <Card title="Tour the app" icon="compass" href="/navigating-the-app">
+    Learn the sidebar, breadcrumbs, and the quick-add menu.
+  </Card>
+  <Card title="Import your book" icon="upload" href="/contacts/importing-contacts">
+    Bring your existing contacts into PolicyDen with a CSV.
+  </Card>
+  <Card title="Set up your pipeline" icon="columns-3" href="/pipeline/overview">
+    Visualize your deals on a Kanban board.
+  </Card>
+  <Card title="Start texting clients" icon="message-square" href="/messages/overview">
+    Send and receive SMS from a dedicated agency number.
+  </Card>
+</Columns>

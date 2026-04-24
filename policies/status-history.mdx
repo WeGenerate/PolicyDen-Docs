@@ -1,0 +1,59 @@
+---
+title: "Status log"
+description: "Review how a policy's status has changed over time on the Status log tab."
+keywords: ["status log", "policy status history", "status timeline", "policy lifecycle", "status changes", "status tooltip"]
+---
+
+The **Status log** tab on a policy profile is a running history of every status check recorded for that policy. Use it to see when the status changed, what it changed from, and what it changed to — without hunting through the audit log.
+
+## Where to find it
+
+1. Open a policy from the [Policies](/policies/overview) list — click the policy number for the drawer, or **Open in new window** for the full page.
+2. Select the **Status log** tab.
+
+The tab loads the entries for that policy. Each entry shows when the check ran, the previous status, and the new status if it changed.
+
+## How to read an entry
+
+Each row on the Status log is one status check.
+
+- **Timestamp** — when the check was recorded.
+- **Previous status** — the status before the check.
+- **New status** — the status after, or "No changes" if nothing moved.
+
+Entries are listed newest first, so the most recent check is at the top.
+
+## The Status column tooltip
+
+You don't have to open a policy to see the last time its status changed. On the [Policies](/policies/overview) list, hover the **Status** badge on any row. The tooltip shows:
+
+- **Last checked** — the timestamp of the most recent entry.
+- Whether the status changed at that check, and what it moved between.
+- **Never checked**, if the policy hasn't been checked yet.
+
+## Why it matters
+
+Use the Status log to answer questions like:
+
+- **When did this policy go active?** Find the entry where the new status is Active.
+- **How long was it pending before it placed?** Compare the pending entry to the placed entry.
+- **Did the status move unexpectedly?** Scroll the log to spot the change and when it happened.
+
+<Tip>
+  The log records status movement specifically. For a full history of every edit — field changes, reassignments, date updates — open the **Audit log** tab instead. See [Policy profile](/policies/policy-profile).
+</Tip>
+
+## Empty state
+
+If the log reads "No status checks to show," the policy hasn't had a status check recorded yet. This is normal for brand-new policies. Entries appear as soon as the first check runs.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Policy profile" icon="file-text" href="/policies/policy-profile">
+    Every other tab on a policy — fields, docs, comments, and audit log.
+  </Card>
+  <Card title="Policies overview" icon="file-text" href="/policies/overview">
+    Filter and sort the full list of policies.
+  </Card>
+</Columns>

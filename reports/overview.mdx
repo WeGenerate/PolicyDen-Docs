@@ -1,0 +1,137 @@
+---
+title: "Reports overview"
+description: "Break down production by agency, agent, carrier, SEP, state, or date — then save, share, and export the view."
+mode: "wide"
+keywords: ["reports", "production reports", "agent reports", "carrier reports", "SEP reports", "export CSV", "saved reports"]
+---
+
+**Reports** is the admin tool for slicing policy production. Start with a date range, pick how you want the data grouped, filter it down, and drill into the numbers. Save the combination you end up with and share it with teammates.
+
+<Frame>
+  <img src="/images/reports-overview.png" alt="Reports page grouped by Agency with columns for total, pending, accepted, issued, placed, acceptance rate, effectuation, and placement rate" />
+</Frame>
+
+<Info>
+  Reports are visible to admins only. Agents see their own numbers on the [Dashboard](/dashboard/overview).
+</Info>
+
+## Open reports
+
+Click **Reporting** in the sidebar and choose **Reports**. The page opens with the current month as the date range and **Agency** as the grouping.
+
+## Pick a date range
+
+The range picker sits in the top right. It controls every row and total on the page. Change it at any time — the report refreshes.
+
+## Choose a breakdown
+
+Breakdowns decide how rows are grouped in the table. You can stack up to three levels.
+
+<Steps>
+  <Step title="Pick the first level">
+    The first dropdown sets the top-level grouping. Options: **Agency**, **Agent**, **Day**, **Week**, **Month**, **State**, **Carrier**, **SEP**.
+  </Step>
+  <Step title="Add a level">
+    Click **Add Level** to nest another grouping inside the first. For example, Agency → Agent shows every agency, with agents listed under each.
+  </Step>
+  <Step title="Expand a row">
+    Click any row with a chevron to load its nested breakdown. The rows underneath obey the next level you picked.
+  </Step>
+</Steps>
+
+<Tip>
+  Use Carrier → Agent to see which agents write the most for each carrier, or Month → Agency to compare month-over-month production across your book.
+</Tip>
+
+## Columns
+
+Columns depend on your agency's commission structure:
+
+<Tabs>
+  <Tab title="Heap">
+    **Total**, **Pending**, **Accepted**, **Issued**, **Placed**, **Cancelled**, **At Risk**, **Acceptance Rate**, **Effectuation %**, **Placement Rate**.
+  </Tab>
+  <Tab title="As earned">
+    **Total**, **Pending**, **Accepted**, **Active**, **Cancelled**, **At Risk**, **Acceptance Rate**, **Active Rate**.
+  </Tab>
+</Tabs>
+
+Sort by any column with the sort icon. Use the **Customize columns** button in the toolbar to hide or reorder columns.
+
+## Filter the data
+
+Click **Filters** in the toolbar to narrow the report. Available filters:
+
+- **Agency**
+- **Agent**
+- **Carrier**
+- **SEP**
+- **State**
+- **Status**
+
+Click **Reset** on the right to clear every filter and return to the default grouping.
+
+## Save a report
+
+Saved reports keep your filters, breakdown, columns, date range, and sort so you can come back to the same view later.
+
+<Steps>
+  <Step title="Set up the view">
+    Pick a breakdown, add filters, and sort the columns the way you want.
+  </Step>
+  <Step title="Name it">
+    Type a name in the **Report name** field in the toolbar.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The report appears in the **Saved Reports** dropdown in the breadcrumb at the top of the page.
+  </Step>
+</Steps>
+
+To switch between saved reports, open the **Saved Reports** dropdown and pick one. To update the current report after changing something, click **Update**. Reports you don't own show as read-only — you can view them but not update or delete them.
+
+## Share a report
+
+<Steps>
+  <Step title="Open the share popover">
+    With a saved report selected, click the share icon in the top right of the toolbar.
+  </Step>
+  <Step title="Pick visibility">
+    Choose **Visible to you only** to keep it private, or **Share with** to open the user list.
+  </Step>
+  <Step title="Select teammates">
+    Search for users, select the ones who should see the report, and click **Share Report**. They'll see it in their own Saved Reports dropdown.
+  </Step>
+</Steps>
+
+<Note>
+  Only the person who created a report can edit, share, or delete it.
+</Note>
+
+## Delete a report
+
+With a report you own selected, click the delete icon in the toolbar. This removes it from every user it was shared with.
+
+## Export to CSV
+
+<Steps>
+  <Step title="Set up the view">
+    Apply the filters, breakdown, and columns you want to export.
+  </Step>
+  <Step title="Open the export dialog">
+    Click the export icon in the toolbar.
+  </Step>
+  <Step title="Download">
+    Choose **CSV** and click **Export**. The file downloads with one row per breakdown, including nested levels. Rows are prefixed with `>` for each nested level so you can see the hierarchy.
+  </Step>
+</Steps>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Dashboard" icon="chart-line" href="/dashboard/overview">
+    The at-a-glance view of the same data for the current month.
+  </Card>
+  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
+    Save filter views on Contacts, Policies, and Tasks.
+  </Card>
+</Columns>

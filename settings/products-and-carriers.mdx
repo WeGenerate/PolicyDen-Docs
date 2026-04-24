@@ -1,0 +1,116 @@
+---
+title: "Products and carriers"
+description: "Set up the product lines you sell and the carriers you write through."
+keywords: ["products", "carriers", "insurance products", "insurance carriers", "Medicare product", "custom product", "carrier management"]
+---
+
+Products and carriers drive every policy in PolicyDen. A **product** is a category of insurance your agency sells — Medicare, dental, life, and so on. A **carrier** is the company that issues the policy. Your agents pick a product and a carrier whenever they log a policy.
+
+<Frame>
+  <img src="/images/settings-products.png" alt="Products page listing Medicare, Ancillary, and Life products with active toggles and policy counts" />
+</Frame>
+
+<Info>
+  Only **Admins** and **Agency Owners** can add or edit products and carriers.
+</Info>
+
+## Add a product
+
+<Steps>
+  <Step title="Open the Products page">
+    From agency settings, click **Products**.
+  </Step>
+  <Step title="Click Add Product">
+    The **Add Product** dialog opens with two options.
+  </Step>
+  <Step title="Pick a product type">
+    Choose either:
+
+    - **Medicare** — a ready-made template for Medicare Advantage, Supplements, and PDP. You can only add this once.
+    - **Custom Product** — your own product type. Enter a name like *Dental* or *Term Life*.
+  </Step>
+  <Step title="Save">
+    Click **Add**. PolicyDen confirms the product was created and offers a shortcut to **Manage Custom Fields** so you can design the policy form for this product.
+  </Step>
+</Steps>
+
+<Tip>
+  Configure [custom fields](/settings/agency-custom-fields) right after you add a product — your agents fill them in on every policy.
+</Tip>
+
+## Enable or disable a product
+
+Each product has a toggle on its row.
+
+- **On** — agents can create policies against the product.
+- **Off** — the product is hidden from the new-policy form, but existing policies remain untouched.
+
+Use **Off** to retire a product without losing its history.
+
+## Edit or delete a product
+
+Open the actions menu (three-dot button) on any custom product:
+
+- **Manage Carriers** — link carriers to this product (see below).
+- **Edit** — rename the product.
+- **Delete** — remove the product. You cannot delete system products, or products that already have policies attached.
+
+## Manage carriers
+
+Carriers are the insurance companies that issue the policies your agents write. Add every carrier your team uses so it appears when agents log a policy.
+
+### Add a carrier
+
+<Steps>
+  <Step title="Open the Carriers tab">
+    On the Products page, switch to the **Carriers** view.
+  </Step>
+  <Step title="Click Add Carrier">
+    Enter the **Carrier name** — for example, *Regional Health Plan*.
+  </Step>
+  <Step title="Save">
+    Click **Create**. The carrier appears in your list and is immediately available to agents.
+  </Step>
+</Steps>
+
+### Enable or disable a carrier
+
+Each carrier has an active toggle. Turn it **Off** to hide a carrier from the new-policy form while keeping its existing policies intact.
+
+### Edit or delete a carrier
+
+Use the actions menu on a carrier row to **Edit** its name or **Delete** it. You cannot edit or delete system-provided carriers.
+
+## Link carriers to a product
+
+By default, every active carrier is available on every product. If you want to restrict a product to a specific set of carriers, use **Manage Carriers** on that product.
+
+<Steps>
+  <Step title="Open Manage Carriers">
+    From a product's actions menu, click **Manage Carriers**.
+  </Step>
+  <Step title="Select carriers">
+    Check the carriers this product should support.
+
+    - Select none → every agency carrier stays available on the product.
+    - Select one or more → only the selected carriers appear when agents log a policy for this product.
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply the restriction.
+  </Step>
+</Steps>
+
+<Note>
+  Restrictions apply going forward. Policies already attached to a carrier you've removed stay as they were.
+</Note>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Custom fields" icon="sliders-horizontal" href="/settings/agency-custom-fields">
+    Design the policy form for each product.
+  </Card>
+  <Card title="Policies overview" icon="file-text" href="/policies/overview">
+    See what policies look like to agents.
+  </Card>
+</Columns>

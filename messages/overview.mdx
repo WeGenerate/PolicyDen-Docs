@@ -1,0 +1,124 @@
+---
+title: "Messages overview"
+description: "Text clients from your agency's dedicated number and keep every conversation on the record."
+keywords: ["messages", "SMS", "text messages", "client texting", "agency number", "conversation history", "MMS"]
+---
+
+Messages is PolicyDen's SMS inbox. Every text you send to a contact and every reply they send back lives on their contact record, so the whole team can see the conversation history without digging through personal phones.
+
+<Frame caption="The Messages page before any conversations exist.">
+  <img src="/images/messages-empty.png" alt="Messages page split between a contact list on the left and a Select a conversation prompt on the right" />
+</Frame>
+
+<Note>
+  This screenshot shows an empty inbox. As your agency sends and receives texts, the left column fills with conversations — most recent first.
+</Note>
+
+## Before you start
+
+Your agency needs at least one active SMS number configured. Admins set that up in [SMS numbers](/settings/sms-numbers). Once a number is active, texting works from the main **Messages** page, from a contact's profile, or from the conversation itself.
+
+## The conversation list
+
+Open **Messages** from the sidebar. The left column lists every contact who has texted with your agency, most recent first.
+
+Each row shows:
+
+- The contact's name and last message preview.
+- A timestamp — time today, **Yesterday**, weekday for the past week, or a date beyond that.
+- A red badge with the unread count, when they have unread incoming messages.
+
+Use the filter dropdown at the top of the list to switch between:
+
+| Filter | What it shows |
+| ------ | ------------- |
+| **All Messages** | Every conversation, active first. |
+| **Unread** | Conversations with messages you haven't opened yet. |
+| **Read** | Conversations where nothing is waiting on you. |
+| **Archived** | Conversations you've set aside. |
+
+Sort toggles between **Recent First** and **Oldest First**. The search box filters by contact name, phone number, or the text inside any message.
+
+<Tip>
+  If you work a large book, save time by switching to **Unread** first thing in the morning — you'll see only the conversations that need a response.
+</Tip>
+
+## Send a message
+
+<Steps>
+  <Step title="Open a conversation">
+    Click a contact in the list. If the contact has never been texted, start from their profile — the **SMS** tab on the [contact profile](/contacts/contact-profile) opens the same conversation view.
+  </Step>
+  <Step title="Type your message">
+    Enter your text in the composer at the bottom. Press **Enter** to send, **Shift + Enter** for a new line.
+  </Step>
+  <Step title="Attach files (optional)">
+    Click the paperclip to attach images, PDFs, audio, video, or vCards. You can attach up to 10 files per message.
+  </Step>
+  <Step title="Send">
+    Click **Send**. The message appears in the thread with a delivery indicator:
+    - Green checkmark: delivered.
+    - Amber alert: the carrier reported undelivered.
+    - Red X: the send failed.
+  </Step>
+</Steps>
+
+<Note>
+  If a contact has unsubscribed from SMS, the composer is replaced with a notice — you can't text them until they opt back in.
+</Note>
+
+## The conversation view
+
+Inside a conversation you'll see:
+
+- **Conversation thread** on the left, grouped by day with **Today**, **Yesterday**, and dated headers.
+- **Contact details** on the right — phone, email, date of birth, pipeline stage, address, and any linked policies.
+- A **Call** button in the header that starts an outbound call to the contact through the [in-app dialer](/calls/overview).
+- A **View Profile** button that opens the full [contact profile](/contacts/contact-profile) in a new tab.
+
+Messages sent by teammates show the sender's name and avatar above the bubble.
+
+## Mark conversations as read
+
+Opening a conversation automatically marks every incoming message in it as read. The red badge clears, and the global unread counter in the sidebar updates.
+
+To clear every unread message at once:
+
+<Steps>
+  <Step title="Open Messages">
+    Go to **Messages** from the sidebar.
+  </Step>
+  <Step title="Apply any filter you want to clear">
+    For example, stay on **All Messages** to clear everything, or switch to **Unread** to scope the action.
+  </Step>
+  <Step title="Click Mark all as read">
+    The button sits at the bottom of the conversation list. It appears when unread messages exist in the current view.
+  </Step>
+</Steps>
+
+## Archive a conversation
+
+Archive conversations you're done with so your main inbox stays focused. Archived conversations don't show in **All Messages** — switch the filter to **Archived** to see them.
+
+Unarchiving a conversation is the reverse: open it from the **Archived** filter and send a new message, or restore it to return it to your main list.
+
+<Note>
+  If you can't find the archive or unarchive action on a conversation, contact [support](mailto:support@policyden.com) — the entry point varies by plan.
+</Note>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Set up SMS numbers" icon="hash" href="/settings/sms-numbers">
+    Admins: add and verify the phone numbers your team texts from.
+  </Card>
+  <Card title="Calls" icon="phone" href="/calls/overview">
+    Place and receive calls from the same contact record.
+  </Card>
+  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
+    See every text alongside calls, notes, and policies on one timeline.
+  </Card>
+  <Card title="Templates" icon="file-text" href="/settings/templates">
+    Save reusable messages for quote follow-ups, renewals, and greetings.
+  </Card>
+</Columns>

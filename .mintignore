@@ -2,6 +2,13 @@
 # .git, .github, .claude, .agents, .idea, node_modules,
 # README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
 
+# Starter kit boilerplate (not part of PolicyDen docs)
+development.mdx
+essentials/
+ai-tools/
+api-reference/
+docs/
+
 # Draft content
 drafts/
 *.draft.mdx

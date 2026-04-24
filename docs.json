@@ -1,87 +1,150 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "PolicyDen",
+  "description": "PolicyDen documentation: how health insurance agencies use PolicyDen to manage contacts, policies, pipeline, tasks, meetings, SMS, calls, and the Atlas AI assistant.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
+    "primary": "#15803D",
+    "light": "#22C55E",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "light"
+  },
+  "icons": {
+    "library": "lucide"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "User guide",
+        "icon": "book-open",
         "groups": [
           {
             "group": "Getting started",
+            "icon": "rocket",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "navigating-the-app"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "icon": "users",
+            "pages": [
+              "contacts/overview",
+              "contacts/creating-contacts",
+              "contacts/contact-profile",
+              "contacts/importing-contacts",
+              "contacts/exporting-contacts",
+              "contacts/bulk-actions"
+            ]
+          },
+          {
+            "group": "Policies",
+            "icon": "file-text",
+            "pages": [
+              "policies/overview",
+              "policies/policy-profile",
+              "policies/status-history",
+              "policies/bulk-actions"
+            ]
+          },
+          {
+            "group": "Pipeline",
+            "icon": "layout-grid",
+            "pages": [
+              "pipeline/overview",
+              "pipeline/configuring-pipeline"
+            ]
+          },
+          {
+            "group": "Tasks",
+            "icon": "check",
+            "pages": [
+              "tasks/overview",
+              "tasks/managing-tasks"
+            ]
+          },
+          {
+            "group": "Meetings",
+            "icon": "calendar",
+            "pages": [
+              "meetings/overview",
+              "meetings/scheduling-meetings"
+            ]
+          },
+          {
+            "group": "Messages",
+            "icon": "message-square",
+            "pages": [
+              "messages/overview"
+            ]
+          },
+          {
+            "group": "Calls",
+            "icon": "phone",
+            "pages": [
+              "calls/overview"
+            ]
+          },
+          {
+            "group": "Atlas",
+            "icon": "sparkles",
+            "pages": [
+              "atlas/overview"
+            ]
+          },
+          {
+            "group": "Dashboard and reports",
+            "icon": "activity",
+            "pages": [
+              "dashboard/overview",
+              "reports/overview"
             ]
           },
           {
             "group": "Customization",
+            "icon": "sliders",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "customization/custom-fields",
+              "customization/saved-filters",
+              "customization/documents",
+              "customization/notes-and-comments"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Admin and settings",
+        "icon": "settings",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Your account",
+            "icon": "user",
             "pages": [
-              "api-reference/introduction"
+              "settings/profile",
+              "settings/password"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Agency settings",
+            "icon": "building",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "settings/agency-overview",
+              "settings/users-and-roles",
+              "settings/products-and-carriers",
+              "settings/sms-numbers",
+              "settings/templates",
+              "settings/agency-custom-fields",
+              "settings/billing"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -91,32 +154,78 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@policyden.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open app",
+      "href": "https://app.policyden.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity"
+    ]
+  },
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "og:site_name": "PolicyDen docs",
+      "og:type": "website"
+    }
+  },
+  "search": {
+    "prompt": "Search PolicyDen docs..."
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "errors": {
+    "404": {
+      "title": "We can't find that page",
+      "description": "This page may have moved or been renamed. Try the [docs home](/) or start with the [quickstart](/quickstart)."
+    }
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {},
+    "links": [
+      {
+        "header": "Get started",
+        "items": [
+          { "label": "Quickstart", "href": "/quickstart" },
+          { "label": "App tour", "href": "/navigating-the-app" },
+          { "label": "Contacts", "href": "/contacts/overview" }
+        ]
+      },
+      {
+        "header": "Work your book",
+        "items": [
+          { "label": "Policies", "href": "/policies/overview" },
+          { "label": "Pipeline", "href": "/pipeline/overview" },
+          { "label": "Messages", "href": "/messages/overview" },
+          { "label": "Atlas", "href": "/atlas/overview" }
+        ]
+      },
+      {
+        "header": "Admin",
+        "items": [
+          { "label": "Agency settings", "href": "/settings/agency-overview" },
+          { "label": "Users and roles", "href": "/settings/users-and-roles" },
+          { "label": "Billing", "href": "/settings/billing" }
+        ]
+      },
+      {
+        "header": "Help",
+        "items": [
+          { "label": "Email support", "href": "mailto:support@policyden.com" },
+          { "label": "Open the app", "href": "https://app.policyden.com" }
+        ]
+      }
+    ]
   }
 }

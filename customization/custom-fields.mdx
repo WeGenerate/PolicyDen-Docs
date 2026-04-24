@@ -1,0 +1,96 @@
+---
+title: "Custom fields"
+description: "Fill in and filter by the custom fields your agency added to contacts and policies."
+keywords: ["custom fields", "custom data", "custom columns", "filter by custom field", "contact fields", "policy fields"]
+---
+
+Your agency admin can add **custom fields** to contacts and policies so PolicyDen tracks the data your team works with. For the admin setup, see [Agency custom fields](/settings/agency-custom-fields).
+
+## Where custom fields appear
+
+Custom fields show up in four places:
+
+- The **Add Contact** and **Add Policy** forms.
+- The contact and policy profile, under the section the admin assigned the field to.
+- The **column picker** on the Contacts and Policies list views.
+- The **Filters** popover on the Contacts and Policies list views.
+
+<Note>
+  Policy custom fields are scoped to a product. A field added for Medicare policies appears only on Medicare policies; a field added for ACA policies appears only on ACA policies.
+</Note>
+
+## Fill in a custom field
+
+When you create or edit a contact or a policy, custom fields render inline alongside the built-in fields. Required fields are marked and block saving until filled.
+
+Field types you might see:
+
+| Type | How you fill it |
+| ---- | --------------- |
+| **Text** | A single-line text box. |
+| **Long Text** | A multi-line textarea. |
+| **Number** | A number input. |
+| **Date** | A date picker — pick or type a date. |
+| **Single Choice** | A dropdown — pick one option. |
+| **Multiple Choice** | A dropdown — pick any number of options. |
+
+Values save with the rest of the form when you click **Save**.
+
+### Example: a Referral Source field
+
+Most agencies run a **Referral Source** custom field on contacts to track where new leads come from. It usually looks like this:
+
+- **Type**: Single Choice
+- **Label**: Referral Source
+- **Options**: `Website`, `Facebook ad`, `Radio`, `Referral from client`, `Walk-in`, `Other`
+- **Required**: Yes
+
+On every new contact, the Referral Source dropdown appears alongside the built-in fields. Once it's on the form you can:
+
+- **Filter the Contacts list** to see only leads from one source — for example, all *Facebook ad* leads created this month.
+- **Add it as a column** so the source shows inline on the list.
+- **Report on it** by saving a filtered view for your weekly pipeline review.
+
+The same pattern works for any field your team tracks — carrier of interest, best time to call, broker partner. Pick the type that matches how people answer the question, and make it required only when you need an answer every time.
+
+## Show a custom field as a column
+
+On the **Contacts** or **Policies** list, click the **Customize columns** button in the toolbar. Every custom field your agency added is in the list — check the box to add it as a column. The order you pick is the order rows display.
+
+Sort by a custom-field column by clicking its header. Long Text fields aren't sortable.
+
+## Filter by a custom field
+
+<Steps>
+  <Step title="Open Filters">
+    On the Contacts or Policies list, click **Filters** in the toolbar.
+  </Step>
+  <Step title="Pick the field">
+    Click **Add Filter**, then pick the custom field from the list.
+  </Step>
+  <Step title="Set the value">
+    Choose an operator (equals, contains, is empty, and so on) and enter the value. The available operators depend on the field type.
+  </Step>
+  <Step title="Apply">
+    Click **Apply** to narrow the list.
+  </Step>
+</Steps>
+
+<Tip>
+  Combine filters with the date range and saved filters to build reusable views. See [Saved filters](/customization/saved-filters).
+</Tip>
+
+## Ask the admin
+
+If you need a new field or a change to an existing one, ask your agency admin. Only admins can add, rename, or remove custom fields — see [Agency custom fields](/settings/agency-custom-fields) for the setup.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
+    Save the filter combinations you use every day.
+  </Card>
+  <Card title="Contacts overview" icon="users" href="/contacts/overview">
+    See custom fields in context on the contacts list.
+  </Card>
+</Columns>

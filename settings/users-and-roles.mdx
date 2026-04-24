@@ -1,0 +1,119 @@
+---
+title: "Users and roles"
+description: "Invite teammates, assign roles and permissions, and deactivate users who leave."
+keywords: ["users", "invite user", "roles", "permissions", "agency owner", "admin role", "agent role", "deactivate user"]
+---
+
+Every person who works in PolicyDen needs a user account and a role. Roles decide what each person can see and do — from admins who configure your agency to agents who sell policies.
+
+<Frame>
+  <img src="/images/settings-users.png" alt="Agency users list with Import Users and Add User buttons, user count, search, and rows showing avatar, name, email, role, and status" />
+</Frame>
+
+<Info>
+  You must be an **Admin** or **Agency Owner** to manage users.
+</Info>
+
+## Invite a user
+
+<Steps>
+  <Step title="Open the Users page">
+    From agency settings, click **Users**. You see a list of everyone in your agency.
+  </Step>
+  <Step title="Click Add User">
+    The **Add User** dialog opens.
+  </Step>
+  <Step title="Fill in the details">
+    Enter the new user's **First Name**, **Last Name**, **Email**, and choose a **Role**.
+  </Step>
+  <Step title="Send the invite">
+    Click **Add**. PolicyDen emails an invitation to the address you entered. The new user appears in the list with a **Pending** status until they accept and set a password.
+  </Step>
+</Steps>
+
+## Built-in roles
+
+PolicyDen ships with three roles:
+
+| Role | What they can do |
+| ---- | ---------------- |
+| **Admin** | Configure agency settings, manage users, products, carriers, custom fields, templates, and billing. |
+| **Agency Owner** | Same access as Admin, plus ownership of your agency. |
+| **Agent** | Work their own book — contacts, policies, tasks, meetings, messages, and calls. Cannot change agency settings. |
+
+## Change a user's status
+
+The status pill next to each user controls whether they can sign in.
+
+- **Active** — the user can sign in and work.
+- **Inactive** — the user is signed out and cannot sign back in until you reactivate them.
+- **Pending** — the invitation hasn't been accepted yet.
+
+Click the status pill on any user's row to switch them between **Active** and **Inactive**. Use **Inactive** when a teammate leaves your agency so their data stays intact but their access stops.
+
+## View a user's profile
+
+Click **View Profile** from the row's actions menu (the three-dot button) to open the user's profile page. From there you can see details about them and manage carrier assignments.
+
+## Import users in bulk
+
+If you have several teammates to add at once:
+
+<Steps>
+  <Step title="Click the import icon">
+    The import button sits next to **Add User** in the top-right.
+  </Step>
+  <Step title="Upload your file">
+    Follow the prompts to upload a CSV with one user per row.
+  </Step>
+  <Step title="Review and finish">
+    PolicyDen emails every imported user an invitation to set their password.
+  </Step>
+</Steps>
+
+### CSV format
+
+Use the header row below. `first_name`, `last_name`, and `email` are required on every row; `role` is optional and defaults to **Agent** if you leave it blank.
+
+| Column | Required? | Accepts |
+| ------ | --------- | ------- |
+| `first_name` | Yes | Any text. |
+| `last_name` | Yes | Any text. |
+| `email` | Yes | A unique email address that isn't already in your agency. |
+| `role` | No | `Agent`, `Admin`, or `Agency Owner`. Defaults to `Agent`. |
+
+**Example row**
+
+```csv users.csv
+first_name,last_name,email,role
+Dana,Rivera,dana@example.com,Agent
+Ben,Nakamura,ben@example.com,Admin
+Priya,Okafor,priya@example.com,Agency Owner
+```
+
+<Tip>
+  Save the file as CSV (not Excel `.xlsx`) and make sure the header names match exactly — PolicyDen is case-sensitive on import.
+</Tip>
+
+## Search users
+
+Use the **Search** box above the list to filter by first name, last name, or email. The list updates as you type.
+
+## Roles and permissions
+
+Admins can review the system-level roles and permissions available on your PolicyDen plan. Each role has a display name (what you see in the UI) and a system name (used internally). Permissions are individual capabilities you can assign to roles.
+
+<Note>
+  If you need a custom role or permission that isn't listed, contact [support](mailto:support@policyden.com).
+</Note>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Products and carriers" icon="package" href="/settings/products-and-carriers">
+    Set up the products and carriers your team can write.
+  </Card>
+  <Card title="Agency settings" icon="building" href="/settings/agency-overview">
+    Back to the agency settings hub.
+  </Card>
+</Columns>

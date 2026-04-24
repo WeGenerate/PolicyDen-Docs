@@ -1,0 +1,71 @@
+---
+title: "Bulk actions"
+description: "Admin-only actions for reassigning or archiving many contacts at once."
+keywords: ["bulk actions", "bulk assign contacts", "bulk archive contacts", "reassign agent", "admin actions", "multi-select contacts"]
+---
+
+Bulk actions let admins act on many contacts in a single step — reassign a batch to a different agent, or archive a list you no longer need in view.
+
+<Info>
+  Bulk actions are admin-only. Agents don't see the selection checkboxes or the bulk action bar.
+</Info>
+
+## Select contacts
+
+Open the [Contacts page](/contacts/overview). A checkbox column appears on the left of the table.
+
+- Click the checkbox on a row to select that contact.
+- Click the checkbox in the table header to select every contact on screen.
+- Use the search, filters, and date range to narrow the list first, then select what's left.
+
+The **bulk action bar** slides up from the bottom of the screen as soon as one contact is selected. It shows how many are selected and the actions available.
+
+## Assign agent
+
+Reassign the selected contacts to a different user in your agency.
+
+<Steps>
+  <Step title="Open the Assign To dialog">
+    In the bulk action bar, click **Assign**.
+  </Step>
+  <Step title="Pick the new agent">
+    Select an agent from the dropdown. The list includes every user in your agency.
+  </Step>
+  <Step title="Confirm">
+    Click **Assign**. Every selected contact is reassigned to that agent, and the agent column updates in the list.
+  </Step>
+</Steps>
+
+<Tip>
+  Only the **Agent** column changes. The contact's agency, status, policies, tasks, and history all stay the same.
+</Tip>
+
+## Archive contacts
+
+Archive selected contacts to remove them from the list without permanently deleting them.
+
+<Steps>
+  <Step title="Open the archive dialog">
+    In the bulk action bar, click **Archive**.
+  </Step>
+  <Step title="Confirm">
+    Review the confirmation text and click **Archive Contacts**.
+  </Step>
+</Steps>
+
+<Warning>
+  Archived contacts disappear from the contact list, pipeline, reports, and other places they normally appear. Their policies, tasks, and messages stay on record, and an archive can be reversed later.
+</Warning>
+
+Use archive when you want to clean up leads that are no longer in play — not as a way to correct a duplicate. For one-off mistakes, archive from the individual contact's profile instead.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
+    Save a filtered view so you can select the same kind of contacts next time.
+  </Card>
+  <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
+    Add or remove the agents that show up in the Assign To dropdown.
+  </Card>
+</Columns>

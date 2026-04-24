@@ -1,0 +1,111 @@
+---
+title: "Agency custom fields"
+description: "Design the contact and policy forms your team fills out every day."
+keywords: ["custom fields admin", "field types", "contact form", "policy form", "required fields", "sections", "form layout"]
+mode: "wide"
+---
+
+Custom fields let you extend PolicyDen beyond the built-in fields. Add the questions your agency tracks — referral source, spouse information, specific plan details — and your agents see them on every contact and policy.
+
+<Frame>
+  <img src="/images/settings-custom-fields.png" alt="Custom Fields page with Contacts tab selected, showing field-type toolbar, product tabs, and Basic Details, Advanced Details, and Address Details sections" />
+</Frame>
+
+<Info>
+  Only **Admins** and **Agency Owners** can configure custom fields. To learn how agents fill in custom fields when working with contacts and policies, see [Custom fields](/customization/custom-fields).
+</Info>
+
+## Open custom fields
+
+From agency settings, click **Custom Fields**. The page splits into three areas:
+
+- A **sidebar** on the left with draggable field types.
+- A **tab bar** across the top — one tab for **Contacts** and one tab for each product you've added.
+- A **canvas** showing the sections and fields on the active tab.
+
+Changes aren't saved until you click **Save Custom Fields** in the top-right of the tab bar.
+
+## Field types
+
+Drag any of these from the sidebar onto a section.
+
+| Type | Best for |
+| ---- | -------- |
+| **Text** | Short free-text answers — a referral source, a plan name. |
+| **Long Text** | Multi-line notes and paragraphs. |
+| **Number** | Numeric values — age, premium amount. |
+| **Date** | Calendar dates — a birthday, a renewal date. |
+| **Single Choice** | One answer from a list — tier, category. |
+| **Multiple Choice** | Any number of answers from a list — coverages, interests. |
+
+## Add a field
+
+<Steps>
+  <Step title="Pick a tab">
+    Switch to **Contacts** or the product tab where the field should live.
+  </Step>
+  <Step title="Drag a field type in">
+    Drag the field type from the left sidebar into the section you want.
+  </Step>
+  <Step title="Edit the field">
+    Click the pencil icon on the new field to open its settings. Set the label and, for choice fields, add the options.
+  </Step>
+  <Step title="Mark it required if needed">
+    Toggle **Required** when an agent must fill the field in before saving.
+  </Step>
+  <Step title="Save">
+    Click **Save Custom Fields** in the top-right to lock in every change on the current tab.
+  </Step>
+</Steps>
+
+## Organize sections
+
+Sections group related fields. A contact form might have a **Basics** section, a **Household** section, and a **Compliance** section — each with its own fields.
+
+<Steps>
+  <Step title="Click Organize Sections">
+    The button sits at the top of the canvas.
+  </Step>
+  <Step title="Add, rename, or reorder">
+    Add new sections, rename existing ones, change the order, or remove ones you don't need. Drag the handle on a section to move it.
+  </Step>
+  <Step title="Save">
+    Close the dialog, then click **Save Custom Fields** to commit your changes.
+  </Step>
+</Steps>
+
+## Layout columns
+
+Use the column selector in the top-right of the canvas to show sections in **1**, **2**, or **3** columns. Wider forms are faster to scan when you have lots of sections.
+
+## Edit or remove a field
+
+Hover any non-system field:
+
+- Click the **pencil** icon to edit its label, options, or settings.
+- Click the **trash** icon to remove it. The field and any data in it are deleted.
+
+System fields (the ones shown in grey) come with PolicyDen and can't be edited or removed.
+
+<Warning>
+  Deleting a field deletes all data stored in that field across every contact or policy. Only remove fields you're sure you no longer need.
+</Warning>
+
+## Per-product policy forms
+
+Every product you add under [Products and carriers](/settings/products-and-carriers) gets its own policy tab under custom fields. Configure **Medicare** to collect plan-specific details, **Dental** to capture coverage tiers, and so on — your agents see the right form based on the product they pick.
+
+<Tip>
+  Set up a new product's custom fields right after you create the product, before agents start logging policies for it.
+</Tip>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Using custom fields" icon="sliders-horizontal" href="/customization/custom-fields">
+    See how agents fill in custom fields on contacts and policies.
+  </Card>
+  <Card title="Products and carriers" icon="package" href="/settings/products-and-carriers">
+    Add new products so you can build policy forms for them.
+  </Card>
+</Columns>

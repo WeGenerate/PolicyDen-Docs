@@ -1,0 +1,113 @@
+---
+title: "Billing"
+description: "Manage payment methods, review invoices, and pay what you owe."
+keywords: ["billing", "invoices", "payment methods", "credit card", "pay invoice", "overdue invoice", "price per agent"]
+mode: "wide"
+---
+
+The Billing page shows what you're paying for PolicyDen, how much is due, and which cards you have on file. Admins and Agency Owners use this page to keep your agency's subscription current.
+
+<Frame>
+  <img src="/images/settings-billing.png" alt="Billing page with Price Per Agent, Total Overdue, and Total Paid cards, a payment methods section, and an invoice table with Pay Now actions" />
+</Frame>
+
+<Info>
+  Billing is admin-only. Agents don't see this page.
+</Info>
+
+## Billing overview
+
+The three cards at the top of the page give you a quick snapshot:
+
+- **Price Per Agent** — your per-agent price and which day of the month you're billed on.
+- **Total Overdue** — the sum of unpaid invoices that are past their due date, and the number of overdue invoices.
+- **Total Paid** — the lifetime total you've paid and the number of paid invoices.
+
+## Payment methods
+
+Any card you add here can be used to pay invoices.
+
+### Add a card
+
+<Steps>
+  <Step title="Click Add Card">
+    The **Add Card** button sits in the top-right of the Payment Methods section.
+  </Step>
+  <Step title="Enter card details">
+    Fill in the card number, expiry, and CVC in the secure form. Your card data is handled through our payment processor and never touches our servers directly.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The card appears in your list with its brand, last four digits, and expiry.
+  </Step>
+</Steps>
+
+### Manage cards
+
+Each card row has an actions menu (the three-dot button):
+
+- **Make Default** — mark this card as the one PolicyDen uses automatically for new invoices. The default card shows a **Default** badge. This action is available only on non-default cards.
+- **Delete** — remove the card from your agency. You cannot delete the default card — switch defaults first.
+
+<Tip>
+  If your default card is about to expire, add the new one and click **Make Default** before the old card lapses.
+</Tip>
+
+## Invoices
+
+The Invoices table lists every invoice PolicyDen has generated for your agency, with the most recent at the top.
+
+Each row shows:
+
+| Column | What it means |
+| ------ | ------------- |
+| **Invoice** | The invoice number. Click to open the hosted invoice in a new tab. |
+| **Period** | The billing period the invoice covers. |
+| **Agents** | How many agents were billed in that period. |
+| **Amount** | The total charge. |
+| **Status** | **Paid**, **Open**, or **Overdue**. |
+| **Due Date** | When the invoice is due. Overdue dates show in red with days-overdue on hover. |
+
+Click an invoice number to open the full invoice in a new tab. If a PDF is available, use the download icon on the right to save it.
+
+## Pay an unpaid invoice
+
+When an invoice goes overdue, a **Pay Now** button appears directly on the invoice row.
+
+<Steps>
+  <Step title="Click Pay Now">
+    The button runs the payment against your default card.
+  </Step>
+  <Step title="Wait for confirmation">
+    PolicyDen shows a loading indicator while the charge processes. On success, you see **Invoice paid successfully** and the status switches to **Paid**.
+  </Step>
+  <Step title="Handle a declined payment">
+    If the card declines, you'll see **Payment declined. Please try again.** Check the card, switch defaults if needed, and try again.
+  </Step>
+</Steps>
+
+You can also open the hosted invoice (by clicking the invoice number) and pay from the invoice page in your browser — useful when you want to use a different card one time.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My card was declined" icon="triangle-alert">
+    Check the card's expiry date and available balance. If everything looks right, your bank may be blocking the charge — call them or switch to another card.
+  </Accordion>
+  <Accordion title="I can't delete a card" icon="trash-2">
+    PolicyDen won't let you delete your default card. Mark a different card as default first, then delete the old one.
+  </Accordion>
+  <Accordion title="The overdue total looks wrong" icon="receipt">
+    Overdue totals include every open invoice whose due date has passed. If you recently paid an invoice, refresh the page — the total updates after payment confirms.
+  </Accordion>
+</AccordionGroup>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
+    Agent count drives the invoice amount. Keep your user list accurate.
+  </Card>
+  <Card title="Agency settings" icon="building" href="/settings/agency-overview">
+    Back to the agency settings hub.
+  </Card>
+</Columns>

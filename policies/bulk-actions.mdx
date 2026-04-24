@@ -1,0 +1,96 @@
+---
+title: "Policies bulk actions"
+description: "Archive or reassign many policies at once. Admin only."
+keywords: ["bulk policy actions", "bulk assign policies", "bulk archive policies", "reassign writing agent", "policy admin actions"]
+---
+
+Bulk actions let agency admins update many policies in a single step instead of clicking through them one at a time. You can bulk-archive policies or bulk-reassign them to a different writing agent.
+
+<Info>
+  Bulk actions on the Policies page are available to agency admins only. If you don't see the action bar after selecting rows, check with your admin.
+</Info>
+
+## How it works
+
+<Steps>
+  <Step title="Open the Policies page">
+    Click **Policies** in the sidebar. Use filters and the date range to narrow the list to the policies you want to act on — see [Policies overview](/policies/overview).
+  </Step>
+  <Step title="Select rows">
+    Check the box on each row you want to include. To select every policy in the current view, check the box in the header.
+  </Step>
+  <Step title="Open the bulk action bar">
+    A bar appears at the bottom of the page showing how many policies are selected and the available actions.
+  </Step>
+  <Step title="Choose an action">
+    Pick **Archive** or **Assign** and confirm in the dialog that opens.
+  </Step>
+</Steps>
+
+<Tip>
+  Combine filters with bulk actions for targeted cleanups — for example, filter by carrier and a date range, select all, and reassign them to a new writing agent in one step.
+</Tip>
+
+## Bulk assign a writing agent
+
+Use **Assign** to move many policies to a different writing agent at once.
+
+<Steps>
+  <Step title="Select the policies">
+    Check the policies you want to reassign.
+  </Step>
+  <Step title="Click Assign">
+    In the bulk action bar, click **Assign**.
+  </Step>
+  <Step title="Pick the new agent">
+    Choose an agent from the dropdown. Only active users in your agency appear here.
+  </Step>
+  <Step title="Confirm">
+    Click **Assign**. The writing agent updates on every selected policy, and the table refreshes to show the new assignment.
+  </Step>
+</Steps>
+
+Reassigning a policy does **not** change the contact's assigned agent. Update the contact separately from [Contact profile](/contacts/contact-profile) or [Contacts bulk actions](/contacts/bulk-actions) if you want both to move together.
+
+## Bulk archive policies
+
+Use **Archive** to remove many policies from the main list at once.
+
+<Steps>
+  <Step title="Select the policies">
+    Check the policies you want to archive.
+  </Step>
+  <Step title="Click Archive">
+    In the bulk action bar, click **Archive**.
+  </Step>
+  <Step title="Confirm">
+    Review the confirmation dialog and click **Archive policies**. The selected policies leave the active list.
+  </Step>
+</Steps>
+
+<Warning>
+  Archiving hides policies from the main pages for your team. The action can be reversed, but do a final review of the filter and selection before you confirm — an incorrect filter could sweep in more policies than you meant.
+</Warning>
+
+## Tips for safe bulk work
+
+- **Filter first, then select.** Use filters and the date range to narrow the list before you check the header box.
+- **Watch the count.** The bulk action bar shows how many rows you've selected — confirm it matches what you expect.
+- **Start small.** If you're not sure your filter is right, run the bulk action on a handful of policies first and check the result before doing the whole list.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Policies overview" icon="file-text" href="/policies/overview">
+    Master the filters, presets, and columns that drive a bulk action.
+  </Card>
+  <Card title="Policy profile" icon="file-text" href="/policies/policy-profile">
+    Work with one policy at a time.
+  </Card>
+  <Card title="Contacts bulk actions" icon="layers" href="/contacts/bulk-actions">
+    The same pattern, applied to contacts.
+  </Card>
+  <Card title="Users and roles" icon="shield-check" href="/settings/users-and-roles">
+    How admin access is granted in your agency.
+  </Card>
+</Columns>

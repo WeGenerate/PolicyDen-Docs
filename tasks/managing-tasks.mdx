@@ -1,0 +1,122 @@
+---
+title: "Managing tasks"
+description: "Create, edit, complete, reassign, and bulk-update tasks in PolicyDen."
+keywords: ["manage tasks", "create task", "complete task", "reassign task", "bulk tasks", "task attachments", "task comments"]
+---
+
+Create, edit, complete, reassign, and bulk-update tasks without leaving the Tasks page. Every action works inline on the list or from a task's detail page.
+
+## Create a task
+
+<Steps>
+  <Step title="Open the Tasks page">
+    Click **Tasks** in the sidebar, then click **Add Task** in the top-right. The **Add Task** dialog opens.
+  </Step>
+  <Step title="Fill in the details">
+    - **Title** — a short description of what needs to happen.
+    - **Description** — optional longer notes.
+    - **Due date** — when it's due.
+    - **Priority** — Low, Medium, or High.
+    - **Assigned to** — pick an agent. Leave blank to assign later.
+  </Step>
+  <Step title="Attach files (optional)">
+    Drag files into the dialog, or click the attach button to pick from your computer.
+  </Step>
+  <Step title="Save">
+    Click **Create Task**. The new task appears at the top of the list.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also create a task tied to a specific contact from that contact's profile. See [Contact profile](/contacts/contact-profile).
+</Tip>
+
+## Open a task
+
+Click the three-dot menu on the right of a row and choose **View**, or click **Task Details** from anywhere the task is linked. The task details page shows the title, description, attachments, comments, and a sidebar with status, due date, agent, priority, and creator.
+
+## Edit a task
+
+You can edit most task fields in two places: inline on the list, or on the task details page.
+
+<Tabs>
+  <Tab title="Inline on the list">
+    Click a cell — **Task Name**, **Due Date**, **Priority**, **Status**, or **Assigned To** — and edit the value. Your change saves as soon as you confirm the new value.
+  </Tab>
+  <Tab title="On the details page">
+    - **Double-click the title or description** to enter edit mode.
+    - Use the widgets under the description to change **due date**, **priority**, or **agent**.
+    - Click **Attach** to add a file.
+    - Click **Save** to commit your changes, or **Cancel** to discard them.
+  </Tab>
+</Tabs>
+
+## Complete a task
+
+From the task details page, click **Mark As Done** in the bottom-right. The task moves to the Completed status and its title is struck through.
+
+To reopen it, click **Reopen** in the same spot.
+
+You can also change status inline on the list by clicking the status cell and picking a new value.
+
+## Reassign a task
+
+- **Inline** — click the **Assigned To** cell on the list and pick a new agent.
+- **On the details page** — use the agent widget under the description.
+- **In bulk** — see [Bulk actions](#bulk-actions) below.
+
+## Add comments and attachments
+
+The task details page includes a **Comments** section so you and teammates can discuss the work without leaving PolicyDen. Drop files under the description to attach reference material.
+
+## Delete a task
+
+<Steps>
+  <Step title="Open the row menu">
+    On the Tasks list, click the three-dot menu on the right of the row.
+  </Step>
+  <Step title="Choose Delete">
+    Pick **Delete**. A confirmation dialog asks you to confirm.
+  </Step>
+  <Step title="Confirm">
+    Click **Delete**. The task is removed.
+  </Step>
+</Steps>
+
+<Warning>
+  Deleting a task is permanent — it can't be undone. If you want to keep the record, change the status to **Canceled** instead.
+</Warning>
+
+## Bulk actions
+
+Select two or more tasks with the checkboxes on the left of the list. A floating bar appears at the bottom of the screen with the available actions.
+
+| Action | What it does |
+| ------ | ------------ |
+| **Complete** | Marks every selected task as Completed. |
+| **Cancel** | Marks every selected task as Canceled. |
+| **Assign To** | Assigns every selected task to the agent you pick. |
+| **Delete** | Permanently deletes every selected task. |
+
+Each action asks for confirmation before it runs. Selection clears once the action finishes.
+
+<Tip>
+  Select every task in the current view by clicking the header checkbox. Combine it with a filter — for example, **Assigned To = Dejan** + **Status = Open** — to reassign a teammate's open tasks in one go.
+</Tip>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Tasks overview" icon="list-checks" href="/tasks/overview">
+    The task list, filters, and presets.
+  </Card>
+  <Card title="Meetings" icon="calendar" href="/meetings/overview">
+    Schedule meetings alongside your tasks.
+  </Card>
+  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
+    Save your most-used task views.
+  </Card>
+  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
+    Create and track tasks from inside a contact's profile.
+  </Card>
+</Columns>

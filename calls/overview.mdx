@@ -1,0 +1,119 @@
+---
+title: "Calls overview"
+description: "Place and receive calls inside PolicyDen with automatic logging and recordings."
+keywords: ["calls", "phone calls", "softphone", "call recordings", "click to call", "call logs", "inbound calls", "outbound calls"]
+---
+
+The calls widget puts a phone on every page of PolicyDen. Dial a contact, answer an incoming call, and keep a record of what happened — without leaving the app or reaching for your cell.
+
+## Before you start
+
+Two things need to be in place before you can call:
+
+- Your agency has at least one active SMS number, which doubles as your caller ID. Admins configure these in [SMS numbers](/settings/sms-numbers).
+- Your browser has permission to use the microphone. The first time you place or take a call, you'll be prompted to allow mic access.
+
+PolicyDen connects your browser to the phone system after your first click or key press on the page. A green indicator on the calls widget in the top bar means you're ready; a red one means there's a configuration issue.
+
+## The calls widget
+
+The calls widget lives in the top bar on every page. Click it to open a popover with your recent call history and controls for any active call.
+
+What the widget shows depends on call state:
+
+| State | What you see |
+| ----- | ------------ |
+| Idle | Your last few calls with play buttons for any recordings. |
+| Incoming call | The caller's name, number, and linked policies with **Accept** and **Reject** buttons. |
+| Outbound ringing | The contact you're dialing with an option to cancel. |
+| On a call | A live timer, mute toggle, and **End Call** button. |
+
+<Note>
+  If you try to leave the page during an active call, PolicyDen asks you to confirm before navigating away so you don't accidentally drop the call.
+</Note>
+
+## Place an outbound call
+
+<Steps>
+  <Step title="Start the call from anywhere">
+    You can call a contact from three places:
+
+    - The **Call** button in the header of a message conversation.
+    - A phone number on the [contact profile](/contacts/contact-profile).
+    - The calls widget in the top bar.
+  </Step>
+  <Step title="Wait for the contact to answer">
+    PolicyDen picks the right caller ID automatically — the last agency number you texted the contact from, or your agency's default active SMS number.
+  </Step>
+  <Step title="Talk">
+    Once the contact picks up, the widget shows a running timer. Use **Mute** to silence your mic or **End Call** to hang up.
+  </Step>
+</Steps>
+
+## Answer an incoming call
+
+When a contact calls one of your agency's numbers, the calls widget turns into an incoming-call trigger and the popover opens with the caller's details.
+
+<Steps>
+  <Step title="Review the caller">
+    The widget shows the contact's name, the phone number, and any policies linked to that contact so you have context before you pick up.
+  </Step>
+  <Step title="Accept or reject">
+    Click **Accept** to take the call or **Reject** to send them away. Accepting triggers a mic permission prompt the first time.
+  </Step>
+  <Step title="Handle the call">
+    Once connected, the widget behaves like an outbound call — timer, mute, and **End Call**.
+  </Step>
+</Steps>
+
+<Warning>
+  If you reject a call, the contact hears the standard line-busy tone. There is no voicemail routing from the in-app dialer — if you expect voicemail, set that up on the carrier side.
+</Warning>
+
+## Call recordings
+
+Calls that complete successfully are recorded and linked to the contact. To listen back:
+
+<Steps>
+  <Step title="Open the calls widget">
+    Click the phone icon in the top bar.
+  </Step>
+  <Step title="Find the call">
+    Recent calls appear with the contact's name, direction (incoming or outgoing), and timestamp. Missed calls are marked in red.
+  </Step>
+  <Step title="Play the recording">
+    Calls with a recording show a play button and progress bar. Click **Play** to listen; click **Pause** to stop. Only one recording plays at a time.
+  </Step>
+</Steps>
+
+Recordings also appear on the contact's profile under the **Activities** tab, alongside texts and notes.
+
+## Call history
+
+The widget surfaces your five most recent calls. For a contact's complete call history — every inbound, outbound, and missed call — open their [contact profile](/contacts/contact-profile) and go to the **Activities** tab.
+
+Each logged call captures:
+
+- Who called whom (direction).
+- Contact name and number.
+- When it happened.
+- The result — answered or missed.
+- Duration, once the call ends.
+- The recording, if one exists.
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="SMS numbers" icon="hash" href="/settings/sms-numbers">
+    Admins: configure the phone numbers your team uses for calls and texts.
+  </Card>
+  <Card title="Messages" icon="message-square" href="/messages/overview">
+    Follow a call up with a text from the same conversation thread.
+  </Card>
+  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
+    See every call, text, and note on the contact's timeline.
+  </Card>
+  <Card title="Your profile" icon="user-cog" href="/settings/profile">
+    Update the name and avatar that appear on your call logs.
+  </Card>
+</Columns>

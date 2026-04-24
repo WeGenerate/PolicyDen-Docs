@@ -1,0 +1,97 @@
+---
+title: "Creating contacts"
+description: "Add a new contact with duplicate detection, from any page in PolicyDen."
+keywords: ["add contact", "new contact", "duplicate detection", "create lead", "phone search", "MBI search", "Medicare Beneficiary Identifier"]
+---
+
+Use **Add Contact** to create a new lead or client. The flow checks for duplicates before you fill in anything else, so you don't end up with two records for the same person.
+
+<Frame>
+  <img src="/images/add-contact-modal.png" alt="Add New Contact modal prompting you to search for an existing contact by phone number before creating a new record" />
+</Frame>
+
+## Open the Add Contact modal
+
+You can start a new contact from a few places:
+
+- The **Add Contact** button on the [Contacts page](/contacts/overview).
+- The **Add new** menu in the top bar.
+- The plus icon next to the **Contact** column header in the contact list.
+
+## Step 1: Search by phone
+
+The first screen asks for a phone number. This is the number you spoke to the client on — it's what PolicyDen uses to check for an existing contact.
+
+<Steps>
+  <Step title="Enter the phone number">
+    Type the phone number into the **Phone** field.
+  </Step>
+  <Step title="Run the search">
+    Click **Search** or press Enter.
+  </Step>
+</Steps>
+
+PolicyDen compares the number against every contact in your agency. Secondary phone numbers are checked too.
+
+## Step 2: Pick an existing contact or create a new one
+
+What happens next depends on what the search returned.
+
+<Tabs>
+  <Tab title="A match was found">
+    If PolicyDen finds one or more contacts with that phone, you'll see them in a list. Each row shows the contact's name and the status of their most recent policy.
+
+    Click any result to open that contact's profile instead of creating a new record.
+  </Tab>
+  <Tab title="No match was found">
+    If the phone number isn't in your agency, PolicyDen opens the create form. The **Phone** field is locked to what you searched for, so you don't have to retype it.
+  </Tab>
+</Tabs>
+
+## Step 3: Fill in the required details
+
+The create form asks for the minimum PolicyDen needs to start tracking the contact. Every field below is required.
+
+| Field | Notes |
+| ----- | ----- |
+| **Phone** | Carried over from the search step. Locked once you reach the create form. |
+| **First Name** | Contact's legal first name. |
+| **Last Name** | Contact's legal last name. |
+| **Medicare Number** | The contact's Medicare Beneficiary Identifier (MBI). |
+| **Date of Birth** | Format: MM/DD/YYYY. You can type the date or pick it from the calendar. |
+
+Click **Add Contact** to save.
+
+## After you save
+
+PolicyDen does three things:
+
+1. Creates the contact with a status of **Lead** and assigns them to you.
+2. Shows a confirmation toast.
+3. Opens the new contact's [profile](/contacts/contact-profile) so you can add more details or log a policy.
+
+From the profile you can fill in email, address, gender, custom fields, and more — all of it is optional at creation time and can be added later.
+
+## Duplicate detection
+
+PolicyDen checks for duplicates whenever you start the Add Contact flow:
+
+- **By phone** — the primary phone and secondary phone on every contact in your agency are searched. The phone must be at least 10 digits to trigger a check.
+- **By Medicare number** — if you search by MBI instead of (or in addition to) phone, PolicyDen compares the uppercased MBI (minimum 11 characters).
+
+If PolicyDen finds a match, it shows you the existing contact before you can create a new one. That prevents two agents from creating duplicate records for the same client.
+
+<Warning>
+  Only agencies you belong to are searched. If a contact lives in another agency on the same PolicyDen tenant, it won't show up.
+</Warning>
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Open the contact profile" icon="id-card" href="/contacts/contact-profile">
+    Log policies, tasks, notes, and messages against the new contact.
+  </Card>
+  <Card title="Bulk import" icon="upload" href="/contacts/importing-contacts">
+    Load many contacts at once from a CSV or Excel file.
+  </Card>
+</Columns>
