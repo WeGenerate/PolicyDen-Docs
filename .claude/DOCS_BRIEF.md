@@ -52,15 +52,10 @@ The app ships three roles: **Agent**, **Admin**, and **Agency Owner** (see [User
 
 ## What to exclude (do not mention, ever)
 
-- **CMS accounts / federal-marketplace CMS / CmsAccountsController** — out of scope for user docs.
-- **MARX** — out of scope.
-- **Bots, BotRuns, how the bot works** — internal automation that users don't touch directly.
-- **Reconciliation** — CMS-related admin-only tooling.
-- **Policy Status Tool** — bot-adjacent, skip.
-- **Workflows** — bot-related, skip entirely.
-- Any implementation details (Laravel, Vue, controllers, tables, queues).
+- **Internal admin-only automation surfaces and integrations.** The agency app has several internal-only admin surfaces that users never touch directly. These are out of scope for user docs; do not describe them.
+- **Implementation details** — Laravel controllers, Vue internals, database tables, queue workers, and any other back-end plumbing.
 
-If a feature is tangled with these, describe only the user-facing surface. When in doubt, leave it out.
+If a user-facing feature is tangled with one of these internal surfaces, describe only the user-facing surface. When in doubt, leave it out and ask the team lead.
 
 ## Mintlify rules
 

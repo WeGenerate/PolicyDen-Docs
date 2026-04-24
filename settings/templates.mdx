@@ -1,5 +1,6 @@
 ---
 title: "SMS and email templates"
+sidebarTitle: "Templates"
 description: "Create reusable messages for common outreach, with dynamic tags for contact and policy data."
 keywords: ["templates", "SMS templates", "email templates", "message templates", "merge tags", "placeholder tags", "reusable messages"]
 ---
@@ -7,7 +8,7 @@ keywords: ["templates", "SMS templates", "email templates", "message templates",
 Templates save you from retyping the same message. Create an SMS or email template once, drop in placeholders for contact or policy details, and your team can send a personalized message in a couple of clicks.
 
 <Info>
-  Templates are managed by admins. Every agent in your agency can use them.
+  Templates are managed by Admins. Every Agent in your agency can use them.
 </Info>
 
 ## Email templates
@@ -85,13 +86,11 @@ Use these as a starting point — swap the tag names if your agency has renamed 
 
 Event type: **Policy Submitted**.
 
-**Subject**
+<CodeGroup>
 
 ```text Subject
 {{contact.first_name}}, we submitted your {{policy.product}} application
 ```
-
-**Body**
 
 ```text Body
 Hi {{contact.first_name}},
@@ -104,6 +103,8 @@ Thanks,
 {{agent.first_name}} at {{agency.name}}
 {{agent.phone}}
 ```
+
+</CodeGroup>
 
 ### Example SMS template: enrollment confirmation
 
@@ -141,6 +142,9 @@ Hi {{contact.first_name}}, this is {{agent.first_name}} at {{agency.name}}. Your
     Make sure your agency has at least one active SMS number.
   </Card>
   <Card title="Messages" icon="message-square" href="/messages/overview">
-    See how agents send SMS to clients.
+    See how Agents send SMS to clients.
+  </Card>
+  <Card title="Billing" icon="credit-card" href="/settings/billing">
+    Keep your agency's subscription current once messaging is in place.
   </Card>
 </Columns>

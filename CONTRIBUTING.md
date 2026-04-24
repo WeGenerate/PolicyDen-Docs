@@ -20,11 +20,11 @@ This repo is the source for [docs.policyden.com](https://docs.policyden.com). Pa
 ## How to add a new page
 
 1. Confirm the page is already registered in `docs.json` navigation. Only add files whose path is in `docs.json` — pages not in `docs.json` are hidden from the sidebar.
-2. Create the `.mdx` file at the path that matches its entry in `docs.json` (for example, `contacts/creating-contacts` → `contacts/creating-contacts.mdx`).
+2. Create the `.mdx` file at the path that matches its entry in `docs.json` (for example, `contacts/create-contacts` → `contacts/create-contacts.mdx`).
 3. Add frontmatter with at least `title` and `description`:
    ```yaml
    ---
-   title: "Creating contacts"
+   title: "Create a contact"
    description: "Add a new contact and capture the details you need to follow up."
    ---
    ```
@@ -37,7 +37,7 @@ This repo is the source for [docs.policyden.com](https://docs.policyden.com). Pa
 Keep the voice consistent with the rest of the docs.
 
 - **Second person, active voice.** "You can add a contact." Not "Contacts can be added by users."
-- **Sentence case for headings.** "Managing tasks", not "Managing Tasks".
+- **Sentence case, imperative verbs for task headings.** "Manage tasks", not "Managing tasks" or "Managing Tasks".
 - **Bold UI elements on first reference.** Click **Add contact**. Go to **Settings → Profile**.
 - **Monospace code for paths, URLs, config keys, filenames.** `docs.json`, `/contacts/overview`.
 - **Code blocks need a language tag.** ` ```json `, ` ```bash `, ` ```mdx `.
@@ -60,10 +60,10 @@ Prefer plain prose. Reach for a Mintlify component when it improves scannability
 
 ### What we do not document
 
-- Federal marketplace CMS accounts, MARX, bots and bot runs, reconciliation, the Policy Status Tool, and internal workflows. These are internal surfaces and out of scope for user docs.
+- Internal admin-only automation surfaces and integrations. These are not user-facing and are out of scope for user docs.
 - Implementation details (Laravel controllers, database tables, queues, Vue internals).
 
-If a feature overlaps with one of these, document only the user-facing surface.
+If a feature overlaps with one of these, document only the user-facing surface. When in doubt, ask before writing.
 
 ## Checks to run before opening a pull request
 

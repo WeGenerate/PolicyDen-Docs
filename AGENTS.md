@@ -18,15 +18,15 @@ This is a Mintlify documentation site for **PolicyDen**, a health-insurance CRM 
 
 ## Content boundaries — do not document
 
-- Federal marketplace CMS accounts, MARX, bots and bot runs, reconciliation, the Policy Status Tool, or internal workflows.
+- Internal admin-only automation surfaces and integrations that users don't touch directly.
 - Implementation details (Laravel controllers, database tables, queue workers, Vue internals).
 
-If a feature overlaps with one of these, document only the user-facing surface.
+If a feature overlaps with one of these, document only the user-facing surface. When in doubt, ask the team lead before writing.
 
 ## Style
 
 - Second-person voice, active voice, direct language.
-- Sentence case for headings: "Managing tasks", not "Managing Tasks".
+- Sentence case for headings, imperative verbs for task headings: "Manage tasks", not "Managing tasks" or "Managing Tasks".
 - Frontmatter requires `title` and `description` on every page.
 - Bold UI elements on first reference: **Add contact**, **Settings → Profile**.
 - Monospace code for paths, URLs, config keys: `docs.json`, `/contacts/overview`.

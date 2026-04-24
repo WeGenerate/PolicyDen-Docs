@@ -62,31 +62,19 @@
           },
           {
             "group": "Tasks",
-            "icon": "check",
+            "icon": "list-todo",
             "pages": [
               "tasks/overview",
               "tasks/managing-tasks"
             ]
           },
           {
-            "group": "Meetings",
-            "icon": "calendar",
+            "group": "Conversations",
+            "icon": "messages-square",
             "pages": [
               "meetings/overview",
-              "meetings/scheduling-meetings"
-            ]
-          },
-          {
-            "group": "Messages",
-            "icon": "message-square",
-            "pages": [
-              "messages/overview"
-            ]
-          },
-          {
-            "group": "Calls",
-            "icon": "phone",
-            "pages": [
+              "meetings/scheduling-meetings",
+              "messages/overview",
               "calls/overview"
             ]
           },
@@ -106,19 +94,19 @@
             ]
           },
           {
-            "group": "Customization",
+            "group": "Your data",
             "icon": "sliders",
             "pages": [
-              "customization/custom-fields",
-              "customization/saved-filters",
+              "customization/notes-and-comments",
               "customization/documents",
-              "customization/notes-and-comments"
+              "customization/saved-filters",
+              "customization/custom-fields"
             ]
           }
         ]
       },
       {
-        "tab": "Admin and settings",
+        "tab": "Settings",
         "icon": "settings",
         "groups": [
           {
@@ -130,15 +118,15 @@
             ]
           },
           {
-            "group": "Agency settings",
+            "group": "Agency",
             "icon": "building",
             "pages": [
               "settings/agency-overview",
               "settings/users-and-roles",
               "settings/products-and-carriers",
+              "settings/agency-custom-fields",
               "settings/sms-numbers",
               "settings/templates",
-              "settings/agency-custom-fields",
               "settings/billing"
             ]
           }
@@ -188,7 +176,7 @@
   "errors": {
     "404": {
       "title": "We can't find that page",
-      "description": "This page may have moved or been renamed. Try the [docs home](/) or start with the [quickstart](/quickstart)."
+      "description": "This page may have moved or been renamed. Try the [docs home](/), the [quickstart](/quickstart), or [Agency settings](/settings/agency-overview)."
     }
   },
   "footer": {
@@ -199,16 +187,16 @@
         "items": [
           { "label": "Quickstart", "href": "/quickstart" },
           { "label": "App tour", "href": "/navigating-the-app" },
-          { "label": "Contacts", "href": "/contacts/overview" }
+          { "label": "Atlas", "href": "/atlas/overview" }
         ]
       },
       {
         "header": "Work your book",
         "items": [
+          { "label": "Contacts", "href": "/contacts/overview" },
           { "label": "Policies", "href": "/policies/overview" },
           { "label": "Pipeline", "href": "/pipeline/overview" },
-          { "label": "Messages", "href": "/messages/overview" },
-          { "label": "Atlas", "href": "/atlas/overview" }
+          { "label": "Messages", "href": "/messages/overview" }
         ]
       },
       {
@@ -216,6 +204,7 @@
         "items": [
           { "label": "Agency settings", "href": "/settings/agency-overview" },
           { "label": "Users and roles", "href": "/settings/users-and-roles" },
+          { "label": "Reports", "href": "/reports/overview" },
           { "label": "Billing", "href": "/settings/billing" }
         ]
       },

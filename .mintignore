@@ -9,6 +9,9 @@ ai-tools/
 api-reference/
 docs/
 
+# Review working docs (not part of the published site)
+docs-review/
+
 # Draft content
 drafts/
 *.draft.mdx

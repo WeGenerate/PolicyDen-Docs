@@ -12,7 +12,7 @@ The Billing page shows what you're paying for PolicyDen, how much is due, and wh
 </Frame>
 
 <Info>
-  Billing is admin-only. Agents don't see this page.
+  Billing is Admin-only. Agents don't see this page.
 </Info>
 
 ## Billing overview
@@ -62,7 +62,7 @@ Each row shows:
 | ------ | ------------- |
 | **Invoice** | The invoice number. Click to open the hosted invoice in a new tab. |
 | **Period** | The billing period the invoice covers. |
-| **Agents** | How many agents were billed in that period. |
+| **Agents** | How many Agents were billed in that period. |
 | **Amount** | The total charge. |
 | **Status** | **Paid**, **Open**, or **Overdue**. |
 | **Due Date** | When the invoice is due. Overdue dates show in red with days-overdue on hover. |
@@ -99,6 +99,9 @@ You can also open the hosted invoice (by clicking the invoice number) and pay fr
   <Accordion title="The overdue total looks wrong" icon="receipt">
     Overdue totals include every open invoice whose due date has passed. If you recently paid an invoice, refresh the page — the total updates after payment confirms.
   </Accordion>
+  <Accordion title="What happens if I don't pay" icon="triangle-alert">
+    PolicyDen emails the billing contact when an invoice goes overdue. If the card on file keeps declining, you'll see an **Unpaid invoices** banner on the dashboard so Admins know to act. If an invoice stays unpaid for an extended period, your agency may be moved to a read-only state until billing is resolved — contact [support](mailto:support@policyden.com) if you're working through a payment issue and need time.
+  </Accordion>
 </AccordionGroup>
 
 ## What's next
@@ -106,6 +109,9 @@ You can also open the hosted invoice (by clicking the invoice number) and pay fr
 <Columns cols={2}>
   <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
     Agent count drives the invoice amount. Keep your user list accurate.
+  </Card>
+  <Card title="Reports" icon="chart-bar" href="/reports/overview">
+    See the production data behind your per-Agent billing.
   </Card>
   <Card title="Agency settings" icon="building" href="/settings/agency-overview">
     Back to the agency settings hub.

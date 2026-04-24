@@ -230,6 +230,6 @@ Run from `/Users/mac/PolicyDen-Docs` after applying every change above.
 | `settings/users-and-roles.mdx` | Added a CSV format subsection with headers, required flags, allowed `role` values, and a 3-row example. |
 | `customization/custom-fields.mdx` | Added a Referral Source worked example anchoring the field-type table. |
 
-Six files changed. All changes preserve the hard exclusions from
-`DOCS_BRIEF.md` (no CMS, MARX, bots, workflows, reconciliation, or
-policy-status-tool references).
+Six files changed. All changes preserve the hard content exclusions
+called out in `DOCS_BRIEF.md` — no references to internal admin-only
+automation surfaces leaked into user-facing copy.
