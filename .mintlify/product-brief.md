@@ -23,4 +23,4 @@ These are documentation audiences, not three separate app roles. The app roles r
 ## Motivation and evidence
 Keep sales work and agency administration understandable without requiring customers to learn implementation details. This is an inferred documentation goal, not a claim about competitive differentiation.
 
-Use `/Users/mac/PolicyDen-App` read-only as the product source of truth and the verified canonical task pages for shared procedures. Preserve real app permission and feature prerequisites. Screenshots and short animations with fictional demo data are handled separately; do not fabricate or add placeholder media in this content task.
+Use the committed `origin/main` revision in `/Users/mac/PolicyDen-App` read-only as the product source of truth, rather than unrelated local workspace edits. Preserve real app permission and feature prerequisites. The isolated capture demo includes main revision `4d27ed3e0`; its Live Monitor screens and procedures were refreshed after comparing the original `036d02997` baseline with main. Screenshots and short animations use fictional demo data; do not fabricate or add placeholder media.

@@ -153,7 +153,7 @@
     "path": "images/settings/licensed-states-and-contracts-overview.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 85213
   },
   {
     "path": "images/settings/user-profiles-overview.png",
@@ -201,13 +201,13 @@
     "path": "images/settings/wallet-balance-and-settings.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 157634
   },
   {
     "path": "images/settings/users-and-roles-overview.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 58877
+    "bytes": 111110
   },
   {
     "path": "images/settings/sessions-overview.png",
@@ -465,7 +465,7 @@
     "path": "images/workflows/review-team-performance-4.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 117474
   },
   {
     "path": "images/workflows/onboard-a-new-agent-3.png",
@@ -483,7 +483,7 @@
     "path": "images/workflows/review-team-performance-5.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 128838
   },
   {
     "path": "images/workflows/set-up-your-solo-account-2.png",
@@ -513,7 +513,7 @@
     "path": "images/workflows/review-team-performance-6.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 85227
   },
   {
     "path": "images/workflows/run-a-dialer-shift-5.png",
@@ -535,27 +535,27 @@
   },
   {
     "path": "images/workflows/review-team-performance-2.png",
-    "width": 1440,
-    "height": 1000,
-    "bytes": 38377
+    "width": 1167,
+    "height": 300,
+    "bytes": 27642
   },
   {
     "path": "images/workflows/onboard-a-new-agent-5.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 128819
   },
   {
     "path": "images/workflows/onboard-a-new-agent-4.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 84140
   },
   {
     "path": "images/workflows/review-team-performance-3.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 96280
   },
   {
     "path": "images/workflows/work-a-new-lead-4.png",
@@ -573,7 +573,7 @@
     "path": "images/workflows/review-team-performance-1.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 159286
   },
   {
     "path": "images/workflows/set-up-your-solo-account-5.png",
@@ -585,13 +585,13 @@
     "path": "images/compliance/overview-summary.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 85227
   },
   {
     "path": "images/policies/overview-list.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 155435
   },
   {
     "path": "images/policies/profile-details.png",
@@ -639,13 +639,13 @@
     "path": "images/dialer/pay-per-call.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 84140
   },
   {
     "path": "images/dialer/live-monitor.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 129160
   },
   {
     "path": "images/dialer/add-dnc-number-form.png",
@@ -657,7 +657,7 @@
     "path": "images/dialer/overview.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 84140
   },
   {
     "path": "images/dialer/add-disposition-form.png",
@@ -669,13 +669,13 @@
     "path": "images/dialer/audio-library.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 92998
   },
   {
     "path": "images/dialer/queue-routing-and-hours.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 84140
   },
   {
     "path": "images/dialer/campaign-dialing-mode.png",
@@ -687,7 +687,7 @@
     "path": "images/dialer/queues.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 84140
   },
   {
     "path": "images/dialer/create-script-form.png",
@@ -729,7 +729,7 @@
     "path": "images/dashboard/overview-admin.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 159286
   },
   {
     "path": "images/dashboard/live-leaderboard-display.png",
@@ -801,13 +801,13 @@
     "path": "images/reports/overview-performance.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 96286
   },
   {
     "path": "images/reports/build-report-toolbar.png",
     "width": 1440,
     "height": 1000,
-    "bytes": 38377
+    "bytes": 96286
   },
   {
     "path": "images/reports/persistency-months.png",

@@ -77,15 +77,11 @@
     "capture": {
       "type": "screenshot",
       "scope": "page",
-      "highlight": [
-        {
-          "label": "Template name"
-        }
-      ],
+      "highlight": [],
       "badges": false
     },
     "output": "images/settings/task-template-form.png",
-    "alt": "Task template form with the relevant control highlighted."
+    "alt": "New task template form with Template name, Task title, and Task details fields."
   },
   {
     "id": "messages/overview-workspace",

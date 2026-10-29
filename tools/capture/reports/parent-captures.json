@@ -44,28 +44,6 @@
     "highlighted": 1
   },
   {
-    "id": "settings/licensed-states-and-contracts",
-    "page": "settings/licensed-states-and-contracts",
-    "output": "images/settings/licensed-states-and-contracts-overview.png",
-    "caption": "Individual profile with Licensed States highlighted.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "settings/users-and-roles",
-    "page": "settings/users-and-roles",
-    "output": "images/settings/users-and-roles-overview.png",
-    "caption": "Agency Users page with Add User highlighted.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/agency-settings/users",
-    "bytes": 58877,
-    "highlighted": 1
-  },
-  {
     "id": "agency-settings/overview",
     "page": "settings/agency-overview",
     "output": "images/agency-settings/overview.png",
@@ -413,7 +391,7 @@
     "id": "customization/add-note",
     "page": "customization/notes-and-comments",
     "output": "images/customization/add-note.png",
-    "caption": "Add Note dialog with Link to Policy highlighted.",
+    "caption": "Add Note dialog with a note title, description, and Create Note button.",
     "before": [
       {
         "click": {
@@ -535,116 +513,6 @@
     "highlighted": 0
   },
   {
-    "id": "reports/overview-performance",
-    "page": "reports/overview",
-    "output": "images/reports/overview-performance.png",
-    "caption": "Admin Reporting with product filters, summary cards, and performance table.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "reports/build-report-toolbar",
-    "page": "reports/building-reports",
-    "output": "images/reports/build-report-toolbar.png",
-    "caption": "Reporting toolbar with product, date, filter, and Group By controls.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "compliance/overview-summary",
-    "page": "compliance/overview",
-    "output": "images/compliance/overview-summary.png",
-    "caption": "Compliance summary cards and grouped scorecard results.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dashboard/overview-admin",
-    "page": "dashboard/overview",
-    "output": "images/dashboard/overview-admin.png",
-    "caption": "Admin Dashboard with sales cards, policy chart, and agency performance.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/overview",
-    "page": "dialer/overview",
-    "output": "images/dialer/overview.png",
-    "caption": "Dialer navigation beside the agency queue list.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/queues",
-    "page": "dialer/queues",
-    "output": "images/dialer/queues.png",
-    "caption": "Queue list showing the agency’s queues and their status.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/queue-routing-and-hours",
-    "page": "dialer/queue-routing-and-hours",
-    "output": "images/dialer/queue-routing-and-hours.png",
-    "caption": "Queue list where you open a queue to change routing.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/audio-library",
-    "page": "dialer/audio-library",
-    "output": "images/dialer/audio-library.png",
-    "caption": "Audio Library showing uploaded files and preview controls.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/live-monitor",
-    "page": "dialer/live-monitor",
-    "output": "images/dialer/live-monitor.png",
-    "caption": "Live Monitor showing agent status and call activity.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "dialer/pay-per-call",
-    "page": "dialer/pay-per-call",
-    "output": "images/dialer/pay-per-call.png",
-    "caption": "Queue list where you open publisher settings.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
     "id": "getting-started/navigation-overview",
     "page": "navigating-the-app",
     "output": "images/getting-started/navigation-overview.png",
@@ -670,28 +538,6 @@
     "status": "completed",
     "url": "https://policyden-docs-demo.test/marketplace",
     "bytes": 140358,
-    "highlighted": 0
-  },
-  {
-    "id": "settings/wallet-balance-and-settings",
-    "page": "settings/wallet",
-    "output": "images/settings/wallet-balance-and-settings.png",
-    "caption": "Wallet balance, payment methods, auto-recharge settings, and transactions.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "policies/overview-list",
-    "page": "policies/overview",
-    "output": "images/policies/overview-list.png",
-    "caption": "Policies list with Add Policy highlighted.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
     "highlighted": 0
   },
   {
@@ -1011,94 +857,6 @@
     "url": "https://policyden-docs-demo.test/contacts",
     "bytes": 19467,
     "highlighted": 1
-  },
-  {
-    "id": "workflows/onboard-a-new-agent-4",
-    "page": "workflows/onboard-a-new-agent",
-    "output": "images/workflows/onboard-a-new-agent-4.png",
-    "caption": "Assign call access: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/onboard-a-new-agent-5",
-    "page": "workflows/onboard-a-new-agent",
-    "output": "images/workflows/onboard-a-new-agent-5.png",
-    "caption": "Prepare practice and handoff: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-1",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-1.png",
-    "caption": "Start with the dashboard: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-2",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-2.png",
-    "caption": "Open the live leaderboard: Open Live View control highlighted.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-3",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-3.png",
-    "caption": "Break down policy results: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-4",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-4.png",
-    "caption": "Compare call results: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-5",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-5.png",
-    "caption": "Choose live coaching: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
-  },
-  {
-    "id": "workflows/review-team-performance-6",
-    "page": "workflows/review-team-performance",
-    "output": "images/workflows/review-team-performance-6.png",
-    "caption": "Review compliance concerns: current workspace and navigation.",
-    "before": [],
-    "status": "completed",
-    "url": "https://policyden-docs-demo.test/login",
-    "bytes": 38377,
-    "highlighted": 0
   },
   {
     "id": "settings/import-users",
@@ -1541,7 +1299,7 @@
     "id": "settings/task-template-form",
     "page": "settings/task-templates",
     "output": "images/settings/task-template-form.png",
-    "caption": "Task template form with the relevant control highlighted.",
+    "caption": "New task template form with Template name, Task title, and Task details fields.",
     "before": [
       {
         "click": {
@@ -1700,5 +1458,276 @@
     "url": "https://policyden-docs-demo.test/tasks/23/edit",
     "bytes": 66203,
     "highlighted": 0
+  },
+  {
+    "id": "dialer/live-monitor",
+    "page": "dialer/live-monitor",
+    "output": "images/dialer/live-monitor.png",
+    "caption": "Live Monitor showing agent status and call activity.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/live-monitor",
+    "bytes": 129160,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-5",
+    "page": "workflows/onboard-a-new-agent",
+    "output": "images/workflows/onboard-a-new-agent-5.png",
+    "caption": "Prepare practice and handoff: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/live-monitor",
+    "bytes": 128819,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-5",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-5.png",
+    "caption": "Choose live coaching: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/live-monitor",
+    "bytes": 128838,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "settings/licensed-states-and-contracts",
+    "page": "settings/licensed-states-and-contracts",
+    "output": "images/settings/licensed-states-and-contracts-overview.png",
+    "caption": "Individual profile with Licensed States highlighted.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/settings/profile?tab=licenses",
+    "bytes": 85213,
+    "highlighted": 1,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "reports/overview-performance",
+    "page": "reports/overview",
+    "output": "images/reports/overview-performance.png",
+    "caption": "Admin Reporting with product filters, summary cards, and performance table.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/reports",
+    "bytes": 96286,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "reports/build-report-toolbar",
+    "page": "reports/building-reports",
+    "output": "images/reports/build-report-toolbar.png",
+    "caption": "Reporting toolbar with product, date, filter, and Group By controls.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/reports",
+    "bytes": 96286,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "compliance/overview-summary",
+    "page": "compliance/overview",
+    "output": "images/compliance/overview-summary.png",
+    "caption": "Compliance summary cards and grouped scorecard results.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/compliance",
+    "bytes": 85227,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dashboard/overview-admin",
+    "page": "dashboard/overview",
+    "output": "images/dashboard/overview-admin.png",
+    "caption": "Admin Dashboard with sales cards, policy chart, and agency performance.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dashboard",
+    "bytes": 159286,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dialer/overview",
+    "page": "dialer/overview",
+    "output": "images/dialer/overview.png",
+    "caption": "Dialer navigation beside the agency queue list.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/queues",
+    "bytes": 84140,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dialer/queues",
+    "page": "dialer/queues",
+    "output": "images/dialer/queues.png",
+    "caption": "Queue list showing the agency’s queues and their status.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/queues",
+    "bytes": 84140,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dialer/queue-routing-and-hours",
+    "page": "dialer/queue-routing-and-hours",
+    "output": "images/dialer/queue-routing-and-hours.png",
+    "caption": "Queue list where you open a queue to change routing.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/queues",
+    "bytes": 84140,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dialer/audio-library",
+    "page": "dialer/audio-library",
+    "output": "images/dialer/audio-library.png",
+    "caption": "Audio Library showing uploaded files and preview controls.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/audio-files",
+    "bytes": 92998,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "dialer/pay-per-call",
+    "page": "dialer/pay-per-call",
+    "output": "images/dialer/pay-per-call.png",
+    "caption": "Queue list where you open publisher settings.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/queues",
+    "bytes": 84140,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "settings/wallet-balance-and-settings",
+    "page": "settings/wallet",
+    "output": "images/settings/wallet-balance-and-settings.png",
+    "caption": "Wallet balance, payment methods, auto-recharge settings, and transactions.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/agency-settings/wallet",
+    "bytes": 157634,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "policies/overview-list",
+    "page": "policies/overview",
+    "output": "images/policies/overview-list.png",
+    "caption": "Policies list with Add Policy highlighted.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/policies",
+    "bytes": 155435,
+    "highlighted": 1,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-4",
+    "page": "workflows/onboard-a-new-agent",
+    "output": "images/workflows/onboard-a-new-agent-4.png",
+    "caption": "Assign call access: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/queues",
+    "bytes": 84140,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-1",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-1.png",
+    "caption": "Start with the dashboard: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dashboard",
+    "bytes": 159286,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-3",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-3.png",
+    "caption": "Break down policy results: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/reports",
+    "bytes": 96280,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-4",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-4.png",
+    "caption": "Compare call results: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dialer/reports",
+    "bytes": 117474,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-6",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-6.png",
+    "caption": "Review compliance concerns: current workspace and navigation.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/compliance",
+    "bytes": 85227,
+    "highlighted": 0,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "settings/users-and-roles",
+    "page": "settings/users-and-roles",
+    "output": "images/settings/users-and-roles-overview.png",
+    "caption": "Agency Users page with Add User highlighted.",
+    "before": [],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/agency-settings/users",
+    "bytes": 111110,
+    "highlighted": 1,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
+  },
+  {
+    "id": "workflows/review-team-performance-2",
+    "page": "workflows/review-team-performance",
+    "output": "images/workflows/review-team-performance-2.png",
+    "caption": "Open the live leaderboard: Open Live View control highlighted.",
+    "before": [
+      {
+        "scroll": {
+          "role": "link",
+          "name": "Open Live View"
+        }
+      }
+    ],
+    "status": "completed",
+    "url": "https://policyden-docs-demo.test/dashboard",
+    "bytes": 27642,
+    "highlighted": 1,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   }
 ]

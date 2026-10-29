@@ -5,5 +5,25 @@
   "gitDiffCheck": "passed",
   "videoControlsAndPlacement": "passed",
   "demoPhpSyntax": "14 files passed",
-  "publication": "not pushed or published"
+  "publication": "not pushed or published",
+  "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+  "originalAppRevision": "036d02997cc14cac68d9c8fb03b46d1ffb5dddb1",
+  "mainCheckedAt": "2026-10-29T19:28:47.065844+00:00",
+  "demoContainsMain": true,
+  "incorrectScreenshotsReplaced": 22,
+  "captureGuards": [
+    "blank pages",
+    "protected-page sign-in redirects",
+    "data-loading errors"
+  ],
+  "liveMonitorStates": {
+    "endpointStatus": 200,
+    "stateRows": 7,
+    "stateFilterVisibility": "passed",
+    "browserErrors": []
+  },
+  "unresolvedAppIssue": {
+    "billingSettingsStatus": 403,
+    "affectedPersona": "ordinary agency owner"
+  }
 }

@@ -60,9 +60,10 @@
     "persona": "field-agent",
     "status": "completed",
     "caption": "Individual profile with Licensed States highlighted.",
-    "bytes": 38377,
+    "bytes": 85213,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "settings/users-and-roles",
@@ -73,9 +74,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Agency Users page with Add User highlighted.",
-    "bytes": 58877,
+    "bytes": 111110,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "settings/import-users",
@@ -417,7 +419,7 @@
     "url": "/contacts",
     "persona": "agency-agent-field",
     "status": "completed",
-    "caption": "Add Note dialog with Link to Policy highlighted.",
+    "caption": "Add Note dialog with a note title, description, and Create Note button.",
     "bytes": 10367,
     "reviewed": true,
     "embedded": true
@@ -509,9 +511,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Admin Reporting with product filters, summary cards, and performance table.",
-    "bytes": 38377,
+    "bytes": 96286,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "reports/build-report-toolbar",
@@ -522,9 +525,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Reporting toolbar with product, date, filter, and Group By controls.",
-    "bytes": 38377,
+    "bytes": 96286,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "compliance/overview-summary",
@@ -535,9 +539,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Compliance summary cards and grouped scorecard results.",
-    "bytes": 38377,
+    "bytes": 85227,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dashboard/overview-admin",
@@ -548,9 +553,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Admin Dashboard with sales cards, policy chart, and agency performance.",
-    "bytes": 38377,
+    "bytes": 159286,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/overview",
@@ -561,9 +567,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Dialer navigation beside the agency queue list.",
-    "bytes": 38377,
+    "bytes": 84140,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/queues",
@@ -573,10 +580,11 @@
     "url": "/dialer/queues",
     "persona": "agency-admin",
     "status": "completed",
-    "caption": "Queue list showing the agency\u2019s queues and their status.",
-    "bytes": 38377,
+    "caption": "Queue list showing the agency’s queues and their status.",
+    "bytes": 84140,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/queue-routing-and-hours",
@@ -587,9 +595,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Queue list where you open a queue to change routing.",
-    "bytes": 38377,
+    "bytes": 84140,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/audio-library",
@@ -600,9 +609,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Audio Library showing uploaded files and preview controls.",
-    "bytes": 38377,
+    "bytes": 92998,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/phone-numbers",
@@ -626,9 +636,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Live Monitor showing agent status and call activity.",
-    "bytes": 38377,
+    "bytes": 129160,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/pay-per-call",
@@ -639,9 +650,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Queue list where you open publisher settings.",
-    "bytes": 38377,
+    "bytes": 84140,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "dialer/create-campaign-form",
@@ -796,9 +808,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Wallet balance, payment methods, auto-recharge settings, and transactions.",
-    "bytes": 38377,
+    "bytes": 157634,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "settings/add-funds-dialog",
@@ -872,9 +885,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Policies list with Add Policy highlighted.",
-    "bytes": 38377,
+    "bytes": 155435,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "policies/import-start",
@@ -963,7 +977,7 @@
     "url": "/agency-settings/task-templates",
     "persona": "agency-admin",
     "status": "completed",
-    "caption": "Task template form with the relevant control highlighted.",
+    "caption": "New task template form with Template name, Task title, and Task details fields.",
     "bytes": 23109,
     "reviewed": true,
     "embedded": true
@@ -1384,9 +1398,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Assign call access: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 84140,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/onboard-a-new-agent-5",
@@ -1397,9 +1412,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Prepare practice and handoff: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 128819,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-1",
@@ -1410,9 +1426,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Start with the dashboard: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 159286,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-2",
@@ -1423,9 +1440,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Open the live leaderboard: Open Live View control highlighted.",
-    "bytes": 38377,
+    "bytes": 27642,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-3",
@@ -1436,9 +1454,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Break down policy results: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 96280,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-4",
@@ -1449,9 +1468,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Compare call results: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 117474,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-5",
@@ -1462,9 +1482,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Choose live coaching: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 128838,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "workflows/review-team-performance-6",
@@ -1475,9 +1496,10 @@
     "persona": "agency-admin",
     "status": "completed",
     "caption": "Review compliance concerns: current workspace and navigation.",
-    "bytes": 38377,
+    "bytes": 85227,
     "reviewed": true,
-    "embedded": true
+    "embedded": true,
+    "appMainRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308"
   },
   {
     "id": "getting-started/sign-in-options",
@@ -1665,7 +1687,7 @@
     "url": "/contacts/01a188d2-fbcf-702d-8ae4-64610e75e7ff/edit",
     "persona": "agency-admin",
     "status": "completed",
-    "caption": "Medicare contact form showing Mai Yilmaz\u2019s basic and advanced details.",
+    "caption": "Medicare contact form showing Mai Yilmaz’s basic and advanced details.",
     "bytes": 40525,
     "embedded": true
   },

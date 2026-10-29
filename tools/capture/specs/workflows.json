@@ -127,7 +127,7 @@
       "badges": false
     },
     "output": "images/workflows/follow-up-with-your-book-1.png",
-    "alt": "Review the week\u2019s tasks: current workspace and navigation."
+    "alt": "Review the week’s tasks: current workspace and navigation."
   },
   {
     "id": "workflows/follow-up-with-your-book-2",
@@ -851,17 +851,27 @@
     "page": "workflows/review-team-performance",
     "persona": "agency-admin",
     "url": "/dashboard",
-    "before": [],
+    "before": [
+      {
+        "scroll": {
+          "role": "link",
+          "name": "Open Live View"
+        }
+      }
+    ],
     "capture": {
       "type": "screenshot",
       "scope": "page",
       "highlight": [
         {
-          "role": "button",
+          "role": "link",
           "name": "Open Live View"
         }
       ],
-      "badges": false
+      "badges": false,
+      "crop": {
+        "css": ".performance-table"
+      }
     },
     "output": "images/workflows/review-team-performance-2.png",
     "alt": "Open the live leaderboard: Open Live View control highlighted."

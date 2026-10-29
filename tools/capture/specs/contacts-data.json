@@ -86,15 +86,11 @@
     "capture": {
       "type": "screenshot",
       "scope": "page",
-      "highlight": [
-        {
-          "css": "button:has(svg.lucide-link2)"
-        }
-      ],
+      "highlight": [],
       "badges": false
     },
     "output": "images/customization/add-note.png",
-    "alt": "Add Note dialog with Link to Policy highlighted."
+    "alt": "Add Note dialog with a note title, description, and Create Note button."
   },
   {
     "id": "customization/documents-tab",

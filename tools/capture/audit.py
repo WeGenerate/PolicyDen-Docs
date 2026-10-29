@@ -1,4 +1,4 @@
-"""Read-only media reference audit; does not alter page layouts."""
+"""Audit media references and refresh the missing-media report; leave pages unchanged."""
 import json,re
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]

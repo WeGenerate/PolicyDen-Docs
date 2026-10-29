@@ -16,11 +16,14 @@ const delegatedPages = new Set([
 
 async function settle(page) {
   await page.waitForLoadState('networkidle', { timeout: 15000 });
+  await page.waitForFunction(() => document.body?.innerText.trim().length > 80, null, { timeout: 15000 });
   await page.waitForFunction(() => {
     const visible = element => element.getClientRects().length > 0;
     return ![...document.querySelectorAll('[data-slot="skeleton"], .animate-pulse')].some(visible);
   }, null, { timeout: 15000 });
   await page.waitForTimeout(400);
+  const text = await page.locator('body').innerText();
+  if (/Something went wrong|Failed to load|couldn['’]t load/i.test(text)) throw new Error('Page shows a data-loading error');
 }
 
 function corrected(spec) {
@@ -75,6 +78,7 @@ async function run() {
         const response = await page.goto(origin + spec.url);
         if (response.status() >= 400) throw new Error('HTTP ' + response.status());
         await settle(page);
+        if (spec.persona !== 'public' && new URL(page.url()).pathname === '/login') throw new Error('Session redirected to login');
         for (const action of spec.before || []) {
           if (action.waitFor?.text) {
             await page.getByText(action.waitFor.text, { exact: false }).filter({ visible: true }).first().waitFor();
@@ -83,6 +87,7 @@ async function run() {
           }
           await settle(page);
         }
+        if (spec.persona !== 'public' && new URL(page.url()).pathname === '/login') throw new Error('Session redirected to login');
         const text = await page.locator('body').innerText();
         if (/MyCareClub|WeGenerate|Magnolia|Internal Server Error|Server Error/.test(text)) throw new Error('Unexpected company or server-error text');
         if (/\bLoading\.{3}/.test(text)) throw new Error('Screen is still loading');
