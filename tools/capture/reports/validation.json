@@ -1,0 +1,9 @@
+{
+  "mintValidate": "passed",
+  "mintBrokenLinks": "passed; zero broken links",
+  "missingMedia": [],
+  "gitDiffCheck": "passed",
+  "videoControlsAndPlacement": "passed",
+  "demoPhpSyntax": "14 files passed",
+  "publication": "not pushed or published"
+}

@@ -139,7 +139,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child"
+          "css": "tbody tr:first-child td:first-child"
         }
       },
       {
@@ -177,7 +177,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child"
+          "css": "tbody tr:first-child td:first-child"
         }
       },
       {

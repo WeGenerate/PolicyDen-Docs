@@ -44,8 +44,9 @@ A column's plus icon opens the same form with its stage already selected and loc
   </Step>
 </Steps>
 
-<Frame caption="Animation: dragging a deal into another stage.">
-  <video autoPlay muted loop playsInline className="w-full aspect-video rounded-xl" poster="/videos/pipeline/drag-deal.png" src="/videos/pipeline/drag-deal.mp4"></video>
+<Frame caption="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/videos/pipeline/drag-deal.png" src="/videos/pipeline/drag-deal.mp4" aria-label="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200." />
+  <img className="hidden motion-reduce:block" src="/videos/pipeline/drag-deal.png" alt="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200." />
 </Frame>
 {/* TODO: verify capture support for dragging: the binding capture action schema has no drag action; record the stage-to-stage motion before publishing. */}
 

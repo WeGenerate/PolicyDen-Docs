@@ -53,13 +53,8 @@
     "id": "policies/create-contact",
     "page": "policies/creating-policies",
     "persona": "agency-admin",
-    "url": "/contacts",
+    "url": "/contacts/01a188d2-fbcf-702d-8ae4-64610e75e7ff/edit",
     "before": [
-      {
-        "click": {
-          "css": "a[href^=\"/contacts/\"][href$=\"/edit\"] >> nth=0"
-        }
-      },
       {
         "click": {
           "role": "button",
@@ -68,12 +63,13 @@
       },
       {
         "click": {
-          "css": "[role=\"dialog\"] [role=\"radio\"] >> nth=0"
+          "role": "radio",
+          "name": "Medicare"
         }
       },
       {
         "waitFor": {
-          "text": "Continue"
+          "text": "Basic Details"
         }
       }
     ],
@@ -92,19 +88,14 @@
       }
     },
     "output": "images/policies/create-contact.png",
-    "alt": "Add Policy dialog showing the Contact phase and Continue button."
+    "alt": "Medicare contact form showing Mai Yilmaz\u2019s basic and advanced details."
   },
   {
     "id": "policies/create-policy",
     "page": "policies/creating-policies",
     "persona": "agency-admin",
-    "url": "/contacts",
+    "url": "/contacts/01a188d2-fbcf-702d-8ae4-64610e75e7ff/edit",
     "before": [
-      {
-        "click": {
-          "css": "a[href^=\"/contacts/\"][href$=\"/edit\"] >> nth=0"
-        }
-      },
       {
         "click": {
           "role": "button",
@@ -113,18 +104,13 @@
       },
       {
         "click": {
-          "css": "[role=\"dialog\"] [role=\"radio\"] >> nth=0"
-        }
-      },
-      {
-        "click": {
-          "role": "button",
-          "name": "Continue"
+          "role": "radio",
+          "name": "Medicare"
         }
       },
       {
         "waitFor": {
-          "text": "Add Policy"
+          "text": "Policy Info"
         }
       }
     ],
@@ -143,7 +129,8 @@
       }
     },
     "output": "images/policies/create-policy.png",
-    "alt": "Add Policy dialog showing the Policy phase and Add Policy button."
+    "alt": "Add Policy for a fictional contact, showing the Medicare policy form.",
+    "blocker": "The current enrollment flow requires submitting contact details before the Policy phase. That write is outside the strictly allowlisted pipeline-move capture path; no list or contact form is substituted."
   },
   {
     "id": "policies/profile-details",
@@ -153,7 +140,7 @@
     "before": [
       {
         "click": {
-          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+          "css": "a[href*=\"/policies/\"][href$=\"/edit\"] >> nth=0"
         }
       },
       {
@@ -179,7 +166,7 @@
     "before": [
       {
         "click": {
-          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+          "css": "a[href*=\"/policies/\"][href$=\"/edit\"] >> nth=0"
         }
       },
       {
@@ -201,34 +188,30 @@
     "id": "policies/attach-dialog",
     "page": "policies/attaching-plans",
     "persona": "agency-admin",
-    "url": "/policies",
+    "url": "/policies/01a188d2-fbe9-715c-a0d4-a5ec2cab5a8d/edit",
     "before": [
       {
         "click": {
-          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+          "css": "div:has(> h3:text-is(\"Plan\")) > button"
         }
       },
       {
-        "click": {
-          "css": "div:has(> h3:text-is(\"Plan\")) > button"
+        "waitFor": {
+          "role": "dialog"
         }
       }
     ],
     "capture": {
       "type": "screenshot",
       "scope": "page",
-      "highlight": [
-        {
-          "placeholder": "Search available plans"
-        }
-      ],
+      "highlight": [],
       "badges": false,
       "crop": {
         "role": "dialog"
       }
     },
     "output": "images/policies/attach-dialog.png",
-    "alt": "Plan selection dialog with the plan search field highlighted."
+    "alt": "Edit Plan dialog showing the plan search field and inactive Attach Plan button."
   },
   {
     "id": "policies/import-start",

@@ -34,7 +34,8 @@
       "badges": false
     },
     "output": "images/calls/status.png",
-    "alt": "Phone menu showing status choices and Taking Calls."
+    "alt": "Phone menu showing status choices and Taking Calls.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
   },
   {
     "id": "calls/dialpad",
@@ -62,7 +63,8 @@
       "badges": false
     },
     "output": "images/calls/dialpad.png",
-    "alt": "Calls menu with the Dialpad tab selected."
+    "alt": "Calls menu with the Dialpad tab selected.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
   },
   {
     "id": "calls/incoming-and-active",
@@ -78,7 +80,8 @@
     },
     "output": "images/calls/incoming-and-active.png",
     "alt": "incoming-and-active",
-    "todo": "needs live call: capture incoming and active phone panels with fictional caller details"
+    "todo": "needs live call: capture incoming and active phone panels with fictional caller details",
+    "blocker": "The fictional demo has no configured telephony provider; a real call panel cannot be shown."
   },
   {
     "id": "calls/transfer",
@@ -94,7 +97,8 @@
     },
     "output": "images/calls/transfer.png",
     "alt": "transfer",
-    "todo": "needs live call: capture Transfer Call with Numbers, Agents, Number, Warm, and Blind options"
+    "todo": "needs live call: capture Transfer Call with Numbers, Agents, Number, Warm, and Blind options",
+    "blocker": "The fictional demo has no configured telephony provider; a real call panel cannot be shown."
   },
   {
     "id": "calls/wrap-up",
@@ -110,7 +114,8 @@
     },
     "output": "images/calls/wrap-up.png",
     "alt": "wrap-up",
-    "todo": "needs live call: capture Wrap Up with fictional outcome and policy choices"
+    "todo": "needs live call: capture Wrap Up with fictional outcome and policy choices",
+    "blocker": "The fictional demo has no configured telephony provider; a real call panel cannot be shown."
   },
   {
     "id": "calls/log",
@@ -135,7 +140,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child"
+          "css": "tbody tr:first-child a[href*=\"/dialer/call-log/\"]"
         }
       }
     ],

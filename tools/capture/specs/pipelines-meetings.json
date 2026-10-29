@@ -82,26 +82,11 @@
     "id": "meetings/overview-details",
     "page": "meetings/overview",
     "persona": "agency-admin",
-    "url": "/pipelines",
+    "url": "/meetings/1/edit",
     "before": [
       {
-        "click": {
-          "css": "div.flex.h-full.gap-4.overflow-x-auto > div:first-child .pipeline-card:first-child a"
-        }
-      },
-      {
-        "click": {
-          "text": "Activities"
-        }
-      },
-      {
-        "click": {
-          "css": "div.cursor-pointer:has(p.text-right):nth-child(2)"
-        }
-      },
-      {
         "waitFor": {
-          "text": "Meeting Details"
+          "text": "Medicare 101 consultation"
         }
       }
     ],
@@ -118,23 +103,22 @@
     "id": "meetings/schedule-form",
     "page": "meetings/scheduling-meetings",
     "persona": "agency-admin",
-    "url": "/pipelines",
+    "url": "/contacts",
     "before": [
       {
         "click": {
-          "css": "div.flex.h-full.gap-4.overflow-x-auto > div:first-child .pipeline-card:first-child button:first-of-type"
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
         }
       },
       {
         "click": {
           "role": "button",
-          "name": "Meeting"
+          "name": "Add Meeting"
         }
       },
       {
         "waitFor": {
-          "role": "dialog",
-          "name": "Add Meeting"
+          "role": "dialog"
         }
       }
     ],

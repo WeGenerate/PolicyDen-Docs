@@ -21,3 +21,6 @@ tools/
 
 # Internal product context
 .mintlify/
+
+# Legacy screenshots; current fictional demo captures live in topic subfolders.
+images/*.png

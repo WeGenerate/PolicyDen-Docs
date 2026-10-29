@@ -19,19 +19,27 @@
     "page": "marketplace/joining-queues",
     "persona": "field-agent",
     "url": "/marketplace",
-    "before": [],
+    "before": [
+      {
+        "waitFor": {
+          "role": "button",
+          "name": "Leave queue"
+        }
+      }
+    ],
     "capture": {
       "type": "screenshot",
       "scope": "page",
       "highlight": [
         {
-          "css": "article:first-of-type button:has-text(\"Join queue\")"
+          "role": "button",
+          "name": "Leave queue"
         }
       ],
       "badges": false
     },
     "output": "images/marketplace/marketplace-join-queue.png",
-    "alt": "Marketplace with the first Join queue button highlighted."
+    "alt": "Fictional Medicare queue membership with Leave queue available."
   },
   {
     "id": "marketplace/queue-state-choices",

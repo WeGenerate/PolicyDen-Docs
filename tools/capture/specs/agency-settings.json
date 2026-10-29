@@ -112,12 +112,17 @@
   {
     "id": "agency-settings/billing",
     "page": "settings/billing",
-    "persona": "agency-admin",
+    "persona": "billing-owner",
     "url": "/agency-settings/billing",
     "before": [
       {
         "waitFor": {
           "text": "Payment Methods"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1500
         }
       }
     ],
@@ -128,6 +133,7 @@
       "badges": false
     },
     "output": "images/agency-settings/billing.png",
-    "alt": "Billing page showing summary cards, Payment Methods, and Invoices."
+    "alt": "Cedar Grove Benefits Billing page showing subscription settings, Payment Methods and invoices.",
+    "blocker": "Ordinary fictional agency reaches Billing, but GET /agency-settings/billing/settings returns 403: route is restricted by routes/super-admin.php. Billing displays fallback totals and a load error. No authorization changes or substitute Wallet screenshot."
   }
 ]

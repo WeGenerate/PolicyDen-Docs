@@ -115,8 +115,40 @@
     "before": [
       {
         "click": {
+          "text": "Life Insurance"
+        }
+      },
+      {
+        "click": {
+          "role": "menuitem",
+          "name": "Medicare"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Apply"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1500
+        }
+      },
+      {
+        "click": {
           "role": "tab",
           "name": "Persistency"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 5000
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Breakdown"
         }
       }
     ],

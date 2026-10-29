@@ -1,0 +1,818 @@
+[
+  {
+    "path": "images/atlas-home.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 77534
+  },
+  {
+    "path": "images/reports-overview.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 85487
+  },
+  {
+    "path": "images/contacts-list.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 293265
+  },
+  {
+    "path": "images/messages-empty.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 66639
+  },
+  {
+    "path": "images/settings-users.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 141818
+  },
+  {
+    "path": "images/policies-list.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 301785
+  },
+  {
+    "path": "images/hero-light.png",
+    "width": 2064,
+    "height": 1104,
+    "bytes": 104264
+  },
+  {
+    "path": "images/settings-custom-fields.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 91665
+  },
+  {
+    "path": "images/checks-passed.png",
+    "width": 1100,
+    "height": 346,
+    "bytes": 160724
+  },
+  {
+    "path": "images/add-contact-modal.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 269516
+  },
+  {
+    "path": "images/policy-profile-expanded.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 138238
+  },
+  {
+    "path": "images/settings-products.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 67105
+  },
+  {
+    "path": "images/settings-billing.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 144966
+  },
+  {
+    "path": "images/tasks-list.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 153890
+  },
+  {
+    "path": "images/contact-profile.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 107040
+  },
+  {
+    "path": "images/hero-dark.png",
+    "width": 2064,
+    "height": 1104,
+    "bytes": 110614
+  },
+  {
+    "path": "images/dashboard-overview.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 115631
+  },
+  {
+    "path": "images/settings-profile.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 86892
+  },
+  {
+    "path": "images/settings-sms-numbers.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 88526
+  },
+  {
+    "path": "images/agency-settings-overview.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 90765
+  },
+  {
+    "path": "images/pipeline-empty.png",
+    "width": 1440,
+    "height": 829,
+    "bytes": 65839
+  },
+  {
+    "path": "images/calls/reporting.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 74373
+  },
+  {
+    "path": "images/calls/details.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 65043
+  },
+  {
+    "path": "images/calls/log.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 141298
+  },
+  {
+    "path": "images/settings/password-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 94786
+  },
+  {
+    "path": "images/settings/licensed-states-and-contracts-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/settings/user-profiles-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 118697
+  },
+  {
+    "path": "images/settings/user-access-and-security-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 102515
+  },
+  {
+    "path": "images/settings/add-funds-dialog.png",
+    "width": 440,
+    "height": 310,
+    "bytes": 18075
+  },
+  {
+    "path": "images/settings/import-users-overview.png",
+    "width": 560,
+    "height": 490,
+    "bytes": 35543
+  },
+  {
+    "path": "images/settings/profile-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 98184
+  },
+  {
+    "path": "images/settings/credentials-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 72733
+  },
+  {
+    "path": "images/settings/task-template-form.png",
+    "width": 560,
+    "height": 474,
+    "bytes": 23109
+  },
+  {
+    "path": "images/settings/wallet-balance-and-settings.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/settings/users-and-roles-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 58877
+  },
+  {
+    "path": "images/settings/sessions-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 132706
+  },
+  {
+    "path": "images/pipeline/configure-stages.png",
+    "width": 500,
+    "height": 478,
+    "bytes": 26357
+  },
+  {
+    "path": "images/pipeline/overview-board.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 137292
+  },
+  {
+    "path": "images/agency-settings/relationships.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 100500
+  },
+  {
+    "path": "images/agency-settings/overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 100324
+  },
+  {
+    "path": "images/agency-settings/products.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 99485
+  },
+  {
+    "path": "images/agency-settings/integrations.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 79945
+  },
+  {
+    "path": "images/agency-settings/custom-fields.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 83969
+  },
+  {
+    "path": "images/tasks/create-form.png",
+    "width": 694,
+    "height": 304,
+    "bytes": 16174
+  },
+  {
+    "path": "images/tasks/overview-workspace.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 123145
+  },
+  {
+    "path": "images/tasks/manage-details.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 66203
+  },
+  {
+    "path": "images/messages/overview-workspace.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 82847
+  },
+  {
+    "path": "images/messages/send-conversation.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 128403
+  },
+  {
+    "path": "images/messages/find-inbox.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 83730
+  },
+  {
+    "path": "images/customization/custom-fields-sidebar.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 102177
+  },
+  {
+    "path": "images/customization/documents-tab.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 111406
+  },
+  {
+    "path": "images/customization/add-note.png",
+    "width": 694,
+    "height": 260,
+    "bytes": 10367
+  },
+  {
+    "path": "images/contacts/filtering-status.png",
+    "width": 224,
+    "height": 195,
+    "bytes": 8593
+  },
+  {
+    "path": "images/contacts/overview-list.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 166397
+  },
+  {
+    "path": "images/contacts/exporting-options.png",
+    "width": 576,
+    "height": 606,
+    "bytes": 30108
+  },
+  {
+    "path": "images/contacts/import-upload.png",
+    "width": 550,
+    "height": 568,
+    "bytes": 45014
+  },
+  {
+    "path": "images/contacts/bulk-selection.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 217934
+  },
+  {
+    "path": "images/contacts/profile-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 102177
+  },
+  {
+    "path": "images/contacts/creating-search.png",
+    "width": 736,
+    "height": 386,
+    "bytes": 19467
+  },
+  {
+    "path": "images/contacts/editing-details.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 103096
+  },
+  {
+    "path": "images/marketplace/queue-state-choices.png",
+    "width": 480,
+    "height": 284,
+    "bytes": 20313
+  },
+  {
+    "path": "images/marketplace/queue-agent-access.png",
+    "width": 520,
+    "height": 560,
+    "bytes": 59431
+  },
+  {
+    "path": "images/marketplace/marketplace-join-queue.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 142420
+  },
+  {
+    "path": "images/marketplace/marketplace-queue-cards.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 140358
+  },
+  {
+    "path": "images/workflows/set-up-your-agency-1.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 100359
+  },
+  {
+    "path": "images/workflows/set-up-your-agency-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 99453
+  },
+  {
+    "path": "images/workflows/buy-and-work-marketplace-leads-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 150626
+  },
+  {
+    "path": "images/workflows/set-up-your-agency-3.png",
+    "width": 560,
+    "height": 248,
+    "bytes": 14392
+  },
+  {
+    "path": "images/workflows/buy-and-work-marketplace-leads-1.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 151605
+  },
+  {
+    "path": "images/workflows/set-up-your-agency-6.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 110126
+  },
+  {
+    "path": "images/workflows/set-up-your-agency-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 84140
+  },
+  {
+    "path": "images/workflows/buy-and-work-marketplace-leads-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 140358
+  },
+  {
+    "path": "images/workflows/follow-up-with-your-book-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 100239
+  },
+  {
+    "path": "images/workflows/follow-up-with-your-book-3.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 82847
+  },
+  {
+    "path": "images/workflows/follow-up-with-your-book-1.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 123145
+  },
+  {
+    "path": "images/workflows/follow-up-with-your-book-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 94587
+  },
+  {
+    "path": "images/workflows/set-up-your-solo-account-1.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 107772
+  },
+  {
+    "path": "images/workflows/review-team-performance-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/onboard-a-new-agent-3.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 87619
+  },
+  {
+    "path": "images/workflows/onboard-a-new-agent-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 117242
+  },
+  {
+    "path": "images/workflows/review-team-performance-5.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/set-up-your-solo-account-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 89324
+  },
+  {
+    "path": "images/workflows/run-a-dialer-shift-4.png",
+    "width": 694,
+    "height": 304,
+    "bytes": 15370
+  },
+  {
+    "path": "images/workflows/onboard-a-new-agent-1.png",
+    "width": 560,
+    "height": 248,
+    "bytes": 14392
+  },
+  {
+    "path": "images/workflows/work-a-new-lead-1.png",
+    "width": 736,
+    "height": 386,
+    "bytes": 19467
+  },
+  {
+    "path": "images/workflows/review-team-performance-6.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/run-a-dialer-shift-5.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 74373
+  },
+  {
+    "path": "images/workflows/set-up-your-solo-account-3.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 84359
+  },
+  {
+    "path": "images/workflows/work-a-new-lead-5.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 74935
+  },
+  {
+    "path": "images/workflows/review-team-performance-2.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/onboard-a-new-agent-5.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/onboard-a-new-agent-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/review-team-performance-3.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/work-a-new-lead-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 95387
+  },
+  {
+    "path": "images/workflows/set-up-your-solo-account-4.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 140358
+  },
+  {
+    "path": "images/workflows/review-team-performance-1.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/workflows/set-up-your-solo-account-5.png",
+    "width": 736,
+    "height": 386,
+    "bytes": 19467
+  },
+  {
+    "path": "images/compliance/overview-summary.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/policies/overview-list.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/policies/profile-details.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 136763
+  },
+  {
+    "path": "images/policies/bulk-selected.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 166606
+  },
+  {
+    "path": "images/policies/create-product.png",
+    "width": 600,
+    "height": 436,
+    "bytes": 21308
+  },
+  {
+    "path": "images/policies/status-log.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 136878
+  },
+  {
+    "path": "images/policies/create-contact.png",
+    "width": 680,
+    "height": 690,
+    "bytes": 40525
+  },
+  {
+    "path": "images/policies/attach-dialog.png",
+    "width": 560,
+    "height": 200,
+    "bytes": 12053
+  },
+  {
+    "path": "images/policies/import-start.png",
+    "width": 550,
+    "height": 318,
+    "bytes": 20019
+  },
+  {
+    "path": "images/dialer/pay-per-call.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/live-monitor.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/add-dnc-number-form.png",
+    "width": 440,
+    "height": 382,
+    "bytes": 18777
+  },
+  {
+    "path": "images/dialer/overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/add-disposition-form.png",
+    "width": 632,
+    "height": 656,
+    "bytes": 42375
+  },
+  {
+    "path": "images/dialer/audio-library.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/queue-routing-and-hours.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/campaign-dialing-mode.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 118787
+  },
+  {
+    "path": "images/dialer/queues.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dialer/create-script-form.png",
+    "width": 440,
+    "height": 248,
+    "bytes": 11788
+  },
+  {
+    "path": "images/dialer/phone-numbers.png",
+    "width": 556,
+    "height": 302,
+    "bytes": 21590
+  },
+  {
+    "path": "images/dialer/add-vendor-form.png",
+    "width": 560,
+    "height": 324,
+    "bytes": 22485
+  },
+  {
+    "path": "images/dialer/add-tag-form.png",
+    "width": 440,
+    "height": 302,
+    "bytes": 18912
+  },
+  {
+    "path": "images/dialer/create-campaign-form.png",
+    "width": 480,
+    "height": 316,
+    "bytes": 16269
+  },
+  {
+    "path": "images/dashboard/overview-agent.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 129000
+  },
+  {
+    "path": "images/dashboard/overview-admin.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/dashboard/live-leaderboard-display.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 160219
+  },
+  {
+    "path": "images/getting-started/navigation-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 129000
+  },
+  {
+    "path": "images/getting-started/notifications-open.png",
+    "width": 320,
+    "height": 331,
+    "bytes": 29696
+  },
+  {
+    "path": "images/getting-started/setup-progress.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 171390
+  },
+  {
+    "path": "images/getting-started/sign-in-options.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/api/add-key-scopes.png",
+    "width": 520,
+    "height": 610,
+    "bytes": 34127
+  },
+  {
+    "path": "images/api/keys-overview.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 116878
+  },
+  {
+    "path": "images/meetings/overview-details.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 98603
+  },
+  {
+    "path": "images/meetings/schedule-form.png",
+    "width": 694,
+    "height": 328,
+    "bytes": 21481
+  },
+  {
+    "path": "images/atlas/ask-atlas-prompt.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 64635
+  },
+  {
+    "path": "images/atlas/overview-empty.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 62846
+  },
+  {
+    "path": "images/reports/overview-performance.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/reports/build-report-toolbar.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 38377
+  },
+  {
+    "path": "images/reports/persistency-months.png",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 147511
+  }
+]

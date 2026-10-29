@@ -1,0 +1,22 @@
+[
+  {
+    "id": "workflows/work-a-new-lead-3",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "output": "videos/workflows/work-a-new-lead-3.png",
+    "caption": "Open the Add Task dialog to record a follow-up.",
+    "video": "videos/workflows/work-a-new-lead-3.mp4",
+    "status": "completed",
+    "duration": 5.496
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-5",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "output": "videos/workflows/follow-up-with-your-book-5.png",
+    "caption": "Open the Add Task dialog to record a follow-up.",
+    "video": "videos/workflows/follow-up-with-your-book-5.mp4",
+    "status": "completed",
+    "duration": 5.47
+  }
+]

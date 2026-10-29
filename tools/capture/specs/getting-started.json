@@ -23,23 +23,13 @@
   {
     "id": "getting-started/sign-in-options",
     "page": "getting-started/sign-in",
-    "persona": "agency-agent-field",
-    "url": "/dashboard",
+    "persona": "public",
+    "url": "/login",
     "before": [
       {
-        "click": {
-          "text": "Brightwater Health Partners"
-        }
-      },
-      {
-        "click": {
-          "role": "menuitem",
-          "name": "Sign Out"
-        }
-      },
-      {
         "waitFor": {
-          "text": "Welcome back"
+          "role": "button",
+          "name": "Log in"
         }
       }
     ],
@@ -81,12 +71,17 @@
     "before": [
       {
         "click": {
-          "css": "header button.relative:has(svg)"
+          "css": "button[data-slot=\"dropdown-menu-trigger\"].relative"
         }
       },
       {
         "waitFor": {
           "text": "Notifications"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1200
         }
       }
     ],

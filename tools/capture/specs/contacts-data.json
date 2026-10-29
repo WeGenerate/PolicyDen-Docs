@@ -68,7 +68,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
         }
       },
       {
@@ -104,7 +104,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
         }
       },
       {
@@ -135,7 +135,7 @@
     "before": [
       {
         "click": {
-          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
         }
       }
     ],

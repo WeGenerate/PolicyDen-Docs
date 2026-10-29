@@ -72,17 +72,12 @@
           "waitFor": {
             "ms": 800
           }
-        },
-        {
-          "press": {
-            "key": "Escape"
-          }
         }
       ],
-      "maxSeconds": 5
+      "maxSeconds": 8
     },
     "output": "videos/workflows/work-a-new-lead-3.mp4",
-    "alt": "Record the next action: Add Task control highlighted."
+    "alt": "Open the Add Task dialog to record a follow-up."
   },
   {
     "id": "workflows/work-a-new-lead-4",
@@ -147,7 +142,7 @@
       },
       {
         "click": {
-          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
         }
       },
       {
@@ -220,17 +215,12 @@
           "waitFor": {
             "ms": 800
           }
-        },
-        {
-          "press": {
-            "key": "Escape"
-          }
         }
       ],
-      "maxSeconds": 5
+      "maxSeconds": 8
     },
     "output": "videos/workflows/follow-up-with-your-book-5.mp4",
-    "alt": "Set the next follow-up: Add Task control highlighted."
+    "alt": "Open the Add Task dialog to record a follow-up."
   },
   {
     "id": "workflows/run-a-dialer-shift-1",
@@ -271,7 +261,8 @@
       "maxSeconds": 5
     },
     "output": "videos/workflows/run-a-dialer-shift-1.mp4",
-    "alt": "Prepare to take calls: current workspace and navigation."
+    "alt": "Prepare to take calls: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
   },
   {
     "id": "workflows/run-a-dialer-shift-2",
@@ -308,7 +299,8 @@
       "badges": false
     },
     "output": "images/workflows/run-a-dialer-shift-2.png",
-    "alt": "Take the call: current workspace and navigation."
+    "alt": "Take the call: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
   },
   {
     "id": "workflows/run-a-dialer-shift-3",
@@ -351,7 +343,8 @@
       "maxSeconds": 5
     },
     "output": "videos/workflows/run-a-dialer-shift-3.mp4",
-    "alt": "Finish and record the outcome: current workspace and navigation."
+    "alt": "Finish and record the outcome: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
   },
   {
     "id": "workflows/run-a-dialer-shift-4",
@@ -649,9 +642,20 @@
   {
     "id": "workflows/set-up-your-agency-5",
     "page": "workflows/set-up-your-agency",
-    "persona": "agency-admin",
+    "persona": "billing-owner",
     "url": "/agency-settings/billing",
-    "before": [],
+    "before": [
+      {
+        "waitFor": {
+          "text": "Payment Methods"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1500
+        }
+      }
+    ],
     "capture": {
       "type": "screenshot",
       "scope": "page",
@@ -659,7 +663,8 @@
       "badges": false
     },
     "output": "images/workflows/set-up-your-agency-5.png",
-    "alt": "Set up payments: current workspace and navigation."
+    "alt": "Cedar Grove Benefits Billing page showing subscription settings, Payment Methods and invoices.",
+    "blocker": "Ordinary fictional agency reaches Billing, but GET /agency-settings/billing/settings returns 403: route is restricted by routes/super-admin.php. Billing displays fallback totals and a load error. No authorization changes or substitute Wallet screenshot."
   },
   {
     "id": "workflows/set-up-your-agency-6",

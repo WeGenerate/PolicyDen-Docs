@@ -22,8 +22,9 @@ Open a call from **Call Log** to review its recording, transcript, and available
     Choose the outcome and any required sold policy, then select **Save**.
   </Step>
 </Steps>
-<Frame>
-  <img src="/images/calls/details.png" alt="Call details showing the recording, scorecard, and transcript." />
+<Frame caption="Call details showing recording availability, scorecard, and transcription panels.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/calls/details.png" src="/videos/calls/details.mp4" aria-label="Call details showing recording availability, scorecard, and transcription panels." />
+  <img className="hidden motion-reduce:block" src="/images/calls/details.png" alt="Call details showing recording availability, scorecard, and transcription panels." />
 </Frame>
 
 The header identifies the caller, source, time, and outcome. **Attached Policy** links to the associated policy when one exists. The **Call** control starts a new outbound call to that number.
@@ -54,4 +55,3 @@ The updated disposition appears in the call header after saving.
   <Card title="Find another call" href="/calls/call-log" />
   <Card title="Make an outbound call" href="/calls/making-calls" />
 </CardGroup>
-

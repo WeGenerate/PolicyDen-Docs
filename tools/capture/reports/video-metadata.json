@@ -1,0 +1,191 @@
+[
+  {
+    "id": "contacts/filtering-status",
+    "path": "videos/contacts/filtering-status.mp4",
+    "duration": 5.416667,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "contacts/creating-search",
+    "path": "videos/contacts/creating-search.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "contacts/profile-overview",
+    "path": "videos/contacts/profile-overview.mp4",
+    "duration": 5.875,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "settings/import-users",
+    "path": "videos/settings/import-users.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "settings/user-profiles",
+    "path": "videos/settings/user-profiles.mp4",
+    "duration": 6.083333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "calls/details",
+    "path": "videos/calls/details.mp4",
+    "duration": 5.75,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "customization/add-note",
+    "path": "videos/customization/add-note.mp4",
+    "duration": 5.958333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "customization/documents-tab",
+    "path": "videos/customization/documents-tab.mp4",
+    "duration": 5.958333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "atlas/ask-atlas-prompt",
+    "path": "videos/atlas/ask-atlas-prompt.mp4",
+    "duration": 5.666667,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "dialer/phone-numbers",
+    "path": "videos/dialer/phone-numbers.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "dialer/create-campaign-form",
+    "path": "videos/dialer/create-campaign-form.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "marketplace/queue-agent-access",
+    "path": "videos/marketplace/queue-agent-access.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "pipeline/configure-stages",
+    "path": "videos/pipeline/configure-stages.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "meetings/schedule-form",
+    "path": "videos/meetings/schedule-form.mp4",
+    "duration": 6.0,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "policies/create-product",
+    "path": "videos/policies/create-product.mp4",
+    "duration": 5.791667,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "workflows/work-a-new-lead-3",
+    "path": "videos/workflows/work-a-new-lead-3.mp4",
+    "duration": 5.5,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-5",
+    "path": "videos/workflows/follow-up-with-your-book-5.mp4",
+    "duration": 5.416667,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "settings/add-funds-dialog",
+    "path": "videos/settings/add-funds-dialog.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "tasks/create-form",
+    "path": "videos/tasks/create-form.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "messages/send-conversation",
+    "path": "videos/messages/send-conversation.mp4",
+    "duration": 5.708333,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  },
+  {
+    "id": "pipeline/drag-deal",
+    "path": "videos/pipeline/drag-deal.mp4",
+    "duration": 6.791667,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "audioStreams": 0
+  }
+]
