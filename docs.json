@@ -27,6 +27,7 @@
             "icon": "rocket",
             "pages": [
               "index",
+              "quickstart",
               "start/field-agent",
               "start/agency-agent",
               "start/agency-admin",
