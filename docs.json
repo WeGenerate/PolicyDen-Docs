@@ -10,7 +10,8 @@
   },
   "favicon": "/favicon.svg",
   "appearance": {
-    "default": "light"
+    "default": "light",
+    "strict": true
   },
   "icons": {
     "library": "lucide"
@@ -18,20 +19,37 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "User guide",
+        "tab": "Guides",
         "icon": "book-open",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "icon": "rocket",
             "pages": [
               "index",
-              "quickstart",
+              "start/field-agent",
+              "start/agency-agent",
+              "start/agency-admin",
+              "start/roles",
+              "navigating-the-app",
               "getting-started/sign-in",
               "getting-started/set-up-your-account",
               "getting-started/setup-checklist",
-              "navigating-the-app",
               "getting-started/notifications-and-alerts"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "icon": "route",
+            "pages": [
+              "workflows/work-a-new-lead",
+              "workflows/follow-up-with-your-book",
+              "workflows/run-a-dialer-shift",
+              "workflows/buy-and-work-marketplace-leads",
+              "workflows/set-up-your-solo-account",
+              "workflows/set-up-your-agency",
+              "workflows/onboard-a-new-agent",
+              "workflows/review-team-performance"
             ]
           },
           {
@@ -45,7 +63,7 @@
             ]
           },
           {
-            "group": "Contacts",
+            "group": "Contacts and leads",
             "icon": "users",
             "pages": [
               "contacts/overview",
@@ -53,9 +71,10 @@
               "contacts/creating-contacts",
               "contacts/contact-profile",
               "contacts/editing-contact-details",
-              "contacts/importing-contacts",
-              "contacts/exporting-contacts",
-              "contacts/bulk-actions"
+              "customization/notes-and-comments",
+              "customization/documents",
+              "customization/custom-fields",
+              "contacts/exporting-contacts"
             ]
           },
           {
@@ -66,9 +85,7 @@
               "policies/creating-policies",
               "policies/policy-profile",
               "policies/status-history",
-              "policies/attaching-plans",
-              "policies/importing-policies",
-              "policies/bulk-actions"
+              "policies/attaching-plans"
             ]
           },
           {
@@ -116,12 +133,14 @@
             ]
           },
           {
-            "group": "Your data",
-            "icon": "sliders",
+            "group": "Buy leads and wallet",
+            "icon": "store",
             "pages": [
-              "customization/notes-and-comments",
-              "customization/documents",
-              "customization/custom-fields"
+              "marketplace/overview",
+              "marketplace/joining-queues",
+              "settings/wallet",
+              "settings/wallet-funds",
+              "settings/wallet-transactions"
             ]
           },
           {
@@ -134,11 +153,30 @@
               "settings/credentials",
               "settings/licensed-states-and-contracts"
             ]
+          },
+          {
+            "group": "Fix a problem",
+            "icon": "life-buoy",
+            "pages": [
+              "fix/cant-see-a-feature",
+              "fix/sign-in-problems",
+              "fix/not-getting-calls",
+              "fix/text-didnt-send",
+              "fix/import-problems",
+              "fix/wallet-and-payments"
+            ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book-marked",
+            "pages": [
+              "start/glossary"
+            ]
           }
         ]
       },
       {
-        "tab": "Admin guide",
+        "tab": "Admin",
         "icon": "settings",
         "groups": [
           {
@@ -162,6 +200,16 @@
               "settings/import-users",
               "settings/user-profiles",
               "settings/user-access-and-security"
+            ]
+          },
+          {
+            "group": "Imports and bulk changes",
+            "icon": "upload",
+            "pages": [
+              "contacts/importing-contacts",
+              "contacts/bulk-actions",
+              "policies/importing-policies",
+              "policies/bulk-actions"
             ]
           },
           {
@@ -195,15 +243,10 @@
             ]
           },
           {
-            "group": "Marketplace and wallet",
+            "group": "Marketplace",
             "icon": "store",
             "pages": [
-              "marketplace/overview",
-              "marketplace/managing-queue-access",
-              "marketplace/joining-queues",
-              "settings/wallet",
-              "settings/wallet-funds",
-              "settings/wallet-transactions"
+              "marketplace/managing-queue-access"
             ]
           }
         ]
