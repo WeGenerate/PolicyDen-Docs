@@ -1,0 +1,98 @@
+{
+  "id": "prepare-your-agency",
+  "page": "workflows/set-up-your-agency",
+  "title": "Prepare your agency",
+  "description": "Review agency products, relationships, users, fields, marketplace access and wallet.",
+  "sourceRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+  "width": 1440,
+  "height": 1000,
+  "scenes": [
+    {
+      "id": "agency",
+      "narration": "Start in Settings. Open the agency menu to confirm Brightwater Health Partners and Maya Chen’s account. This walkthrough uses fictional agency data.",
+      "start": 1.898,
+      "end": 9.898
+    },
+    {
+      "id": "products",
+      "narration": "Open Products. Review the active products your agency sells and check their carrier selections against the business your team will write.",
+      "start": 10.75,
+      "end": 19.751
+    },
+    {
+      "id": "carriers",
+      "narration": "Open the carrier selector to inspect the available carriers. Check that the selected carriers match the business your agency writes.",
+      "start": 20.196,
+      "end": 28.197
+    },
+    {
+      "id": "relationships",
+      "narration": "Open Relationships. Review uplines, downlines, agents, and partnerships. Confirm the agencies your team works with and check any pending invitations.",
+      "start": 29.062,
+      "end": 38.063
+    },
+    {
+      "id": "users",
+      "narration": "Open Users to review teammates, roles, and account status. Use Add User when you are ready to invite someone.",
+      "start": 38.515,
+      "end": 46.516
+    },
+    {
+      "id": "fields",
+      "narration": "Open Custom Fields. Review the existing sections and field types before deciding which additional information your team needs to collect.",
+      "start": 46.959,
+      "end": 54.96
+    },
+    {
+      "id": "access",
+      "narration": "In Marketplace, open Manage Access on a queue. Review each agent’s eligibility and intended access before making assignments.",
+      "start": 56.679,
+      "end": 65.68
+    },
+    {
+      "id": "wallet",
+      "narration": "Finally, review Wallet to check the balance, saved payment methods, and auto-recharge settings. Marketplace agencies use Wallet in place of Billing.",
+      "start": 67.424,
+      "end": 76.425
+    }
+  ],
+  "outcomes": [
+    "Reviewed existing agency settings without saving changes",
+    "Viewed marketplace access controls",
+    "Viewed Wallet without payment operations"
+  ],
+  "browserErrors": [
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to send logs: TypeError: Failed to fetch\n    at flushLogs (https://policyden-docs-demo.test/agency-settings/wallet:90:9)"
+  ],
+  "blockedRequests": [
+    {
+      "method": "GET",
+      "url": "https://policyden-docs-demo.test/herd-studio/loader.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://policyden-docs-demo.test/herd-studio/loader.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://policyden-docs-demo.test/herd-studio/loader.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://js.stripe.com/clover/stripe.js"
+    },
+    {
+      "method": "POST",
+      "url": "https://policyden-docs-demo.test/_boost/browser-logs"
+    }
+  ],
+  "status": "completed",
+  "poster": "/Users/mac/PolicyDen-Docs/tools/tutorials/agency-onboarding/output/prepare-your-agency-poster.png",
+  "recording": "/Users/mac/PolicyDen-Docs/tools/tutorials/agency-onboarding/output/prepare-your-agency.webm",
+  "demoRevision": "b08de22207bee505fac0795754936fc085f20a0b"
+}

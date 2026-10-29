@@ -6,7 +6,7 @@ Requires Node, Python, Playwright, and ffmpeg. The scripts use the locally insta
 
 ## Capture and review
 
-Fetch `origin/main` before a capture pass and record the reviewed app revision. Compare it with the isolated demo's baseline and bring relevant app changes into that demo before rebuilding its assets. Serve the built assets from the demo origin. Archive any demo `public/hot` file before capturing: it points to a separate development server that the capture browser blocks. The real application's working tree stays untouched.
+Fetch `origin/main` before a capture pass and record the reviewed app revision. Compare it with the isolated demo's baseline and bring relevant app changes into that demo before rebuilding its assets. The demo provider forces the reviewed built assets even if a local development server recreates `public/hot`. Confirm the page uses `/build/assets/` and no development-server URLs. The real application's working tree stays untouched.
 
 ```bash
 node tools/capture/capture.cjs

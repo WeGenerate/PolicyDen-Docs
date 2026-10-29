@@ -1,6 +1,6 @@
 # Documentation capture review
 
-The docs now reference **118 PNG stills/posters and 21 silent looping videos**, all from the isolated fictional demo at https://policyden-docs-demo.test. The clips last 5.42–6.79 seconds. Their native controls support pausing and replay; reduced-motion users see the still image instead.
+The original inline capture set contains **118 PNG stills/posters and 21 silent looping videos**, all from the isolated fictional demo at https://policyden-docs-demo.test. The clips last 5.42–6.79 seconds. Their native controls support pausing and replay; reduced-motion users see the still image instead. Three narrated account-setup and onboarding tutorials are tracked separately in `tools/narration/tutorials.json` and `tools/narration/validation.json`.
 
 Start here uses shared, task-based onboarding. The three audience-guide sources are excluded from the current build and navigation; the permissions reference is under Admin → Users. RBAC is deferred. Nothing has been pushed or published.
 
@@ -13,7 +13,7 @@ The original captures used app commit `036d02997`. A later review fetched `origi
 - Screens show fictional Brightwater Health Partners, Alex Morgan Insurance, and generated clients rather than production data.
 - Loading skeletons and partially opened dialogs were recaptured after network activity and transitions settled. Dialogs are cropped for readable text.
 - A follow-up image audit found 21 protected-page screenshots showing sign-in and one Users screenshot showing a loading error. All 22 were replaced with their intended screens. This corrects misses in the earlier visual review. Two capture specifications no longer claim absent highlights; the task-template page's alt text now describes its visible fields.
-- The still-capture checks now reject blank pages, sign-in redirects on protected pages, and data-loading errors. The demo uses built assets on its own origin, with no development-server hot file.
+- The still-capture checks now reject blank pages, sign-in redirects on protected pages, and data-loading errors. The demo provider always uses the reviewed build on its own origin, independently of a local development server's hot file.
 - Clips sit beside the instructions they demonstrate, before the Next section. The pipeline drag checks a successful local stage-change PATCH and the destination lane.
 - Existing clips have readable pauses. The two follow-up demonstrations were recorded again so they finish on the Add Task form.
 - Legacy root-level screenshots are excluded from publishing in `.mintignore`. Unused generated assets and raw recordings are under ignored capture-tool directories.

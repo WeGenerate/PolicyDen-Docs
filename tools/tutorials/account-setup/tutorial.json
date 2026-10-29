@@ -1,0 +1,96 @@
+{
+  "id": "account-setup",
+  "page": "getting-started/set-up-your-account",
+  "title": "Set up your account",
+  "description": "Complete an invited agency Agent profile, address, and password, then open the dashboard.",
+  "sourceRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+  "recording": "/Users/mac/PolicyDen-Docs/tools/tutorials/account-setup/output/account-setup.webm",
+  "poster": "/Users/mac/PolicyDen-Docs/tools/tutorials/account-setup/output/profile.png",
+  "width": 1440,
+  "height": 1000,
+  "scenes": [
+    {
+      "id": "profile",
+      "narration": "Open the account setup link from your invitation. This example follows an invited agency Agent. In Your Profile, check your First Name and Last Name, then enter your Phone number. A profile photo is optional.",
+      "start": 1.562,
+      "end": 12.97,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "birth-date",
+      "narration": "Select your Date of Birth. Use the year and month menus in the calendar, then choose the day.",
+      "start": 13.4,
+      "end": 22.309,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "npn",
+      "narration": "Enter your National Producer Number in NPN. Check the required details, then select Continue to open Address.",
+      "start": 22.75,
+      "end": 31.656,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "address",
+      "narration": "Enter Street and City. Choose your State and enter your ZIP Code. Here, the address is entered manually.",
+      "start": 32.096,
+      "end": 44.5,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "password-step",
+      "narration": "Select Continue. Invited agency Agents move to Create Password. Individual accounts may show an extra Licensing step before this screen.",
+      "start": 44.932,
+      "end": 53.342,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "password",
+      "narration": "Enter a password that meets the displayed requirements, then enter the same value in Repeat Password. Check that all requirements are satisfied.",
+      "start": 53.783,
+      "end": 64.692,
+      "crop": {
+        "x": 180,
+        "y": 90,
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "finish",
+      "narration": "Select Finish to complete account setup. When the completion screen appears, select Go To Dashboard to open your account. Your dashboard is the starting point for your next tasks in PolicyDen.",
+      "start": 65.133,
+      "end": 76.542
+    }
+  ],
+  "outcomes": [
+    "Completed invited agency Agent setup",
+    "Opened authenticated dashboard"
+  ],
+  "demoRevision": "b08de22207bee505fac0795754936fc085f20a0b"
+}
