@@ -28,10 +28,6 @@
             "pages": [
               "index",
               "quickstart",
-              "start/field-agent",
-              "start/agency-agent",
-              "start/agency-admin",
-              "start/roles",
               "navigating-the-app",
               "getting-started/sign-in",
               "getting-started/set-up-your-account",
@@ -198,6 +194,7 @@
             "icon": "user-cog",
             "pages": [
               "settings/users-and-roles",
+              "start/roles",
               "settings/import-users",
               "settings/user-profiles",
               "settings/user-access-and-security"

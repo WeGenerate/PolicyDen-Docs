@@ -16,6 +16,11 @@ docs-review/
 drafts/
 *.draft.mdx
 
+# Audience guide sources are reserved for future assigned documentation.
+start/field-agent.mdx
+start/agency-agent.mdx
+start/agency-admin.mdx
+
 # Docs tooling (screenshot/video capture pipeline)
 tools/
 

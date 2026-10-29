@@ -6,12 +6,12 @@ PolicyDen is a health-insurance CRM for managing contacts, policies, sales follo
 ## Audience decision
 The user wants documentation assigned to specific users in the future, rather than asking readers to choose a persona or path. Build useful docs now; documentation access control is deferred. Do not implement access groups, authentication, role redirects, or an RBAC integration plan.
 
-Keep three individually addressable starting guides:
+Retain these audience-guide source files for possible future assigned documentation. Exclude them from the current build and navigation; do not link to them from onboarding or workflow handoffs:
 - `/start/field-agent`: owner of a solo/individual agent account, with Admin rights.
 - `/start/agency-agent`: agency employee with Agent access.
 - `/start/agency-admin`: Admin or Agency Owner managing an agency.
 
-These are documentation audiences, not three separate app roles. The app roles remain Agent, Admin, and Agency Owner. Address the known reader directly on each start page. The shared home is task-focused; the shared first-session guide has no persona selection or cross-audience detours. Shared task pages remain canonical and do not need duplication.
+These are documentation audiences, not three separate app roles. The app roles remain Agent, Admin, and Agency Owner. Current onboarding uses one shared first-session guide and task-based setup pages. Start here must not list audience guides or a role-permissions breakdown. The role-permissions reference belongs under Admin → Users, beside user management. Shared task pages remain canonical and do not need duplication.
 
 ## Jobs to be done
 - Sign in, review personal details, find a contact, and record a follow-up.
