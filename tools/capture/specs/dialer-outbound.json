@@ -1,0 +1,201 @@
+[
+  {
+    "id": "dialer/create-campaign-form",
+    "page": "dialer/campaigns",
+    "persona": "agency-admin",
+    "url": "/dialer/campaigns",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Campaign"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/create-campaign-form.png",
+    "alt": "Add Campaign form in the Dialer settings."
+  },
+  {
+    "id": "dialer/campaign-dialing-mode",
+    "page": "dialer/campaign-dialing-settings",
+    "persona": "agency-admin",
+    "url": "/dialer/campaigns",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child td:first-child"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Dialing Mode"
+        }
+      },
+      {
+        "scroll": {
+          "text": "Dialing Mode"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/campaign-dialing-mode.png",
+    "alt": "Campaign editor showing Dialing Mode settings."
+  },
+  {
+    "id": "dialer/add-disposition-form",
+    "page": "dialer/dispositions",
+    "persona": "agency-admin",
+    "url": "/dialer/dispositions",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Disposition"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/add-disposition-form.png",
+    "alt": "Add Disposition form in the Dialer settings."
+  },
+  {
+    "id": "dialer/create-script-form",
+    "page": "dialer/scripts",
+    "persona": "agency-admin",
+    "url": "/dialer/scripts",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Script"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/create-script-form.png",
+    "alt": "Add Script form in the Dialer settings."
+  },
+  {
+    "id": "dialer/add-dnc-number-form",
+    "page": "dialer/dnc-numbers",
+    "persona": "agency-admin",
+    "url": "/dialer/dnc",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Number"
+        }
+      },
+      {
+        "click": {
+          "role": "menuitem",
+          "name": "Add Number"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/add-dnc-number-form.png",
+    "alt": "Add Number form in the Dialer settings."
+  },
+  {
+    "id": "dialer/add-vendor-form",
+    "page": "dialer/vendors-and-tags",
+    "persona": "agency-admin",
+    "url": "/dialer/vendors",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Vendor"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/add-vendor-form.png",
+    "alt": "Add Vendor form in the Dialer settings."
+  },
+  {
+    "id": "dialer/add-tag-form",
+    "page": "dialer/vendors-and-tags",
+    "persona": "agency-admin",
+    "url": "/dialer/tags",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Tag"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/add-tag-form.png",
+    "alt": "Add Tag form in the Dialer settings."
+  }
+]

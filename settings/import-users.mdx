@@ -1,0 +1,71 @@
+---
+title: "Import agency users"
+description: "Upload a spreadsheet and map its columns to create agency users."
+keywords: ["import users", "CSV", "Excel", "bulk invite"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agency accounts. Individual agent accounts have no Users page.</Info>
+
+Create several users from a CSV or XLSX file. Review the column mapping before starting the import.
+
+## Before you start
+
+- Use CSV or XLSX, up to 10MB, with a header row.
+- Include **First Name**, **Last Name**, **Email**, and **Role**. Use role values `agent`, `admin`, or `agency_owner`.
+- Optional columns include birth date, phone, NPN, resident state, license number/date, employment type, sales channel, and address fields.
+
+<Steps>
+  <Step title="Open the import dialog">
+    In agency **Users**, select **Import Users**.
+
+    <Frame>
+      <img src="/images/settings/import-users-overview.png" alt="Import Users dialog with the invitation switch." />
+    </Frame>
+  </Step>
+  <Step title="Choose your file">
+    Select the upload area and choose your CSV or XLSX file.
+  </Step>
+  <Step title="Choose invitation delivery">
+    Leave **Send email invitation to imported users** on to invite users, or turn it off.
+  </Step>
+  <Step title="Map the columns">
+    Choose the worksheet if needed, then match file columns to the required and optional fields.
+  </Step>
+  <Step title="Start the import">
+    Select **Import Users**.
+  </Step>
+  <Step title="Review import results">
+    Review **Import Complete** and any **Issues**, then select **Done**.
+  </Step>
+</Steps>
+
+## What you'll see
+
+The results show imported users, skipped rows, and row-specific issues; invited users receive email invitations.
+
+Review optional dates, sales channels, and employment types on imported profiles. An imported row does not guarantee every optional value was accepted.
+
+{/* TODO: verify whether invalid optional dates, sales channels, and employment types should produce row-level import issues instead of being omitted. */}
+
+When invitations are off, users are created without an invitation. Confirm how they should access the account before choosing this option.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="Import Users is disabled">
+    Map all four required fields. Check the selected worksheet contains the intended headers.
+  </Accordion>
+  <Accordion title="Some rows were skipped">
+    Correct the listed **Issues**, such as missing names, invalid roles, or duplicate email addresses. Retry only the corrected rows.
+  </Accordion>
+  <Accordion title="Work Location is missing">
+    The import has no Work Location column. Review Telesales users afterward in [user profiles](/settings/user-profiles).
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Edit imported profiles" href="/settings/user-profiles" />
+  <Card title="Fix import problems" href="/fix/import-problems" />
+</CardGroup>

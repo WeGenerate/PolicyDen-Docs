@@ -1,0 +1,105 @@
+[
+  {
+    "id": "getting-started/navigation-overview",
+    "page": "navigating-the-app",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Contacts"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/getting-started/navigation-overview.png",
+    "alt": "PolicyDen dashboard with the main sidebar and header visible."
+  },
+  {
+    "id": "getting-started/sign-in-options",
+    "page": "getting-started/sign-in",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [
+      {
+        "click": {
+          "text": "Brightwater Health Partners"
+        }
+      },
+      {
+        "click": {
+          "role": "menuitem",
+          "name": "Sign Out"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Welcome back"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/getting-started/sign-in-options.png",
+    "alt": "Sign-in form showing password, Login with code, and Login with Google options."
+  },
+  {
+    "id": "getting-started/setup-progress",
+    "page": "getting-started/setup-checklist",
+    "persona": "field-agent",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Setup progress"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/getting-started/setup-progress.png",
+    "alt": "Individual account dashboard showing the five Setup progress cards."
+  },
+  {
+    "id": "getting-started/notifications-open",
+    "page": "getting-started/notifications-and-alerts",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [
+      {
+        "click": {
+          "css": "header button.relative:has(svg)"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Notifications"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "menu"
+      }
+    },
+    "output": "images/getting-started/notifications-open.png",
+    "alt": "Notifications menu showing task updates and Mark all read."
+  }
+]

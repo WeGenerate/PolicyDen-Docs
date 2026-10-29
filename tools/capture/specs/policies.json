@@ -1,0 +1,283 @@
+[
+  {
+    "id": "policies/overview-list",
+    "page": "policies/overview",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/policies/overview-list.png",
+    "alt": "Policies list with Add Policy highlighted."
+  },
+  {
+    "id": "policies/create-product",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Select Product"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-product.png",
+    "alt": "Add New Policy dialog showing the Product phase."
+  },
+  {
+    "id": "policies/create-contact",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "a[href^=\"/contacts/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "click": {
+          "css": "[role=\"dialog\"] [role=\"radio\"] >> nth=0"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Continue"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Continue"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-contact.png",
+    "alt": "Add Policy dialog showing the Contact phase and Continue button."
+  },
+  {
+    "id": "policies/create-policy",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "a[href^=\"/contacts/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "click": {
+          "css": "[role=\"dialog\"] [role=\"radio\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Continue"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Add Policy"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-policy.png",
+    "alt": "Add Policy dialog showing the Policy phase and Add Policy button."
+  },
+  {
+    "id": "policies/profile-details",
+    "page": "policies/policy-profile",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Status Log"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/profile-details.png",
+    "alt": "Policy profile showing policy details and the contact sidebar."
+  },
+  {
+    "id": "policies/status-log",
+    "page": "policies/status-history",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "text": "Status Log"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/status-log.png",
+    "alt": "Policy profile with Status Log expanded."
+  },
+  {
+    "id": "policies/attach-dialog",
+    "page": "policies/attaching-plans",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "a[href^=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "css": "div:has(> h3:text-is(\"Plan\")) > button"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "placeholder": "Search available plans"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/attach-dialog.png",
+    "alt": "Plan selection dialog with the plan search field highlighted."
+  },
+  {
+    "id": "policies/import-start",
+    "page": "policies/importing-policies",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "button:has(+ button:has-text(\"Add Policy\"))"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Import Policies"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/import-start.png",
+    "alt": "Import Policies dialog at product selection."
+  },
+  {
+    "id": "policies/bulk-selected",
+    "page": "policies/bulk-actions",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child [role=\"checkbox\"]"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/bulk-selected.png",
+    "alt": "Policies list with selected rows and the bulk action bar visible."
+  }
+]

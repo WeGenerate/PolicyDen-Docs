@@ -1,0 +1,151 @@
+[
+  {
+    "id": "contacts/import-upload",
+    "page": "contacts/importing-contacts",
+    "persona": "agency-admin",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "div.flex.flex-wrap.items-center.justify-between > div > button:nth-last-child(2)"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Download template"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/contacts/import-upload.png",
+    "alt": "Import Contacts dialog with Download template highlighted."
+  },
+  {
+    "id": "contacts/bulk-selection",
+    "page": "contacts/bulk-actions",
+    "persona": "agency-admin",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child button[role=\"checkbox\"]"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Assign To"
+        },
+        {
+          "role": "button",
+          "name": "Archive"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/contacts/bulk-selection.png",
+    "alt": "Contacts list with the selection bar highlighted."
+  },
+  {
+    "id": "customization/add-note",
+    "page": "customization/notes-and-comments",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Note"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "css": "button:has(svg.lucide-link2)"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/customization/add-note.png",
+    "alt": "Add Note dialog with Link to Policy highlighted."
+  },
+  {
+    "id": "customization/documents-tab",
+    "page": "customization/documents",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Documents"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "text": "Drop files here or click to browse"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/customization/documents-tab.png",
+    "alt": "Contact Documents tab with the upload area highlighted."
+  },
+  {
+    "id": "customization/custom-fields-sidebar",
+    "page": "customization/custom-fields",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"]"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/customization/custom-fields-sidebar.png",
+    "alt": "Contact profile showing Contact Details and agency-defined fields."
+  }
+]

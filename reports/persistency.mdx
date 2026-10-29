@@ -1,0 +1,62 @@
+---
+title: "Review policy persistency"
+description: "Track Medicare policy retention by sale month."
+keywords: ["persistency", "retention", "Medicare", "fall off", "RDR"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners reporting on a Medicare product, including individual agent accounts.</Info>
+
+Compare monthly retention for groups of policy sales. Start with a Medicare product that has policies recorded in the period you want to review.
+
+<Steps>
+<Step title="Open Reporting">
+  In **Management**, select **Reporting**.
+</Step>
+<Step title="Choose Medicare">
+  Use the product selector to choose your Medicare product.
+</Step>
+<Step title="Open Persistency">
+  Select **Persistency** beside **Performance**.
+</Step>
+<Step title="Set the sale period">
+  Use the date picker to choose the sale period for your policy groups.
+</Step>
+<Step title="Compare monthly results">
+  Review the monthly percentages and use extra **Group By** levels to compare smaller groups.
+</Step>
+</Steps>
+
+{/* TODO: verify the capture account opens a Medicare product; select its seeded product before the Persistency capture if needed. */}
+
+<Frame>
+  <img src="/images/reports/persistency-months.png" alt="Persistency view with monthly retention columns and its legend." />
+</Frame>
+
+## What you'll see
+
+Each sale-month group shows **Sales**, **Effectuated**, **Active**, and monthly retention percentages for eligible effectuated policies.
+
+**Month** stays locked as the first grouping. The initial sale period is the current year. A dash means no eligible policies for that monthly rate.
+
+**Still Filling** marks the current month. **Fall Off** shading shows the share of effectuated policies lost in a month. **RDR** means **Rapid Disenrollment Rate**; the legend uses that full name.
+
+## If it didn't work
+
+<AccordionGroup>
+<Accordion title="Persistency isn't available">
+  Choose a Medicare product. Other product reporting does not include this view.
+</Accordion>
+<Accordion title="No cohorts in this range">
+  Widen the sale period or clear filters. A cohort is a group of policies sold in the same month.
+</Accordion>
+<Accordion title="I can't export this view">
+  CSV export is available in **Performance**. Return there to export a sales report.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Understand report metrics" href="/reports/metrics-and-columns">Check Sales, Effectuated, and Active.</Card>
+<Card title="Review policies" href="/policies/overview">Inspect policy status and dates.</Card>
+</CardGroup>

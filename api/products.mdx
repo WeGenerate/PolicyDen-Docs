@@ -1,0 +1,127 @@
+---
+title: "Products"
+description: "List your agency's products and their carriers to get the ids that contacts, policies and relationships need."
+keywords: ["api", "products", "carriers", "product_id", "carrier_id", "Medicare", "life insurance"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use `GET /products` to read the products your agency sells and the carriers attached to each one. Most write requests need a `product_id` or `carrier_id` from this list.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoint
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/products` | `products:list` |
+
+The endpoint takes no parameters and isn't paginated. It returns every product in your agency, including inactive ones. Products built on a template (Medicare or life insurance) come first, then the rest, each group in the order they were added.
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/products" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json
+{
+  "data": [
+    {
+      "id": 3,
+      "name": "Medicare Advantage",
+      "template": "medicare",
+      "is_system": true,
+      "active": true,
+      "carriers": [
+        { "id": "DEMO-CARRIER", "name": "Brightwater Demo Health", "logo": null, "template": "medicare", "is_system": true },
+        { "id": "DEMO-ID", "name": "Brightwater Demo Care", "logo": null, "template": "medicare", "is_system": true }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Final Expense",
+      "template": null,
+      "is_system": false,
+      "active": true,
+      "carriers": [
+        { "id": "DEMO-ID", "name": "Brightwater Demo Life", "logo": null, "template": null, "is_system": false }
+      ]
+    }
+  ]
+}
+```
+
+</ResponseExample>
+
+## Response fields
+
+<ResponseField name="id">
+Product id, an integer. Use it as `product_id`.
+</ResponseField>
+
+<ResponseField name="name">
+Product name.
+</ResponseField>
+
+<ResponseField name="template">
+`medicare`, `life_insurance`, or `null` for a product your agency created. The template decides which policy types and statuses the product accepts.
+</ResponseField>
+
+<ResponseField name="is_system">
+`true` when the product is built on a template.
+</ResponseField>
+
+<ResponseField name="active">
+Whether the product is turned on for your agency.
+</ResponseField>
+
+<ResponseField name="carriers">
+The carriers attached to the product.
+</ResponseField>
+
+<ResponseField name="carriers[].id">
+Carrier id, a UUID. Use it as `carrier_id`.
+</ResponseField>
+
+<ResponseField name="carriers[].name">
+Carrier name.
+</ResponseField>
+
+<ResponseField name="carriers[].logo">
+Logo URL, or `null`.
+</ResponseField>
+
+<ResponseField name="carriers[].template">
+The carrier's template, or `null`.
+</ResponseField>
+
+<ResponseField name="carriers[].is_system">
+`true` for carriers PolicyDen provides. `false` for carriers your agency added.
+</ResponseField>
+
+## Where to use these ids
+
+| Endpoint | Fields |
+| -------- | ------ |
+| [`POST /policies`, `PUT /policies/{id}`](/api/policies) | `product_id` and `carrier_id`. Pick a carrier from that product's `carriers`. |
+| [`POST /contacts`](/api/contacts) | `product_id`, which decides which product-limited contact fields apply. |
+| [`GET /custom-fields`](/api/custom-fields) | `product_id`, required when `type` is `policies`. |
+| [`GET /policies`](/api/policies) | `product_id` query parameter. |
+| [`POST /relationships`](/api/relationships) | `product_id` and `carrier_id` in each `carriers[]` item. |
+
+See [Policies](/api/policies#rules-by-product) for how each template changes what a policy accepts.
+
+You can't add or change products or carriers through the API. Admins do that in the app. See [Products and carriers](/settings/products-and-carriers).

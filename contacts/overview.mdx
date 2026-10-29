@@ -1,97 +1,32 @@
 ---
 title: "Contacts overview"
-description: "Browse, filter, and act on every lead and client in your agency's book."
-mode: "wide"
-keywords: ["contacts", "leads", "clients", "book of business", "filter contacts", "search contacts", "contact list"]
+description: "Find contacts and open their records to manage client work."
+keywords: ["contacts", "clients", "leads", "contact list"]
 ---
 
-The **Contacts** page is the home for every lead and client your agency works with. From a single table you can search your book, narrow it with filters, jump into any contact's profile, and — if you're an Admin — import, export, and run bulk actions.
+Contacts brings your leads and clients into one list. Open a contact to review their policies, messages, notes, and follow-up work.
 
-<Frame>
-  <img src="/images/contacts-list.png" alt="Contacts list with search, filters, sort, columns controls and a table of contacts with pinned name column" />
+<Frame caption="The Contacts list, search, and filter bar.">
+  <img src="/images/contacts/overview-list.png" alt="Full Contacts window showing the filter bar and contact list." />
 </Frame>
 
-## Open the Contacts page
+Use **Search** to find a record, or narrow the list with filters. Select a contact’s name to open their profile. Scroll through the table to load more results.
 
-Click **Contacts** in the sidebar. You land on the full contact list, sorted by most recently created.
+## What you can do here
 
-## The table
+<CardGroup cols={2}>
+  <Card title="Find and filter contacts" href="/contacts/filtering-contacts" />
+  <Card title="Create a contact" href="/contacts/creating-contacts" />
+  <Card title="Explore a contact profile" href="/contacts/contact-profile" />
+  <Card title="Update contact details" href="/contacts/editing-contact-details" />
+  <Card title="Export contacts" href="/contacts/exporting-contacts" />
+  <Card title="Import contacts" href="/contacts/importing-contacts" />
+</CardGroup>
 
-Each row is one contact. The **Contact** column is pinned on the left so the name stays visible as you scroll sideways.
+## Who sees what
 
-Out of the box, the table shows:
+Agents start with **My Contacts** turned on. Clear it to see other contacts available within your agency access. Agents whose work location is set to Remote can only see their assigned contacts; they don’t see this checkbox.
 
-- **Contact** — full name. Click the name to open the profile.
-- **Phone**, **Date of Birth**, **Medicare Number** — common system fields.
-- **Physical State** and **Physical City** — from the contact's address.
-- **Agent** — the user assigned to the contact.
-- **Agency** — which agency the contact belongs to (relevant for multi-agency users).
+Admins and Agency Owners can import contacts and select rows for [bulk changes](/contacts/bulk-actions). Everyone can create contacts and export records they can access.
 
-You can add, remove, and reorder columns from the column picker.
-
-### Inline editing
-
-Hover any editable cell and click to edit in place. Phone, email, date of birth, address fields, Medicare number, and the assigned agent can all be updated without leaving the list.
-
-### Open a contact
-
-Click the contact's name to open their profile. See [Contact profile](/contacts/contact-profile) for what you'll find there.
-
-## Toolbar
-
-The toolbar across the top of the table groups everything you do against the list.
-
-| Control | What it does |
-| ------- | ------------ |
-| **Search** | Filters by name, email, or phone as you type. |
-| **Filters** | Add one or more field conditions to narrow the list. |
-| **Reset filters** | Clears all active filters. |
-| **Sort** | Sort by one or more columns. |
-| **Customize columns** | Choose which columns are visible and in what order. |
-| **My Contacts** | Agents only. Show only contacts assigned to you. |
-| **Date range** | Limits the list to contacts created in the selected window. |
-
-The toolbar also includes three entry points with dedicated pages:
-
-- **Add Contact** opens the search-then-create flow. See [Create a contact](/contacts/creating-contacts).
-- **Export** downloads the current list as a CSV. See [Export contacts](/contacts/exporting-contacts).
-- **Import** (Admins only) bulk-uploads contacts from CSV or Excel. See [Import contacts](/contacts/importing-contacts).
-
-## Filters
-
-Click **Filters** to add one or more conditions. You can filter by:
-
-- **Name**, **Agent**, **Agency**.
-- System fields like phone, email, date of birth, gender, state, city, county, ZIP, and Medicare number.
-- Any custom fields your agency has defined.
-
-Each filter uses operators that match the field type — for example, **equals** and **contains** for text, **before** / **after** for dates, **is empty** / **is not empty** to find missing data.
-
-<Tip>
-  Save a filter combination and its columns as a reusable view in [Saved filters](/customization/saved-filters).
-</Tip>
-
-## Sort the list
-
-Click a column header to sort by that column. Click **Sort** in the toolbar to sort by multiple columns at once.
-
-## Select contacts
-
-Admins see a checkbox column. Use it to select one or more rows, then run a [bulk action](/contacts/bulk-actions) against the selection.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Create a contact" icon="user-plus" href="/contacts/creating-contacts">
-    Walk through the Add Contact flow, including duplicate detection.
-  </Card>
-  <Card title="Open a contact's profile" icon="id-card" href="/contacts/contact-profile">
-    Policies, tasks, messages, documents, notes, comments, and history.
-  </Card>
-  <Card title="Import your book" icon="upload" href="/contacts/importing-contacts">
-    Bring an existing book into PolicyDen from a CSV or Excel file.
-  </Card>
-  <Card title="Export a list" icon="download" href="/contacts/exporting-contacts">
-    Download the current list — filtered or selected — as a CSV.
-  </Card>
-</Columns>
+Individual agent accounts don’t show **Agent** or **Agency** filters or columns.

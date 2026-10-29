@@ -1,0 +1,155 @@
+[
+  {
+    "id": "tasks/overview-workspace",
+    "page": "tasks/overview",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/tasks/overview-workspace.png",
+    "alt": "Tasks workspace."
+  },
+  {
+    "id": "tasks/create-form",
+    "page": "tasks/creating-tasks",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Task"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "placeholder": "Task Title"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/tasks/create-form.png",
+    "alt": "Tasks workspace with the relevant control highlighted."
+  },
+  {
+    "id": "tasks/manage-details",
+    "page": "tasks/managing-tasks",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child td:nth-child(2) a"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Task Details"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/tasks/manage-details.png",
+    "alt": "Tasks workspace."
+  },
+  {
+    "id": "settings/task-template-form",
+    "page": "settings/task-templates",
+    "persona": "agency-admin",
+    "url": "/agency-settings/task-templates",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Template"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "label": "Template name"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/task-template-form.png",
+    "alt": "Task template form with the relevant control highlighted."
+  },
+  {
+    "id": "messages/overview-workspace",
+    "page": "messages/overview",
+    "persona": "agency-agent-field",
+    "url": "/messages",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/messages/overview-workspace.png",
+    "alt": "Messages workspace."
+  },
+  {
+    "id": "messages/send-conversation",
+    "page": "messages/sending-texts",
+    "persona": "agency-agent-field",
+    "url": "/messages",
+    "before": [
+      {
+        "click": {
+          "css": "button:has(span.block.truncate):first-of-type"
+        }
+      },
+      {
+        "waitFor": {
+          "placeholder": "Send Message..."
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/messages/send-conversation.png",
+    "alt": "Messages workspace."
+  },
+  {
+    "id": "messages/find-inbox",
+    "page": "messages/finding-conversations",
+    "persona": "agency-agent-field",
+    "url": "/messages",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "placeholder": "Search Contacts"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/messages/find-inbox.png",
+    "alt": "Messages workspace with the relevant control highlighted."
+  }
+]

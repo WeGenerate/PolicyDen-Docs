@@ -1,0 +1,77 @@
+---
+title: "Manage user access"
+description: "Reset a user password, restrict login locations, or log in as a user."
+keywords: ["access", "security", "impersonation", "log in as", "IP allowlist"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agency accounts. Individual agent accounts have no Users page.</Info>
+
+Use a user profile to manage password and login access. You can also log in as an eligible user to help troubleshoot.
+
+## Reset a user password
+
+<Steps>
+  <Step title="Open the user profile">
+    In **Users**, select **View Profile** from the user’s actions menu.
+  </Step>
+  <Step title="Open security settings">
+    Select **Security**.
+
+    <Frame>
+      <img src="/images/settings/user-access-and-security-overview.png" alt="User profile with the Security tab highlighted." />
+    </Frame>
+  </Step>
+  <Step title="Enter the new password">
+    In **Password**, enter **New Password** and **Confirm Password**, following the displayed requirements.
+  </Step>
+  <Step title="Save the password">
+    Select **Save** in the password section.
+  </Step>
+</Steps>
+
+## Restrict login locations
+
+In **Security**, enter an approved IP address in **IP Allowlist**, then select **Add**. Repeat for each approved address. With no addresses listed, the user can log in from anywhere.
+
+Use **Remove IP address** to remove an entry. Confirm the user’s current public IP address before restricting access.
+
+## Log in as a user
+
+Admins can log in as Agents. Agency Owners can log in as Admins and Agents, but not other Agency Owners.
+
+<Steps>
+  <Step title="Start from user management">
+    In **Users**, open the eligible user’s **View Profile** action.
+  </Step>
+  <Step title="Start the user session">
+    On the profile card, select **Log in as User**.
+  </Step>
+  <Step title="Return to your account">
+    In the sign-in banner, select **Switch back to** followed by your name.
+  </Step>
+</Steps>
+
+## What you'll see
+
+The sign-in banner names the user you are logged in as until you switch back.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="Log in as User is missing">
+    Check the role rules above. You cannot log in as yourself or a user outside your accessible agency.
+  </Accordion>
+  <Accordion title="Credentials will not reveal">
+    Switch back to your own account. Saved credentials cannot be revealed during impersonation.
+  </Accordion>
+  <Accordion title="An IP address is rejected">
+    Enter a valid IP address. Check the field error before trying again.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review user profiles" href="/settings/user-profiles" />
+  <Card title="Review your own sessions" href="/settings/sessions" />
+</CardGroup>

@@ -1,0 +1,182 @@
+---
+title: "Custom fields"
+description: "Look up your agency's contact and policy fields so you can build valid create and update payloads."
+keywords: ["api", "custom fields", "field definitions", "custom_fields", "cf_", "select options"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use `GET /custom-fields` to read the fields your agency set up for contacts or policies. You need the field ids and option keys to send `custom_fields` on [contacts](/api/contacts) and [policies](/api/policies), and to filter or sort by a custom field.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoint
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/custom-fields` | `custom-fields:list` |
+
+<ParamField query="type" type="string" required>
+**Required.** `contacts` or `policies`.
+</ParamField>
+
+<ParamField query="product_id" type="integer">
+Required when `type` is `policies`, because policy fields are set up per product. Use a product from [`GET /products`](/api/products). Leave it out for contacts.
+</ParamField>
+
+A wrong `type` returns `422` with `The type must be either "contacts" or "policies".` Leaving out `product_id` for policies returns `The product_id is required when type is "policies".`
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/custom-fields?type=contacts" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Response
+
+The response isn't paginated. `data` holds the field setup, or `null` when your agency hasn't set up fields for that type or product.
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": 4,
+    "type": "contacts",
+    "options": null,
+    "sections": [
+      {
+        "id": 9,
+        "name": "Basic information",
+        "order": 0,
+        "fields": [
+          {
+            "id": 31,
+            "name": "email",
+            "label": "Email",
+            "type": "text",
+            "system": true,
+            "locked": false,
+            "encrypted": false,
+            "required": false,
+            "hidden_from_forms": false,
+            "settings": { "validation": "email" },
+            "order": 2,
+            "product_ids": []
+          },
+          {
+            "id": 42,
+            "name": "lead_source",
+            "label": "Lead source",
+            "type": "select",
+            "system": false,
+            "locked": false,
+            "encrypted": false,
+            "required": true,
+            "hidden_from_forms": false,
+            "settings": { "options": { "referral": "Referral", "web": "Website" } },
+            "order": 7,
+            "product_ids": [3]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+</ResponseExample>
+
+Sections and fields carry an `order`, which matches the order in the app.
+
+### Field properties
+
+<ResponseField name="id">
+Definition id. Use it as the key in `custom_fields` and in `cf_ID`.
+</ResponseField>
+
+<ResponseField name="name">
+Field name. For built-in fields, it's the attribute name you send, such as `first_name`.
+</ResponseField>
+
+<ResponseField name="label">
+The label agents see in the app.
+</ResponseField>
+
+<ResponseField name="type">
+`text`, `textarea`, `number`, `date`, `select`, `checkbox` or `group`.
+</ResponseField>
+
+<ResponseField name="system">
+`true` for built-in fields. See [Build a payload](#build-a-payload).
+</ResponseField>
+
+<ResponseField name="locked">
+`true` for fields admins can't edit or delete in the app. 
+</ResponseField>
+
+<ResponseField name="encrypted">
+`true` when the value is stored encrypted. The API returns it masked.
+</ResponseField>
+
+<ResponseField name="required">
+Whether the field must have a value on create.
+</ResponseField>
+
+<ResponseField name="hidden_from_forms">
+`true` when the field is marked **Hidden from forms** in the app.
+</ResponseField>
+
+<ResponseField name="settings">
+Type-specific settings, such as `options` for `select`, `validation`, `min`, `max` or `max_length`.
+</ResponseField>
+
+<ResponseField name="product_ids">
+Contact fields only. Empty means the field applies to every product. Otherwise it applies only when the contact's `product_id` is in the list. Always empty for policy fields.
+</ResponseField>
+
+## Build a payload
+
+1. Send fields with `system: true` as top-level attributes by `name`, for example `"first_name": "Jane"`.
+2. Send every other field inside `custom_fields`, keyed by `id` as a string: `"custom_fields": { "42": "referral" }`.
+3. Format each value for its `type`:
+
+| Type | Value to send |
+| ---- | ------------- |
+| `text`, `textarea` | A string. Respects `settings.max_length` and `settings.validation` when set. |
+| `number` | A number. Respects `settings.min` and `settings.max`. |
+| `date` | A date, such as `2026-09-10`. |
+| `select` | The option **key** from `settings.options`, not the label. For the example above, send `referral`, not `Referral`. |
+| `checkbox` | A string. Arrays aren't accepted. |
+| `group` | An array of rows. Each row is an object keyed by the `name` of each entry in `settings.fields`. |
+
+{/* TODO: verify — the expected string format for a multi-choice checkbox value (for example, comma-separated keys) */}
+
+On contacts, a required field limited to certain products is enforced only when the `product_id` you send is in its `product_ids`. Required fields apply on create. Group subfields can also require values on update. Updates merge `custom_fields`, so you can send just the ids you want to change.
+
+### Filter and sort by a custom field
+
+On `GET /contacts` and `GET /policies`, use `cf_ID` as a filter field or `sortKey`, for example `filters[0][field]=cf_42`. The id must belong to one of your agency's non-built-in fields of the same type, or the request returns `422`. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting).
+
+## Related
+
+- [Agency custom fields](/settings/agency-custom-fields) for how admins set fields up in the app.
+- [Products](/api/products) to find the `product_id` for policy fields.
+
+## Configuration fields
+
+<ResponseField name="id" type="integer">Configuration ID.</ResponseField>
+<ResponseField name="type" type="string">`contacts` or `policies`.</ResponseField>
+<ResponseField name="options" type="object">Configuration options, or null.</ResponseField>
+<ResponseField name="sections" type="array">Sections containing `id`, `name`, `order` and `fields`.</ResponseField>
+<ResponseField name="sections[].fields[].order" type="integer">Field display order.</ResponseField>

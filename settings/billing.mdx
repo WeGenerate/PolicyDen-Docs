@@ -1,119 +1,85 @@
 ---
-title: "Billing"
-description: "Manage payment methods, review invoices, and pay what you owe."
-keywords: ["billing", "invoices", "payment methods", "credit card", "pay invoice", "overdue invoice", "price per agent"]
-mode: "wide"
+title: "Manage agency billing"
+description: "Add a payment card, review invoices, and pay outstanding balances."
+keywords: ["billing", "invoices", "payment methods", "credit card", "subscription"]
 ---
 
-The Billing page shows what you're paying for PolicyDen, how much is due, and which cards you have on file. Admins and Agency Owners use this page to keep your agency's subscription current.
+<Info>**Who can do this:** Admins and Agency Owners at agencies that don't use the marketplace. Marketplace agencies use [Wallet](/settings/wallet).</Info>
 
-<Frame>
-  <img src="/images/settings-billing.png" alt="Billing page with Price Per Agent, Total Overdue, and Total Paid cards, a payment methods section, and an invoice table with Pay Now actions" />
-</Frame>
+Review agency charges and maintain the card used for billing. Check the amount and invoice before making a payment.
 
-<Info>
-  Billing is Admin-only. Agents don't see this page.
-</Info>
-
-## Billing overview
-
-The three cards at the top of the page give you a quick snapshot:
-
-- **Price Per Agent** — your per-agent price and which day of the month you're billed on.
-- **Total Overdue** — the sum of unpaid invoices that are past their due date, and the number of overdue invoices.
-- **Total Paid** — the lifetime total you've paid and the number of paid invoices.
-
-## Payment methods
-
-Any card you add here can be used to pay invoices.
-
-### Add a card
+## Add a payment card
 
 <Steps>
-  <Step title="Click Add Card">
-    The **Add Card** button sits in the top-right of the Payment Methods section.
+  <Step title="Open Billing">
+    In **Settings**, select **Billing**.
+
+    <Frame>
+      <img src="/images/agency-settings/billing.png" alt="Billing page showing summary cards, Payment Methods, and Invoices." />
+    </Frame>
+  </Step>
+  <Step title="Open the card form">
+    In **Payment Methods**, select **Add Card**.
+  </Step>
+  <Step title="Enter billing details">
+    Complete **Card Holder** and **Billing Address**.
   </Step>
   <Step title="Enter card details">
-    Fill in the card number, expiry, and CVC in the secure form. Your card data is handled through our payment processor and never touches our servers directly.
+    Complete **Card Number**, **Expiry**, and **CVC**.
   </Step>
-  <Step title="Save">
-    Click **Save**. The card appears in your list with its brand, last four digits, and expiry.
+  <Step title="Save the card">
+    Select **Add Card**.
   </Step>
 </Steps>
 
-### Manage cards
+A card's row menu offers **Make Default** for a non-default card, and **Delete**. The current billing card has a **Default** badge.
 
-Each card row has an actions menu (the three-dot button):
+## Pay an invoice
 
-- **Make Default** — mark this card as the one PolicyDen uses automatically for new invoices. The default card shows a **Default** badge. This action is available only on non-default cards.
-- **Delete** — remove the card from your agency. You cannot delete the default card — switch defaults first.
-
-<Tip>
-  If your default card is about to expire, add the new one and click **Make Default** before the old card lapses.
-</Tip>
-
-## Invoices
-
-The Invoices table lists every invoice PolicyDen has generated for your agency, with the most recent at the top.
-
-Each row shows:
-
-| Column | What it means |
-| ------ | ------------- |
-| **Invoice** | The invoice number. Click to open the hosted invoice in a new tab. |
-| **Period** | The billing period the invoice covers. |
-| **Agents** | How many Agents were billed in that period. |
-| **Amount** | The total charge. |
-| **Status** | **Paid**, **Open**, or **Overdue**. |
-| **Due Date** | When the invoice is due. Overdue dates show in red with days-overdue on hover. |
-
-Click an invoice number to open the full invoice in a new tab. If a PDF is available, use the download icon on the right to save it.
-
-## Pay an unpaid invoice
-
-When an invoice goes overdue, a **Pay Now** button appears directly on the invoice row.
+**Pay Now** appears on overdue, unpaid invoices. **Pay Invoice** appears in the row menu for open, unpaid invoices.
 
 <Steps>
-  <Step title="Click Pay Now">
-    The button runs the payment against your default card.
+  <Step title="Find the invoice">
+    In **Invoices**, review the amount and status.
   </Step>
-  <Step title="Wait for confirmation">
-    PolicyDen shows a loading indicator while the charge processes. On success, you see **Invoice paid successfully** and the status switches to **Paid**.
+  <Step title="Start the payment">
+    Select **Pay Now**, or select **Pay Invoice** from the invoice's row menu.
   </Step>
-  <Step title="Handle a declined payment">
-    If the card declines, you'll see **Payment declined. Please try again.** Check the card, switch defaults if needed, and try again.
+  <Step title="Check the result">
+    Review the invoice's status after payment completes.
   </Step>
 </Steps>
 
-You can also open the hosted invoice (by clicking the invoice number) and pay from the invoice page in your browser — useful when you want to use a different card one time.
+Use **Download PDF** from an invoice's row menu when a PDF is available.
 
-## Troubleshooting
+<Warning>The **Payment Required** banner says, “Please pay now to avoid account suspension.” Review unpaid invoices when it appears.</Warning>
+
+## What you'll see
+
+Billing shows **Price Per Agent**, its billing day, **Total Overdue**, and **Total Paid**, plus your cards and invoices.
+
+{/* TODO: verify billing summary values for ordinary Admins; the settings request currently targets a restricted route and can leave fallback values visible. */}
+
+## If it didn't work
 
 <AccordionGroup>
-  <Accordion title="My card was declined" icon="triangle-alert">
-    Check the card's expiry date and available balance. If everything looks right, your bank may be blocking the charge — call them or switch to another card.
+  <Accordion title="Billing isn't in Settings">
+    Marketplace agencies see **Wallet** instead. Open [Wallet](/settings/wallet) for funds, cards, and transactions.
   </Accordion>
-  <Accordion title="I can't delete a card" icon="trash-2">
-    PolicyDen won't let you delete your default card. Mark a different card as default first, then delete the old one.
+  <Accordion title="There are no invoices">
+    **No Invoices yet** means invoices haven't appeared. The page states they appear once billing begins.
   </Accordion>
-  <Accordion title="The overdue total looks wrong" icon="receipt">
-    Overdue totals include every open invoice whose due date has passed. If you recently paid an invoice, refresh the page — the total updates after payment confirms.
+  <Accordion title="Billing data won't load">
+    If **Failed to load billing data.** appears, contact support before relying on the summary amounts.
   </Accordion>
-  <Accordion title="What happens if I don't pay" icon="triangle-alert">
-    PolicyDen emails the billing contact when an invoice goes overdue. If the card on file keeps declining, you'll see an **Unpaid invoices** banner on the dashboard so Admins know to act. If an invoice stays unpaid for an extended period, your agency may be moved to a read-only state until billing is resolved — contact [support](mailto:support@policyden.com) if you're working through a payment issue and need time.
+  <Accordion title="The card form won't load">
+    If **Stripe is not configured.** appears, contact support@policyden.com. Include your agency name and the error.
   </Accordion>
 </AccordionGroup>
 
-## What's next
+## Next
 
-<Columns cols={2}>
-  <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
-    Agent count drives the invoice amount. Keep your user list accurate.
-  </Card>
-  <Card title="Reports" icon="chart-bar" href="/reports/overview">
-    See the production data behind your per-Agent billing.
-  </Card>
-  <Card title="Agency settings" icon="building" href="/settings/agency-overview">
-    Back to the agency settings hub.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Fix payment problems" href="/fix/wallet-and-payments" />
+  <Card title="Explore agency settings" href="/settings/agency-overview" />
+</CardGroup>

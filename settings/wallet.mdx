@@ -1,0 +1,44 @@
+---
+title: "Understand your wallet"
+description: "Find your prepaid balance, payment cards, recharge settings, and call charges."
+keywords: ["wallet", "balance", "payment methods", "billing"]
+---
+
+Your wallet holds prepaid funds for marketplace calls. Each billable call reduces the balance.
+
+<Info>**Who can do this:** Admins and Agency Owners in accounts that use the marketplace, including individual agent accounts.</Info>
+
+Open **Settings > Agency > Wallet**. Accounts using the marketplace see **Wallet** in place of **Billing**. Wallet does not require the dialer.
+
+<Frame>
+  <img src="/images/settings/wallet-balance-and-settings.png" alt="Wallet balance, payment methods, auto-recharge settings, and transactions." />
+</Frame>
+
+**Balance** is the amount available and turns red at zero or less. **Deposited** totals deposits, auto-recharges, and credits. **Charged** totals charges. **Billable Calls** counts charged calls.
+
+## What you can do here
+
+<CardGroup cols={2}>
+<Card title="Add funds and auto-recharge" href="/settings/wallet-funds" />
+<Card title="Understand transactions" href="/settings/wallet-transactions" />
+<Card title="Fix payment problems" href="/fix/wallet-and-payments" />
+</CardGroup>
+
+## Payment methods
+
+In **Payment Methods**, **Add Card** opens **Add Payment Method**. Enter **Card Holder**, **Billing Address**, **Card Number**, **Expiry**, and **CVC**; **Add Card** saves it.
+
+Cards show **Default** and **Expired** badges when applicable. The card's menu offers **Make Default** for a non-default card and **Delete**, followed by confirmation.
+
+<Warning>Auto-recharge charges your default card. Check which card is marked **Default** before turning it on.</Warning>
+
+## Balance warnings
+
+At $50 or less, the banner says your wallet is running low. At zero or less, it says your wallet is empty.
+{/* TODO: verify production low-balance threshold; current configuration is $50. */}
+
+An empty wallet pauses priced marketplace calls. Their cards show **No funds**; free queues remain available. The banner's **Add funds** link opens Wallet.
+
+## Who sees what
+
+Admins and Agency Owners manage the wallet. This includes the owner of an individual agent account, who holds Admin rights. Agents inside an agency do not see this page.

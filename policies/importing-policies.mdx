@@ -1,0 +1,75 @@
+---
+title: "Import policies from a spreadsheet"
+description: "Upload policy records, map columns, and review import issues."
+keywords: ["import policies", "CSV", "Excel", "upload policies"]
+---
+
+import WhoAdmins from "/snippets/who-admins.mdx";
+
+<WhoAdmins />
+
+Import multiple policies from a CSV or Excel file. Choose a supported active product and review the column mapping before importing.
+
+## Before you start
+
+- Use a **.csv** or **.xlsx** file.
+- Prepare **Medicare Number**, **Carrier**, **Enrollment Code**, **Agent Email**, and **Sale Date** columns.
+- Include **Policy Type** for products that require it. Optional fields vary by product.
+
+{/* TODO: verify why Medicare Number is required for every supported import product, including custom products; UI and request validation both require it. */}
+
+<Steps>
+  <Step title="Open the importer">
+    In **Policies**, select the import icon with the **Import Policies** tooltip.
+  </Step>
+  <Step title="Choose the product">
+    Select the product and then **Continue**.
+    This screen is skipped when only one supported active product is available.
+  </Step>
+  <Step title="Upload your file">
+    Select the upload area and choose your file.
+    Use **Download template** in the dialog if you need a starting point.
+  </Step>
+  <Step title="Map the columns">
+    Match each required field to a file column, checking any automatic matches.
+    For a workbook with multiple sheets, choose the sheet to import.
+  </Step>
+  <Step title="Import the records">
+    Select **Import Policies**.
+    Keep the dialog open while the import runs.
+  </Step>
+  <Step title="Review the result">
+    Check **Import Complete** and any **Issues**, then select **Done**.
+    Issues identify affected row numbers and error messages.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/policies/import-start.png" alt="Import Policies dialog at product selection." />
+</Frame>
+
+## What you'll see
+
+The result reports imported policies and skipped rows, with row-level issues when available.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="No active products found">
+    Ask an Admin to check [Products and carriers](/settings/products-and-carriers). Only products that support importing appear here.
+  </Accordion>
+  <Accordion title="Import Policies is unavailable">
+    Map every required field to a column. Check the selected sheet before importing.
+  </Accordion>
+  <Accordion title="Rows were skipped">
+    Read each message under **Issues** and correct the affected rows. Prepare a file containing only rows that still need importing.
+    See [Import problems](/fix/import-problems) for more help.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Find imported policies" href="/policies/overview" />
+  <Card title="Change policies in bulk" href="/policies/bulk-actions" />
+</CardGroup>

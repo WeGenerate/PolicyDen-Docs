@@ -1,0 +1,134 @@
+[
+  {
+    "id": "marketplace/marketplace-queue-cards",
+    "page": "marketplace/overview",
+    "persona": "field-agent",
+    "url": "/marketplace",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/marketplace/marketplace-queue-cards.png",
+    "alt": "Marketplace queue cards showing prices, hours, and state coverage."
+  },
+  {
+    "id": "marketplace/marketplace-join-queue",
+    "page": "marketplace/joining-queues",
+    "persona": "field-agent",
+    "url": "/marketplace",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "css": "article:first-of-type button:has-text(\"Join queue\")"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/marketplace/marketplace-join-queue.png",
+    "alt": "Marketplace with the first Join queue button highlighted."
+  },
+  {
+    "id": "marketplace/queue-state-choices",
+    "page": "marketplace/joining-queues",
+    "persona": "field-agent",
+    "url": "/marketplace",
+    "before": [
+      {
+        "click": {
+          "css": "button:has-text(\"Limit states\") >> nth=0"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Save"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/marketplace/queue-state-choices.png",
+    "alt": "Queue state choices with the Save button highlighted."
+  },
+  {
+    "id": "marketplace/queue-agent-access",
+    "page": "marketplace/managing-queue-access",
+    "persona": "agency-admin",
+    "url": "/marketplace",
+    "before": [
+      {
+        "click": {
+          "css": "button:has-text(\"Manage Access\") >> nth=0"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Save Agents"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/marketplace/queue-agent-access.png",
+    "alt": "Queue agent access dialog with the Save Agents button highlighted."
+  },
+  {
+    "id": "settings/wallet-balance-and-settings",
+    "page": "settings/wallet",
+    "persona": "agency-admin",
+    "url": "/agency-settings/wallet",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/settings/wallet-balance-and-settings.png",
+    "alt": "Wallet balance, payment methods, auto-recharge settings, and transactions."
+  },
+  {
+    "id": "settings/add-funds-dialog",
+    "page": "settings/wallet-funds",
+    "persona": "agency-admin",
+    "url": "/agency-settings/wallet",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Funds"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/settings/add-funds-dialog.png",
+    "alt": "Add Funds dialog showing the amount and payment card."
+  }
+]

@@ -1,0 +1,436 @@
+---
+title: "Contacts"
+description: "List, read, create and update contacts in your agency through the PolicyDen API."
+keywords: ["api", "contacts", "leads", "clients", "create contact", "update contact", "check_duplicates"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use the contacts endpoints to sync leads, prospects and clients between PolicyDen and your other systems. Each endpoint needs its own scope on the API key.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers and [Manage API keys](/api/manage-api-keys) for scopes.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoints
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/contacts` | `contacts:list` |
+| `GET` | `/contacts/{id}` | `contacts:view` |
+| `POST` | `/contacts` | `contacts:create` |
+| `PUT` | `/contacts/{id}` | `contacts:update` |
+
+A contact id that isn't in your agency returns `404`.
+
+<ParamField query="page" type="integer" default="1">
+Page number, starting at 1. Applies to list requests.
+</ParamField>
+
+<ParamField query="per_page" type="integer" default="25">
+Rows per page, from 1 to 100. Applies to list requests.
+</ParamField>
+
+## List contacts
+
+`GET /contacts` returns your agency's contacts, newest first. Each item is the full contact, the same as [Get a contact](#get-a-contact). The list is paginated. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting) for `page`, `per_page`, filter operators and `logicOperator`.
+
+<ParamField query="search" type="string">
+Matches first or last name, full name, email, phone, Medicare number or the assigned agent's name.
+</ParamField>
+
+<ParamField query="startDate" type="string">
+Created on or after this date, `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField query="endDate" type="string">
+Created on or before this date, `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField query="city" type="string">
+Physical address city contains this text.
+</ParamField>
+
+<ParamField query="state" type="string">
+Physical address state contains this text, for example `FL`.
+</ParamField>
+
+<ParamField query="phone" type="string">
+Exact phone match. Fewer than 10 digits returns no contacts.
+</ParamField>
+
+<ParamField query="filters" type="array">
+Advanced filters: `filters[0][field]`, `filters[0][operator]`, `filters[0][value]`.
+</ParamField>
+
+<ParamField query="sortKey" type="string">
+Field to sort by. Ignored unless you also send `sortDirection`.
+</ParamField>
+
+<ParamField query="sortDirection" type="string">
+`asc` or `desc`.
+</ParamField>
+
+**Filter fields:** `agency_id`, `name`, `phone`, `email`, `dob`, `gender`, `status`, `physical_street_1`, `physical_city`, `physical_state`, `physical_county`, `physical_zip_code`, `mailing_street_1`, `mailing_city`, `mailing_state`, `mailing_county`, `mailing_zip_code`, `medicare_number`, `assigned_to`, `has_policy`, `policies.product_id`, `policies.status`, `policies.type`, `policies.plan.type`, `policies.plan.snp_type`, `policies.sale_date`, `policies.effective_date`, and `cf_ID` for any contact [custom field](/api/custom-fields).
+
+**Sort keys:** `name`, `dob`, `email`, `state`, `city`, `medicare_number`, `agent`, `agency`, `created_at`, and `cf_ID`.
+
+An unknown filter field returns `422` with `Unknown filter field: FIELD.`, and an unknown sort key returns `Unknown sort key: KEY.`
+
+<RequestExample>
+
+```bash
+curl -g "{BASE_URL}/contacts?startDate=2026-09-01&endDate=2026-09-30&filters[0][field]=status&filters[0][operator]=equals&filters[0][value]=lead&sortKey=created_at&sortDirection=desc" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Get a contact
+
+`GET /contacts/{id}` returns one contact with its custom field values and pipeline stages.
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/contacts/DEMO-CONTACT" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Create a contact
+
+`POST /contacts` creates a contact and returns it with status `201`.
+
+<ParamField body="first_name" type="string" required>
+**Required.**
+</ParamField>
+
+<ParamField body="last_name" type="string" required>
+**Required.**
+</ParamField>
+
+<ParamField body="phone" type="string" required>
+**Required.** A 10-digit US phone number in any format.
+</ParamField>
+
+<ParamField body="email" type="string">
+Email address, up to 255 characters. Optional on create and update.
+</ParamField>
+
+<ParamField body="dob" type="date">
+Date of birth, `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField body="gender" type="string">
+`M` or `F`.
+</ParamField>
+
+<ParamField body="status" type="string">
+`lead`, `prospect`, `client` or `former_client`. Defaults to `lead`.
+</ParamField>
+
+<ParamField body="physical_street_1" type="string">
+Physical address.
+</ParamField>
+
+<ParamField body="physical_street_2" type="string">
+Physical address.
+</ParamField>
+
+<ParamField body="physical_city" type="string">
+Physical address.
+</ParamField>
+
+<ParamField body="physical_state" type="string">
+Physical address.
+</ParamField>
+
+<ParamField body="physical_county" type="string">
+Physical address.
+</ParamField>
+
+<ParamField body="physical_zip_code" type="string">
+Up to 10 characters.
+</ParamField>
+
+<ParamField body="mailing_street_1" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="mailing_street_2" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="mailing_city" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="mailing_state" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="mailing_county" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="mailing_zip_code" type="string">
+Mailing address.
+</ParamField>
+
+<ParamField body="medicare_number" type="string">
+Exactly 11 characters. Required only when your agency's contact fields mark it required for the `product_id` you send.
+</ParamField>
+
+<ParamField body="ssn" type="string">
+Up to 11 characters. Stored encrypted.
+</ParamField>
+
+<ParamField body="product_id" type="integer">
+A product from [`GET /products`](/api/products). Decides which product-scoped custom fields apply.
+</ParamField>
+
+<ParamField body="assigned_to" type="uuid">
+The contact's owner, a user id from [`GET /users`](/api/users). Defaults to the user who created the API key.
+</ParamField>
+
+<ParamField body="pipeline_stage_id" type="integer">
+Adds the contact to this stage. Use a stage id from [`GET /pipelines`](/api/pipelines).
+</ParamField>
+
+<ParamField body="custom_fields" type="object">
+Custom field values keyed by definition id, for example `{"42": "referral"}`.
+</ParamField>
+
+<ParamField body="check_duplicates" type="boolean">
+When `true`, a contact with the same phone number returns `409` instead of creating a new one.
+</ParamField>
+
+Required custom fields apply on create. A field limited to certain products is required only when `product_id` matches one of them. If you leave `product_id` out, product-limited fields aren't required. See [Custom fields](/api/custom-fields) to look up ids and which fields are built in.
+
+A phone number that isn't valid returns `422` with `Enter a valid 10-digit US phone number.`
+
+With `check_duplicates: true`, a phone match returns `409` with the message `A contact with this phone number already exists.` and the matching contacts in `data`. Without it, PolicyDen creates the contact even when the phone number already exists.
+
+<RequestExample>
+
+```bash
+curl -X POST "{BASE_URL}/contacts" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "phone": "305-555-0199",
+    "email": "jane@example.com",
+    "dob": "1958-04-12",
+    "status": "lead",
+    "physical_state": "FL",
+    "product_id": 3,
+    "pipeline_stage_id": 12,
+    "custom_fields": { "42": "referral" },
+    "check_duplicates": true
+  }'
+```
+
+</RequestExample>
+
+## Update a contact
+
+`PUT /contacts/{id}` replaces the contact and returns it. `first_name`, `last_name`, `phone` and `status` are required. You can send every field from [Create a contact](#create-a-contact) except `product_id` and `check_duplicates`, plus these:
+
+<ParamField body="doctors" type="array">
+Each item is `{"name": "Dr. Smith", "isInNetwork": true}`.
+</ParamField>
+
+<ParamField body="medications" type="array">
+Each item is `{"name": "Metformin", "isTaking": true}`.
+</ParamField>
+
+<Warning>
+  `PUT` clears omitted contact details such as email, birth date and addresses. Read the contact first, then send all writable details you want to keep.
+</Warning>
+
+These fields are the exceptions. They keep their current value when you leave them out:
+
+| Field | Behavior on `PUT` |
+| ----- | ----------------- |
+| `assigned_to` | Changes only when you send a value. |
+| `pipeline_stage_id` | Changes only when you send a value. Moves the contact to that stage within the stage's pipeline. Stages in other pipelines stay as they are. |
+| `custom_fields` | Merged. Only the ids you send change. Send `null` or an empty string to clear one. |
+| `ssn` | Changes only when the key is present. |
+| `doctors`, `medications` | Change only when the key is present. |
+
+Required top-level custom fields aren't enforced on update. Required subfields still apply to group rows you send.
+
+## Response fields
+
+<ResponseField name="id">
+Contact id and your agency's id.
+</ResponseField>
+
+<ResponseField name="agency_id">
+Contact id and your agency's id.
+</ResponseField>
+
+<ResponseField name="first_name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="last_name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="initials">
+Name fields.
+</ResponseField>
+
+<ResponseField name="email">
+Contact details.
+</ResponseField>
+
+<ResponseField name="phone">
+Contact details.
+</ResponseField>
+
+<ResponseField name="dob">
+Date of birth as `YYYY-MM-DD` and `MM/DD/YYYY`.
+</ResponseField>
+
+<ResponseField name="dob_formatted">
+Date of birth as `YYYY-MM-DD` and `MM/DD/YYYY`.
+</ResponseField>
+
+<ResponseField name="gender">
+`M` or `F`, and its label.
+</ResponseField>
+
+<ResponseField name="gender_formatted">
+`M` or `F`, and its label.
+</ResponseField>
+
+<ResponseField name="status">
+Status value and its label, for example `former_client` and `Former Client`.
+</ResponseField>
+
+<ResponseField name="status_formatted">
+Status value and its label, for example `former_client` and `Former Client`.
+</ResponseField>
+
+<ResponseField name="physical_*">
+Address fields.
+</ResponseField>
+
+<ResponseField name="mailing_*">
+Address fields.
+</ResponseField>
+
+<ResponseField name="medicare_number">
+Returned as stored. `ssn` isn't masked.
+</ResponseField>
+
+<ResponseField name="ssn">
+Returned as stored. `ssn` isn't masked.
+</ResponseField>
+
+<ResponseField name="doctors">
+Arrays, or `null`.
+</ResponseField>
+
+<ResponseField name="medications">
+Arrays, or `null`.
+</ResponseField>
+
+<ResponseField name="assigned_to">
+Owner's user id and name.
+</ResponseField>
+
+<ResponseField name="assigned_to_name">
+Owner's user id and name.
+</ResponseField>
+
+<ResponseField name="created_by">
+User ids.
+</ResponseField>
+
+<ResponseField name="updated_by">
+User ids.
+</ResponseField>
+
+<ResponseField name="sms_unsubscribed_at">
+ISO 8601 timestamps, or `null`.
+</ResponseField>
+
+<ResponseField name="email_unsubscribed_at">
+ISO 8601 timestamps, or `null`.
+</ResponseField>
+
+<ResponseField name="conversation_archived_at">
+ISO 8601 timestamps, or `null`.
+</ResponseField>
+
+<ResponseField name="pipeline_stages">
+The stages the contact is in: `id`, `pipeline_id`, `name`, `position`, `color`.
+</ResponseField>
+
+<ResponseField name="custom_field_values">
+Values keyed by both definition id and field name.
+</ResponseField>
+
+<ResponseField name="created_at">
+`MM/DD/YYYY hh:mm AM`.
+</ResponseField>
+
+<ResponseField name="updated_at">
+`MM/DD/YYYY hh:mm AM`.
+</ResponseField>
+
+<ResponseField name="created_at_iso">
+ISO 8601.
+</ResponseField>
+
+<ResponseField name="updated_at_iso">
+ISO 8601.
+</ResponseField>
+
+In `custom_field_values`, date fields come back as `MM/DD/YYYY`. Encrypted fields come back masked as `••••` plus the last four characters. If you send a masked value back on `PUT`, PolicyDen ignores it and keeps the stored value.
+
+{/* TODO: verify — whether ssn should be returned unmasked to API clients */}
+
+## Related
+
+- [Contacts overview](/contacts/overview) for how agents work with contacts in the app.
+- [Policies](/api/policies). Creating a policy changes the contact's status to `client`.
+- [Errors and rate limits](/api/errors-and-rate-limits) for status codes.
+
+## Response example
+
+This excerpt shows selected fields from a successful response.
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": "DEMO-CONTACT",
+    "first_name": "Alex",
+    "last_name": "Rivera",
+    "phone": "305-555-0199",
+    "status": "lead"
+  }
+}
+```
+
+</ResponseExample>

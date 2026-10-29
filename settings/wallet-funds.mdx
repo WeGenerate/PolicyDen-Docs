@@ -1,0 +1,93 @@
+---
+title: "Add funds and enable auto-recharge"
+description: "Top up your wallet and choose when your default card is charged automatically."
+keywords: ["add funds", "deposit", "auto recharge", "credit card"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in accounts that use the marketplace, including individual agent accounts.</Info>
+
+Add prepaid funds for marketplace calls, then set up auto-recharge if you want automatic top-ups.
+
+## Before you start
+
+- Have a valid card in **Payment Methods**.
+- Check the card marked **Default** before enabling auto-recharge.
+
+<Warning>Adding funds charges the selected card. Auto-recharge charges your default card when your balance reaches the saved threshold.</Warning>
+
+## Add funds
+
+<Steps>
+<Step title="Open your wallet">
+  Go to **Settings > Agency > Wallet**.
+</Step>
+<Step title="Open the deposit form">
+  Select **Add Funds**.
+
+  <Frame>
+    <img src="/images/settings/add-funds-dialog.png" alt="Add Funds dialog showing the amount and payment card." />
+  </Frame>
+</Step>
+<Step title="Choose a deposit amount">
+  Select a preset amount or enter a value in **Custom amount**.
+</Step>
+<Step title="Choose your card">
+  In **Pay with**, select a valid card. The default valid card is selected first.
+</Step>
+<Step title="Submit your deposit">
+  Select the **Add** button showing your amount. Complete any card authentication requested by your bank.
+</Step>
+</Steps>
+
+Current presets are $50, $100, $250, and $500. Deposits must be between $25 and $5,000; follow the form's displayed limits.
+{/* TODO: verify production deposit limits and presets; current configuration is $25–$5,000 and $50/$100/$250/$500. */}
+
+## Enable auto-recharge
+
+<Steps>
+<Step title="Turn on automatic charging">
+  In **Auto-Recharge**, turn on the switch beside **Automatically charge your default card.**
+</Step>
+<Step title="Set the balance threshold">
+  Enter **Recharge Threshold**, the balance that triggers a top-up.
+</Step>
+<Step title="Set the recharge amount">
+  Enter **Recharge Amount**, the amount added each time.
+</Step>
+<Step title="Save recharge settings">
+  Select **Save**. **Cancel** discards unsaved changes.
+</Step>
+</Steps>
+
+The current threshold range is $0–$5,000, and the recharge amount range is $25–$5,000.
+{/* TODO: verify production auto-recharge limits. */}
+
+To stop automatic charges, turn off the switch and select **Save**.
+
+## What you'll see
+
+A successful deposit updates **Balance** and adds a transaction; saved automatic top-ups appear in **Auto-Recharge**.
+
+## If it didn't work
+
+<AccordionGroup>
+<Accordion title="Add a card first">
+  With no card saved, **Add Funds** opens **Add Payment Method**. Save a card, then reopen **Add Funds**.
+</Accordion>
+<Accordion title="The Add button is disabled">
+  Choose a valid amount and a non-expired card. Expired cards cannot be selected.
+</Accordion>
+<Accordion title="My payment or authentication failed">
+  Follow the displayed error. See [payment fixes](/fix/wallet-and-payments) for declined cards and incomplete authentication.
+</Accordion>
+<Accordion title="Auto-recharge turned itself off">
+  Repeated failures suspend auto-recharge. Update your default card, then turn it on and save again.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Check your transactions" href="/settings/wallet-transactions" />
+<Card title="Join marketplace queues" href="/marketplace/joining-queues" />
+</CardGroup>

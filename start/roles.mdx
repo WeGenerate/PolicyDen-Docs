@@ -1,0 +1,53 @@
+---
+title: "What each role can do"
+description: "Compare role permissions and the features available in your account."
+keywords: ["permissions", "roles", "admin", "owner", "remote", "training"]
+---
+
+Use this matrix to check which controls you should see. **Field Agent** means the owner of an individual agent account, with Admin rights. It is not a separate permission role.
+
+“Yes” applies within your account and data access. Feature requirements still apply.
+
+| Capability | Agent | Admin | Agency Owner | Field Agent (individual agent account) |
+| --- | --- | --- | --- | --- |
+| Open Dashboard and Atlas | Yes | Yes | Yes | Yes |
+| Add contacts and policies | Yes | Yes | Yes | Yes |
+| Delete contacts and policies | No | Yes | Yes | Yes |
+| Use contact and policy import controls | No | Yes | Yes | Yes |
+| Work deals in Pipelines | Yes | Yes | Yes | Yes |
+| Configure pipelines and stages | No | Yes | Yes | Yes |
+| Use Tasks and Messages | Yes | Yes | Yes | Yes |
+| Edit your own profile and security | Yes | Yes | Yes | Yes |
+| See Licensed States and Contracts on your own profile | No | No | No | Yes |
+| Manage Products, Relationships, and Custom Fields | No | Yes | Yes | Yes |
+| Open Users from Settings | No | Yes | Yes | No |
+| Open API Keys from Settings | No | Yes | Yes | No |
+| Sign in as an Agent on your team | No | Yes | Yes | No team |
+| Sign in as an Admin on your team | No | No | Yes | No team |
+| Open agency Reporting | No | Yes | Yes | Yes |
+| Use calls, Call Log, and dialer Reporting | Dialer required | Dialer required | Dialer required | Dialer required |
+| Manage dialer queues, campaigns, and settings | No | Dialer required | Dialer required | Dialer required |
+| Open Live Monitor | Training and dialer required; listen only | Dialer required | Dialer required | No |
+| Join marketplace queues and manage queue access | No | Marketplace and dialer required | Marketplace and dialer required | Marketplace and dialer required |
+| Manage Wallet | No | Marketplace required | Marketplace required | Marketplace required |
+| Open Billing | No | Non-marketplace account | Non-marketplace account | Non-marketplace account |
+| Open Compliance | No | Medicare products required | Medicare products required | Medicare products required |
+
+## Feature and access differences
+
+- **Dialer:** your agency must have the dialer enabled. This applies to calls and dialer management.
+- **Marketplace:** your agency must use the lead marketplace. **Wallet** replaces **Billing** in Settings. Opening **Marketplace** also requires the dialer.
+- **Medicare:** **Compliance** appears for agencies with Medicare products.
+- **Training:** an Agent with **Training** enabled can listen through **Live Monitor**, without supervisor controls.
+- **Remote:** Agents whose work location is **Remote** can view and update only contacts assigned to them.
+- **Individual agent account:** **Users**, **API Keys**, and **Live Monitor** are absent. Your own profile includes **Licensed States** and **Contracts**.
+
+{/* TODO: verify whether individual accounts should also be blocked from Users and API Keys routes; the sidebar hides them but the routes use the shared Admin gate. */}
+
+{/* TODO: verify intended policy access for Remote agents; contact access is assignment-restricted, while the policy access check permits agency membership. */}
+
+**Reporting** has two destinations. Agents see [call reporting](/calls/reporting); Admins and Agency Owners see [agency reporting](/reports/overview) and can also use call reporting when the dialer is enabled.
+
+Agency Owners can sign in as Admins or Agents in their agency. Admins can sign in as Agents only. Neither can sign in as another Agency Owner.
+
+See [Users and roles](/settings/users-and-roles) for team setup, or [find a missing feature](/fix/cant-see-a-feature) when a control is absent.

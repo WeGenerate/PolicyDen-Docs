@@ -1,0 +1,133 @@
+[
+  {
+    "id": "agency-settings/overview",
+    "page": "settings/agency-overview",
+    "persona": "agency-admin",
+    "url": "/agency-settings/relationships",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Relationships"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/agency-settings/overview.png",
+    "alt": "Agency settings open on Relationships, with the Agency navigation visible."
+  },
+  {
+    "id": "agency-settings/products",
+    "page": "settings/products-and-carriers",
+    "persona": "agency-admin",
+    "url": "/agency-settings/products",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Products"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Product"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/agency-settings/products.png",
+    "alt": "Products and Carriers sections, with Add Product highlighted."
+  },
+  {
+    "id": "agency-settings/relationships",
+    "page": "settings/relationships",
+    "persona": "agency-admin",
+    "url": "/agency-settings/relationships",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Relationships"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/agency-settings/relationships.png",
+    "alt": "Relationships page showing Uplines, Downlines, Agents, and Partnerships."
+  },
+  {
+    "id": "agency-settings/custom-fields",
+    "page": "settings/agency-custom-fields",
+    "persona": "agency-admin",
+    "url": "/agency-settings/custom-fields",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Custom Fields"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/agency-settings/custom-fields.png",
+    "alt": "Custom Fields editor showing field types, category selector, and Save."
+  },
+  {
+    "id": "agency-settings/integrations",
+    "page": "settings/integrations",
+    "persona": "agency-admin",
+    "url": "/agency-settings/integrations",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Connect your favorite tools"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/agency-settings/integrations.png",
+    "alt": "Integrations page showing provider cards and connection controls."
+  },
+  {
+    "id": "agency-settings/billing",
+    "page": "settings/billing",
+    "persona": "agency-admin",
+    "url": "/agency-settings/billing",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Payment Methods"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/agency-settings/billing.png",
+    "alt": "Billing page showing summary cards, Payment Methods, and Invoices."
+  }
+]

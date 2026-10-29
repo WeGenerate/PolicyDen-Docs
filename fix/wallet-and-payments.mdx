@@ -1,0 +1,67 @@
+---
+title: "My wallet or payment isn\u2019t working"
+description: "Restore marketplace calls and resolve failed deposits or automatic top-ups."
+keywords: ["low balance", "empty wallet", "card declined", "auto recharge failed"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in accounts that use the marketplace, including individual agent accounts.</Info>
+
+Use the message in Wallet or Marketplace to find the matching fix.
+
+<AccordionGroup>
+<Accordion title="Your wallet is running low">
+  **Why it happens**
+
+  - Your balance has reached the low-balance threshold, currently $50 or less.
+
+  {/* TODO: verify production low-balance threshold; current configuration is $50. */}
+
+  **Fix it**
+
+  [Add funds or enable auto-recharge](/settings/wallet-funds) before your balance reaches zero.
+</Accordion>
+<Accordion title="Your wallet is empty or a queue says No funds">
+  **Why it happens**
+
+  - A balance of zero or less pauses priced marketplace calls.
+  - Free queues remain available.
+
+  **Fix it**
+
+  1. Follow **Add funds** to Wallet.
+  2. [Complete a deposit](/settings/wallet-funds).
+  3. Check **Balance**, queue hours, and agent availability before expecting new calls.
+</Accordion>
+<Accordion title="Auto-recharge failed or turned itself off">
+  **Why it happens**
+
+  - The default card is missing, expired, or could not complete the payment.
+  - Repeated failed attempts turn auto-recharge off; the current limit is three failures.
+
+  {/* TODO: verify production auto-recharge suspension limit; current configuration is three failures. */}
+
+  **Fix it**
+
+  1. In **Payment Methods**, add a valid card with **Add Card** if needed.
+  2. Use its menu's **Make Default** action.
+  3. [Turn on auto-recharge and save](/settings/wallet-funds#enable-auto-recharge).
+
+  If calls are paused, make a manual deposit while you resolve automatic payments.
+</Accordion>
+<Accordion title="My card was declined or authentication failed">
+  **Why it happens**
+
+  - Your card provider declined the payment or bank authentication did not complete.
+  - The payment form could not finish the request.
+
+  **Fix it**
+
+  1. Read the displayed error and check [Transactions](/settings/wallet-transactions) before retrying.
+  2. Resolve the decline with your card provider, or choose another valid card in **Pay with**.
+  3. Complete any authentication requested by your bank.
+
+  For **Payment system not initialized. Please refresh the page.**, refresh Wallet before trying again.
+</Accordion>
+</AccordionGroup>
+
+Still stuck? Email support@policyden.com. Include your agency name, exact error, attempt time, amount, and transaction number if available. Never send full card numbers or CVC codes.

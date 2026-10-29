@@ -1,0 +1,184 @@
+---
+title: "Pagination, filtering and sorting"
+description: "Page through list endpoints, narrow contacts and policies with advanced filters, and change the sort order."
+keywords: ["pagination", "per_page", "filters", "operators", "sortKey", "sortDirection", "custom fields", "query parameters"]
+---
+
+List endpoints return results one page at a time. Contacts and policies also accept advanced filters and a sort order, using the same filter fields and operators as the Contacts and Policies pages in the app. This page explains the shared query parameters. Each resource page lists the fields it accepts.
+
+## Pagination
+
+These list endpoints are paginated: `GET /contacts`, `GET /policies`, `GET /users`, `GET /pipelines` and `GET /relationships`.
+
+`GET /products` and `GET /custom-fields` aren't paginated. They return everything in one response.
+
+### Parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `page` | integer | Page number, starting at `1`. Defaults to `1`. |
+| `per_page` | integer | Rows per page, from `1` to `100`. Defaults to `25`. |
+
+A value outside these ranges returns `422 Validation failed`.
+
+### Response shape
+
+Paginated responses wrap the rows in `data` and add `links` and `meta`:
+
+```json
+{
+  "data": [
+    { "id": "DEMO-CONTACT", "name": "Jane Doe" }
+  ],
+  "links": {
+    "first": "$BASE_URL/contacts?page=1",
+    "last": null,
+    "prev": null,
+    "next": "$BASE_URL/contacts?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "current_page_url": "$BASE_URL/contacts?page=1",
+    "from": 1,
+    "to": 1,
+    "per_page": 25,
+    "path": "$BASE_URL/contacts"
+  }
+}
+```
+
+| Field | Description |
+| --- | --- |
+| `links.first` | URL of the first page. |
+| `links.prev` | URL of the previous page, or `null` on page 1. |
+| `links.next` | URL of the next page, or `null` on the last page. |
+| `links.last` | Always `null`. |
+| `meta.current_page` | The page you asked for. |
+| `meta.current_page_url` | URL of this page. |
+| `meta.from`, `meta.to` | Position of the first and last row on this page. |
+| `meta.per_page` | Rows per page. |
+| `meta.path` | The endpoint URL without query parameters. |
+
+<Note>
+  Responses don't include a total count or a last page number. To fetch everything, keep increasing `page` until `links.next` is `null`.
+</Note>
+
+<Note>
+  The URLs in `links` and `meta` carry only the `page` parameter. They drop `per_page`, filters, sorting and any other query parameters you sent. If you follow `links.next` as-is, you get 25 unfiltered rows. Build each next request yourself: resend all your parameters and change only `page`.
+</Note>
+
+{/* TODO: verify whether pagination links should keep the request's query parameters (they currently don't). */}
+
+```bash
+curl "$BASE_URL/contacts?page=2&per_page=100" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```
+
+## Advanced filters
+
+`GET /contacts` and `GET /policies` accept a `filters` array. Each filter is a set of bracketed query parameters with an index, starting at `0`:
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `filters[n][field]` | Yes | The field to filter on. Each resource has its own list: see [Contacts](/api/contacts) and [Policies](/api/policies). |
+| `filters[n][operator]` | Yes | One of the operators below. |
+| `filters[n][value]` | Depends | The value to compare against. Not needed for `is_empty` and `is_not_empty`. |
+| `filters[n][valueEnd]` | For `is_between` | The upper end of the range. |
+| `filters[n][logicOperator]` | No | `and` (default) or `or`. Sets how this filter joins the filters before it. |
+
+### Operators
+
+| Operator | Matches records where the field… |
+| --- | --- |
+| `equals` | Equals the value. Text comparisons ignore case. |
+| `not_equals` | Doesn't equal the value. |
+| `includes` | Is one of a list of values. |
+| `excludes` | Isn't one of a list of values, or is empty. |
+| `contains` | Contains the text, ignoring case. |
+| `not_contains` | Doesn't contain the text. |
+| `starts_with` | Starts with the text, ignoring case. |
+| `is_greater` | Is greater than the value. |
+| `is_less` | Is less than the value. |
+| `is_between` | Is between `value` and `valueEnd`, including both ends. |
+| `is_empty` | Has no value. |
+| `is_not_empty` | Has a value. |
+
+For `includes` and `excludes`, send several values with empty brackets: `filters[0][value][]=active&filters[0][value][]=placed`.
+
+Dates use the `YYYY-MM-DD` format.
+
+### Examples
+
+Contacts whose email contains `example.com`:
+
+```bash
+curl -g "$BASE_URL/contacts?filters[0][field]=email&filters[0][operator]=contains&filters[0][value]=example.com" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```
+
+Policies with an effective date in October 2026 **and** a status of active or placed:
+
+```bash
+curl -g "$BASE_URL/policies?filters[0][field]=effective_date&filters[0][operator]=is_between&filters[0][value]=2026-10-01&filters[0][valueEnd]=2026-10-31&filters[1][field]=status&filters[1][operator]=includes&filters[1][value][]=active&filters[1][value][]=placed" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```
+
+Contacts in Florida **or** Georgia:
+
+```bash
+curl -g "$BASE_URL/contacts?filters[0][field]=physical_state&filters[0][operator]=equals&filters[0][value]=FL&filters[1][field]=physical_state&filters[1][operator]=equals&filters[1][value]=GA&filters[1][logicOperator]=or" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```
+
+{/* TODO: verify how a mix of `and` and `or` filters is grouped (for example A and B or C) before documenting mixed chains. */}
+
+<Tip>
+  Use curl's `-g` flag (`--globoff`) whenever a URL has square brackets. Without it, curl treats `[0]` as a range pattern and the request fails before it's sent. Most HTTP libraries encode brackets for you.
+</Tip>
+
+### How filters are checked
+
+- An unknown field returns `422` with `Unknown filter field: FIELD.` in `errors`.
+- An unknown operator, or a `logicOperator` other than `and` or `or`, returns `422`.
+- A filter with an empty `value` is skipped, except for `is_empty` and `is_not_empty`. Double-check your values if a filter seems to have no effect.
+
+## Simple filters
+
+Some list endpoints also take plain query parameters such as `search`, `startDate`, `endDate` or `status`. You can combine them with advanced filters. Each resource page lists its own: [Contacts](/api/contacts), [Policies](/api/policies), [Users](/api/users) and [Relationships](/api/relationships).
+
+## Sorting
+
+`GET /contacts` and `GET /policies` accept a sort order:
+
+| Parameter | Description |
+| --- | --- |
+| `sortKey` | The field to sort by. Each resource has its own list of sort keys. |
+| `sortDirection` | `asc` or `desc`. |
+
+Send both parameters. If you send `sortKey` without `sortDirection`, the default order applies: contacts newest first by creation date, policies newest first by sale date.
+
+```bash
+curl "$BASE_URL/contacts?sortKey=name&sortDirection=asc" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```
+
+An unknown sort key returns `422` with `Unknown sort key: KEY.` A `sortDirection` other than `asc` or `desc` also returns `422`.
+
+## Custom fields
+
+Your agency's custom fields work in filters and in `sortKey`. Write them as `cf_` followed by the field definition's `id`, for example `cf_42`.
+
+- Get definition ids from [List custom fields](/api/custom-fields). Use `type=contacts` for contact fields. For policy fields, use `type=policies` together with a `product_id`, which that endpoint requires for policies.
+- Only fields with `"system": false` work this way. System fields are regular attributes with their own field names.
+- An id that isn't one of your agency's custom fields for that resource returns `422`.
+
+```bash
+curl -g "$BASE_URL/contacts?filters[0][field]=cf_42&filters[0][operator]=equals&filters[0][value]=referral" \
+  -H "Authorization: Bearer $PD_API_KEY" \
+  -H "Accept: application/json"
+```

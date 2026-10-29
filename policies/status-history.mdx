@@ -1,65 +1,57 @@
 ---
-title: "Status log"
-description: "Review how a policy's status has changed over time on the Status log tab."
-keywords: ["status log", "policy status history", "status timeline", "policy lifecycle", "status changes", "status tooltip"]
+title: "Review policy status history"
+description: "Read the current policy status and entries in the Status Log."
+keywords: ["policy status", "status history", "status log", "status changed"]
 ---
 
-The **Status log** tab on a policy profile is a running history of every status check recorded for that policy. Use it to see when the status changed, what it changed from, and what it changed to — without hunting through the audit log.
+<Info>**Who can do this:** Agents, Admins, and Agency Owners with access to the policy.</Info>
 
-## Where to find it
+Use the policy profile to compare the current status with entries in **Status Log**. A detected status message may differ from the current status.
 
 <Steps>
-  <Step title="Open a policy">
-    From the [Policies](/policies/overview) list, click the policy number to open the side drawer, or click **Open in new window** for the full page.
+  <Step title="Open the policy">
+    In **Policies**, select the policy number you want to review.
   </Step>
-  <Step title="Select the Status log tab">
-    In the policy profile tab row, click **Status log**.
+  <Step title="Read the current status">
+    Check the status badge beside the policy number and the **Status** field when shown.
+    Available statuses depend on the product.
+  </Step>
+  <Step title="Expand the log">
+    Select **Status Log** to show its entries.
+        <Frame>
+      <img src="/images/policies/status-log.png" alt="Policy profile with Status Log expanded." />
+    </Frame>
+  </Step>
+  <Step title="Review each entry">
+    Read the entry's result, date, and time.
+    Entries may show a status change, no change, a detected status, or a failed check.
   </Step>
 </Steps>
 
-The tab loads the entries for that policy. Each entry shows when the check ran, the previous status, and the new status if it changed.
+## What you'll see
 
-## How to read an entry
+The log shows available status-check results, including the previous and new status when a change is recorded.
 
-Each row on the Status log is one status check.
+## If it didn't work
 
-- **Timestamp** — when the check was recorded.
-- **Previous status** — the status before the check.
-- **New status** — the status after, or "No changes" if nothing moved.
+<AccordionGroup>
+  <Accordion title="No status checks yet">
+    No entries are available for this policy. Return to the profile to review its current status.
+  </Accordion>
+  <Accordion title="Status check failed">
+    Read the entry's error message. If you need help, send support@policyden.com the policy number and error text.
+  </Accordion>
+  <Accordion title="A detected status differs from the current status">
+    A message beginning **Detected** and ending **no change applied** does not confirm that the current status changed.
+    Ask an Admin to review the policy before editing its status.
+  </Accordion>
+</AccordionGroup>
 
-Entries are listed newest first, so the most recent check is at the top.
+{/* TODO: verify whether manual status edits should appear in Status Log; the current log does not establish a complete edit history. */}
 
-## The Status column tooltip
+## Next
 
-You don't have to open a policy to see the last time its status changed. On the [Policies](/policies/overview) list, hover the **Status** badge on any row. The tooltip shows:
-
-- **Last checked** — the timestamp of the most recent entry.
-- Whether the status changed at that check, and what it moved between.
-- **Never checked**, if the policy hasn't been checked yet.
-
-## Why it matters
-
-Use the Status log to answer questions like:
-
-- **When did this policy go active?** Find the entry where the new status is Active.
-- **How long was it pending before it placed?** Compare the pending entry to the placed entry.
-- **Did the status move unexpectedly?** Scroll the log to spot the change and when it happened.
-
-<Tip>
-  The log records status movement specifically. For a full history of every edit — field changes, reassignments, date updates — open the **Audit log** tab instead. See [Policy profile](/policies/policy-profile).
-</Tip>
-
-## Empty state
-
-If the log reads "No status checks to show," the policy hasn't had a status check recorded yet. This is normal for brand-new policies. Entries appear as soon as the first check runs.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Policy profile" icon="file-text" href="/policies/policy-profile">
-    Every other tab on a policy — fields, docs, comments, and audit log.
-  </Card>
-  <Card title="Policies overview" icon="file-text" href="/policies/overview">
-    Filter and sort the full list of policies.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Review a policy" href="/policies/policy-profile" />
+  <Card title="Find policies" href="/policies/overview" />
+</CardGroup>

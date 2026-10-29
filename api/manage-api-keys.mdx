@@ -1,0 +1,73 @@
+---
+title: "Manage API keys"
+description: "Create, edit and revoke keys that connect other systems to your agency."
+keywords: ["api keys", "scopes", "revoke key", "integration", "agency settings"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners. Individual agent accounts don't have API keys.</Info>
+
+Create a separate key for each system that needs access. Scopes control which endpoints that system can call.
+
+## Create a key
+
+<Steps>
+  <Step title="Open API Keys">
+    In **Settings**, select **API Keys** under **Agency**.
+  </Step>
+  <Step title="Open the form">
+    Select **Add Key** to open **Add API Key**.
+  </Step>
+  <Step title="Name the key">
+    Enter a **Name**, such as Brightwater Health Partners website. Use a unique name of up to 100 characters.
+  </Step>
+  <Step title="Choose scopes">
+    Under **Scopes**, clear permissions the system doesn't need. All scopes start selected.
+  </Step>
+  <Step title="Create the key">
+    Select **Add Key**. The **API Key Added** dialog opens.
+  </Step>
+  <Step title="Copy the key">
+    Select **Copy API key**, store the key securely, then select **Done**.
+  </Step>
+</Steps>
+
+<Frame caption="Choose only the endpoints this system needs.">
+  <img src="/images/api/add-key-scopes.png" alt="Add API Key dialog with Name and Scopes controls." />
+</Frame>
+
+The app warns: "Copy this key now - it is shown only once." If you lose it, revoke it and create another.
+
+Scopes are grouped by resource. Expand a group to choose endpoints, or use **Select all** and **Clear all**.
+See [Authentication and scopes](/api/authentication#scopes) for the full list.
+
+## Review your keys
+
+Search by name to find a key. **Key** shows its name and masked prefix.
+**Scopes** shows **All** or a selected count. **Created By** identifies its creator.
+**Last Used** shows recent use, or **Never**. **Date** shows when it was created.
+
+<Frame>
+  <img src="/images/api/keys-overview.png" alt="API Keys page showing the key table and Add Key control." />
+</Frame>
+
+## Edit a key
+
+In the key's row menu, select **Edit**. Change **Name** or **Scopes**, then select **Save Key**.
+The key stays the same; changed scopes apply to subsequent requests.
+
+## Revoke a key
+
+In the key's row menu, select **Revoke**. In **Revoke API Key**, select **Revoke Key**.
+Revocation is permanent. Requests using that key return `401`.
+
+<Note>
+If the creator is deactivated or loses their Admin or Agency Owner role, requests using their keys return `401`.
+Replace their keys before changing their access.
+</Note>
+
+## If it didn't work
+
+- **An active key with this name already exists.** Enter another name.
+- **Select at least one scope.** Choose an endpoint under **Scopes**.
+
+Next, [make your first request](/api/make-your-first-request).

@@ -1,89 +1,84 @@
 ---
-title: "Configure the pipeline"
-description: "Add, rename, reorder, and delete the stages that appear on the pipeline board."
-keywords: ["configure pipeline", "pipeline stages", "add stage", "reorder stages", "delete stage", "Kanban configuration", "pipeline settings"]
+title: "Create and configure pipelines"
+description: "Create a sales board and set the stages your agency uses to track deals."
+keywords: ["create pipeline", "configure pipeline", "stages", "rename pipeline", "delete pipeline"]
 ---
 
-The columns on your pipeline board are stages you define. Admins can add new stages, rename or reorder the ones you already have, and delete stages you no longer need.
+<Info>**Who can do this:** Admins and Agency Owners, including the owner of an individual agent account.</Info>
 
-## Prerequisites
+Create a pipeline for a sales process, then name and arrange its stages. Your agency's Agents use these stages when moving deals.
 
-You need the **Admin** or **Agency Owner** role in your agency to open the configuration. Agents can see and use the board, but they can't change its structure. See [Users and roles](/settings/users-and-roles) for how roles are assigned.
-
-## Open pipeline settings
+## Create a pipeline
 
 <Steps>
-  <Step title="Go to Pipeline">
-    Click **Pipeline** in the sidebar.
+  <Step title="Open the create form">
+    In **Pipelines**, select **Create Pipeline** from the pipeline name dropdown. An empty page shows this button directly.
   </Step>
-  <Step title="Open the settings icon">
-    Click the **gear** icon in the top-right of the pipeline header. The **Configure Pipeline** dialog opens.
+  <Step title="Name your pipeline">
+    Enter a **Pipeline Name** that helps your team identify the process.
+  </Step>
+  <Step title="Create the board">
+    Select **Create Pipeline**. The new board opens.
   </Step>
 </Steps>
 
-The dialog shows your pipeline name and every stage in order, each with a color label and a drag handle.
+New pipelines start with **Qualified**, **Contact Made**, and **Proposal Made**.
 
-## Rename the pipeline
+## Configure the stages
 
-The **Pipeline Name** field at the top controls the label shown above the board. Edit the text and save to update it.
-
-## Add a stage
+<Warning>Removing a stage removes its deals from this pipeline when you save. The contacts themselves remain in PolicyDen.</Warning>
 
 <Steps>
-  <Step title="Click the plus button">
-    Scroll to the bottom of the stage list and click the **+** button. A blank row appears.
+  <Step title="Open pipeline settings">
+    In the board header, select the settings icon to open **Configure Pipeline**.
+        <Frame caption="Use pipeline settings to name and arrange stages.">
+          <img src="/images/pipeline/configure-stages.png" alt="Configure Pipeline dialog showing the pipeline name, stage rows, and Save Pipeline button." />
+        </Frame>
   </Step>
-  <Step title="Name the stage">
-    Type the stage name — for example, **Application sent** or **Awaiting decision**.
+  <Step title="Update the names">
+    Edit **Pipeline Name** or the **Stage Name** fields.
   </Step>
-  <Step title="Pick a color">
-    Click the icon on the left of the row to open the color picker and choose a label color.
+  <Step title="Choose stage markers">
+    Select the small marker before a stage name to choose its appearance.
   </Step>
-  <Step title="Save">
-    Click **Save Pipeline**. The new column appears at the end of the board.
+  <Step title="Arrange the stages">
+    Drag a row's handle to change the stages' left-to-right order on the board.
+  </Step>
+  <Step title="Adjust the stage list">
+    Use the plus row to add a stage, or a stage's trash icon to remove it.
+  </Step>
+  <Step title="Save your changes">
+    Select **Save Pipeline**.
   </Step>
 </Steps>
 
-## Rename or recolor a stage
+## Delete a pipeline
 
-In the same dialog, click into a stage's name to edit it, or click its color icon to change the label color. Click **Save Pipeline** to apply your changes.
+Select the trash icon in the board header to open **Delete Pipeline?**, then confirm the deletion.
 
-## Reorder stages
+<Warning>Deleting a pipeline permanently removes the board and all its stages. This action can't be undone.</Warning>
 
-Grab the **drag handle** on the left of any stage row and drop it above or below other stages. The order in the dialog matches the left-to-right order of columns on the board.
+## What you'll see
 
-## Delete a stage
+Your saved stage names, markers, and order appear on the board for your agency.
 
-<Steps>
-  <Step title="Click the trash icon">
-    Next to the stage you want to remove, click the **trash** icon.
-  </Step>
-  <Step title="Save">
-    Click **Save Pipeline**.
-  </Step>
-</Steps>
+## If it didn't work
 
-<Warning>
-  Deleting a stage removes it from the board and unsets the stage on every contact that was in it. Those contacts stay in PolicyDen, but they won't appear on the board until you assign them to another stage.
-</Warning>
+<AccordionGroup>
+  <Accordion title="I don't see pipeline settings">
+    Only Admins and Agency Owners can create, configure, or delete pipelines.
+  </Accordion>
+  <Accordion title="Save Pipeline is unavailable">
+    Enter a nonblank pipeline name and a name for every stage, including newly added stages.
+  </Accordion>
+  <Accordion title="The changes didn't save">
+    If you see **Failed to save**, reopen settings and check which changes remain before trying again.
+  </Accordion>
+</AccordionGroup>
 
-## Tips for a useful pipeline
+## Next
 
-<Tip>
-  Keep stages short and action-oriented ("Quoted", "Application sent", "Enrolled"). Every stage should represent a real step in your sales process, not a status like "Active" or "Lost".
-</Tip>
-
-- Give related stages the same color so your team can scan the board quickly.
-- Reorder stages to match the flow an agent works — leftmost column first, rightmost last.
-- If a stage sits empty for weeks, delete it to keep the board focused.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Pipeline overview" icon="columns-3" href="/pipeline/overview">
-    Use the board to move contacts between the stages you configured.
-  </Card>
-  <Card title="Custom fields" icon="sliders-horizontal" href="/customization/custom-fields">
-    Add fields that capture the details your pipeline depends on.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Manage deals" href="/pipeline/managing-deals">Add contacts to the configured stages.</Card>
+  <Card title="Read the board" href="/pipeline/overview">See how cards and counts work.</Card>
+</CardGroup>

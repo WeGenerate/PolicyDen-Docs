@@ -1,0 +1,23 @@
+[
+  {
+    "id": "start/dashboard-overview",
+    "page": "index",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Dashboard"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/start/dashboard-overview.png",
+    "alt": "Dashboard and main sidebar in an agency Agent account."
+  }
+]

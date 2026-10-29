@@ -1,89 +1,31 @@
 ---
-title: "Pipeline overview"
-description: "Work your Medicare pipeline on a Kanban board — drag contacts between stages and add new deals from any column."
-mode: "wide"
-keywords: ["pipeline", "Kanban board", "deal stages", "sales pipeline", "Medicare pipeline", "ACA pipeline", "drag and drop"]
+title: "Pipelines overview"
+description: "Find your deals, read each stage, and choose the pipeline you want to work."
+keywords: ["pipelines", "deals", "stages", "sales board", "leads"]
 ---
 
-The **Pipeline** page shows every contact in your book as a card on a Kanban board. Each column is a stage you define, so you can see at a glance where every lead and client stands and drag them forward as they progress.
+**Pipelines** shows contacts as deal cards, grouped into stages. Each pipeline has its own board, so you can track different sales processes separately.
 
-<Frame caption="The pipeline board before any stages are configured.">
-  <img src="/images/pipeline-empty.png" alt="Pipeline page with Medicare Pipeline heading, lead count, and Add Deal button — shown before any stages are configured" />
+<Frame caption="A pipeline board groups your deals by stage.">
+  <img src="/images/pipeline/overview-board.png" alt="Pipelines board showing stage columns, deal cards, and the pipeline name dropdown." />
 </Frame>
 
-<Note>
-  This screenshot shows an empty board. An Admin needs to set up stages before contacts appear as cards — see [Configure the pipeline](/pipeline/configuring-pipeline).
-</Note>
+Go to **Pipelines** in the sidebar. Use the pipeline name dropdown to switch boards when your agency has more than one pipeline. Admins and Agency Owners also see this dropdown when there's only one pipeline.
 
-## Open the pipeline
+Each column shows a stage marker, name, and card count. The **Leads** tag beside the pipeline name counts cards on the board.
 
-Click **Pipeline** in the sidebar. You'll see your agency's Medicare Pipeline with one column per stage. A tag at the top shows your total lead count.
+A card shows the contact's name and Medicare Beneficiary Identifier (MBI), when available. See the [glossary](/start/glossary) for insurance terms. Select the name to open the contact's profile. Agency accounts also show an assigned-agent tag when the contact has an assigned agent.
 
-<Note>
-  The pipeline is scoped to your agency — every user with access sees the same stages and the same contacts.
-</Note>
+## What you can do here
 
-## Read a card
+<CardGroup cols={2}>
+  <Card title="Manage deals" href="/pipeline/managing-deals">Add contacts to stages, move deals, and remove cards.</Card>
+  <Card title="Configure pipelines" href="/pipeline/configuring-pipeline">Create boards and change their stages as an Admin or Agency Owner.</Card>
+  <Card title="Schedule a meeting" href="/meetings/scheduling-meetings">Use a card's plus icon to start a meeting for that contact.</Card>
+</CardGroup>
 
-Each card on the board represents one contact.
+## Who sees what
 
-| Detail | Where it comes from |
-| ------ | ------------------- |
-| Medicare number | The contact's MBI, shown above the name. |
-| Name | The contact's full name. |
-| Assigned agent | The agent who owns the contact, shown as a tag. |
-| Product tag | The product the contact is associated with (for example, **Medicare Advantage**). |
+Agents see and manage deals for contacts assigned to them. Admins and Agency Owners see all deals and can create, configure, or delete pipelines. An individual agent account has Admin rights and doesn't show assigned-agent tags on cards.
 
-Click a card's **+** icon to add an activity to that contact — a task, meeting, note, or file — without leaving the board.
-
-## Move a contact between stages
-
-<Steps>
-  <Step title="Grab the card">
-    Click and hold any contact card. The cursor turns into a grab handle.
-  </Step>
-  <Step title="Drag to a new column">
-    Drop it into any other stage. The board scrolls if you drag to the edge.
-  </Step>
-  <Step title="Release to save">
-    PolicyDen saves the new stage for you. If something goes wrong, the card returns to its original column and a toast explains why.
-  </Step>
-</Steps>
-
-You can also drag cards up and down inside a single column to reorder them for your own reference.
-
-## Add a deal
-
-You can drop an existing contact onto the board from two places:
-
-- The **Add Deal** button in the top-right opens a picker where you choose a stage and search for a contact.
-- The **+** icon at the top of any column opens the same picker with that stage pre-selected.
-
-Search contacts by name or **MBI** (Medicare Beneficiary Identifier). Pick one, click **Add**, and the contact appears as a card in the chosen stage.
-
-<Tip>
-  Use **Add Deal** when you want to pull an existing contact into the pipeline. If the person isn't in PolicyDen yet, see [Create a contact](/contacts/creating-contacts) first.
-</Tip>
-
-## Empty pipeline
-
-If you haven't set up any stages yet, the board is empty. An Admin needs to configure the stages before contacts can appear on the board.
-
-See [Configure the pipeline](/pipeline/configuring-pipeline) for how to add, rename, reorder, and delete stages.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Configure the pipeline" icon="settings" href="/pipeline/configuring-pipeline">
-    Add, rename, reorder, and delete the stages that appear on the board.
-  </Card>
-  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
-    Open a contact to see their full history, policies, and activity.
-  </Card>
-  <Card title="Tasks" icon="list-checks" href="/tasks/overview">
-    Follow up on pipeline contacts with scheduled tasks.
-  </Card>
-  <Card title="Meetings" icon="calendar" href="/meetings/overview">
-    Book meetings directly from a contact's card.
-  </Card>
-</Columns>
+If you see **No pipelines yet**, ask an Admin or Agency Owner to create one. **No stages configured** means that the selected pipeline needs stages before you can add deals.

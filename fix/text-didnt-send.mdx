@@ -1,0 +1,80 @@
+---
+title: "My text didn't send"
+description: "Resolve texting errors, opt-outs, and attachment limits."
+keywords: ["text failed", "SMS error", "STOP", "unsubscribe", "texting number"]
+---
+
+Match the message you see to a cause here. Check the conversation before resending a text.
+
+<AccordionGroup>
+  <Accordion title="The contact has opted out">
+    **Why it happens**
+
+    The inbox shows **This contact has unsubscribed from SMS messages**, or sending returns **This contact has unsubscribed and can no longer receive messages.**
+
+    A reply containing STOP, UNSUB, UNSUBSCRIBE, CANCEL, END, or QUIT opts the contact out. Keywords ignore capitalization and surrounding spaces.
+
+    **Fix it**
+
+    Respect the opt-out. If the contact independently chooses to resume texts, they can reply START, SUBSCRIBE, or UNSTOP.
+
+    {/* TODO: verify opt-out notice consistency; the contact profile composer lacks the inbox's unsubscribed banner. */}
+  </Accordion>
+  <Accordion title="No active texting number">
+    **Why it happens**
+
+    **No active SMS numbers available. Please contact support.** means the agency has no active texting number available.
+
+    **Fix it**
+
+    Contact PolicyDen support. Support provisions agency texting numbers.
+  </Accordion>
+  <Accordion title="The phone number is invalid">
+    **Why it happens**
+
+    **Invalid contact phone number.** means the contact's phone number cannot be used for sending.
+
+    **Fix it**
+
+    Check and [edit the contact's phone number](/contacts/editing-contact-details), then try again.
+  </Accordion>
+  <Accordion title="The message is blank or too long">
+    **Why it happens**
+
+    - **A message or media attachment is required.** appears when neither text nor a file is supplied.
+    - **The message may not be greater than 500 characters.** means the text is too long.
+    - **The message must be a string.** means the submitted text was not accepted.
+
+    **Fix it**
+
+    Enter text within 500 characters, or attach a file. Reopen the composer if ordinary text still produces an error.
+  </Accordion>
+  <Accordion title="An attachment is rejected">
+    **Why it happens**
+
+    - **Size limit exceeded**: **Total attachments cannot exceed 5MB.**
+    - **The total size of all attachments must not exceed 5MB.**
+    - **Each file must not exceed 5MB.**
+    - **Too many files**: **You can attach up to 10 files.**
+    - **Unsupported file type. Supported: images, video, audio, PDF, CSV, vCard.**
+
+    **Fix it**
+
+    Remove files until no more than 10 remain and their combined size is within 5 MB. Use a supported format.
+  </Accordion>
+  <Accordion title="A service or connection error appears">
+    **Why it happens**
+
+    The composer shows **Failed to send message**, sometimes followed by **Please try again.** The service can also return:
+
+    **Failed to send message. Please try again or contact support if the issue persists.**
+
+    Other errors can include a specific message from the texting provider.
+
+    **Fix it**
+
+    Check the thread before retrying so you don't send a duplicate. Check your connection, then try again. Send persistent provider errors to support.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? Email support@policyden.com. Include the exact error, time of the attempt, contact record link, and whether you attached files. Include their formats and total size; avoid sending sensitive message content.

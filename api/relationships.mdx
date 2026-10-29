@@ -1,0 +1,351 @@
+---
+title: "Relationships"
+description: "List your uplines, downlines, agents and partners, and create new relationships through the PolicyDen API."
+keywords: ["api", "relationships", "upline", "downline", "agent", "partnership", "invite agency", "carriers"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use the relationships endpoints to read the agencies and agents your agency works with, and to add uplines, invite downlines and partners, or connect agents from another system.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoints
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/relationships` | `relationships:list` |
+| `GET` | `/relationships/{id}` | `relationships:view` |
+| `POST` | `/relationships` | `relationships:create` |
+
+A relationship id that isn't one of your agency's returns `404`.
+
+<ParamField query="page" type="integer" default="1">
+Page number, starting at 1. Applies to list requests.
+</ParamField>
+
+<ParamField query="per_page" type="integer" default="25">
+Rows per page, from 1 to 100. Applies to list requests.
+</ParamField>
+
+## List relationships
+
+`GET /relationships` returns your agency's relationships, newest first. The list is paginated with `page` and `per_page`. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting).
+
+<ParamField query="type" type="string">
+`upline`, `downline`, `agent` or `partnership`.
+</ParamField>
+
+<ParamField query="status" type="string">
+`active`, `pending`, `accepted` or `declined`.
+</ParamField>
+
+<ParamField query="search" type="string">
+Matches the other agency's name or email.
+</ParamField>
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/relationships?type=downline&status=accepted" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Get a relationship
+
+`GET /relationships/{id}` returns one relationship with the products and carriers it covers.
+
+## Response fields
+
+Every relationship is shown from your agency's side.
+
+<ResponseField name="id">
+Relationship id.
+</ResponseField>
+
+<ResponseField name="type">
+`upline`, `downline`, `agent` or `partnership`. If another agency added yours as its downline or agent, you see that relationship as `upline`.
+</ResponseField>
+
+<ResponseField name="name">
+The other agency's or agent's name.
+</ResponseField>
+
+<ResponseField name="email">
+The email you sent the relationship to. `null` when the other agency created it.
+</ResponseField>
+
+<ResponseField name="status">
+`active`, `pending`, `accepted` or `declined`.
+</ResponseField>
+
+<ResponseField name="commission_type">
+`as_earned` or `heap`. Only on uplines you added.
+</ResponseField>
+
+<ResponseField name="referred_by">
+Agents only. `{ "id", "name" }` of the agent who referred them, or `null`.
+</ResponseField>
+
+<ResponseField name="agents_count">
+Number of agents holding carriers through this relationship.
+</ResponseField>
+
+<ResponseField name="products">
+Products covered, each with `id`, `name`, `template`, `is_system`, `active` and `carriers`.
+</ResponseField>
+
+<ResponseField name="products[].carriers[]">
+`id`, `name`, `logo`, `template`, `is_system`. On downlines, agents and partners you added, each carrier also has `upline`: the `{ "id", "name" }` of the upline you get it through.
+</ResponseField>
+
+<ResponseField name="responded_at">
+When the other side responded, ISO 8601, or `null`.
+</ResponseField>
+
+<ResponseField name="created_at">
+ISO 8601.
+</ResponseField>
+
+<ResponseField name="updated_at">
+ISO 8601.
+</ResponseField>
+
+## Create a relationship
+
+`POST /relationships` creates a relationship and returns it with status `201`. `type` is always required. The other required fields depend on the type and on whether the agency or agent already has a PolicyDen account.
+
+<Tabs>
+  <Tab title="Upline">
+    Adds an agency you get carriers through. The upline is `active` right away. No invitation is sent.
+
+    <ParamField body="type" type="string" required>
+    `upline`
+    </ParamField>
+
+    <ParamField body="name" type="string" required>
+    The upline's name.
+    </ParamField>
+
+    <ParamField body="commission_type" type="string" required>
+    `as_earned` or `heap`.
+    </ParamField>
+
+    <ParamField body="carriers" type="array">
+    Carriers you get through this upline. See [Carriers](#carriers).
+    </ParamField>
+  </Tab>
+  <Tab title="Downline or partnership">
+    Invites another agency. If the email belongs to an existing agency owner or admin, the relationship is `pending` until that agency accepts. Otherwise PolicyDen creates a new agency and invites its owner, and the relationship stays `pending` until the owner activates the account.
+
+    <ParamField body="type" type="string" required>
+    `downline` or `partnership`
+    </ParamField>
+
+    <ParamField body="name" type="string" required>
+    Agency name. Must be unique when PolicyDen creates a new agency.
+    </ParamField>
+
+    <ParamField body="email" type="string" required>
+    The owner's email.
+    </ParamField>
+
+    <ParamField body="first_name" type="string">
+    The new owner's name.
+    </ParamField>
+
+    <ParamField body="last_name" type="string">
+    The new owner's name.
+    </ParamField>
+
+    <ParamField body="commission_type" type="string">
+    New agency only. `as_earned` or `heap`. Defaults to `as_earned`.
+    </ParamField>
+
+    <ParamField body="phone" type="string">
+    The new owner's phone and date of birth (`YYYY-MM-DD`, before today).
+    </ParamField>
+
+    <ParamField body="dob" type="string">
+    The new owner's phone and date of birth (`YYYY-MM-DD`, before today).
+    </ParamField>
+
+    <ParamField body="street" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="city" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="state" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="zip_code" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="users" type="array">
+    New agency only. Up to 50 users to add to it.
+    </ParamField>
+
+    <ParamField body="carriers" type="array">
+    Carriers you share. See [Carriers](#carriers).
+    </ParamField>
+
+        Each item in `users` takes `first_name`, `last_name`, `email` and `role` (`admin` or `agent`), all required, plus optional `npn`, `phone`, `dob`, `street`, `city`, `state` and `zip_code`. Each email must be unique and can't be the owner's email.
+
+        {/* TODO: verify — when users[] receive their invitations (at creation or after the owner activates) */}
+
+        To invite an individual agent, use the **Agent** type. A downline sent to an individual agent's email returns `This email belongs to an individual agent. Use Invite Agent instead.`
+  </Tab>
+  <Tab title="Agent">
+    Connects an individual agent. If the email belongs to an existing, active individual agent, the relationship is `accepted` right away. Otherwise PolicyDen creates the agent and invites them, and the relationship stays `pending` until they activate the account.
+
+    <ParamField body="type" type="string" required>
+    `agent`
+    </ParamField>
+
+    <ParamField body="email" type="string" required>
+    The agent's email.
+    </ParamField>
+
+    <ParamField body="first_name" type="string">
+    The agent's name.
+    </ParamField>
+
+    <ParamField body="last_name" type="string">
+    The agent's name.
+    </ParamField>
+
+    <ParamField body="npn" type="string">
+    National Producer Number.
+    </ParamField>
+
+    <ParamField body="phone" type="string">
+    Phone and date of birth (`YYYY-MM-DD`, before today).
+    </ParamField>
+
+    <ParamField body="dob" type="string">
+    Phone and date of birth (`YYYY-MM-DD`, before today).
+    </ParamField>
+
+    <ParamField body="street" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="city" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="state" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="zip_code" type="string">
+    Address. `state` is a two-letter code. `zip_code` is 5 digits.
+    </ParamField>
+
+    <ParamField body="referred_by" type="string">
+    The relationship id of one of your agents who referred this agent.
+    </ParamField>
+
+    <ParamField body="carriers" type="array">
+    Carriers you share. See [Carriers](#carriers).
+    </ParamField>
+
+        An email that belongs to a user who isn't an individual agent returns `This email belongs to an existing user who is not an individual agent.`
+  </Tab>
+</Tabs>
+
+<RequestExample>
+
+```bash
+curl -X POST "{BASE_URL}/relationships" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "agent",
+    "email": "alex@example.com",
+    "first_name": "Alex",
+    "last_name": "Agent",
+    "npn": "12345678",
+    "state": "FL",
+    "carriers": [
+      { "product_id": 3, "carrier_id": "DEMO-CARRIER" }
+    ]
+  }'
+```
+
+</RequestExample>
+
+### Carriers
+
+Each item in `carriers` takes:
+
+<ParamField body="product_id" type="string" required>
+One of your products from [`GET /products`](/api/products).
+</ParamField>
+
+<ParamField body="carrier_id" type="string" required>
+A carrier id from `GET /products`.
+</ParamField>
+
+<ParamField body="upline_id" type="string">
+The id of the upline you get this carrier through, from `GET /relationships?type=upline`. Not used for uplines.
+</ParamField>
+
+For downlines, partners and agents, you can only share carriers you get through one of your active uplines. Leave out `upline_id` when only one upline offers that carrier for the product. These errors return `422`:
+
+| Message | What to do |
+| ------- | ---------- |
+| `You do not have this carrier through any upline for this product.` | Add the carrier to one of your uplines first. |
+| `More than one upline offers this carrier. Send upline_id to pick one.` | Add `upline_id`. |
+| `This carrier is not available through that upline for this product.` | Use a different `upline_id`. |
+| `This carrier is listed twice for the same product.` | Remove the duplicate. |
+
+### Other validation errors
+
+| Message | Cause |
+| ------- | ----- |
+| `An agency with this name already exists.` | A new agency's `name` is taken. |
+| `Users can only be added to an agency that does not exist yet.` | You sent `users` for an existing agency. |
+| `A relationship with this agent already exists.` | You're already connected to that agent. |
+| `You cannot create a relationship with your own agency.` | The email belongs to someone in your agency. |
+
+## Related
+
+- [Relationships](/settings/relationships) for how admins manage relationships in the app.
+- [Policies](/api/policies). Use an upline's id as a policy's `relationship_id`.
+- [Errors and rate limits](/api/errors-and-rate-limits) for status codes.
+
+## Response example
+
+This excerpt shows selected fields from a successful response.
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": "DEMO-RELATIONSHIP",
+    "type": "upline",
+    "name": "Brightwater Health Partners",
+    "status": "active",
+    "commission_type": "as_earned"
+  }
+}
+```
+
+</ResponseExample>

@@ -1,150 +1,38 @@
 ---
-title: "Policies overview"
-description: "Track every policy your agency has written — filter the list, edit cells inline, and drill into individual policies."
-mode: "wide"
-keywords: ["policies", "insurance policies", "Medicare Advantage", "ACA policies", "book of business", "policy list", "effective date", "renewals"]
+title: "Manage your policies"
+description: "Find policies, review their details, and record new business."
+keywords: ["policies", "book of business", "enrollment", "plans"]
 ---
 
-The **Policies** page is the master list of every policy your agency has on file. Each row is a policy tied to a contact, with a product, carrier, effective date, and current status.
+Policies brings your book of business into one list. Find a policy, review its contact and coverage details, or record a new policy.
 
 <Frame>
-  <img src="/images/policies-list.png" alt="Policies list with status preset filters, product switcher, and a table showing policy number, contact, status, product, carrier, and agent columns" />
+  <img src="/images/policies/overview-list.png" alt="Policies list with Add Policy highlighted." />
 </Frame>
 
-## What's on a policy
+## What you can do here
 
-A policy record captures the key details of coverage your agency has written for a client. Every policy has:
+<CardGroup cols={2}>
+  <Card title="Add a policy" href="/policies/creating-policies">Record a policy for a new or existing contact.</Card>
+  <Card title="Review a policy" href="/policies/policy-profile">Open policy details and the linked contact.</Card>
+  <Card title="Review status history" href="/policies/status-history">Read the current status and Status Log.</Card>
+  <Card title="Attach a plan" href="/policies/attaching-plans">Admins can link a catalog plan.</Card>
+  <Card title="Import policies" href="/policies/importing-policies">Admins can upload a spreadsheet.</Card>
+  <Card title="Change policies in bulk" href="/policies/bulk-actions">Admins can assign or archive selected policies.</Card>
+</CardGroup>
 
-- A **contact** — the client the policy belongs to.
-- A **product** — the line of business (for example, Medicare, ACA, or a product your agency has defined).
-- A **carrier** — the insurance company issuing the coverage.
-- An **effective date** — when coverage starts.
-- A **status** — where the policy is in its lifecycle (pending, active, canceled, and so on).
+## Find the right policy
 
-Each policy also gets a unique policy number that PolicyDen generates automatically.
+Use **Search**, the product selector, date range, and **Filters** to narrow the list. Select a policy number to open its profile. Selecting a contact name opens the contact instead.
 
-## Open the Policies page
+## Who sees what
 
-Click **Policies** in the sidebar. If your agency has more than one product, you'll see a product switcher in the breadcrumb next to "Policies" — use it to focus the list on one product at a time.
+| Role or account | Available controls | Difference |
+| --- | --- | --- |
+| Agent | Add Policy and accessible policy profiles | Some profile fields are read-only. |
+| Admin or Agency Owner | Import, row selection, and profile editing | Bulk actions appear after selecting rows. |
+| Individual agent account | Policy creation and admin controls | Agent and Agency list columns and filters are hidden. |
 
-## The filter presets
+Fields vary by product and agency setup. The **Plan** card appears only for products configured with a plan-number field.
 
-Above the table, PolicyDen shows filter presets so you can jump to the policies that need attention:
-
-- **All** — every policy.
-- **Pending** — policies that haven't been confirmed yet.
-- **Active**, **Issued**, or **Placed** — the in-force presets (which ones you see depend on how your agency tracks commissions).
-
-Each preset shows the current count so you always know how much work is in each bucket.
-
-## Search, filter, and sort
-
-The toolbar above the table gives you the same controls on every list page in PolicyDen.
-
-### Search
-
-Type in the search box to narrow the list by policy number, contact name, Medicare number, or carrier.
-
-### Filters
-
-Click **Filters** to combine conditions. You can filter by:
-
-- Agency
-- Policy number
-- Assigned Agent
-- Contact
-- Carrier
-- Status
-- Policy type
-- Sale date, effective date, or placed date
-- Accreted, Fronted deal, HRA flags
-
-Save any filter combination as a named view with [Saved filters](/customization/saved-filters).
-
-### Sort
-
-Click any sortable column header to sort ascending or descending. Use the sort button in the toolbar to sort by multiple columns at once.
-
-### Date range
-
-The date range picker in the top-right scopes the list — and the preset counts — to a specific window. By default the range covers the current sales period.
-
-## Customize the columns
-
-Click the columns button in the toolbar to pick which columns show in the table. You can surface fields like plan number, source of lead, SEP, agent 2, HRA, fronted deal, or any [custom field](/customization/custom-fields) defined for the selected product. Your column choices stick between sessions.
-
-## Edit cells inline
-
-Click a cell in most columns — policy type, carrier, enrollment code, plan number, or writing agent — to edit it without opening the policy. Your change saves as soon as you click away.
-
-<Note>
-  Some fields are editable only for Admins. If a cell doesn't respond to a click, check with your Admin.
-</Note>
-
-## Open a policy
-
-You have two ways to open a policy from the list:
-
-- **Click the policy number** to open a side drawer with the full policy view. This is the fastest way to review or edit a policy without losing your place.
-- **Click the contact name** to jump to the contact's profile. See [Contact profile](/contacts/contact-profile).
-
-Inside the drawer you can also click **Open in new window** to move the policy to its own page.
-
-Full details on the policy view are in [Policy profile](/policies/policy-profile).
-
-## Create a policy
-
-<Steps>
-  <Step title="Click Add Policy">
-    The **Add Policy** button is in the top-right of the page.
-  </Step>
-  <Step title="Pick a product">
-    Select the product the policy belongs to. If your agency only uses one, PolicyDen skips this step.
-  </Step>
-  <Step title="Fill in the details">
-    Pick the contact, carrier, policy type, and any other required fields. The form changes based on the product.
-  </Step>
-  <Step title="Save">
-    Click **Add Policy**. The new policy appears at the top of the list, and its contact is automatically marked as a client.
-  </Step>
-</Steps>
-
-<Tip>
-  You can also add a policy straight from a contact's profile. Open the contact, go to the **Policies** tab, and click **Add Policy** — the contact is pre-filled for you.
-</Tip>
-
-## Export policies
-
-Click the export icon in the toolbar to download a CSV. You can export:
-
-- **All** policies that match your current filters and date range, or
-- **Selected** policies — check the boxes first, then export.
-
-Pick which columns to include in the CSV before downloading.
-
-## Import policies
-
-Admins can bulk import policies from a CSV or Excel file. Click the upload icon in the toolbar, pick the product, upload your file, and map your columns. See [Products and carriers](/settings/products-and-carriers) for where products are configured.
-
-## Archive a policy
-
-Open a policy and use the archive action to remove it from the list. Archived policies stop appearing in the table but can be restored by your Admin.
-
-For bulk archiving across many policies at once, see [Policies bulk actions](/policies/bulk-actions).
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Policy profile" icon="file-text" href="/policies/policy-profile">
-    Work inside a single policy — edit fields, upload documents, comment, and track changes.
-  </Card>
-  <Card title="Status log" icon="history" href="/policies/status-history">
-    See how a policy's status has changed over time.
-  </Card>
-  <Card title="Bulk actions" icon="layers" href="/policies/bulk-actions">
-    Reassign or archive many policies in one step.
-  </Card>
-  <Card title="Contacts overview" icon="users" href="/contacts/overview">
-    The client side of every policy.
-  </Card>
-</Columns>
+{/* TODO: verify list versus profile editing permissions; list cells expose edits that the profile restricts to admins. */}

@@ -1,66 +1,69 @@
 ---
 title: "Export contacts"
-description: "Download the contact list as a CSV, filtered or by selection."
-keywords: ["export contacts", "CSV export", "download contacts", "contact list download", "filtered export", "custom field export"]
+description: "Download contact fields as a CSV file."
+keywords: ["download contacts", "CSV", "export clients", "spreadsheet"]
 ---
 
-Use the export tool to pull contacts out of PolicyDen as a CSV. You choose which contacts to export, which fields to include, and PolicyDen builds the file on the fly.
+import WhoEveryone from "/snippets/who-everyone.mdx";
 
-## Open the exporter
+<WhoEveryone />
 
-On the [Contacts page](/contacts/overview), click the export icon in the toolbar (to the left of the import and **Add Contact** buttons).
+Download contacts you can access as a CSV file. Choose the records and fields before exporting.
 
-## Step 1: Pick what to export
+## Before you start
 
-<Tabs>
-  <Tab title="All matching contacts">
-    Exports every contact that matches the current search, filters, date range, and **My Contacts** toggle.
+- Apply any filters or date range you need in **Contacts**.
+- Admins and Agency Owners can select row checkboxes to export specific contacts.
 
-    The counter next to **All** shows exactly how many contacts will be included.
-  </Tab>
-  <Tab title="Selected contacts">
-    Exports only the contacts you've selected with the checkboxes in the list.
+<Steps>
+  <Step title="Open the export dialog">
+    In **Contacts**, select the export icon with the **Export Contacts** tooltip.
 
-    The counter next to **Selected** shows how many rows you've picked. This option is disabled until at least one contact is selected.
-  </Tab>
-</Tabs>
+    <Frame caption="Choose records and fields before downloading.">
+      <img src="/images/contacts/exporting-options.png" alt="Export Contacts dialog showing Type, CSV format, and Fields." />
+    </Frame>
+  </Step>
+  <Step title="Choose the records">
+    Under **Type**, select **All** or **Selected**.
 
-## Step 2: Pick a format
+    **All** uses applied filters, the date range, and **My Contacts**. **Selected** uses the rows you selected.
+  </Step>
+  <Step title="Choose the fields">
+    Under **Fields**, select the information to include.
 
-CSV is the only format available. Your file downloads as `contacts.csv`.
+    Use **Search fields...** to find a field, or **Select All** to include every available field.
+  </Step>
+  <Step title="Download the file">
+    Select **Export**.
+  </Step>
+</Steps>
 
-## Step 3: Pick the fields
+The default fields are **First Name**, **Last Name**, **Email**, **Phone**, **Date of Birth**, and **Medicare Number**. Additional choices include addresses, assignment, creation date, and custom fields.
 
-Choose which columns to include in the file. System fields like **First Name**, **Last Name**, **Email**, **Phone**, **Date of Birth**, and **Medicare Number** are selected by default — the same defaults you see in the contact list.
+The list’s **Search** text does not narrow an **All** export. Use **Filters** to restrict exported records instead.
+{/* TODO: verify whether All export should include the list Search text; it currently omits it. */}
 
-You can:
+## What you'll see
 
-- Search the field list to find a specific field quickly.
-- Click **Select All** to include every available field (including custom fields).
-- Click **Deselect All** to start from scratch.
-- Remove a selected field by clicking the **×** on its pill above the list.
+Your browser downloads **contacts.csv**, containing the selected fields and accessible records.
 
-Every field your agency has defined as a [custom field](/customization/custom-fields) is available for export, not only the system ones.
+## If it didn't work
 
-## Step 4: Download
+<AccordionGroup>
+  <Accordion title="Selected is unavailable">
+    Select row checkboxes before opening the dialog. Only Admins and Agency Owners have row selection controls.
+  </Accordion>
+  <Accordion title="Export is unavailable">
+    Select at least one field. The button is also unavailable while an export is running.
+  </Accordion>
+  <Accordion title="No download appeared">
+    Wait for the request to finish and check your browser’s downloads. If it failed, reopen the dialog and try again.
+  </Accordion>
+</AccordionGroup>
 
-Click **Export**. PolicyDen builds the file and your browser starts the download.
+## Next
 
-<Note>
-  Exports respect the filters and search that were active when you opened the dialog. If you change filters after opening the dialog, close and reopen it to pick up the new list.
-</Note>
-
-## What you get
-
-Each row in the file represents one contact. The columns match the fields you selected, in the order you selected them. Dates are formatted as `MM/DD/YYYY`. Empty fields render as `-`.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Save a filter" icon="filter" href="/customization/saved-filters">
-    Save the filter combination you export most often as a reusable view.
-  </Card>
-  <Card title="Import contacts" icon="upload" href="/contacts/importing-contacts">
-    Bring contacts in from another system using the same column mapping idea.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Refine your filters" href="/contacts/filtering-contacts" />
+  <Card title="Review contact details" href="/contacts/contact-profile" />
+</CardGroup>

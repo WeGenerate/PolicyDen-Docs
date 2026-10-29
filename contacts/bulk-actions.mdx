@@ -1,71 +1,89 @@
 ---
-title: "Bulk actions"
-description: "Admin-only actions for reassigning or archiving many contacts at once."
-keywords: ["bulk actions", "bulk assign contacts", "bulk archive contacts", "reassign agent", "admin actions", "multi-select contacts"]
+title: "Reassign or archive contacts"
+description: "Select contacts and change their assignment or remove them from lists."
+keywords: ["bulk", "assign", "archive", "selected contacts"]
 ---
 
-Bulk actions let Admins act on many contacts in a single step — reassign a batch to a different Agent, or archive a list you no longer need in view.
+<Info>**Who can do this:** Admins and Agency Owners, including owners of individual agent accounts.</Info>
 
-<Info>
-  Bulk actions are Admin-only. Agents don't see the selection checkboxes or the bulk action bar.
-</Info>
+Use the selection bar to reassign or archive several contacts together. Start with a filtered list to narrow your selection.
 
-## Select contacts
+## Before you start
 
-Open the [Contacts page](/contacts/overview). A checkbox column appears on the left of the table.
+- Review the contacts you plan to change.
+- For reassignment, know which agency user should receive the contacts.
 
-- Click the checkbox on a row to select that contact.
-- Click the checkbox in the table header to select every contact on screen.
-- Use the search, filters, and date range to narrow the list first, then select what's left.
-
-The **bulk action bar** slides up from the bottom of the screen as soon as one contact is selected. It shows how many are selected and the actions available.
-
-## Assign agent
-
-Reassign the selected contacts to a different user in your agency.
+## Select your contacts
 
 <Steps>
-  <Step title="Open the Assign To dialog">
-    In the bulk action bar, click **Assign**.
+  <Step title="Open your contact list">
+    Go to **Contacts** and apply the filters you need.
   </Step>
-  <Step title="Pick the new Agent">
-    Select an Agent from the dropdown. The list includes every user in your agency.
+  <Step title="Select the rows">
+    Select each contact's checkbox. The header checkbox selects all loaded rows, including rows outside the visible area.
   </Step>
-  <Step title="Confirm">
-    Click **Assign**. Every selected contact is reassigned to that Agent, and the Agent column updates in the list.
+  <Step title="Check the selection count">
+    Review the **Selected** count in the action bar before continuing.
+    <Frame>
+      <img src="/images/contacts/bulk-selection.png" alt="Contacts list with the selection bar highlighted." />
+    </Frame>
   </Step>
 </Steps>
 
-<Tip>
-  Only the **Agent** column changes. The contact's agency, status, policies, tasks, and history all stay the same.
-</Tip>
+## Reassign selected contacts
 
-## Archive contacts
+<Steps>
+  <Step title="Open the assignment dialog">
+    In the selection bar, select **Assign To**.
+  </Step>
+  <Step title="Choose an agency user">
+    In **Select agent**, choose the user who should receive the contacts.
+  </Step>
+  <Step title="Confirm the assignment">
+    Select **Assign**.
+  </Step>
+</Steps>
 
-Archive selected contacts to remove them from the list without permanently deleting them.
+Admins can also change one contact's **Agent** field on its profile.
+
+## Archive selected contacts
+
+<Warning>Archiving removes contacts from lists. There is no restore control in the app; review your selection before confirming.</Warning>
+{/* TODO: verify contact restoration process; the confirmation says the action can be reversed, but no restore UI is present. */}
 
 <Steps>
   <Step title="Open the archive dialog">
-    In the bulk action bar, click **Archive**.
+    In the selection bar, select **Archive**.
   </Step>
-  <Step title="Confirm">
-    Review the confirmation text and click **Archive Contacts**.
+  <Step title="Review the confirmation">
+    Check that you intend to remove every selected contact. Select **Cancel** to keep them.
+  </Step>
+  <Step title="Confirm the archive">
+    Select **Archive Contacts**.
   </Step>
 </Steps>
 
-<Warning>
-  Archived contacts disappear from the contact list, pipeline, reports, and other places they normally appear. Their policies, tasks, and messages stay on record, and an archive can be reversed later.
-</Warning>
+## What you'll see
 
-Use archive when you want to clean up leads that are no longer in play — not as a way to correct a duplicate. For one-off mistakes, archive from the individual contact's profile instead.
+Reassigned contacts show their new agent; archived contacts disappear from the list.
 
-## What's next
+## If it didn't work
 
-<Columns cols={2}>
-  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
-    Save a filtered view so you can select the same kind of contacts next time.
-  </Card>
-  <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
-    Add or remove the Agents that show up in the Assign To dropdown.
-  </Card>
-</Columns>
+<AccordionGroup>
+  <Accordion title="I don't see selection checkboxes">
+    Bulk selection is available to Admins and Agency Owners. Ask your agency administrator to check your role.
+  </Accordion>
+  <Accordion title="Assign is disabled">
+    Choose a user in **Select agent** before confirming.
+  </Accordion>
+  <Accordion title="No contacts appear">
+    Adjust your filters, then review the resulting list before selecting rows.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Filter contacts" href="/contacts/filtering-contacts">Narrow your list.</Card>
+  <Card title="Edit contact details" href="/contacts/editing-contact-details">Update one contact.</Card>
+</CardGroup>

@@ -1,99 +1,80 @@
 ---
-title: "Notes and comments"
-description: "When to use notes, when to use comments, and where each one shows up."
-keywords: ["notes", "comments", "client notes", "team comments", "note attachments", "policy comments", "intake notes"]
+title: "Add notes and comments"
+description: "Keep contact notes, attachments, and discussion together."
+keywords: ["notes", "comments", "attachments", "discussion"]
 ---
 
-PolicyDen gives you two ways to write things down on a record: **notes** and **comments**. They look similar at first glance, so this page explains when to reach for each.
+<Info>**Who can do this:** Agents, Admins, and Agency Owners with access to the contact.</Info>
 
-## Notes vs comments at a glance
+Create a note for contact details that need more space. Use its comment thread for follow-up discussion.
 
-| | Notes | Comments |
-| --- | ----- | -------- |
-| **Where they live** | On a contact | On a contact, policy, or task |
-| **What they're for** | Structured write-ups you'll come back to — summaries, research, call prep | A running discussion with teammates |
-| **Have a title** | Yes | No |
-| **Attach files** | Yes | Yes |
-| **Edit later** | Yes | Yes, on your own comments |
-
-Use a **note** when the content is something you'd save and read again — an intake summary, a doctor list, a plan comparison. Use a **comment** when you're leaving context for a teammate or working through a decision as a team.
-
-## Notes
-
-The **Notes** tab sits on every contact profile. Each note has a title, a body, and any files you attached.
-
-### Add a note
+## Create a note
 
 <Steps>
-  <Step title="Open the contact">
-    From the contacts list, click the contact's name.
+  <Step title="Open the note form">
+    Open the contact and select **Add Note** in the profile header.
+    <Frame>
+      <img src="/images/customization/add-note.png" alt="Add Note dialog with Link to Policy highlighted." />
+    </Frame>
   </Step>
-  <Step title="Open the Notes tab">
-    Click **Notes** in the tab bar.
+  <Step title="Enter your note">
+    Enter **Note Title** and **Add Description...**.
   </Step>
-  <Step title="Click Add Note">
-    In the bottom right, click **Add Note**. You can also click the note icon in the profile header.
+  <Step title="Attach supporting files">
+    Optionally select **Attach file**. You can attach up to 10 files, each up to 100MB.
   </Step>
-  <Step title="Write and save">
-    Give the note a title, write the body, and attach files with the paperclip if you need to. Click **Add Note** to save.
+  <Step title="Link a policy">
+    Optionally select **Link to Policy**, then choose one of the contact's policies.
+  </Step>
+  <Step title="Create the note">
+    Select **Create Note**.
   </Step>
 </Steps>
 
-### Open, edit, or share a note
-
-- Click a note card to open it for editing.
-- Use the three-dot menu on the card to **Copy Link** (a direct URL you can paste anywhere in PolicyDen) or **Archive** the note.
-
-<Tip>
-  Paste a note link into a comment or a task description to point a teammate straight at it.
-</Tip>
-
-## Comments
-
-The **Comments** tab is on contacts, policies, and tasks. It's a chronological thread, newest first.
-
-### Add a comment
+## Edit or discuss a note
 
 <Steps>
-  <Step title="Open the Comments tab">
-    From a contact, policy, or task profile, click the **Comments** tab.
+  <Step title="Open the note details">
+    In the contact's **Notes** tab, select a note card to open **Note Details**.
   </Step>
-  <Step title="Write in the box at the top">
-    The compose box sits at the top of the tab. Type the comment.
+  <Step title="Update the note">
+    Select its title or content to edit. Select **Save** when finished, or **Cancel** to discard changes.
+
+    You can also attach files and change or remove the linked policy.
   </Step>
-  <Step title="Send">
-    Click the send button. The comment appears in the thread with your name, avatar, and a timestamp.
+  <Step title="Add a comment">
+    Enter your message in **Leave a comment...**, then select the send icon.
+
+    Your own comments have **Edit** and **Delete** menu options. Comments can also contain attachments.
   </Step>
 </Steps>
 
-### Edit your comment
+## What you'll see
 
-Open the comment's actions from the card to edit your own comments. The card marks the comment as edited and keeps track of who made the last change.
+The **Notes** tab shows note cards with their author, date, linked policy, and attachment count.
 
-## Which one should I use?
+<Warning>**Delete** on a note card permanently deletes the note and its attachments. The **Archive** action in **Note Details** also deletes the note.</Warning>
+{/* TODO: verify intended note deletion permissions and whether Archive should offer recovery. */}
+
+Contact discussions live inside note threads. Task and meeting details also have comment threads.
+
+## If it didn't work
 
 <AccordionGroup>
-  <Accordion title="Intake notes after a discovery call">
-    Use a **note**. Title it by call date or topic so you can find it later. Attach the SOA or consent form to the same note.
+  <Accordion title="No policies appear to link">
+    **No policies found.** means this contact has no available policies to select. You can create the note without a policy link.
   </Accordion>
-  <Accordion title="A quick follow-up for a teammate">
-    Use a **comment** on the contact or policy. The teammate sees it when they open the record; the thread keeps the context with the record.
+  <Accordion title="An attachment failed to upload">
+    Open the saved note and check its attachments before retrying. See [document limits](/customization/documents).
   </Accordion>
-  <Accordion title="Summary of a plan comparison">
-    Use a **note**. It's a reference document — give it a title and save a copy of any PDFs you shared with the client.
-  </Accordion>
-  <Accordion title="Working through whether to cancel a policy">
-    Use a **comment** on the policy. Everyone reviewing the record sees the back-and-forth in place.
+  <Accordion title="I can't edit a comment">
+    The comment menu displays **Edit** and **Delete** only for comments you wrote.
   </Accordion>
 </AccordionGroup>
 
-## What's next
+## Next
 
-<Columns cols={2}>
-  <Card title="Documents" icon="file-text" href="/customization/documents">
-    Use the Docs tab for files that aren't tied to a specific note or comment.
-  </Card>
-  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
-    See where Notes and Comments sit in the tab bar.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Manage documents" href="/customization/documents">Upload files to a contact.</Card>
+  <Card title="Manage tasks" href="/tasks/managing-tasks">Follow up on your notes.</Card>
+</CardGroup>

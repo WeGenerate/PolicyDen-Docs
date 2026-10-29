@@ -1,111 +1,73 @@
 ---
-title: "Agency custom fields"
-description: "Design the contact and policy forms your team fills out every day."
-keywords: ["custom fields admin", "field types", "contact form", "policy form", "required fields", "sections", "form layout"]
-mode: "wide"
+title: "Configure agency custom fields"
+description: "Add and organize fields for contacts and product-specific policy forms."
+keywords: ["custom fields", "form builder", "mandatory fields", "sections", "hidden fields"]
 ---
 
-Custom fields let you extend PolicyDen beyond the built-in fields. Add the questions your agency tracks — referral source, spouse information, specific plan details — and your Agents see them on every contact and policy.
+<Info>**Who can do this:** Admins and Agency Owners, including Admins of individual agent accounts.</Info>
 
-<Frame>
-  <img src="/images/settings-custom-fields.png" alt="Custom Fields page with Contacts tab selected, showing field-type toolbar, product tabs, and Basic Details, Advanced Details, and Address Details sections" />
-</Frame>
-
-<Info>
-  Only **Admins** and **Agency Owners** can configure custom fields. To learn how Agents fill in custom fields when working with contacts and policies, see [Custom fields](/customization/custom-fields).
-</Info>
-
-## Open custom fields
-
-From agency settings, click **Custom Fields**. The page splits into three areas:
-
-- A **sidebar** on the left with draggable field types.
-- A **tab bar** across the top — one tab for **Contacts** and one tab for each product you've added.
-- A **canvas** showing the sections and fields on the active tab.
-
-Changes aren't saved until you click **Save Custom Fields** in the top-right of the tab bar.
-
-## Field types
-
-Drag any of these from the sidebar onto a section.
-
-| Type | Best for |
-| ---- | -------- |
-| **Text** | Short free-text answers — a referral source, a plan name. |
-| **Long Text** | Multi-line notes and paragraphs. |
-| **Number** | Numeric values — age, premium amount. |
-| **Date** | Calendar dates — a birthday, a renewal date. |
-| **Single Choice** | One answer from a list — tier, category. |
-| **Multiple Choice** | Any number of answers from a list — coverages, interests. |
+Build the forms your team uses for contacts and policies. Choose the correct category before changing fields.
 
 ## Add a field
 
 <Steps>
-  <Step title="Pick a tab">
-    Switch to **Contacts** or the product tab where the field should live.
+  <Step title="Open Custom Fields">
+    In **Settings**, select **Custom Fields**.
+
+    <Frame>
+      <img src="/images/agency-settings/custom-fields.png" alt="Custom Fields editor showing field types, category selector, and Save." />
+    </Frame>
   </Step>
-  <Step title="Drag a field type in">
-    Drag the field type from the left sidebar into the section you want.
+  <Step title="Choose a category">
+    Open **Select category** and choose **Contacts** or a product.
   </Step>
-  <Step title="Edit the field">
-    Click the pencil icon on the new field to open its settings. Set the label and, for choice fields, add the options.
+  <Step title="Place a field">
+    Drag a field type from the sidebar into a section.
   </Step>
-  <Step title="Mark it required if needed">
-    Toggle **Required** when an agent must fill the field in before saving.
+  <Step title="Configure the field">
+    Open the field's edit control and enter **Field Name** and, optionally, **Field Hint**.
   </Step>
-  <Step title="Save">
-    Click **Save Custom Fields** in the top-right to lock in every change on the current tab.
+  <Step title="Save field settings">
+    Select **Save** in the field dialog.
+  </Step>
+  <Step title="Save the category">
+    Select **Save** on the editor page.
   </Step>
 </Steps>
+
+Available types are **Text**, **Long Text**, **Number**, **Date**, **Single Choice**, and **Multiple Choice**.
+
+Use **Field Group** to choose a section. **Mandatory Field** requires a value. **Hide from Forms** removes the field from new-record forms and turns off the mandatory setting. The field remains editable on the record.
+
+For contact fields, **Applies To** offers **All products** or **Specific products**. Text fields offer **Max Length** and **Input Mask** where supported.
+
+Choice fields offer **Manual options** or **From a resource**. Resource choices are **Users**, **Contacts**, and **Carriers**.
 
 ## Organize sections
 
-Sections group related fields. A contact form might have a **Basics** section, a **Household** section, and a **Compliance** section — each with its own fields.
+Select **Organize Sections** to open **Edit Sections**. Save the section changes, then save the editor page. Use field edit and delete controls only on fields you can change.
 
-<Steps>
-  <Step title="Click Organize Sections">
-    The button sits at the top of the canvas.
-  </Step>
-  <Step title="Add, rename, or reorder">
-    Add new sections, rename existing ones, change the order, or remove ones you don't need. Drag the handle on a section to move it.
-  </Step>
-  <Step title="Save">
-    Close the dialog, then click **Save Custom Fields** to commit your changes.
-  </Step>
-</Steps>
+## What you'll see
 
-## Layout columns
+Your selected category shows the updated layout; hidden fields display a **Hidden from forms** badge.
 
-Use the column selector in the top-right of the canvas to show sections in **1**, **2**, or **3** columns. Wider forms are faster to scan when you have lots of sections.
+## If it didn't work
 
-## Edit or remove a field
+<AccordionGroup>
+  <Accordion title="A field has no edit controls">
+    Built-in and locked fields don't offer edit or delete controls.
+  </Accordion>
+  <Accordion title="My changes aren't saved">
+    The dialog saves your field settings locally. Select the page's **Save** before leaving the category.
+  </Accordion>
+  <Accordion title="A product category is missing">
+    Add the product in **Products** first, then reopen **Custom Fields**.
+  </Accordion>
+</AccordionGroup>
 
-Hover any non-system field:
+## Next
 
-- Click the **pencil** icon to edit its label, options, or settings.
-- Click the **trash** icon to remove it. The field and any data in it are deleted.
-
-System fields (the ones shown in grey) come with PolicyDen and can't be edited or removed.
-
-<Warning>
-  Deleting a field deletes all data stored in that field across every contact or policy. Only remove fields you're sure you no longer need.
-</Warning>
-
-## Per-product policy forms
-
-Every product you add under [Products and carriers](/settings/products-and-carriers) gets its own policy tab under custom fields. Configure **Medicare** to collect plan-specific details, **Dental** to capture coverage tiers, and so on — your Agents see the right form based on the product they pick.
-
-<Tip>
-  Set up a new product's custom fields right after you create the product, before Agents start logging policies for it.
-</Tip>
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Using custom fields" icon="sliders-horizontal" href="/customization/custom-fields">
-    See how Agents fill in custom fields on contacts and policies.
-  </Card>
-  <Card title="SMS numbers" icon="phone" href="/settings/sms-numbers">
-    Next up in the setup order — provision a number for outbound texts.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Use custom fields" href="/customization/custom-fields" />
+  <Card title="Set up products" href="/settings/products-and-carriers" />
+</CardGroup>

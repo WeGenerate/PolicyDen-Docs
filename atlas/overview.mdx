@@ -1,94 +1,29 @@
 ---
-title: "Atlas overview"
-description: "Atlas is PolicyDen's built-in AI assistant. Ask it questions about your book and get fast, plain-English answers."
-keywords: ["Atlas", "AI assistant", "ask questions", "natural language search", "book summary", "insurance AI", "agent AI"]
+title: "Explore Atlas"
+description: "Ask questions about contacts, policies, and performance."
+keywords: ["Atlas", "AI", "assistant", "questions"]
 ---
 
-Atlas is the AI assistant built into PolicyDen. Ask it a question in plain English and it answers using the contacts, policies, messages, and activity in your agency. Use it to look things up, summarize your pipeline, or pull a quick stat without building a report.
+Atlas answers questions about your PolicyDen contacts, policies, and performance. Use it to find records or explore a specific question, then check the underlying records before acting.
 
 <Frame>
-  <img src="/images/atlas-home.png" alt="Atlas home screen with the What can I help you with prompt, a message composer, and four starter suggestion buttons" />
+  <img src="/images/atlas/overview-empty.png" alt="Atlas start screen with question field and suggested prompts." />
 </Frame>
 
-## Open Atlas
+## What you can do here
 
-Click **Atlas** in the sidebar, or open it from the **Add new** menu on any page. The first time you visit, you'll land on a blank canvas with a prompt — *What can I help you with?* — and a few starter suggestions.
+<CardGroup cols={2}>
+<Card title="Ask a question" href="/atlas/ask-atlas">Write a prompt and continue with follow-up questions.</Card>
+<Card title="Check contact details" href="/contacts/contact-profile">Confirm contact information in the source record.</Card>
+<Card title="Check policy details" href="/policies/policy-profile">Review the policy behind an answer.</Card>
+</CardGroup>
 
-Suggested prompts cover the kinds of things Atlas is good at:
+## Who sees what
 
-- "How are my agents performing this month?"
-- "What policies go effective this week?"
-- "Show me our carrier breakdown."
-- "Find contacts named Smith."
+Agents, Admins, and Agency Owners can open **Atlas** from the sidebar. Answers use the data your account can access.
 
-Click any suggestion to run it as-is, or type your own question.
+Select a suggested question to send it immediately, or write your own. Individual agent accounts get suggestions about personal performance; agency accounts get team-oriented suggestions.
 
-## Ask a question
+The conversation list lets you reopen earlier chats or select **New chat**. On smaller screens, use **Open conversations** to reach it.
 
-<Steps>
-  <Step title="Type your question">
-    Enter anything in the composer. Press **Enter** to send, or **Shift + Enter** for a new line.
-  </Step>
-  <Step title="Wait for the answer">
-    Atlas shows a thinking indicator while it works, then streams the response into the thread. You'll see your question on the right and the answer on the left.
-  </Step>
-  <Step title="Ask follow-ups">
-    Keep typing in the composer at the bottom. Atlas remembers the conversation, so you can refine or drill in: *"Just the ones in California"*, *"Sort by effective date"*, *"Summarize that as bullet points"*.
-  </Step>
-</Steps>
-
-<Tip>
-  Atlas works best with specific, concrete questions. *"Who are my top five agents by policies written this quarter?"* gets a better answer than *"How's the team doing?"*
-</Tip>
-
-## Actions on each answer
-
-Hover any answer from Atlas to reveal two buttons:
-
-- **Copy** — copies the response to your clipboard.
-- **Try again** — regenerates the last answer. Atlas retracts your previous question and answer, then re-runs your question to produce a fresh response.
-
-<Warning>
-  Atlas can make mistakes. Double-check any number, name, or date it gives you before acting on it — especially for quotes, renewals, or anything you'd send to a client.
-</Warning>
-
-## Conversation history
-
-Every exchange with Atlas is saved as a conversation in the sidebar on the left, grouped by when you last used it:
-
-- **Today**
-- **Yesterday**
-- **Previous 7 days**
-- **Previous 30 days**
-- **Older**
-
-The most recent conversations load by default. Click **View more** to see older ones. Click any conversation to reopen it — Atlas picks up where you left off.
-
-### Start a new conversation
-
-Click **New chat** at the top of the sidebar. You'll get a fresh canvas without context from earlier conversations. Use a new chat when you switch topics — it gives Atlas a cleaner slate and usually faster answers.
-
-### Delete a conversation
-
-Hover a conversation in the sidebar and click the trash icon. Confirm the prompt. The conversation and every message in it are permanently deleted.
-
-## Rate limits
-
-Atlas has a short rate limit to keep things responsive for everyone in your agency. If you send too many questions too quickly, you'll see a brief "try again in a moment" message. Wait a few seconds and send again.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Dashboard" icon="chart-line" href="/dashboard/overview">
-    For the same stats on a standing dashboard you can bookmark.
-  </Card>
-  <Card title="Reports" icon="chart-bar" href="/reports/overview">
-    For exportable, shareable versions of the numbers Atlas pulls on the fly.
-  </Card>
-  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
-    For repeat lookups, save a filter on Contacts or Policies instead of re-asking Atlas.
-  </Card>
-  <Card title="Contacts" icon="users" href="/contacts/overview">
-    Open any contact Atlas surfaces to see the full record.
-  </Card>
-</Columns>
+Atlas can make mistakes. Check names, dates, totals, and linked records before using an answer for client work.

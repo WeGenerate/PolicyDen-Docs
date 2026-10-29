@@ -1,65 +1,44 @@
 ---
 title: "Meetings overview"
-description: "Keep a record of every meeting with a contact — upcoming sessions, past conversations, attendees, and links."
-keywords: ["meetings", "appointments", "calendar", "scheduling", "enrollment meetings", "client meetings", "Zoom", "Google Meet"]
+description: "Find a contact's meetings and understand the details, attendees, and daily schedule."
+keywords: ["meetings", "appointments", "meeting details", "attendees", "schedule"]
 ---
 
-Meetings in PolicyDen live alongside tasks and notes on each contact's profile. You can see what's coming up, review what you discussed last time, and open any meeting for full details.
+Meetings belong to a contact. Open the contact's **Activities** tab and select a meeting in the **Meetings** section to open **Meeting Details**.
 
-## Where meetings live
+<Frame caption="Meeting Details keeps the appointment beside your daily schedule.">
+  <img src="/images/meetings/overview-details.png" alt="Meeting Details showing the venue, date, time, attendees control, and daily schedule sidebar." />
+</Frame>
 
-Meetings are attached to the contact you're meeting with. Open a contact's profile and use the **Activities** tab to see every meeting, task, and note in one timeline — or filter to meetings only to focus on sessions.
+The contact's meeting rows show the title, date, start and end times, and owner tag. In **Meeting Details**, you can review the description, comments, and **Location** or **Meeting Link**. Select a saved meeting link to open it.
 
-See [Contact profile](/contacts/contact-profile) for the full profile layout.
+The daily schedule shows your other meetings for that date. Its **All Day** control clears both times; timed meetings appear as blocks you can drag to adjust their times. Save changes with **Save**.
+{/* TODO: verify all-day saving: creation requires both times, and update validation rejects the empty times produced by All Day. */}
 
-## Upcoming vs past meetings
+## What you can do here
 
-The contact timeline groups meetings by date so you can tell future sessions apart from completed ones at a glance.
+<CardGroup cols={2}>
+  <Card title="Schedule a meeting" href="/meetings/scheduling-meetings">Create an appointment and add attendees after saving.</Card>
+  <Card title="Open a contact" href="/contacts/contact-profile">Find meetings in the contact's Activities tab.</Card>
+  <Card title="Create a follow-up task" href="/tasks/creating-tasks">Record work to complete after your meeting.</Card>
+</CardGroup>
 
-- **Upcoming** — meetings scheduled for today or later. Use these to prepare.
-- **Past** — meetings whose end time has passed. Use these as a record of what was discussed.
+## Edit meeting details
 
-Click any meeting to open its details page.
+Select the title or description to edit it. Use the date, **Starts**, **Ends**, and repeat controls to adjust the appointment. Repeat choices are **No repeat**, **Daily**, **Weekly**, and **Monthly**.
 
-## Meeting details
+Select **Attendees** to choose agency users, then **Save**. Attendees selected during creation aren't retained; add them here after creating the meeting.
+{/* TODO: verify attendee creation fix before recommending the Add Meeting attendee picker. */}
 
-The meeting details page shows everything about a single session.
+Select **Cancel** to discard unsaved edits. If **Save** is unavailable, check that the title and either a location or meeting link are filled in.
 
-| Field | What it captures |
-| ----- | ---------------- |
-| **Title** | What the meeting is about — for example, **Medicare presentation**. |
-| **Repeat label** | Whether the meeting repeats, and how often. |
-| **Description** | Notes, agenda, or context for the meeting. |
-| **Location or meeting link** | An in-person address, or a video link you can click to join. |
-| **Date** | The meeting date. |
-| **Start and end time** | The time window. Leave both empty to mark it as all-day. |
-| **Repeat** | Does not repeat, Daily, Weekly, or Monthly. |
-| **Attendees** | The teammates invited. |
-| **Attachments** | Files relevant to the meeting. |
+## Archive a meeting
 
-A mini schedule on the right shows the meeting in the context of your day so you can spot conflicts.
+Open the meeting's three-dot menu and select **Archive**. In **Archive meeting?**, select **Archive** to return to the contact's **Activities** tab.
 
-<Tip>
-  Click the video link to open your meeting platform in a new tab. The link is saved with the meeting so you can return to the same session later.
-</Tip>
+<Warning>Archiving permanently deletes the meeting. You can't restore it from an archive.</Warning>
+{/* TODO: verify Archive wording with product; the action deletes the meeting rather than retaining an archived record. */}
 
-## Edit a meeting
+## Who sees what
 
-Open the meeting details page and double-click the title or description to edit them. Use the widgets below the description to change the date, start and end time, repeat cadence, and attendees. Click **Save** to apply your changes, or **Cancel** to discard them.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Schedule a meeting" icon="calendar-plus" href="/meetings/scheduling-meetings">
-    Book a new meeting with a contact.
-  </Card>
-  <Card title="Tasks" icon="list-checks" href="/tasks/overview">
-    Create follow-up tasks that come out of your meetings.
-  </Card>
-  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
-    See every meeting for a single contact.
-  </Card>
-  <Card title="Pipeline" icon="columns-3" href="/pipeline/overview">
-    Move a contact forward in your pipeline after a meeting.
-  </Card>
-</Columns>
+Agents, Admins, and Agency Owners use meetings from the contacts they can open. The daily schedule shows meetings you own. The **Attendees** picker lists agency users.

@@ -1,120 +1,59 @@
 ---
-title: "Policy profile"
-description: "The full view of a single policy — edit fields, attach documents, comment, and see every change."
-keywords: ["policy profile", "policy drawer", "edit policy", "policy info", "policy details", "writing agent", "audit log", "enrollment code"]
+title: "Review a policy"
+description: "Open a policy profile and update the fields available to your role."
+keywords: ["policy profile", "edit policy", "policy details", "contact"]
 ---
 
-Every policy has a profile where you can review the details, edit them in place, and track what's happened over the policy's life. You can open it as a side drawer from the **Policies** list or as a full page in its own tab.
+<Info>**Who can do this:** Agents, Admins, and Agency Owners with access to the policy.</Info>
 
-<Frame>
-  <img src="/images/policy-profile-expanded.png" alt="Policy profile expanded on a contact showing Policy Info and Policy Details cards with carrier, product, sale date, effective date, and plan number" />
-</Frame>
+Open a policy to review its coverage details, writing agent, and linked contact. Editable fields depend on your role and the product.
 
-## Open a policy profile
+<Steps>
+  <Step title="Find the policy">
+    In **Policies**, use **Search** or **Filters** to find the record.
+  </Step>
+  <Step title="Open the profile">
+    Select the policy number.
+        The profile shows policy details alongside the contact sidebar.
+        <Frame>
+      <img src="/images/policies/profile-details.png" alt="Policy profile showing policy details and the contact sidebar." />
+    </Frame>
+  </Step>
+  <Step title="Review the details">
+    Check the product, carrier, dates, and any custom fields shown for this policy.
+    Admins can also change fields such as **Writing Agent** and **Status** when those fields appear.
+  </Step>
+  <Step title="Update an editable field">
+    Select the field's edit control and enter the corrected value.
+    Use that field's save control to apply the change.
+  </Step>
+</Steps>
 
-From the [Policies](/policies/overview) list:
+{/* TODO: verify field edit permissions across list and profile, including custom-product dates and custom fields; do not infer one screen's permissions from the other. */}
 
-- **Click the policy number** to open the profile in a side drawer over the list.
-- In the drawer, click **Open in new window** to move the policy to a dedicated page.
-- Click a contact's name to jump to the [Contact profile](/contacts/contact-profile) — the policy still appears on the contact's **Policies** tab.
+## What you'll see
 
-The profile header shows the policy number and, when available, the contact's name and Medicare number.
+A successful field update appears on the policy profile; product settings determine which fields and sections are present.
 
-## The tabs
+## If it didn't work
 
-Every policy profile has five tabs.
+<AccordionGroup>
+  <Accordion title="A field is read-only">
+    Ask an Admin to make the change. Several policy fields have edit controls only for Admins and Agency Owners.
+  </Accordion>
+  <Accordion title="The update failed">
+    Read the **Update failed** message and check the value. Required fields and enrollment-code uniqueness still apply.
+  </Accordion>
+  <Accordion title="The Plan card is missing">
+    The card appears only when the product includes its plan-number field. Ask an Admin to check the product setup.
+  </Accordion>
+</AccordionGroup>
 
-| Tab | What it shows |
-| --- | ------------- |
-| **Policy** | All the policy's fields, grouped into Policy info, Policy details, and Agent info. |
-| **Docs** | Files attached to the policy — applications, scope of appointment, signed forms. |
-| **Comments** | Internal notes from you and your teammates. |
-| **Audit log** | Every change ever made to the policy, with who made it and when. |
-| **Status log** | A timeline of the policy's status changes. See [Status log](/policies/status-history). |
+For contact documents, use [Documents](/customization/documents). For contact notes, use [Notes and comments](/customization/notes-and-comments).
 
-## Policy info
+## Next
 
-The **Policy info** card has the identifying fields.
-
-| Field | What it captures |
-| ----- | ---------------- |
-| **Product** | The product the policy was written for (for example, Medicare or ACA). Set at creation and not editable afterward. |
-| **Contact** | The client the policy belongs to. Click the name to open their profile. |
-| **Policy type** | The specific coverage type within the product. |
-| **Carrier** | The insurance company that issued the policy. |
-| **Enrollment code** | The carrier's enrollment or confirmation code. |
-| **Status** | Where the policy is in its lifecycle — pending, active, placed, canceled, and so on. See [Status log](/policies/status-history) for the history. |
-| **Sale date** | The date the policy was sold. |
-
-## Policy details
-
-Depending on the product, a separate **Policy details** card may show:
-
-- **Effective date** — when coverage started or starts.
-- **Placed date** — the date the policy became eligible for full commission.
-- **Plan number** — the carrier's plan identifier.
-- **Advance payment** and **Placed payment** — whether the policy has been paid at the advance and placed stages (visible for agencies that track commissions this way).
-- **Accreted** — whether the policy has been accreted.
-
-## Agent info
-
-The **Agent info** card shows the **Writing agent** — the person assigned to the policy. Admins can reassign it here or bulk-reassign across many policies at once. See [Policies bulk actions](/policies/bulk-actions).
-
-## Medicare extras
-
-Medicare policies have two extra sections on the right of the profile:
-
-- **Doctors** — the client's physicians, with a toggle for in-network vs. out-of-network.
-- **Medications** — the client's prescriptions, with a toggle for whether they're currently taking it.
-
-Add, rename, or remove entries the same way you would in the contact's profile.
-
-## Edit policy fields
-
-Click any editable field to change it inline. The change saves when you click away, and a toast confirms success or surfaces any validation errors.
-
-<Info>
-  Some fields — policy type, carrier, enrollment code, status, effective date, placed date, plan number, and writing agent — are editable only for Admins. If you can't click a field, ask your Admin to make the change.
-</Info>
-
-## Custom fields
-
-If your agency has set up [custom fields](/customization/custom-fields) for this product's policies, they appear in the same cards alongside the built-in fields, in the order and sections your Admin defined.
-
-## Attach documents
-
-Open the **Docs** tab to upload files related to this policy — signed applications, enrollment confirmations, scope-of-appointment forms, anything else worth keeping on record.
-
-- Drag files into the drop zone or click to browse.
-- Each file supports up to 10 MB.
-- Supported types include documents, images, videos, audio, and archives.
-- Download, rename, or archive a file from its card.
-
-For a general overview of documents in PolicyDen, see [Documents](/customization/documents).
-
-## Leave comments
-
-The **Comments** tab is for internal notes visible to your team — not to the client. Type a comment, click send, and it appears at the top of the thread with your name and timestamp.
-
-See [Notes and comments](/customization/notes-and-comments) for the difference between notes on a contact and comments on a policy.
-
-## Review the audit log
-
-The **Audit log** tab shows a complete history of every change made to the policy — field edits, status changes, reassignments — with the user who made the change and when it happened. Use it to answer questions like "who set the effective date?" or "when did this policy move to placed?"
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Status log" icon="history" href="/policies/status-history">
-    A dedicated timeline of how a policy's status has progressed.
-  </Card>
-  <Card title="Policies overview" icon="file-text" href="/policies/overview">
-    Back to the policies list, filters, and columns.
-  </Card>
-  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
-    See every policy a client has on their profile.
-  </Card>
-  <Card title="Custom fields" icon="sliders-horizontal" href="/customization/custom-fields">
-    Add fields that match how your agency tracks policies.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Review status history" href="/policies/status-history" />
+  <Card title="Attach a plan" href="/policies/attaching-plans" />
+</CardGroup>

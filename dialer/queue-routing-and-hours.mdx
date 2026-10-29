@@ -1,0 +1,100 @@
+---
+title: "Set queue routing and hours"
+description: "Control routing, business hours, waiting audio, and transfers."
+keywords: ["dialer", "queue routing and hours", "agency", "calls"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer enabled.</Info>
+
+Set when your queue accepts calls and what callers and agents experience.
+
+## Before you start
+
+- [Create a queue](/dialer/queues).
+- [Upload audio](/dialer/audio-library) for waiting and after-hours messages.
+
+<Frame>
+<img src="/images/dialer/queue-routing-and-hours.png" alt="Queue list where you open a queue to change routing." />
+</Frame>
+
+<Steps>
+<Step title="Open the queue">
+  In **Dialer** → **Queues**, open your queue.
+</Step>
+<Step title="Set routing options">
+  In **Routing**, choose your settings, then select **Save**.
+</Step>
+<Step title="Set business hours">
+  In **Schedule**, turn on **Business Hours** and choose **Timezone**.
+</Step>
+<Step title="Set daily hours">
+  Under **Hours**, enable working days, enter times, and use **Add break** where needed.
+</Step>
+<Step title="Set after-hours handling">
+  Choose **After Hours Destination**, select **After Hours Audio** when required, then select **Save**.
+</Step>
+<Step title="Set hold options">
+  In **Hold Settings**, choose **Hold Music** and **Max Wait Time**, then select **Save**.
+</Step>
+</Steps>
+
+## Routing settings
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| **Accepted States** | Accepts selected states; empty means all states. | All states | Admin, Agency Owner |
+| **State Licensing** | Rings only agents licensed in the caller’s state. | Off | Admin, Agency Owner |
+| **Auto Answer** | Connects an available agent immediately with a short beep. | Off | Admin, Agency Owner |
+| **After Call Status** | Sets **Paused** or **Available** after the agent completes a disposition. | Check your queue | Admin, Agency Owner |
+| **Total Ring Timeout** | Total ringing time before No Answer. | 30 seconds | Admin, Agency Owner |
+| **Agent Ring Timeout** | Ringing time before trying the next available agent. | 15 seconds | Admin, Agency Owner |
+| **Wait for Agent** | Plays waiting audio until an agent is available, subject to **Max Wait Time**. | Off | Admin, Agency Owner |
+| **Wait Audio** | Required with **Wait for Agent**; loops while callers wait. | None | Admin, Agency Owner |
+| **Business Hours** | Limits availability; off means open 24/7. | Check your queue | Admin, Agency Owner |
+| **After Hours Destination** | **Hangup** or **Play Audio & Hangup**. | Check your queue | Admin, Agency Owner |
+| **Hold Music** | Plays while callers are on hold. | None | Admin, Agency Owner |
+| **Max Wait Time** | Limits waiting or hold time. | Check your queue | Admin, Agency Owner |
+
+{/* TODO: verify Max Wait Time expiry behavior: Routing describes waiting for an agent; Hold Settings says callers are taken off hold. */}
+
+## Add transfer destinations
+
+<Steps>
+<Step title="Enable agent transfers">
+  In **Transfers**, turn on **Agent Transfers** to allow transfers to other available agents.
+</Step>
+<Step title="Add a destination">
+  Select **Add New Transfer**, then choose a number or **Custom number**.
+</Step>
+<Step title="Label the destination">
+  Enter a label and, for a custom destination, a ten-digit US number.
+</Step>
+<Step title="Save transfer settings">
+  Select **Save**. Agents can use these destinations during calls.
+</Step>
+</Steps>
+
+## What you'll see
+
+Each section retains its saved settings for the queue.
+
+## If it didn’t work
+
+<AccordionGroup>
+<Accordion title="Waiting audio will not save">
+  Choose **Wait Audio** when **Wait for Agent** is on.
+</Accordion>
+<Accordion title="Hours will not save">
+  End times must follow start times. Keep breaks within the day’s hours and choose a timezone.
+</Accordion>
+<Accordion title="After-hours audio is required">
+  Choose a file when the destination is **Play Audio & Hangup**.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Set up queues" href="/dialer/queues">Review agents and incoming numbers.</Card>
+<Card title="Monitor calls" href="/dialer/live-monitor">Watch live activity.</Card>
+</CardGroup>

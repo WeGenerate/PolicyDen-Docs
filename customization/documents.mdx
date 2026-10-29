@@ -1,70 +1,77 @@
 ---
-title: "Documents"
-description: "Upload, rename, download, and delete files on contacts and policies."
-keywords: ["documents", "file upload", "Docs tab", "contact files", "policy files", "scope of appointment", "SOA", "attachments"]
+title: "Upload and manage documents"
+description: "Store files on contacts and link them to policies."
+keywords: ["documents", "files", "upload", "attachments", "download"]
 ---
 
-Every contact and policy has a **Docs** tab where you can attach files — signed applications, ID photos, correspondence, SOAs, anything you want tied to the record.
+<Info>**Who can do this:** Agents, Admins, and Agency Owners with access to the contact.</Info>
 
-## Where documents live
+Upload a file to a contact's **Documents** tab. You can rename it, download it, or link it to a policy.
 
-| Location | What belongs there |
-| -------- | ------------------ |
-| **Contact → Docs** | Files about the client: ID, SOA, email attachments, enrollment paperwork. |
-| **Policy → Docs** | Files specific to one policy: the application, the EOB, cancellation paperwork. |
+## Before you start
 
-Files uploaded on a contact stay with the contact. Files uploaded on a policy stay with the policy, even if the contact has multiple policies.
+- Upload one file at a time, up to 100MB.
+- Supported formats: TXT, PDF, DOC, DOCX, XLS, XLSX, CSV, PPT, PPTX; JPG, JPEG, PNG, GIF, WEBP, SVG; ZIP, RAR, 7Z; MP4, AVI, MOV, WMV; MP3, WAV, FLAC.
 
-## Upload a file
+## Upload a document
 
 <Steps>
-  <Step title="Open the Docs tab">
-    From the contact or policy profile, click the **Docs** tab.
+  <Step title="Open the documents tab">
+    Open a contact, then select **Documents**.
+    <Frame>
+      <img src="/images/customization/documents-tab.png" alt="Contact Documents tab with the upload area highlighted." />
+    </Frame>
   </Step>
-  <Step title="Drop or browse">
-    Drag a file onto the drop zone, or click the drop zone to open the file picker.
+  <Step title="Choose your file">
+    Drop a file into the upload area, or select the area to browse for one.
   </Step>
   <Step title="Wait for the upload">
-    The file appears in the list when the upload finishes. The name, size, uploader, and timestamp show on the card.
+    Wait for the progress indicator to finish. Your file appears as a document card.
   </Step>
 </Steps>
 
-<Info>
-  Files are capped at **10 MB each**. Supported formats: PDF, Word, Excel, CSV, text, images (PNG, JPG, GIF, WEBP, SVG), archives (ZIP, RAR, 7Z), audio (MP3, WAV, FLAC), video (MP4, MOV, AVI, WMV), and PowerPoint.
-</Info>
+## Manage an uploaded file
 
-## Download a file
+<Steps>
+  <Step title="Open or download it">
+    Select **Preview** for an image, PDF, or TXT file. Select **Download** to save a copy.
+  </Step>
+  <Step title="Rename the file">
+    Select the file name twice quickly, enter a new name, then press Enter. The file extension stays unchanged.
+  </Step>
+  <Step title="Link a policy">
+    Select **Link to Policy**, then choose a policy belonging to this contact.
 
-Click the **Download** action on the file card. The file opens in a new tab using a short-lived secure link.
+    Use **Change Policy** to choose another policy, or **Remove link** to unlink it.
+  </Step>
+</Steps>
 
-## Rename a file
+To remove a file from the list, select **Archive**, then **Archive file** in the **Archive File** dialog.
 
-Use the rename action on the file card. Type the new name and press Enter. The extension is kept as-is.
+<Warning>Archived files disappear from the list. There is no restore control in the app.</Warning>
+{/* TODO: verify document restoration process; the dialog promises restoration without a visible restore control. */}
 
-## Delete a file
+## What you'll see
 
-Click the archive action on the file card and confirm. The file is removed from the record.
+The document card shows the file name and any linked policy; notes and comments can hold their own attachments too.
 
-<Warning>
-  Deletion is immediate and can't be undone. If you're not sure, rename or leave it alone.
-</Warning>
+## If it didn't work
 
-## Attach files to a note or comment
+<AccordionGroup>
+  <Accordion title="My file won't upload">
+    Check its extension and size against the supported formats. Upload one file at a time.
+  </Accordion>
+  <Accordion title="Preview is missing or fails">
+    Preview supports images, PDF, and TXT only. If it cannot load, select **Download** instead.
+  </Accordion>
+  <Accordion title="No policies appear">
+    Only policies belonging to this contact are available. You can leave the document unlinked.
+  </Accordion>
+</AccordionGroup>
 
-You can also attach files inline when you write a note or a comment:
+## Next
 
-- **Notes** — use the paperclip in the note editor. See [Notes and comments](/customization/notes-and-comments).
-- **Comments** — attach files to a comment so they travel with the discussion.
-
-Files attached to a note or comment don't appear in the contact's or policy's main Docs tab. They stay with the note or comment.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Notes and comments" icon="message-square" href="/customization/notes-and-comments">
-    When to attach a file to a note or comment instead of the Docs tab.
-  </Card>
-  <Card title="Contact profile" icon="user" href="/contacts/contact-profile">
-    See where the Docs tab sits on a contact's profile.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Add notes" href="/customization/notes-and-comments">Keep files with written context.</Card>
+  <Card title="Contact profile" href="/contacts/contact-profile">Find other contact details.</Card>
+</CardGroup>

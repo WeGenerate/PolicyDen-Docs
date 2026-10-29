@@ -1,0 +1,166 @@
+[
+  {
+    "id": "calls/orientation",
+    "page": "calls/overview",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/orientation.png",
+    "alt": "Dialer workspace with the phone status and Calls controls."
+  },
+  {
+    "id": "calls/status",
+    "page": "calls/setting-your-status",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Offline"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/status.png",
+    "alt": "Phone menu showing status choices and Taking Calls."
+  },
+  {
+    "id": "calls/dialpad",
+    "page": "calls/making-calls",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Calls"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Dialpad"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/dialpad.png",
+    "alt": "Calls menu with the Dialpad tab selected."
+  },
+  {
+    "id": "calls/incoming-and-active",
+    "page": "calls/answering-calls",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/incoming-and-active.png",
+    "alt": "incoming-and-active",
+    "todo": "needs live call: capture incoming and active phone panels with fictional caller details"
+  },
+  {
+    "id": "calls/transfer",
+    "page": "calls/transferring-calls",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/transfer.png",
+    "alt": "transfer",
+    "todo": "needs live call: capture Transfer Call with Numbers, Agents, Number, Warm, and Blind options"
+  },
+  {
+    "id": "calls/wrap-up",
+    "page": "calls/wrapping-up-calls",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/wrap-up.png",
+    "alt": "wrap-up",
+    "todo": "needs live call: capture Wrap Up with fictional outcome and policy choices"
+  },
+  {
+    "id": "calls/log",
+    "page": "calls/call-log",
+    "persona": "agency-agent-telesales",
+    "url": "/dialer/call-log",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/log.png",
+    "alt": "Call Log with date range, filters, and call rows."
+  },
+  {
+    "id": "calls/details",
+    "page": "calls/call-details",
+    "persona": "agency-agent-telesales",
+    "url": "/dialer/call-log",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/details.png",
+    "alt": "Call details showing the recording, scorecard, and transcript."
+  },
+  {
+    "id": "calls/reporting",
+    "page": "calls/reporting",
+    "persona": "agency-agent-telesales",
+    "url": "/dialer/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/calls/reporting.png",
+    "alt": "Dialer Reporting with Outcomes and Efficiency views."
+  }
+]

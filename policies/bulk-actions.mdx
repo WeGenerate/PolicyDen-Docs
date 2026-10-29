@@ -1,96 +1,84 @@
 ---
-title: "Policies bulk actions"
-description: "Archive or reassign many policies at once. Admin only."
-keywords: ["bulk policy actions", "bulk assign policies", "bulk archive policies", "reassign writing agent", "policy admin actions"]
+title: "Change policies in bulk"
+description: "Assign a writing agent or archive selected policies."
+keywords: ["bulk policies", "assign agent", "archive policies", "multiple policies"]
 ---
 
-Bulk actions let Admins update many policies in a single step instead of clicking through them one at a time. You can bulk-archive policies or bulk-reassign them to a different writing Agent.
+import WhoAdmins from "/snippets/who-admins.mdx";
 
-<Info>
-  Bulk actions on the Policies page are available to Admins only. If you don't see the action bar after selecting rows, check with your Admin.
-</Info>
+<WhoAdmins />
 
-## How it works
+Select policy rows to assign a writing agent or archive records together. Review the selection before applying either action.
 
-<Steps>
-  <Step title="Open the Policies page">
-    Click **Policies** in the sidebar. Use filters and the date range to narrow the list to the policies you want to act on — see [Policies overview](/policies/overview).
-  </Step>
-  <Step title="Select rows">
-    Check the box on each row you want to include. To select every policy in the current view, check the box in the header.
-  </Step>
-  <Step title="Open the bulk action bar">
-    A bar appears at the bottom of the page showing how many policies are selected and the available actions.
-  </Step>
-  <Step title="Choose an action">
-    Pick **Archive** or **Assign** and confirm in the dialog that opens.
-  </Step>
-</Steps>
+## Before you start
 
-<Tip>
-  Combine filters with bulk actions for targeted cleanups — for example, filter by carrier and a date range, select all, and reassign them to a new writing agent in one step.
-</Tip>
+- Use **Search**, **Filters**, and the date range to narrow the list.
+- Confirm that every selected policy should receive the same change.
 
-## Bulk assign a writing agent
-
-Use **Assign** to move many policies to a different writing Agent at once.
+## Assign a writing agent
 
 <Steps>
   <Step title="Select the policies">
-    Check the policies you want to reassign.
+    In **Policies**, select the checkbox beside each policy to change.
+        The action bar shows the selected count.
+        <Frame>
+      <img src="/images/policies/bulk-selected.png" alt="Policies list with selected rows and the bulk action bar visible." />
+    </Frame>
   </Step>
-  <Step title="Click Assign">
-    In the bulk action bar, click **Assign**.
+  <Step title="Open agent assignment">
+    Select **Assign To** in the action bar.
   </Step>
-  <Step title="Pick the new Agent">
-    Choose an Agent from the dropdown. Only active users in your agency appear here.
+  <Step title="Choose the agent">
+    In **Select agent**, choose the writing agent.
   </Step>
-  <Step title="Confirm">
-    Click **Assign**. The writing Agent updates on every selected policy, and the table refreshes to show the new assignment.
+  <Step title="Apply the assignment">
+    Select **Assign**.
+    A successful change shows **Agent assigned**.
   </Step>
 </Steps>
 
-Reassigning a policy does **not** change the contact's assigned Agent. Update the contact separately from [Contact profile](/contacts/contact-profile) or [Contacts bulk actions](/contacts/bulk-actions) if you want both to move together.
+## Archive selected policies
 
-## Bulk archive policies
-
-Use **Archive** to remove many policies from the main list at once.
+<Warning>Archiving removes selected policies from the pages. Check the selection carefully before confirming.</Warning>
 
 <Steps>
-  <Step title="Select the policies">
-    Check the policies you want to archive.
+  <Step title="Review the selection">
+    Check the selected policy numbers and the count in the action bar.
   </Step>
-  <Step title="Click Archive">
-    In the bulk action bar, click **Archive**.
+  <Step title="Open archive confirmation">
+    Select **Archive** in the action bar.
   </Step>
-  <Step title="Confirm">
-    Review the confirmation dialog and click **Archive policies**. The selected policies leave the active list.
+  <Step title="Confirm the archive">
+    In **Archive Policies**, select **Archive Policies**.
+    Choose **Cancel** if the selection needs correction.
   </Step>
 </Steps>
 
-<Warning>
-  Archiving hides policies from the main pages for your team. The action can be reversed, but do a final review of the filter and selection before you confirm — an incorrect filter could sweep in more policies than you meant.
-</Warning>
+{/* TODO: verify restoration: the archive dialog says the action can be reversed, but no restore control is present in this area. */}
 
-## Tips for safe bulk work
+## What you'll see
 
-- **Filter first, then select.** Use filters and the date range to narrow the list before you check the header box.
-- **Watch the count.** The bulk action bar shows how many rows you've selected — confirm it matches what you expect.
-- **Start small.** If you're not sure your filter is right, run the bulk action on a handful of policies first and check the result before doing the whole list.
+Assigned policies show the chosen writing agent; archived policies disappear from the list after the success message.
 
-## What's next
+## If it didn't work
 
-<Columns cols={2}>
-  <Card title="Policies overview" icon="file-text" href="/policies/overview">
-    Master the filters, presets, and columns that drive a bulk action.
-  </Card>
-  <Card title="Policy profile" icon="file-text" href="/policies/policy-profile">
-    Work with one policy at a time.
-  </Card>
-  <Card title="Contacts bulk actions" icon="layers" href="/contacts/bulk-actions">
-    The same pattern, applied to contacts.
-  </Card>
-  <Card title="Users and roles" icon="shield-check" href="/settings/users-and-roles">
-    How Admin access is granted in your agency.
-  </Card>
-</Columns>
+<AccordionGroup>
+  <Accordion title="No selection checkboxes appear">
+    Row selection is available to Admins and Agency Owners. Ask an Admin to make the bulk change.
+  </Accordion>
+  <Accordion title="Assign is unavailable">
+    Choose an agent in **Select agent** before submitting.
+  </Accordion>
+  <Accordion title="The bulk action failed">
+    Read the error message and refresh the list to check which records changed before retrying.
+  </Accordion>
+</AccordionGroup>
+
+{/* TODO: verify partial bulk failures and archive authorization for Agency Owners; records are processed individually and delete authorization differs from the visible admin controls. */}
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review a policy" href="/policies/policy-profile" />
+  <Card title="Import policies" href="/policies/importing-policies" />
+</CardGroup>

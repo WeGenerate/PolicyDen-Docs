@@ -1,0 +1,85 @@
+---
+title: "My contacts won't import"
+description: "Resolve upload, mapping, and row errors in contact imports."
+keywords: ["import error", "CSV", "XLSX", "duplicates", "skipped rows"]
+---
+
+Use the message shown during upload or under **Issues** to find the cause. Row numbers include the header: the first data row is row 2.
+
+<AccordionGroup>
+  <Accordion title="The file type or size is rejected">
+    **Why it happens**
+    - Imports accept CSV or XLSX files up to 10MB.
+    - Dropping multiple files produces **Please upload one file at a time.**
+
+    **Fix it**
+    Save your spreadsheet as CSV or XLSX, reduce its size if needed, and upload one file.
+    Renaming an unsupported file's extension does not convert it.
+  </Accordion>
+  <Accordion title="Import Contacts stays disabled">
+    **Why it happens**
+    - A workbook sheet hasn't been selected.
+    - One or more required fields have no column mapping.
+
+    **Fix it**
+    Choose **Select Sheet** if shown. Map every field under **Required Fields** to its matching column.
+    A column can only be mapped once. Use **Download template** to check the expected headers.
+  </Accordion>
+  <Accordion title="A row says a field is required">
+    **Why it happens**
+    - New contacts need first name, last name, phone, and agency fields required for all products.
+    - An existing contact also lacks the required value.
+
+    **Fix it**
+    Fill the named field and retry. Existing values can satisfy a required field when the spreadsheet cell is blank.
+    Rows with no first name, last name, or phone are ignored, even if other cells contain data.
+  </Accordion>
+  <Accordion title="A row has an invalid value">
+    **Why it happens**
+    - A phone, email, date, state, postal code, or custom-field value fails validation.
+
+    **Fix it**
+    Correct the field named in the row error. Use **M**, **F**, **Male**, or **Female** for gender.
+    Use a two-letter state code or full state name. Use an unambiguous date such as **1955-01-15**; birth dates cannot be in the future.
+    Match custom choice values to the allowed options listed in the error.
+  </Accordion>
+  <Accordion title="No user was found for an agent email">
+    **Why it happens**
+    - The supplied agent email doesn't match a user in this agency.
+
+    **Fix it**
+    Correct the email or leave the cell blank. New contacts then belong to you; existing contacts keep their current assignment.
+  </Accordion>
+  <Accordion title="Contacts already share the same phone">
+    **Why it happens**
+    - More than one existing contact matches the row's phone number, so PolicyDen skips that row.
+
+    **Fix it**
+    Ask your agency administrator to review the duplicate records before retrying.
+    The error mentions merging, but no merge procedure is documented here.
+    {/* TODO: verify the supported resolution for duplicate contacts; the error requests merging but no merge UI was identified. */}
+  </Accordion>
+  <Accordion title="The import stopped or another import is running">
+    **Why it happens**
+    - A request failed or the server did not respond in time.
+    - Another import request is running for your agency.
+
+    **Fix it**
+    For the other-import message, wait a minute, then try again.
+    For **Import Stopped**, review the saved counts and run the file again. Saved contacts are matched by phone and updated.
+    Keep the window open until the import finishes.
+  </Accordion>
+  <Accordion title="The counts or changes aren't what I expected">
+    **Why it happens**
+    - A matching phone updates an existing contact instead of creating another one.
+    - Repeated phone numbers in the spreadsheet can update the same contact more than once.
+    - Blank cells preserve existing values; they do not clear them.
+
+    **Fix it**
+    Review repeated phone numbers and the column mappings before retrying.
+    For **Failed to save contact**, retain the row error and contact support if correcting that row doesn't help.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? Email support@policyden.com with the exact error, affected row numbers, file format, and imported/updated/skipped counts.
+Include a redacted example row rather than a full client spreadsheet.

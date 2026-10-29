@@ -1,0 +1,69 @@
+---
+title: "Filter and sort contacts"
+description: "Narrow your contact list and choose the order of results."
+keywords: ["search contacts", "filters", "sort", "find clients"]
+---
+
+import WhoEveryone from "/snippets/who-everyone.mdx";
+
+<WhoEveryone />
+
+Find the contacts you need with search, filters, and sorting. You can only find records available within your agency access.
+
+<Steps>
+  <Step title="Open the contact list">
+    Go to **Contacts**.
+  </Step>
+  <Step title="Search for a contact">
+    In **Search**, enter part of the contact’s name, email, phone number, or Medicare number.
+  </Step>
+  <Step title="Choose your filters">
+    Open **Status**, **Gender**, or **State**, then select the values to include.
+
+    Use **Exclude** to leave out selected values. Agency accounts also show **Agency** and **Agent** filters.
+
+    <Frame caption="Choose which contact statuses to include or exclude.">
+      <img src="/images/contacts/filtering-status.png" alt="Contacts with the Status filter open, showing Include and Exclude." />
+    </Frame>
+  </Step>
+  <Step title="Apply the selection">
+    Select **Apply** to update the list.
+  </Step>
+  <Step title="Add detailed conditions">
+    Open **Filters** to choose a field, condition, and value, then select **Apply Filters**.
+
+    Use **Add Filter** for another condition. **And** requires both conditions; **Or** accepts either condition.
+  </Step>
+  <Step title="Set the sort order">
+    Open **Sort** and choose a column and direction.
+
+    Use **Add Sort** to break ties with another column. The control shows **Sorted By** after sorting is set.
+  </Step>
+</Steps>
+
+The date range limits results by when contacts were created. The column settings icon lets you choose visible columns from **Available** and reorder **Active** columns. **Fixed** columns stay in place.
+
+## What you'll see
+
+The table shows contacts matching your search, applied filters, date range, and access scope.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="No contacts match">
+    Select **Clear** in the filter bar, clear **Search**, and review the date range. These are separate controls.
+  </Accordion>
+  <Accordion title="A colleague’s contact is missing">
+    Clear **My Contacts** if it appears. Agents whose work location is set to Remote can only view their assigned contacts.
+  </Accordion>
+  <Accordion title="The list didn’t change">
+    Select **Apply** after changing quick filters, or **Apply Filters** after changing detailed conditions.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Open a contact profile" href="/contacts/contact-profile" />
+  <Card title="Export the results" href="/contacts/exporting-contacts" />
+</CardGroup>

@@ -1,0 +1,67 @@
+---
+title: "Write call scripts"
+description: "Create step-by-step wording for agents to use during calls."
+keywords: ["script", "call script", "talk track", "script steps"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer turned on.</Info>
+
+Write ordered talking points for your agents. Choose the product and whether the script is for inbound calls, outbound calls, or both.
+
+## Before you start
+
+- Add the script's [product](/settings/products-and-carriers).
+- Prepare wording for agents, including required disclosures.
+
+<Steps>
+  <Step title="Open script setup">
+    In **Dialer > Scripts**, select **Add Script**.
+
+    <Frame>
+      <img src="/images/dialer/create-script-form.png" alt="Add Script form in the Dialer settings." />
+    </Frame>
+  </Step>
+  <Step title="Create the script">
+    Complete **Product** and **Name**, then select **Add Script**.
+  </Step>
+  <Step title="Set the script purpose">
+    Open the script and choose **Inbound Only**, **Outbound Only**, or **Both** under **Purpose**. Select **Save**.
+  </Step>
+  <Step title="Add a talking point">
+    In **Script Steps**, select **Add Step**.
+  </Step>
+  <Step title="Write the step content">
+    Enter a step title and the wording agents should use. Each step needs both fields.
+  </Step>
+  <Step title="Save your script steps">
+    Add any further steps, arrange their order, then select **Save** in **Script Steps**.
+  </Step>
+</Steps>
+
+Use **Insert tag** to insert **Agent Name**, **Contact Name**, **Contact Phone**, or **Contact State** into a step. Review each step before agents use it.
+
+For inbound use, open the [queue](/dialer/queues) and choose the script under **Script > Call Script**. Save the queue section. Keep the script **Active** when it should be available.
+
+{/* TODO: verify outbound script assignment: the campaign editor has no script selector, and CallsController loads scripts through the call's queue. */}
+
+## What you'll see
+
+The script appears in **Scripts**, and agents can open an assigned active script with **View Script** during a call.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The script will not save">
+    Check for a duplicate script name. Each script step also needs a title and content.
+  </Accordion>
+  <Accordion title="Agents cannot view the script">
+    Check that the queue has a **Call Script** selected and the script is active.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Assign a queue script" href="/dialer/queues" />
+  <Card title="Set call outcomes" href="/dialer/dispositions" />
+</CardGroup>

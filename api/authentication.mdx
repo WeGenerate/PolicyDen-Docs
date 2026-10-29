@@ -1,0 +1,115 @@
+---
+title: "Authentication and scopes"
+description: "Send your API key as a Bearer token, and check which scope each endpoint needs."
+keywords: ["authentication", "bearer token", "authorization header", "scopes", "401", "403", "api key"]
+---
+
+Every request to the PolicyDen API sends an API key as a Bearer token. The key's scopes decide which endpoints it can call. This page lists the headers to send, every scope, and the errors you get when authentication or a scope check fails.
+
+To create a key, see [Manage API keys](/api/manage-api-keys).
+
+## Send the key
+
+Put the key in the `Authorization` header with the `Bearer` prefix:
+
+```http
+Authorization: Bearer pd_your_api_key
+```
+
+Keys always start with `pd_`. Along with the key, send these headers:
+
+| Header | When | Value |
+| --- | --- | --- |
+| `Authorization` | Every request | `Bearer pd_your_api_key` |
+| `Accept` | Every request | `application/json` |
+| `Content-Type` | `POST` and `PUT` requests with a JSON body | `application/json` |
+
+A complete request looks like this. Replace `$BASE_URL` with the **Base URL** from the **API Keys** page (see [Find your base URL](/api/overview#find-your-base-url)).
+
+```bash
+curl "$BASE_URL/products" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+## Requests act as the key's creator
+
+Each key belongs to the user who created it, and every request runs as that user in your agency. This affects defaults. For example, a contact you create without `assigned_to` is assigned to the key's creator.
+
+The creator must stay active and keep the Admin or Agency Owner role. If they're deactivated or their role changes, the key stops working. See [Keys depend on the person who created them](/api/manage-api-keys#keys-depend-on-the-person-who-created-them).
+
+## Scopes
+
+A key can call an endpoint only if it has that endpoint's scope. Each endpoint needs exactly one scope. The labels match the ones in the **Scopes** list of the **Add API Key** dialog.
+
+| Group | Scope | Label | Endpoint |
+| --- | --- | --- | --- |
+| Contacts | `contacts:list` | List contacts | `GET /contacts` |
+| Contacts | `contacts:view` | Get a contact | `GET /contacts/{id}` |
+| Contacts | `contacts:create` | Create a contact | `POST /contacts` |
+| Contacts | `contacts:update` | Update a contact | `PUT /contacts/{id}` |
+| Policies | `policies:list` | List policies | `GET /policies` |
+| Policies | `policies:view` | Get a policy | `GET /policies/{id}` |
+| Policies | `policies:create` | Create a policy | `POST /policies` |
+| Policies | `policies:update` | Update a policy | `PUT /policies/{id}` |
+| Custom Fields | `custom-fields:list` | List custom fields | `GET /custom-fields` |
+| Products | `products:list` | List products | `GET /products` |
+| Users | `users:list` | List users | `GET /users` |
+| Pipelines | `pipelines:list` | List pipelines | `GET /pipelines` |
+| Pipelines | `pipelines:view` | Get a pipeline | `GET /pipelines/{id}` |
+| Relationships | `relationships:list` | List relationships | `GET /relationships` |
+| Relationships | `relationships:view` | Get a relationship | `GET /relationships/{id}` |
+| Relationships | `relationships:create` | Create a relationship | `POST /relationships` |
+
+<Tip>
+  Give each key only the scopes it needs. A website form that creates leads needs `contacts:create`, and maybe `products:list` and `users:list` to look up ids. It doesn't need to read your policies.
+</Tip>
+
+You can change a key's scopes at any time without changing the key. See [Edit a key](/api/manage-api-keys#edit-a-key).
+
+## Authentication errors
+
+All errors return JSON with a `message`. For the full list of status codes, see [Errors and rate limits](/api/errors-and-rate-limits).
+
+### 401 Unauthorized
+
+| Message | Cause |
+| --- | --- |
+| `Missing API key. Send it as a Bearer token in the Authorization header.` | No `Authorization: Bearer` header was sent. |
+| `Invalid or revoked API key.` | The key is mistyped, doesn't exist, or was revoked. |
+| `This API key is no longer authorized for its agency.` | The user who created the key is no longer active, or no longer has the Admin or Agency Owner role in your agency. |
+
+```json
+{
+  "message": "Invalid or revoked API key."
+}
+```
+
+### 403 Forbidden
+
+The key is valid but doesn't have the scope the endpoint needs. The message names the missing scope:
+
+```json
+{
+  "message": "This API key does not have the contacts:create scope."
+}
+```
+
+Add the scope to the key on the **API Keys** page, then retry.
+
+### 404 for another agency's records
+
+A key only sees its own agency. If you ask for a contact, policy, pipeline or relationship that belongs to another agency, you get `404` with the message `Resource not found.`, not a `403`. The response is the same as for an id that doesn't exist, so it never reveals whether a record exists elsewhere.
+
+```json
+{
+  "message": "Resource not found."
+}
+```
+
+## Keep keys safe
+
+- **Copy the key when you create it.** PolicyDen shows the full key once and doesn't store it in a form it can show again. A lost key can't be recovered: revoke it and add a new one.
+- **Keep keys on the server.** Don't put a key in browser code, a mobile app or a public repository. Anyone with the key can act as its creator within its scopes.
+- **Use one key per system.** Separate keys let you see each system's **Last Used** time and revoke one without breaking the others.
+- **Revoke keys you don't need.** Revoking takes effect on the next request. See [Revoke a key](/api/manage-api-keys#revoke-a-key).
