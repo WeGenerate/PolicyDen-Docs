@@ -2,13 +2,16 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "PolicyDen",
-  "description": "PolicyDen documentation: how health insurance agencies use PolicyDen to manage contacts, policies, pipeline, tasks, meetings, SMS, calls, and the Atlas AI assistant.",
+  "description": "PolicyDen documentation: how health & life insurance agencies use PolicyDen to manage contacts, policies, pipeline, tasks, meetings, SMS, calls, and the Atlas AI assistant.",
   "colors": {
     "primary": "#15803D",
     "light": "#22C55E",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/favicon.png",
+    "dark": "/images/favicon.png"
+  },
   "appearance": {
     "default": "light"
   },
@@ -135,8 +138,9 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/logo.svg",
+    "dark": "/images/logo-dark.svg",
+    "href": "https://app.policyden.com"
   },
   "navbar": {
     "links": [
