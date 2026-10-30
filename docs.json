@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "linden",
+  "theme": "almond",
   "name": "PolicyDen",
   "description": "PolicyDen documentation: how health & life insurance agencies use PolicyDen to manage contacts, policies, pipeline, tasks, meetings, SMS, calls, and the Atlas AI assistant.",
   "colors": {
