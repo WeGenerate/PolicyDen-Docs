@@ -28,3 +28,5 @@ Use the committed `origin/main` revision in `/Users/mac/PolicyDen-App` read-only
 ## Narrated tutorials
 
 The user requested voiceover tutorials near the top of key pages and prioritized account setup and onboarding. Start with account invitation setup, agency setup, and onboarding a new agent. Use actual recordings of the fictional demo, OpenAI narration, English captions and an expandable transcript. Label the voice as AI narration. Place the player after the page introduction and before the written steps, with playback controls and no autoplay or loop. Keep the existing detailed procedures available below each tutorial.
+
+The narrated agent-onboarding tutorial is withheld at the user’s request. Keep its player and transcript out of the onboarding page unless the user asks to restore them. The two other existing narrated tutorials remain in place.
