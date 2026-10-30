@@ -221,5 +221,8 @@
         ]
       }
     ]
+  },
+  "background": {
+    "decoration": "windows"
   }
 }
