@@ -225,7 +225,7 @@
   "background": {
     "decoration": "windows"
   },
-  "fonts": {
-    "family": "Sora"
+  "styling": {
+    "eyebrows": "section"
   }
 }
