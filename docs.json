@@ -224,5 +224,8 @@
   },
   "background": {
     "decoration": "windows"
+  },
+  "fonts": {
+    "family": "Sora"
   }
 }
