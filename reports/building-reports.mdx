@@ -1,0 +1,75 @@
+---
+title: "Build a sales report"
+description: "Filter, group, and export policy sales."
+keywords: ["build report", "filters", "export", "CSV", "grouping"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners, including owners of individual agent accounts.</Info>
+
+Use admin **Reporting** at `/reports` to answer a sales question. Agents looking for dialer activity should use [call reporting](/calls/reporting).
+
+## Before you start
+
+- Decide which product and sale period you want to compare.
+- Check whether you need sales performance or Medicare persistency.
+
+<Steps>
+<Step title="Open Reporting">
+  In the sidebar's **Management** section, select **Reporting**.
+</Step>
+<Step title="Choose a product">
+  Use the product selector to choose the product you want to review.
+</Step>
+<Step title="Set your dates">
+  Use the date picker to choose the reporting period.
+</Step>
+<Step title="Narrow your results">
+  Use the quick filters, or **Filters**, to select the records you need.
+</Step>
+<Step title="Group the results">
+  Under **Group By**, choose a grouping. You can add levels, up to three in total.
+</Step>
+<Step title="Inspect policy counts">
+  Select a linked count to open matching policies in a new browser tab.
+</Step>
+<Step title="Export the report">
+  In **Performance**, select **Export Report**, then **Export** to download a CSV file.
+</Step>
+</Steps>
+
+<Frame>
+  <img src="/images/reports/build-report-toolbar.png" alt="Reporting toolbar with product, date, filter, and Group By controls." />
+</Frame>
+
+## What you'll see
+
+The table groups matching policies, while the export includes the selected filters, grouping levels, and sorting.
+
+Counts are linked only when drill-through is available. Rows grouped by **Vendor** do not offer policy drill-through.
+
+The initial performance period is the current month. Initial grouping is **Agent** for agency accounts, **Day** for individual agent accounts, or **Agency** when multiple report agencies are available.
+
+## If it didn't work
+
+<AccordionGroup>
+<Accordion title="No policies in this range">
+  Widen the date range or clear restrictive filters. Confirm you selected the intended product.
+</Accordion>
+<Accordion title="A filter or metric is missing">
+  Options depend on your product, account type, and dialer access. Check the [column reference](/reports/metrics-and-columns).
+</Accordion>
+<Accordion title="I can't find Export Report">
+  Export is available in **Performance**. Switch back from **Persistency** before exporting.
+</Accordion>
+<Accordion title="The export doesn't download">
+  Try **Export** again. If no file appears, contact support@policyden.com with the selected product and dates.
+  {/* TODO: verify export error feedback; the current export dialog logs failures without showing an error message. */}
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Understand report columns" href="/reports/metrics-and-columns">Check totals and available metrics.</Card>
+<Card title="Review persistency" href="/reports/persistency">Follow policy retention over time.</Card>
+</CardGroup>

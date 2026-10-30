@@ -1,0 +1,155 @@
+---
+title: "Make your first request"
+description: "Test an API key by listing your products, then create a contact with curl."
+keywords: ["first request", "quickstart", "curl", "create contact", "list products", "api example"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+This walkthrough checks that your API key works and then creates a real contact in your agency. You list your products, look up a user to assign the contact to, and send a `POST /contacts` request. It takes about five minutes with curl.
+
+## Before you start
+
+- **An API key** with these scopes: `products:list`, `users:list` and `contacts:create`. An Admin or Agency Owner creates keys on the **API Keys** page. See [Manage API keys](/api/manage-api-keys).
+- **Your base URL**, copied from the **Getting Started** card on the **API Keys** page. See [Find your base URL](/api/overview#find-your-base-url).
+- **curl**, or any HTTP client you prefer.
+
+<Note>
+  This creates a real contact in your agency. Use a test name you can find and remove in PolicyDen afterward, because the API has no delete endpoint.
+</Note>
+
+## Send the requests
+
+<Steps>
+  <Step title="Store your key and base URL">
+    Set two shell variables so you don't paste the key into every command. Use the base URL exactly as the app shows it. It already ends in `/v1`.
+
+    ```bash
+    export BASE_URL="paste-your-base-url-here"
+    export PD_API_KEY="pd_your_api_key"
+    ```
+
+    {/* TODO: verify the production API domain and show a real example base URL here. */}
+  </Step>
+  <Step title="List your products">
+    This is the same request as the example under **Show example request** on the **API Keys** page.
+
+    ```bash
+    curl "$BASE_URL/products" \
+      -H "Authorization: Bearer $PD_API_KEY" \
+      -H "Accept: application/json"
+    ```
+
+    A `200` response lists every product with its carriers. Products aren't paginated, so you get them all at once.
+
+    ```json
+    {
+      "data": [
+        {
+          "id": 8,
+          "name": "Final Expense",
+          "template": null,
+          "is_system": false,
+          "active": true,
+          "carriers": [
+            { "id": "DEMO-ID", "name": "Brightwater Demo Life", "logo": null, "template": null, "is_system": false }
+          ]
+        }
+      ]
+    }
+    ```
+
+    Note a product `id`. In this example it's `8`.
+  </Step>
+  <Step title="Find a user to assign the contact to">
+    ```bash
+    curl "$BASE_URL/users?search=alex" \
+      -H "Authorization: Bearer $PD_API_KEY" \
+      -H "Accept: application/json"
+    ```
+
+    Note the user's `id`, a UUID such as `DEMO-USER`. If you skip this step and leave `assigned_to` out, the contact is assigned to the person who created the key.
+  </Step>
+  <Step title="Create a contact">
+    Send a `POST` with a JSON body. Only `first_name`, `last_name` and `phone` are always required. `status` defaults to `lead`.
+
+    ```bash
+    curl -X POST "$BASE_URL/contacts" \
+      -H "Authorization: Bearer $PD_API_KEY" \
+      -H "Accept: application/json" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "first_name": "Test",
+        "last_name": "Contact",
+        "phone": "305-555-0199",
+        "email": "test.contact@example.com",
+        "product_id": 8,
+        "assigned_to": "DEMO-USER"
+      }'
+    ```
+
+    `product_id` tells PolicyDen which product-specific custom fields apply to the contact.
+  </Step>
+  <Step title="Read the response">
+    A successful create returns `201 Created` with the new contact in `data`. The response includes more fields than shown here.
+
+    ```json
+    {
+      "data": {
+        "id": "DEMO-CONTACT",
+        "first_name": "Test",
+        "last_name": "Contact",
+        "name": "Test Contact",
+        "email": "test.contact@example.com",
+        "phone": "305-555-0199",
+        "status": "lead",
+        "assigned_to": "DEMO-USER",
+        "assigned_to_name": "Alex Agent",
+        "custom_field_values": {},
+        "created_at_iso": "2026-09-10T14:14:00.000000Z"
+      }
+    }
+    ```
+
+    Save the contact's `id`. You need it to read the contact with `GET /contacts/{id}` or update it with `PUT /contacts/{id}`. The contact also appears on the **Contacts** page in PolicyDen.
+  </Step>
+</Steps>
+
+<Info>
+  If your agency marks some contact fields as required, the API enforces them too, and the create fails with a `422` that names each missing field. This covers required custom fields and, if your agency requires it, the Medicare number. Look up your fields with [List custom fields](/api/custom-fields) and send their values in `custom_fields`. For every contact field, see [Contacts](/api/contacts).
+</Info>
+
+## If a step fails
+
+**401 Unauthorized** means PolicyDen didn't accept the key. Check that the header reads `Authorization: Bearer pd_...` and that the key hasn't been revoked.
+
+```json
+{
+  "message": "Invalid or revoked API key."
+}
+```
+
+**403 Forbidden** means the key works but is missing the scope for that endpoint. The message names the scope. An Admin or Agency Owner can add it with **Edit** on the **API Keys** page.
+
+```json
+{
+  "message": "This API key does not have the contacts:create scope."
+}
+```
+
+**422 Validation failed** lists each problem by field, for example a missing `first_name` or an invalid `phone`. Fix every field listed and resend.
+
+**404 Not found** on every request usually means the base URL is wrong. Copy it again from the **API Keys** page and check that you didn't add a second `/v1`.
+
+For every status code, see [Errors and rate limits](/api/errors-and-rate-limits).
+
+## What's next
+
+<Columns cols={2}>
+  <Card title="Contacts" icon="user" href="/api/contacts">
+    Every contact field, duplicate checks, and updates.
+  </Card>
+  <Card title="Pagination, filtering and sorting" icon="list-filter" href="/api/pagination-filtering-and-sorting">
+    Page through contacts and policies and filter the results.
+  </Card>
+</Columns>

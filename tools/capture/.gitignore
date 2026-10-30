@@ -1,0 +1,4 @@
+recordings/
+unused/
+__pycache__/
+reports/*.log

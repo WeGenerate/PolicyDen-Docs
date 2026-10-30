@@ -1,0 +1,60 @@
+[
+  {
+    "id": "api/keys-overview",
+    "page": "api/manage-api-keys",
+    "persona": "agency-admin",
+    "url": "/agency-settings/api-keys",
+    "before": [
+      {
+        "waitFor": {
+          "text": "API Keys"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Key"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/api/keys-overview.png",
+    "alt": "API Keys page showing the key table and Add Key control."
+  },
+  {
+    "id": "api/add-key-scopes",
+    "page": "api/manage-api-keys",
+    "persona": "agency-admin",
+    "url": "/agency-settings/api-keys",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Key"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog",
+          "name": "Add API Key"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "locator",
+      "crop": {
+        "role": "dialog",
+        "name": "Add API Key"
+      },
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/api/add-key-scopes.png",
+    "alt": "Add API Key dialog with Name and Scopes controls."
+  }
+]

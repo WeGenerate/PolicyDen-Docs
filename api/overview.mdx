@@ -1,0 +1,72 @@
+---
+title: "PolicyDen API"
+description: "Connect your own systems to your agency's contacts, policies and setup data with the PolicyDen REST API."
+keywords: ["api", "rest api", "integration", "developers", "api keys", "v1"]
+---
+
+The PolicyDen API lets your own systems read and write your agency's data over HTTPS. Use it to send leads from a website form into Contacts, keep policies in sync with another tool, or look up the products, users and pipelines you need to build those records.
+
+This tab is for developers. If you're an Admin or Agency Owner who only needs to create a key for someone else, go to [Manage API keys](/api/manage-api-keys).
+
+## What the API can do
+
+The API is a JSON REST API, version 1. It covers seven resources:
+
+| Resource | What you can do | Endpoints |
+| --- | --- | --- |
+| [Contacts](/api/contacts) | List, get, create and update | `GET /contacts`, `GET /contacts/{id}`, `POST /contacts`, `PUT /contacts/{id}` |
+| [Policies](/api/policies) | List, get, create and update | `GET /policies`, `GET /policies/{id}`, `POST /policies`, `PUT /policies/{id}` |
+| [Custom fields](/api/custom-fields) | List your agency's contact and policy fields | `GET /custom-fields` |
+| [Products](/api/products) | List products with their carriers | `GET /products` |
+| [Users](/api/users) | List users in your agency | `GET /users` |
+| [Pipelines](/api/pipelines) | List and get pipelines with their stages | `GET /pipelines`, `GET /pipelines/{id}` |
+| [Relationships](/api/relationships) | List, get and create uplines, downlines, agents and partnerships | `GET /relationships`, `GET /relationships/{id}`, `POST /relationships` |
+
+Each endpoint needs its own scope on the key, such as `contacts:list` or `policies:create`. See [Authentication and scopes](/api/authentication) for the full list.
+
+## What the API doesn't do
+
+- **No deletes.** There is no endpoint to delete a contact, policy or any other record. 
+- **No webhooks.** PolicyDen doesn't push events to your system. Poll the list endpoints instead, for example by sorting contacts by creation date.
+
+## Keys belong to one agency
+
+Every API key belongs to the agency it was created in. Read requests are limited to that agency's data. Asking for a record that belongs to another agency returns `404 Not found`, the same as a record that doesn't exist.
+
+Only Admins and Agency Owners can create keys. They do it on the **API Keys** page in agency settings. Individual agent accounts don't have an **API Keys** page.
+
+## Find your base URL
+
+Don't hardcode the base URL from an example. Copy it from the app:
+
+1. In the sidebar, select **Settings**, then **API Keys** under **Agency**.
+2. Scroll to the **Documentation** section.
+3. In the **Getting Started** card, copy the **Base URL**.
+
+{/* TODO: verify the production API domain with the product team and add it here as a reference. */}
+
+The base URL already ends in `/v1`. Add the endpoint path straight after it, for example `{Base URL}/contacts`.
+
+<Tip>
+  The **Documentation** section on the **API Keys** page also lists every endpoint with its fields and a copyable example request and response, filled in with your base URL.
+</Tip>
+
+## Get started
+
+<Columns cols={2}>
+  <Card title="Manage API keys" icon="key" href="/api/manage-api-keys">
+    Create a key, pick its scopes, and revoke it when you're done.
+  </Card>
+  <Card title="Authentication and scopes" icon="lock" href="/api/authentication">
+    Send the key as a Bearer token and see which scope each endpoint needs.
+  </Card>
+  <Card title="Make your first request" icon="terminal" href="/api/make-your-first-request">
+    List products, then create a contact with curl.
+  </Card>
+  <Card title="Pagination, filtering and sorting" icon="list-filter" href="/api/pagination-filtering-and-sorting">
+    Page through lists and narrow results with filters.
+  </Card>
+  <Card title="Errors and rate limits" icon="triangle-alert" href="/api/errors-and-rate-limits">
+    Handle status codes, validation errors and the per-minute limit.
+  </Card>
+</Columns>

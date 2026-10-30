@@ -1,0 +1,120 @@
+---
+title: "Errors and rate limits"
+description: "Status codes the PolicyDen API returns, what each error body looks like, and how many requests you can send per minute."
+keywords: ["errors", "status codes", "401", "403", "429", "rate limit", "retry-after"]
+---
+
+The PolicyDen API uses standard HTTP status codes and always returns errors as JSON. This page lists every status code, shows each error body, and explains the per-minute rate limit and how to retry.
+
+## Status codes
+
+Successful requests return `200 OK`. Requests that create a record, `POST /contacts`, `POST /policies` and `POST /relationships`, return `201 Created`.
+
+These are the error codes. The **Errors** card on the **API Keys** page lists the same codes.
+
+| Status | Meaning | When you get it |
+| --- | --- | --- |
+| `401` | Unauthorized | The key is missing, invalid or revoked, or its creator can no longer use it. |
+| `403` | Forbidden | The key doesn't have the scope this endpoint needs. |
+| `404` | Not found | No such record in your agency, or no such endpoint. |
+| `409` | Duplicate | A contact with this phone exists and you sent `check_duplicates: true`. |
+| `422` | Validation failed | One or more fields are missing or invalid. Every problem is listed by field. |
+| `429` | Too many requests | You hit the rate limit. Wait the number of seconds in the `Retry-After` header. |
+| `500` | Server error | Something went wrong on PolicyDen's side. Retry with a short backoff. |
+
+## Error bodies
+
+Every error has a `message`. Some add more detail.
+
+### 401 Unauthorized
+
+The `message` says what's wrong with the key:
+
+| Message | Fix |
+| --- | --- |
+| `Missing API key. Send it as a Bearer token in the Authorization header.` | Add `Authorization: Bearer pd_...` to the request. |
+| `Invalid or revoked API key.` | Check the key for typos. If it was revoked, ask an Admin or Agency Owner for a new one. |
+| `This API key is no longer authorized for its agency.` | The key's creator was deactivated or lost the Admin or Agency Owner role. Create a new key. |
+
+See [Authentication and scopes](/api/authentication) for details.
+
+### 403 Forbidden
+
+```json
+{
+  "message": "This API key does not have the policies:update scope."
+}
+```
+
+Add the named scope to the key with **Edit** on the [API Keys page](/api/manage-api-keys#edit-a-key).
+
+### 404 Not found
+
+```json
+{
+  "message": "Resource not found."
+}
+```
+
+You get this for an id that doesn't exist, for a record that belongs to another agency, and for any path under the base URL that isn't an endpoint, such as a typo in the path.
+
+### 409 Duplicate
+
+Only `POST /contacts` returns a `409`, and only when you send `"check_duplicates": true` and a contact with the same phone number already exists in your agency. `data` lists every matching contact in the same shape as `GET /contacts/{id}`, so you can update one of them instead.
+
+```json
+{
+  "message": "A contact with this phone number already exists.",
+  "data": [
+    {
+      "id": "DEMO-CONTACT",
+      "name": "Jane Doe",
+      "phone": "305-555-0199",
+      "status": "client"
+    }
+  ]
+}
+```
+
+Each contact in `data` includes all its fields. This example is shortened. Without `check_duplicates`, the API creates the contact even if the phone number is already in use.
+
+### 422 Validation failed
+
+A `422` lists every problem at once, so you can fix them all before you retry. `errors` is keyed by field name, and each field has a list of messages. `message` summarizes the first error and how many more there are.
+
+```json
+{
+  "message": "The first name field is required. (and 1 more error)",
+  "errors": {
+    "first_name": ["The first name field is required."],
+    "status": ["The selected status is invalid."]
+  }
+}
+```
+
+Nested fields use dot notation, such as `filters.0.field` for the first advanced filter.
+
+### 500 Server error
+
+The body has a `message` only. Retry with backoff. If the same request keeps failing, contact PolicyDen support with the endpoint and the time of the request.
+
+## Rate limits
+
+Each API key can send **300 requests per minute**. This is the limit shown in the **Getting Started** card on the **API Keys** page.
+
+Requests from a single IP address are also limited to 300 per minute, across all keys. This limit also counts requests that fail authentication. {/* TODO: verify with the product team that the 300-per-minute per-IP limit should be published; the app only shows the per-key limit. */}
+
+When you go over either limit, the API returns `429 Too many requests` with a `Retry-After` header. Its value is the number of seconds to wait before you send another request.
+
+```http
+HTTP/1.1 429 Too Many Requests
+Retry-After: 42
+```
+
+## Retry safely
+
+- **On `429`**, wait for the `Retry-After` seconds, then retry.
+- **On `500` and other `5xx` codes**, retry with exponential backoff: wait about 1 second, then 2, then 4, and stop after a few attempts.
+- **Don't retry `4xx` errors other than `429`** without changing the request. A `401`, `403`, `404` or `422` fails the same way every time.
+- **Be careful retrying a `POST`.** If a create timed out, the record may already exist. For contacts, send `"check_duplicates": true` on the retry. A `409` means a contact with that phone number already exists, possibly from your first attempt, and `data` shows it so you can check.
+- **Spread out bulk jobs.** Paging through a large list with `per_page=100` uses fewer requests than the default of 25. Resend `per_page` with every page, because the `links` URLs drop it. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting).

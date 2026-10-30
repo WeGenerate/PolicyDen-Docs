@@ -1,0 +1,444 @@
+---
+title: "Policies"
+description: "List, read, create and update policies in your agency through the PolicyDen API."
+keywords: ["api", "policies", "create policy", "update policy", "policy status", "enrollment code"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use the policies endpoints to read your agency's book of business and to log or update sales from another system. Every policy belongs to a contact, a product and a carrier.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoints
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/policies` | `policies:list` |
+| `GET` | `/policies/{id}` | `policies:view` |
+| `POST` | `/policies` | `policies:create` |
+| `PUT` | `/policies/{id}` | `policies:update` |
+
+A policy id that isn't in your agency returns `404`.
+
+## Rules by product
+
+What a policy accepts depends on its product. Check the `template` of each product in [`GET /products`](/api/products).
+
+| | Medicare (`template: medicare`) | Life insurance (`template: life_insurance`) | Your own products (`template: null`) |
+| - | - | - | - |
+| `type` | Required: `medicare_advantage`, `medicare_supplement` or `part_d` | Required: `final_expense`, `guaranteed_issue`, `whole_life`, `term` or `indexed_universal_life` | Optional: one of the Medicare types |
+| `plan_number` | Required | Optional | Optional |
+| `status` values | `unknown`, `pending_cms`, `pending_aor`, `pending_application_request`, `wrong_sep`, `accepted`, `rejected`, `issued`, `placed`, `active`, `withdrawn`, `future_cancellation`, `cancelled`, `old_policy_terminated`, `flagged` | `submitted`, `pending_underwriting`, `approved`, `in_force`, `declined`, `withdrawn`, `not_taken`, `lapsed`, `cancelled` | Optional: one of the Medicare values |
+| Status on create | `unknown` | `submitted` | `unknown` |
+| Dates on create | Filled in automatically | Left empty | Filled in automatically |
+
+<ParamField query="page" type="integer" default="1">
+Page number, starting at 1. Applies to list requests.
+</ParamField>
+
+<ParamField query="per_page" type="integer" default="25">
+Rows per page, from 1 to 100. Applies to list requests.
+</ParamField>
+
+## List policies
+
+`GET /policies` returns your agency's policies by sale date, newest first. Each item is the full policy, the same as [Get a policy](#get-a-policy). The list is paginated. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting) for `page`, `per_page` and filter operators.
+
+<ParamField query="search" type="string">
+Matches enrollment code, plan number, policy number, the contact's name, phone or Medicare number, or the agent's name.
+</ParamField>
+
+<ParamField query="type" type="string">
+Policy type. Accepts the Medicare types only.
+</ParamField>
+
+<ParamField query="product_id" type="integer">
+Only policies for this product.
+</ParamField>
+
+<ParamField query="startDate" type="string">
+Sale date on or after this date, `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField query="endDate" type="string">
+Sale date on or before this date, `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField query="filters" type="array">
+Advanced filters: `filters[0][field]`, `filters[0][operator]`, `filters[0][value]`.
+</ParamField>
+
+<ParamField query="sortKey" type="string">
+Field to sort by. Ignored unless you also send `sortDirection`.
+</ParamField>
+
+<ParamField query="sortDirection" type="string">
+`asc` or `desc`.
+</ParamField>
+
+{/* TODO: verify — the list `type` parameter rejects life insurance types with 422 */}
+
+**Filter fields:** `agency_id`, `vendor_id`, `number`, `status`, `type`, `product_id`, `carrier_id`, `assigned_to`, `contact_id`, `contact_phone`, `contact_email`, `contact_state`, `enrollment_code`, `sale_date`, `effective_date`, `placed_date`, `termination_date`, `sep_id`, `relationship_id`, `relationship_commission_type`, `accreted`, `status_changed`, `contact_has_products`, `has_transcription`, `has_scorecard`, `has_plan`, `scorecard_score`, `scorecard_percentage`, and `cf_ID` for any policy [custom field](/api/custom-fields).
+
+**Sort keys:** `policy_number`, `contact`, `medicare_number`, `contact_phone`, `contact_email`, `contact_state`, `carrier_id`, `enrollment_code`, `sale_date`, `agent`, `agency`, `status`, `type`, `plan_number_network_id`, `effective_date`, `placed_date`, `termination_date`, and `cf_ID`.
+
+<RequestExample>
+
+```bash
+curl -g "{BASE_URL}/policies?startDate=2026-09-01&endDate=2026-09-30&product_id=3&filters[0][field]=status&filters[0][operator]=equals&filters[0][value]=active" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Get a policy
+
+`GET /policies/{id}` returns one policy with its contact, product, carrier, upline relationship and custom field values.
+
+## Create a policy
+
+`POST /policies` creates a policy and returns it with status `201`.
+
+<ParamField body="contact_id" type="uuid" required>
+**Required.** A contact in your agency.
+</ParamField>
+
+<ParamField body="product_id" type="integer" required>
+**Required.** A product from [`GET /products`](/api/products).
+</ParamField>
+
+<ParamField body="carrier_id" type="uuid" required>
+**Required.** Use one of the product's carriers from `GET /products`.
+</ParamField>
+
+<ParamField body="enrollment_code" type="string" required>
+**Required.** Must be unique per product in your agency.
+</ParamField>
+
+<ParamField body="assigned_to" type="uuid" required>
+**Required.** The writing agent, a user id from [`GET /users`](/api/users).
+</ParamField>
+
+<ParamField body="type" type="string">
+See [Rules by product](#rules-by-product).
+</ParamField>
+
+<ParamField body="plan_number" type="string">
+For example `DEMO-PLAN`. Required for Medicare products.
+</ParamField>
+
+<ParamField body="plan_id" type="integer">
+A plan id. Optional.
+</ParamField>
+
+<ParamField body="custom_fields" type="object">
+Values keyed by definition id, for example `{"57": "yes"}`. Required policy custom fields apply.
+</ParamField>
+
+{/* TODO: verify — the API only checks that carrier_id is a system carrier or one of your agency's carriers, not that it belongs to product_id */}
+
+PolicyDen sets these on create. Change them later with `PUT`.
+
+- **Sale date**: today.
+- **Effective date**: the first of next month. For Medicare products sold from October 15 through December 31, it's January 1 of the next year. Life insurance policies start without one.
+- **Placed date**: four months after the effective date. Life insurance policies start without one.
+- **Status**: see [Rules by product](#rules-by-product).
+- **Contact**: becomes a `client` and is assigned to the writing agent.
+- **Upline**: `relationship_id` is set from the relationship the writing agent holds the carrier through, when there is one. You can't send it on create.
+
+A carrier that isn't available returns `422` with `The selected carrier is invalid or not available for your agency.`
+
+<RequestExample>
+
+```bash
+curl -X POST "{BASE_URL}/policies" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contact_id": "DEMO-CONTACT",
+    "product_id": 3,
+    "carrier_id": "DEMO-CARRIER",
+    "type": "medicare_advantage",
+    "enrollment_code": "DEMO-ENROLLMENT",
+    "plan_number": "DEMO-PLAN",
+    "assigned_to": "DEMO-USER"
+  }'
+```
+
+</RequestExample>
+
+## Update a policy
+
+`PUT /policies/{id}` updates the policy and returns it. This is how you change status and dates. `contact_id`, `product_id`, `carrier_id`, `enrollment_code` and `sale_date` are required, plus `type`, `plan_number` and `status` where [Rules by product](#rules-by-product) requires them.
+
+<ParamField body="sale_date" type="date" required>
+**Required.** `YYYY-MM-DD`.
+</ParamField>
+
+<ParamField body="status" type="string">
+See [Rules by product](#rules-by-product).
+</ParamField>
+
+<ParamField body="effective_date" type="date">
+`YYYY-MM-DD`.
+</ParamField>
+
+<ParamField body="placed_date" type="date">
+`YYYY-MM-DD`.
+</ParamField>
+
+<ParamField body="advance_payment_status" type="string">
+`yes` or `no`.
+</ParamField>
+
+<ParamField body="placed_payment_status" type="string">
+`yes` or `no`.
+</ParamField>
+
+<ParamField body="relationship_id" type="uuid">
+Your upline for this policy. Must be an active upline from [`GET /relationships?type=upline`](/api/relationships).
+</ParamField>
+
+<ParamField body="assigned_to" type="uuid">
+The writing agent.
+</ParamField>
+
+<ParamField body="plan_id" type="integer">
+A plan id.
+</ParamField>
+
+<ParamField body="custom_fields" type="object">
+Values keyed by definition id.
+</ParamField>
+
+Each field is handled differently when you leave it out:
+
+| Behavior | Fields |
+| -------- | ------ |
+| Always replaced. Leaving an optional one out clears it. | `contact_id`, `product_id`, `carrier_id`, `enrollment_code`, `type`, `plan_number` |
+| Changed only when you include the key. Send `null` to clear. | `assigned_to`, `relationship_id`, `plan_id` |
+| Changed only when you send a value. You can't clear them. | `sale_date`, `status`, `effective_date`, `placed_date`, `advance_payment_status`, `placed_payment_status` |
+| Merged. Only the ids you send change. | `custom_fields` |
+
+<Warning>
+  Read the policy before updating it. Omitting optional `type` or `plan_number` clears that value. Required values must still be sent.
+</Warning>
+
+A `relationship_id` that isn't one of your active uplines returns `422` with `The relationship is not one of your active uplines.` Sending the policy's current `relationship_id` always passes.
+
+When the status changes to `issued`, `placed` or `active`, PolicyDen sets `accreted` to `true`.
+
+## Response fields
+
+<ResponseField name="id">
+Policy id, policy number, and the number with its prefix, for example `DEMO-POLICY`.
+</ResponseField>
+
+<ResponseField name="number">
+Policy id, policy number, and the number with its prefix, for example `DEMO-POLICY`.
+</ResponseField>
+
+<ResponseField name="number_formatted">
+Policy id, policy number, and the number with its prefix, for example `DEMO-POLICY`.
+</ResponseField>
+
+<ResponseField name="agency_id">
+Your agency's id.
+</ResponseField>
+
+<ResponseField name="contact_id">
+The contact's id and contact details. Nested contacts omit owner names, custom field values and pipeline stages.
+</ResponseField>
+
+<ResponseField name="contact">
+The contact's id and contact details. Nested contacts omit owner names, custom field values and pipeline stages.
+</ResponseField>
+
+<ResponseField name="product_id">
+The product. `product.id` is a string. For Medicare and life insurance products, `product` also includes `features`, `labels`, `policy_types` and `policy_statuses`.
+</ResponseField>
+
+<ResponseField name="product">
+The product. `product.id` is a string. For Medicare and life insurance products, `product` also includes `features`, `labels`, `policy_types` and `policy_statuses`.
+</ResponseField>
+
+<ResponseField name="is_system_product">
+The product. `product.id` is a string. For Medicare and life insurance products, `product` also includes `features`, `labels`, `policy_types` and `policy_statuses`.
+</ResponseField>
+
+<ResponseField name="carrier_id">
+The carrier: `id`, `name`, `logo`, `agency_id`, `template`, `is_system`, `policies_count`.
+</ResponseField>
+
+<ResponseField name="carrier">
+The carrier: `id`, `name`, `logo`, `agency_id`, `template`, `is_system`, `policies_count`.
+</ResponseField>
+
+<ResponseField name="relationship_id">
+The upline: `id`, `name`, `relationship_type`, `status`, `commission_type`, `commission_type_formatted`, `archived`. `null` when there's none.
+</ResponseField>
+
+<ResponseField name="relationship">
+The upline: `id`, `name`, `relationship_type`, `status`, `commission_type`, `commission_type_formatted`, `archived`. `null` when there's none.
+</ResponseField>
+
+<ResponseField name="type">
+Policy type and its label.
+</ResponseField>
+
+<ResponseField name="type_formatted">
+Policy type and its label.
+</ResponseField>
+
+<ResponseField name="status">
+Status value and labels.
+</ResponseField>
+
+<ResponseField name="status_formatted">
+Status value and labels.
+</ResponseField>
+
+<ResponseField name="display_status_formatted">
+Status value and labels.
+</ResponseField>
+
+<ResponseField name="is_custom_status">
+Status value and labels.
+</ResponseField>
+
+<ResponseField name="assigned_to_id">
+The writing agent's user id.
+</ResponseField>
+
+<ResponseField name="sale_date">
+`MM/DD/YYYY` and `YYYY-MM-DD`.
+</ResponseField>
+
+<ResponseField name="sale_date_iso">
+`MM/DD/YYYY` and `YYYY-MM-DD`.
+</ResponseField>
+
+<ResponseField name="effective_date">
+`YYYY-MM-DD`. Each has a `_formatted` version in `MM/DD/YYYY`.
+</ResponseField>
+
+<ResponseField name="placed_date">
+`YYYY-MM-DD`. Each has a `_formatted` version in `MM/DD/YYYY`.
+</ResponseField>
+
+<ResponseField name="termination_date">
+`YYYY-MM-DD`. Each has a `_formatted` version in `MM/DD/YYYY`.
+</ResponseField>
+
+<ResponseField name="enrollment_code">
+Enrollment details.
+</ResponseField>
+
+<ResponseField name="plan_number">
+Enrollment details.
+</ResponseField>
+
+<ResponseField name="plan_id">
+Enrollment details.
+</ResponseField>
+
+<ResponseField name="advance_payment_status">
+`yes`, `no` or `null`, each with a `_formatted` label.
+</ResponseField>
+
+<ResponseField name="placed_payment_status">
+`yes`, `no` or `null`, each with a `_formatted` label.
+</ResponseField>
+
+<ResponseField name="accreted">
+`true` once the status has changed to `issued`, `placed` or `active`.
+</ResponseField>
+
+<ResponseField name="source_of_lead">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="hra">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="fronted_deal">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="old_ma_plan">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="old_ma_premium">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="new_ma_plan">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="new_ma_premium">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="notes">
+Other policy details, or `null`.
+</ResponseField>
+
+<ResponseField name="custom_field_values">
+Values keyed by both definition id and field name.
+</ResponseField>
+
+<ResponseField name="custom_field_display_values">
+The same values as display labels.
+</ResponseField>
+
+<ResponseField name="created_by">
+User ids.
+</ResponseField>
+
+<ResponseField name="updated_by">
+User ids.
+</ResponseField>
+
+<ResponseField name="created_at">
+`MM/DD/YYYY hh:mm AM`, plus `_iso` versions in ISO 8601.
+</ResponseField>
+
+<ResponseField name="updated_at">
+`MM/DD/YYYY hh:mm AM`, plus `_iso` versions in ISO 8601.
+</ResponseField>
+
+## Related
+
+- [Policies overview](/policies/overview) for how agents log and track policies in the app.
+- [Custom fields](/api/custom-fields) to look up policy field ids for a product.
+- [Errors and rate limits](/api/errors-and-rate-limits) for status codes.
+
+## Response example
+
+This excerpt shows selected fields from a successful response.
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": "DEMO-POLICY",
+    "enrollment_code": "DEMO-ENROLLMENT",
+    "status": "unknown"
+  }
+}
+```
+
+</ResponseExample>

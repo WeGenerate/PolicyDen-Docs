@@ -1,0 +1,73 @@
+---
+title: "Manage Do Not Call numbers"
+description: "Add, import, and review numbers your agency must not dial."
+keywords: ["DNC", "do not call", "suppression", "blocked number", "import numbers"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer turned on.</Info>
+
+Use the Do Not Call ([DNC](/start/glossary)) list to block outgoing calls to listed numbers. Keep a reason so your team can understand each entry.
+
+<Warning>Deleting a DNC number makes it dialable again. Confirm removal is appropriate under your agency's compliance rules before deleting.</Warning>
+
+<Steps>
+  <Step title="Open the DNC list">
+    In **Dialer > DNC Numbers**, select **Add Number**.
+
+    <Frame>
+      <img src="/images/dialer/add-dnc-number-form.png" alt="Add Number form in the Dialer settings." />
+    </Frame>
+  </Step>
+  <Step title="Enter the phone number">
+    Enter a valid 10-digit number in **Phone**.
+  </Step>
+  <Step title="Record the reason">
+    Optionally enter **First Name**, **Last Name**, and **Reason**.
+  </Step>
+  <Step title="Save the number">
+    Select **Add Number** to add it to your agency's list.
+  </Step>
+</Steps>
+
+## Import several numbers
+
+<Steps>
+  <Step title="Upload your number list">
+    Select **Import CSV** and upload a CSV or Excel file with a header row.
+  </Step>
+  <Step title="Map the columns">
+    Map **Phone** and any optional **First Name**, **Last Name**, or **Reason** columns.
+  </Step>
+  <Step title="Review import results">
+    Select **Import Numbers**, then review **Import Complete** and any **Issues** before selecting **Done**.
+  </Step>
+</Steps>
+
+## What you'll see
+
+The list shows **Phone**, **Name**, **Reason**, and **Date** for saved entries.
+
+DNC-flagged [dispositions](/dialer/dispositions) can also add numbers. Campaigns exclude listed numbers, and manual calls are blocked. Inbound calls from listed numbers hang up unless **Route DNC Calls To** sends them to a queue. See [Phone Numbers](/dialer/phone-numbers).
+
+To correct an entry, open its row menu and select **Edit**. To remove entries, use **Delete** for one row or selected rows, then review the confirmation.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The number is already listed">
+    Search for the existing entry and edit it instead. Imports skip duplicate numbers.
+  </Accordion>
+  <Accordion title="An imported row was skipped">
+    Review **Issues** for missing or invalid phone numbers. Correct the file and import again.
+  </Accordion>
+  <Accordion title="A manual call is blocked">
+    The message **This number is on the Do Not Call list.** means the number is suppressed. Review its reason before changing it.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Set disposition flags" href="/dialer/dispositions" />
+  <Card title="Review number routing" href="/dialer/phone-numbers" />
+</CardGroup>

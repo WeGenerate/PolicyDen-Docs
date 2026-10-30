@@ -1,0 +1,105 @@
+---
+title: "Manage your phone numbers"
+description: "Buy numbers, route incoming calls, and create caller ID pools."
+keywords: ["dialer", "phone numbers", "agency", "calls"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer enabled.</Info>
+
+Use **Phone Numbers** for inbound routing and outbound caller ID pools.
+
+## Buy a number
+
+<Steps>
+<Step title="Open phone numbers">
+  In **Dialer** → **Settings**, select **Phone Numbers**.
+</Step>
+<Step title="Open number purchasing">
+  Select **Add Number** and choose **Buy New Number**.
+</Step>
+<Step title="Choose a number type">
+  Choose **Local** or **Toll-Free** under **Type** and optionally choose **Area Code**.
+</Step>
+<Step title="Choose a pool">
+  Optionally select **Add To Pool** for your purchases.
+</Step>
+<Step title="Buy a number">
+  Review the monthly price, then select **Buy** beside the number.
+</Step>
+</Steps>
+<Frame caption="Add Number form showing number type, area code, and purchasing options.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/dialer/phone-numbers.png" src="/videos/dialer/phone-numbers.mp4" aria-label="Add Number form showing number type, area code, and purchasing options." />
+  <img className="hidden motion-reduce:block" src="/images/dialer/phone-numbers.png" alt="Add Number form showing number type, area code, and purchasing options." />
+</Frame>
+
+<Warning>Buying a number adds the monthly cost shown beside it. Review the price before selecting **Buy**.</Warning>
+
+To buy several numbers together, use **Buy N Numbers**, where N is the displayed quantity. Manual calls use the agency’s first active dialer number as caller ID.
+
+## Route incoming calls
+
+<Steps>
+<Step title="Edit a number">
+  Open the number’s menu and select **Edit**.
+</Step>
+<Step title="Choose normal routing">
+  Under **Route Calls To**, choose **Queue** and a queue, or **Hangup**.
+</Step>
+<Step title="Choose DNC routing">
+  Under **Route DNC Calls To**, choose **Queue** and a **DNC Queue**, or **Hangup**.
+</Step>
+<Step title="Save the routing">
+  Select **Save Changes**.
+</Step>
+</Steps>
+
+DNC means do not call; see the [DNC list](/dialer/dnc-numbers). **Hangup** ends incoming calls immediately. DNC callers hang up unless you route them to a queue.
+
+For bulk routing, select numbers, select **Route Calls To**, choose a destination, and select **Apply**.
+
+## Create a caller ID pool
+
+<Steps>
+<Step title="Add a pool">
+  In **Number Pools**, select **Add Pool**.
+</Step>
+<Step title="Name the pool">
+  Enter a unique **Pool Name**.
+</Step>
+<Step title="Choose pool numbers">
+  Select numbers not already in another pool.
+</Step>
+<Step title="Set local presence">
+  Turn on **Local Presence** to prefer a number matching the contact’s area code, then their state.
+</Step>
+<Step title="Save the pool">
+  Select **Add Number Pool**, then choose the pool in your campaign’s caller ID settings.
+</Step>
+</Steps>
+
+A pool’s **Edit** menu lets you change its name, numbers, and local presence. Select **Save Number Pool** afterward. Number and pool menus also offer **Delete**, followed by **Delete Number** or **Delete Number Pool** confirmation.
+
+## What you'll see
+
+The list shows monthly prices, routing destinations, and pool assignments.
+
+## If it didn’t work
+
+<AccordionGroup>
+<Accordion title="No numbers are available">
+  Try a different area code when the purchase form has no results.
+</Accordion>
+<Accordion title="A pool number cannot be selected">
+  A number can belong to only one pool. Remove it from its current pool first.
+</Accordion>
+<Accordion title="Routing will not save">
+  Choose a queue when routing to **Queue**. The app reports “Select a queue to route calls to.”
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Set up queues" href="/dialer/queues">Review agents and incoming numbers.</Card>
+<Card title="Monitor calls" href="/dialer/live-monitor">Watch live activity.</Card>
+</CardGroup>

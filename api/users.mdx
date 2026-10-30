@@ -1,0 +1,122 @@
+---
+title: "Users"
+description: "List the users in your agency to get the ids you assign contacts and policies to."
+keywords: ["api", "users", "agents", "assigned_to", "writing agent"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use `GET /users` to read the users in your agency. You need a user id to set the owner of a contact or the writing agent of a policy.
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+<ParamField query="page" type="integer" default="1">Page number, starting at 1.</ParamField>
+
+<ParamField query="per_page" type="integer" default="25">Rows per page, from 1 to 100.</ParamField>
+
+## Endpoint
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/users` | `users:list` |
+
+The response lists users whose main agency is yours, sorted by first name and then last name. It's paginated with `page` and `per_page`. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting).
+
+<ParamField query="search" type="string">
+Matches first name, last name, full name or email.
+</ParamField>
+
+<ParamField query="status" type="string">
+Only users with this status: `active`, `inactive`, `pending` or `suspended`. Any other value returns no users.
+</ParamField>
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/users?search=alex&status=active" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json
+{
+  "data": [
+    {
+      "id": "DEMO-USER",
+      "first_name": "Alex",
+      "last_name": "Agent",
+      "name": "Alex Agent",
+      "email": "alex@example.com",
+      "role": "agent",
+      "status": "active",
+      "is_agent": true
+    }
+  ],
+  "links": {
+    "first": "{BASE_URL}/users?page=1",
+    "last": null,
+    "prev": null,
+    "next": null
+  },
+  "meta": { "current_page": 1, "from": 1, "to": 1, "per_page": 25, "path": "{BASE_URL}/users" }
+}
+```
+
+</ResponseExample>
+
+## Response fields
+
+<ResponseField name="id">
+User id, a UUID.
+</ResponseField>
+
+<ResponseField name="first_name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="last_name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="name">
+Name fields.
+</ResponseField>
+
+<ResponseField name="email">
+Login email.
+</ResponseField>
+
+<ResponseField name="role">
+The user's role in your agency: `agent`, `admin` or `agency_owner`.
+</ResponseField>
+
+<ResponseField name="status">
+`active`, `inactive`, `pending` or `suspended`.
+</ResponseField>
+
+<ResponseField name="is_agent">
+`true` when the user's role in their main agency is Agent.
+</ResponseField>
+
+## Use user ids
+
+| Endpoint | Field | Notes |
+| -------- | ----- | ----- |
+| [`POST /contacts`, `PUT /contacts/{id}`](/api/contacts) | `assigned_to` | The contact's owner. On create, it defaults to the user who created the API key. |
+| [`POST /policies`](/api/policies) | `assigned_to` | The writing agent. Required. |
+| [`PUT /policies/{id}`](/api/policies) | `assigned_to` | Changes the writing agent. |
+| [`GET /contacts`, `GET /policies`](/api/pagination-filtering-and-sorting) | `assigned_to` filter | Only records assigned to this user. |
+
+A user who doesn't belong to your agency returns `422` with `The assigned user does not belong to your agency.`
+
+You can't invite or edit users through the API. Admins do that in the app. See [Users and roles](/settings/users-and-roles).

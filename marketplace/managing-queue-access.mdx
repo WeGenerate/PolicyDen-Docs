@@ -1,0 +1,71 @@
+---
+title: "Manage marketplace queue access"
+description: "Choose which agents can receive each marketplace queue\u2019s calls."
+keywords: ["queue access", "assign agents", "marketplace", "remove agents"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners with marketplace access and the dialer turned on.</Info>
+
+Choose agents for each queue in an agency account. For an individual agent account, [join queues yourself](/marketplace/joining-queues).
+
+## Before you start
+
+- [Invite your agents](/settings/users-and-roles) to the agency.
+- Check their [licensed states](/settings/user-profiles) and your [wallet balance](/settings/wallet).
+
+<Warning>Each billable call received by a selected agent is deducted from your agency's wallet.</Warning>
+
+<Steps>
+<Step title="Open the marketplace">
+  In the sidebar, select **Marketplace**.
+</Step>
+<Step title="Review the queue">
+  Check its price, hours, and accepted states before assigning agents.
+</Step>
+<Step title="Open agent access">
+  On the queue card, select **Manage Access**.
+
+<Frame caption="Queue agent access dialog with the Save Agents button.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/marketplace/queue-agent-access.png" src="/videos/marketplace/queue-agent-access.mp4" aria-label="Queue agent access dialog with the Save Agents button." />
+  <img className="hidden motion-reduce:block" src="/images/marketplace/queue-agent-access.png" alt="Queue agent access dialog with the Save Agents button." />
+</Frame>
+</Step>
+<Step title="Choose your agents">
+  Select agents' checkboxes. Use **Search agents** to find a name or email.
+</Step>
+<Step title="Save agent access">
+  Select **Save Agents**. Selected agents receive the queue's calls when available.
+</Step>
+</Steps>
+
+**Select All** and **Remove All** affect agents matching the current search. Clear the search before changing everyone. For state-licensed queues, each agent's **Licensed in** count helps you check coverage.
+
+To remove access, clear an agent's checkbox and select **Save Agents**. Removing every agent stops this queue's calls for your agency.
+
+## What you'll see
+
+The card updates its opted-in agent count and shows **Live**, or **No funds** when the wallet is empty.
+
+## If it didn't work
+
+<AccordionGroup>
+<Accordion title="No agency users yet">
+  [Invite agents](/settings/users-and-roles), then reopen **Manage Access**.
+</Accordion>
+<Accordion title="No agents match your search">
+  Clear **Search agents** or search by the agent's email.
+</Accordion>
+<Accordion title="Save Agents is disabled">
+  Change at least one selection. If an update fails, reopen the dialog and try again.
+</Accordion>
+<Accordion title="Assigned agents aren't getting calls">
+  Check queue hours, agent availability, licensed states, and [wallet funds](/fix/wallet-and-payments).
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Review wallet charges" href="/settings/wallet-transactions" />
+<Card title="Troubleshoot incoming calls" href="/fix/not-getting-calls" />
+</CardGroup>

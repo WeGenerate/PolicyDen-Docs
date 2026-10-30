@@ -1,0 +1,75 @@
+---
+title: "Create an outbound campaign"
+description: "Choose contacts and agents for an outbound calling campaign."
+keywords: ["campaign", "outbound", "contact list", "assign agents"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer turned on.</Info>
+
+Create a campaign to connect selected contacts with your agents. Set up a product and a number pool before adding it.
+
+## Before you start
+
+- Add the [product](/settings/products-and-carriers) you want to call about.
+- Create a [number pool](/dialer/phone-numbers) with calling numbers.
+- Decide which contacts and agents should take part.
+
+<Steps>
+  <Step title="Open campaign setup">
+    In **Dialer > Campaigns**, select **Add Campaign**.
+
+<Frame caption="Add Campaign form in the Dialer settings.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/dialer/create-campaign-form.png" src="/videos/dialer/create-campaign-form.mp4" aria-label="Add Campaign form in the Dialer settings." />
+  <img className="hidden motion-reduce:block" src="/images/dialer/create-campaign-form.png" alt="Add Campaign form in the Dialer settings." />
+</Frame>
+  </Step>
+  <Step title="Choose campaign details">
+    Complete **Product**, **Name**, and **Number Pool**. Use a name that no other campaign uses.
+  </Step>
+  <Step title="Create the campaign">
+    Select **Add Campaign**, then open the new campaign from the list.
+  </Step>
+  <Step title="Choose your contacts">
+    In **Contacts**, use **Select List** to choose a contact list, then select **Save**.
+  </Step>
+  <Step title="Assign your agents">
+    In **Users**, select the agents who should receive calls, then select **Save**.
+  </Step>
+  <Step title="Set call outcomes">
+    In **Dispositions**, choose the outcomes agents can use. Follow [Set up dispositions](/dialer/dispositions).
+  </Step>
+  <Step title="Review calling settings">
+    [Configure campaign dialing](/dialer/campaign-dialing-settings), then review the **Active** or **Inactive** status at the campaign header.
+  </Step>
+</Steps>
+
+If no contact list exists, choose **Build A List** in **Contacts**. Enter a list name, add filters, and select **Save List**. **Matching** shows the eligible contact count. Do Not Call ([DNC](/start/glossary)) numbers and contacts on another running campaign are excluded.
+
+## What you'll see
+
+The campaign shows **In The List**, **Dialed**, **Left To Dial**, **Answered**, **Connected**, and **Abandoned** counts.
+
+Assigned agents choose outbound calling and their campaign in the status widget. See [Set your status](/calls/setting-your-status).
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="No number pools are available">
+    Create a pool in [Phone Numbers](/dialer/phone-numbers), then reopen **Add Campaign**.
+  </Accordion>
+  <Accordion title="The campaign has no matching contacts">
+    Review the list filters, DNC list, and whether other running campaigns already include these contacts.
+  </Accordion>
+  <Accordion title="An agent gets no calls">
+    Check **Users**, campaign status, schedule, and the selected campaign. See [Not getting calls](/fix/not-getting-calls).
+  </Accordion>
+</AccordionGroup>
+
+To remove a campaign, use **Delete Campaign**. The confirmation warns that deletion can't be undone and removes campaign assignments.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Configure dialing" href="/dialer/campaign-dialing-settings" />
+  <Card title="Review live calls" href="/dialer/live-monitor" />
+</CardGroup>

@@ -1,0 +1,83 @@
+---
+title: "Manage deals on a pipeline"
+description: "Add contacts to your pipeline, move them between stages, and remove finished deals."
+keywords: ["deals", "move contact", "pipeline stages", "add deal", "remove deal"]
+---
+
+<Info>**Who can do this:** Agents for contacts assigned to them; Admins and Agency Owners for all agency contacts.</Info>
+
+Use a pipeline to track a contact's progress. The contact and at least one pipeline stage must already exist.
+
+## Add a deal
+
+<Steps>
+  <Step title="Open your pipeline">
+    In **Pipelines**, open the board you want to work.
+  </Step>
+  <Step title="Open the deal form">
+    Select **Add Deal**. On a narrow screen, use the header's plus icon.
+  </Step>
+  <Step title="Choose a stage">
+    Under **Add to stage**, select the contact's current stage.
+  </Step>
+  <Step title="Find your contact">
+    Under **Find Contact**, search using **Search by MBI or Name**, then select the matching contact.
+  </Step>
+  <Step title="Add the deal">
+    Select **Add**. The contact appears in the selected stage.
+  </Step>
+</Steps>
+
+A column's plus icon opens the same form with its stage already selected and locked. Adding a contact already on this board moves their existing card. A contact can belong to several pipelines, but only one stage per pipeline.
+
+## Move a deal
+
+<Steps>
+  <Step title="Find the card">
+    Locate the contact's card in its current stage.
+  </Step>
+  <Step title="Drag to another stage">
+    Drag the card's body into the destination column, avoiding its name and action buttons.
+  </Step>
+  <Step title="Release the card">
+    Release the card in the column. PolicyDen saves the new stage automatically.
+  </Step>
+</Steps>
+
+<Frame caption="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/videos/pipeline/drag-deal.png" src="/videos/pipeline/drag-deal.mp4" aria-label="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200." />
+  <img className="hidden motion-reduce:block" src="/videos/pipeline/drag-deal.png" alt="Actual pointer drag between pipeline stages; local PATCH returned HTTP 200." />
+</Frame>
+{/* TODO: verify capture support for dragging: the binding capture action schema has no drag action; record the stage-to-stage motion before publishing. */}
+
+## Add an activity or remove a deal
+
+Select a card's plus icon to open **Add Activity**, then choose **Task**, **Meeting**, or **Note**. Follow the linked task pages for the full forms.
+
+To remove a card, select its trash icon. In **Remove Deal?**, select **Remove**. The contact stays in PolicyDen.
+
+## What you'll see
+
+The card appears in its saved stage, and the column counts reflect the move.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="Add is unavailable">
+    Choose both a stage and a contact. If the board has no stages, ask an Admin or Agency Owner to configure it.
+  </Accordion>
+  <Accordion title="The card moved back">
+    **Failed to update stage** means the move wasn't saved. Try dragging it again.
+  </Accordion>
+  <Accordion title="I can't find a contact">
+    Agents can manage only contacts assigned to them. Check the assignment with your Admin or Agency Owner.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Create a task" href="/tasks/creating-tasks">Plan the next follow-up.</Card>
+  <Card title="Schedule a meeting" href="/meetings/scheduling-meetings">Book time with the contact.</Card>
+  <Card title="Add a note" href="/customization/notes-and-comments">Record the conversation.</Card>
+</CardGroup>

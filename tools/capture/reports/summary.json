@@ -1,0 +1,14 @@
+{
+  "attemptedSpecs": 133,
+  "captureStatuses": {
+    "completed": 122,
+    "blocked": 11
+  },
+  "referencedPngFiles": 118,
+  "referencedVideos": 21,
+  "minimumClipSeconds": 5.416667,
+  "maximumClipSeconds": 6.791667,
+  "silentClips": true,
+  "archivedUnusedAssets": 31,
+  "rbac": "deferred"
+}

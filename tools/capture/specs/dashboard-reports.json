@@ -1,0 +1,194 @@
+[
+  {
+    "id": "dashboard/overview-agent",
+    "page": "dashboard/overview",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dashboard/overview-agent.png",
+    "alt": "Agent Dashboard with sales cards, tasks, and performance sections."
+  },
+  {
+    "id": "dashboard/live-leaderboard-display",
+    "page": "dashboard/live-leaderboard",
+    "persona": "agency-admin",
+    "url": "/dashboard",
+    "before": [
+      {
+        "scroll": {
+          "text": "Open Live View"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "link",
+          "name": "Open Live View"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/dashboard/live-leaderboard-display.png",
+    "alt": "Dashboard performance table with the Open Live View link."
+  },
+  {
+    "id": "atlas/overview-empty",
+    "page": "atlas/overview",
+    "persona": "agency-agent-field",
+    "url": "/ai-chat",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/atlas/overview-empty.png",
+    "alt": "Atlas start screen with question field and suggested prompts."
+  },
+  {
+    "id": "atlas/ask-atlas-prompt",
+    "page": "atlas/ask-atlas",
+    "persona": "agency-agent-field",
+    "url": "/ai-chat",
+    "before": [
+      {
+        "fill": {
+          "label": "Ask Atlas a question",
+          "value": "What policies go effective this week?"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/atlas/ask-atlas-prompt.png",
+    "alt": "Atlas question field containing an example question before sending."
+  },
+  {
+    "id": "reports/overview-performance",
+    "page": "reports/overview",
+    "persona": "agency-admin",
+    "url": "/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/reports/overview-performance.png",
+    "alt": "Admin Reporting with product filters, summary cards, and performance table."
+  },
+  {
+    "id": "reports/build-report-toolbar",
+    "page": "reports/building-reports",
+    "persona": "agency-admin",
+    "url": "/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/reports/build-report-toolbar.png",
+    "alt": "Reporting toolbar with product, date, filter, and Group By controls."
+  },
+  {
+    "id": "reports/persistency-months",
+    "page": "reports/persistency",
+    "persona": "agency-admin",
+    "url": "/reports",
+    "before": [
+      {
+        "click": {
+          "text": "Life Insurance"
+        }
+      },
+      {
+        "click": {
+          "role": "menuitem",
+          "name": "Medicare"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Apply"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1500
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Persistency"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 5000
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Breakdown"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/reports/persistency-months.png",
+    "alt": "Persistency view with monthly retention columns and its legend."
+  },
+  {
+    "id": "compliance/overview-summary",
+    "page": "compliance/overview",
+    "persona": "agency-admin",
+    "url": "/compliance",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/compliance/overview-summary.png",
+    "alt": "Compliance summary cards and grouped scorecard results."
+  },
+  {
+    "id": "dashboard/overview-admin",
+    "page": "dashboard/overview",
+    "persona": "agency-admin",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dashboard/overview-admin.png",
+    "alt": "Admin Dashboard with sales cards, policy chart, and agency performance."
+  }
+]

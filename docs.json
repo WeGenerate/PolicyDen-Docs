@@ -22,28 +22,59 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "User guide",
+        "tab": "Guides",
         "icon": "book-open",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "icon": "rocket",
             "pages": [
               "index",
               "quickstart",
-              "navigating-the-app"
+              "navigating-the-app",
+              "getting-started/sign-in",
+              "getting-started/set-up-your-account",
+              "getting-started/setup-checklist",
+              "getting-started/notifications-and-alerts"
             ]
           },
           {
-            "group": "Contacts",
+            "group": "Workflows",
+            "icon": "route",
+            "pages": [
+              "workflows/work-a-new-lead",
+              "workflows/follow-up-with-your-book",
+              "workflows/run-a-dialer-shift",
+              "workflows/buy-and-work-marketplace-leads",
+              "workflows/set-up-your-solo-account",
+              "workflows/set-up-your-agency",
+              "workflows/onboard-a-new-agent",
+              "workflows/review-team-performance"
+            ]
+          },
+          {
+            "group": "Dashboard and Atlas",
+            "icon": "sparkles",
+            "pages": [
+              "dashboard/overview",
+              "dashboard/live-leaderboard",
+              "atlas/overview",
+              "atlas/ask-atlas"
+            ]
+          },
+          {
+            "group": "Contacts and leads",
             "icon": "users",
             "pages": [
               "contacts/overview",
+              "contacts/filtering-contacts",
               "contacts/creating-contacts",
               "contacts/contact-profile",
-              "contacts/importing-contacts",
-              "contacts/exporting-contacts",
-              "contacts/bulk-actions"
+              "contacts/editing-contact-details",
+              "customization/notes-and-comments",
+              "customization/documents",
+              "customization/custom-fields",
+              "contacts/exporting-contacts"
             ]
           },
           {
@@ -51,87 +82,209 @@
             "icon": "file-text",
             "pages": [
               "policies/overview",
+              "policies/creating-policies",
               "policies/policy-profile",
               "policies/status-history",
-              "policies/bulk-actions"
+              "policies/attaching-plans"
             ]
           },
           {
-            "group": "Pipeline",
+            "group": "Pipelines",
             "icon": "layout-grid",
             "pages": [
               "pipeline/overview",
+              "pipeline/managing-deals",
               "pipeline/configuring-pipeline"
             ]
           },
           {
-            "group": "Tasks",
+            "group": "Tasks and meetings",
             "icon": "list-todo",
             "pages": [
               "tasks/overview",
-              "tasks/managing-tasks"
+              "tasks/creating-tasks",
+              "tasks/managing-tasks",
+              "meetings/overview",
+              "meetings/scheduling-meetings"
             ]
           },
           {
-            "group": "Conversations",
+            "group": "Messages",
             "icon": "messages-square",
             "pages": [
-              "meetings/overview",
-              "meetings/scheduling-meetings",
               "messages/overview",
-              "calls/overview"
+              "messages/sending-texts",
+              "messages/finding-conversations"
             ]
           },
           {
-            "group": "Atlas",
-            "icon": "sparkles",
+            "group": "Calls",
+            "icon": "phone",
             "pages": [
-              "atlas/overview"
+              "calls/overview",
+              "calls/setting-your-status",
+              "calls/making-calls",
+              "calls/answering-calls",
+              "calls/transferring-calls",
+              "calls/wrapping-up-calls",
+              "calls/call-log",
+              "calls/call-details",
+              "calls/reporting"
             ]
           },
           {
-            "group": "Dashboard and reports",
-            "icon": "activity",
+            "group": "Buy leads and wallet",
+            "icon": "store",
             "pages": [
-              "dashboard/overview",
-              "reports/overview"
+              "marketplace/overview",
+              "marketplace/joining-queues",
+              "settings/wallet",
+              "settings/wallet-funds",
+              "settings/wallet-transactions"
             ]
           },
-          {
-            "group": "Your data",
-            "icon": "sliders",
-            "pages": [
-              "customization/notes-and-comments",
-              "customization/documents",
-              "customization/saved-filters",
-              "customization/custom-fields"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Settings",
-        "icon": "settings",
-        "groups": [
           {
             "group": "Your account",
             "icon": "user",
             "pages": [
               "settings/profile",
-              "settings/password"
+              "settings/password",
+              "settings/sessions",
+              "settings/credentials",
+              "settings/licensed-states-and-contracts"
             ]
           },
           {
-            "group": "Agency",
+            "group": "Fix a problem",
+            "icon": "life-buoy",
+            "pages": [
+              "fix/cant-see-a-feature",
+              "fix/sign-in-problems",
+              "fix/not-getting-calls",
+              "fix/text-didnt-send",
+              "fix/import-problems",
+              "fix/wallet-and-payments"
+            ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book-marked",
+            "pages": [
+              "start/glossary"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Admin",
+        "icon": "settings",
+        "groups": [
+          {
+            "group": "Agency settings",
             "icon": "building",
             "pages": [
               "settings/agency-overview",
-              "settings/users-and-roles",
               "settings/products-and-carriers",
+              "settings/relationships",
               "settings/agency-custom-fields",
-              "settings/sms-numbers",
-              "settings/templates",
+              "settings/task-templates",
+              "settings/integrations",
               "settings/billing"
+            ]
+          },
+          {
+            "group": "Users",
+            "icon": "user-cog",
+            "pages": [
+              "settings/users-and-roles",
+              "start/roles",
+              "settings/import-users",
+              "settings/user-profiles",
+              "settings/user-access-and-security"
+            ]
+          },
+          {
+            "group": "Imports and bulk changes",
+            "icon": "upload",
+            "pages": [
+              "contacts/importing-contacts",
+              "contacts/bulk-actions",
+              "policies/importing-policies",
+              "policies/bulk-actions"
+            ]
+          },
+          {
+            "group": "Reporting and compliance",
+            "icon": "activity",
+            "pages": [
+              "reports/overview",
+              "reports/building-reports",
+              "reports/metrics-and-columns",
+              "reports/persistency",
+              "compliance/overview"
+            ]
+          },
+          {
+            "group": "Dialer",
+            "icon": "headset",
+            "pages": [
+              "dialer/overview",
+              "dialer/live-monitor",
+              "dialer/phone-numbers",
+              "dialer/queues",
+              "dialer/queue-routing-and-hours",
+              "dialer/campaigns",
+              "dialer/campaign-dialing-settings",
+              "dialer/dispositions",
+              "dialer/scripts",
+              "dialer/audio-library",
+              "dialer/dnc-numbers",
+              "dialer/pay-per-call",
+              "dialer/vendors-and-tags"
+            ]
+          },
+          {
+            "group": "Marketplace",
+            "icon": "store",
+            "pages": [
+              "marketplace/managing-queue-access"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Get started",
+            "icon": "rocket",
+            "pages": [
+              "api/overview",
+              "api/manage-api-keys",
+              "api/authentication",
+              "api/make-your-first-request"
+            ]
+          },
+          {
+            "group": "Concepts",
+            "icon": "book-open",
+            "pages": [
+              "api/pagination-filtering-and-sorting",
+              "api/errors-and-rate-limits"
+            ]
+          },
+          {
+            "group": "Resources",
+            "icon": "database",
+            "pages": [
+              "api/contacts",
+              "api/policies",
+              "api/custom-fields",
+              "api/relationships",
+              "api/pipelines",
+              "api/products",
+              "api/users"
             ]
           }
         ]
@@ -190,38 +343,95 @@
       {
         "header": "Get started",
         "items": [
-          { "label": "Quickstart", "href": "/quickstart" },
-          { "label": "App tour", "href": "/navigating-the-app" },
-          { "label": "Atlas", "href": "/atlas/overview" }
+          {
+            "label": "Quickstart",
+            "href": "/quickstart"
+          },
+          {
+            "label": "App tour",
+            "href": "/navigating-the-app"
+          },
+          {
+            "label": "Atlas",
+            "href": "/atlas/overview"
+          }
         ]
       },
       {
         "header": "Work your book",
         "items": [
-          { "label": "Contacts", "href": "/contacts/overview" },
-          { "label": "Policies", "href": "/policies/overview" },
-          { "label": "Pipeline", "href": "/pipeline/overview" },
-          { "label": "Messages", "href": "/messages/overview" }
+          {
+            "label": "Contacts",
+            "href": "/contacts/overview"
+          },
+          {
+            "label": "Policies",
+            "href": "/policies/overview"
+          },
+          {
+            "label": "Pipeline",
+            "href": "/pipeline/overview"
+          },
+          {
+            "label": "Messages",
+            "href": "/messages/overview"
+          }
         ]
       },
       {
         "header": "Admin",
         "items": [
-          { "label": "Agency settings", "href": "/settings/agency-overview" },
-          { "label": "Users and roles", "href": "/settings/users-and-roles" },
-          { "label": "Reports", "href": "/reports/overview" },
-          { "label": "Billing", "href": "/settings/billing" }
+          {
+            "label": "Agency settings",
+            "href": "/settings/agency-overview"
+          },
+          {
+            "label": "Users and roles",
+            "href": "/settings/users-and-roles"
+          },
+          {
+            "label": "Reports",
+            "href": "/reports/overview"
+          },
+          {
+            "label": "Billing",
+            "href": "/settings/billing"
+          }
         ]
       },
       {
         "header": "Help",
         "items": [
-          { "label": "Email support", "href": "mailto:support@policyden.com" },
-          { "label": "Open the app", "href": "https://app.policyden.com" }
+          {
+            "label": "Email support",
+            "href": "mailto:support@policyden.com"
+          },
+          {
+            "label": "API",
+            "href": "/api/overview"
+          },
+          {
+            "label": "Open the app",
+            "href": "https://app.policyden.com"
+          }
         ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/customization/saved-filters",
+      "destination": "/contacts/filtering-contacts"
+    },
+    {
+      "source": "/settings/sms-numbers",
+      "destination": "/messages/overview"
+    },
+    {
+      "source": "/settings/templates",
+      "destination": "/messages/sending-texts"
+    }
+  ],
   "background": {
     "decoration": "windows"
   },

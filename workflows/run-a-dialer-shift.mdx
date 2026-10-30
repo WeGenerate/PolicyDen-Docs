@@ -1,0 +1,86 @@
+---
+title: "Run a dialer shift"
+description: "Take calls, record outcomes, plan callbacks, and review your shift."
+keywords: ["run a dialer shift", "daily work", "agent guide"]
+---
+
+<Info>**Who can do this:** Agency Agents on the Telesales channel, in agencies with the dialer enabled.</Info>
+
+Take calls, record outcomes, plan callbacks, and review your shift. Allow about 10 minutes to prepare, then repeat for each call.
+
+## Before you start
+
+- Allow microphone access and connect your headset.
+- An Admin must assign the queues or active campaign you need.
+
+## 1. Prepare to take calls
+
+Open your status menu and check **Audio Settings**. Under **Taking Calls**, choose **Inbound** or **Outbound**; outbound calling also needs a campaign.
+
+Select **Available** when ready to receive calls.
+
+
+
+[Full steps: Set your status →](/calls/setting-your-status)
+
+{/* TODO: verify the demo incoming-call fixture before capturing phase 2; it must not place a real call. */}
+
+## 2. Take the call
+
+Select **Accept** for an incoming call. Review the caller’s details and record notes on their contact.
+
+
+
+[Full steps: Answer calls →](/calls/answering-calls)
+
+{/* TODO: verify the demo Wrap Up fixture before capturing phase 3; use a seeded ended call. */}
+
+## 3. Finish and record the outcome
+
+In **Wrap Up**, choose the disposition that matches the call. A sale disposition requires a policy under **Which policy was sold?**
+
+Select **Save Disposition** and choose **Available** or **Paused** when the next-status selector appears.
+
+
+
+[Full steps: Wrap up calls →](/calls/wrapping-up-calls)
+
+## 4. Plan callbacks
+
+Create a dated task on the contact when you promise another call. Use **Call Log** and **Callbacks** to review calls with callback outcomes.
+
+<Frame>
+  <img src="/images/workflows/run-a-dialer-shift-4.png" alt="Plan callbacks: Add Task control highlighted." />
+</Frame>
+
+[Full steps: Create follow-up tasks →](/tasks/creating-tasks)
+
+## 5. Review the shift
+
+Open **Reporting** for your call results, then set **Offline** when finished. This is dialer Reporting at `/dialer/reports`; agency Reporting at `/reports` is separate.
+
+[Full steps: Understand agency Reporting →](/reports/overview)
+
+<Frame>
+  <img src="/images/workflows/run-a-dialer-shift-5.png" alt="Sales report with agent rows, status columns, and totals." />
+</Frame>
+
+[Full steps: Review dialer results →](/calls/reporting)
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="I am not getting calls">
+    Check microphone access, status, and queue or campaign assignment. [Fix missing calls](/fix/not-getting-calls).
+  </Accordion>
+  <Accordion title="I cannot save the outcome">
+    Select a disposition and, for a sale, its policy. If no dispositions appear, ask an Admin to configure the queue or campaign.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review call history" href="/calls/call-log" />
+  <Card title="Follow up with your book" href="/workflows/follow-up-with-your-book" />
+</CardGroup>

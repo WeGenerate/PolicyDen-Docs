@@ -1,0 +1,46 @@
+/* Shared documentation rhythm. The audit grid lives only in tools/layout-audit. */
+#content {
+  --pd-heading-gap: 1rem;
+  --pd-section-gap: 2.5rem;
+  --pd-card-gap: 1rem;
+}
+
+#content > h2 {
+  margin-block: var(--pd-section-gap) var(--pd-heading-gap);
+  line-height: 2rem;
+}
+
+#content > h3 {
+  margin-block: 2rem 0.75rem;
+  line-height: 1.75rem;
+}
+
+/* The content container already supplies the gap below the page header. */
+#content > :first-child {
+  margin-block-start: 0;
+}
+
+/* Put gutters on the grid, so Cards and Columns share the same row rhythm. */
+#content .columns {
+  row-gap: var(--pd-card-gap);
+}
+
+#content .columns > .card {
+  margin-block: 0;
+  min-inline-size: 0;
+}
+
+/* Keep short labels together; wrap long labels within the reading column. */
+#content :not(pre) > code {
+  display: inline-block;
+  max-inline-size: 100%;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  #content {
+    --pd-section-gap: 2rem;
+  }
+}

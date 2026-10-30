@@ -1,0 +1,27 @@
+---
+title: "Understand report columns"
+description: "Interpret the metrics and options in admin Reporting."
+keywords: ["metrics", "columns", "effectuated", "CPA", "sales"]
+---
+
+Admin **Reporting** columns depend on the selected product and grouping. Effectuated policies have been marked as placed; active counts follow the product's active statuses. Cost per acquisition (CPA) compares spending with policy counts.
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| **Sales** | Counts matching policy sales. | Shown; fixed column. | Admins and Agency Owners change the report scope. |
+| **Effectuated** | Counts policies marked as placed. | Shown for Medicare. | Admins and Agency Owners choose visible columns. |
+| **Effectuated %** | Effectuated divided by Sales, as a percentage. | Shown for Medicare. | Admins and Agency Owners choose visible columns. |
+| **Active** | Counts policies in active statuses. | Shown for Medicare. | Admins and Agency Owners choose visible columns. |
+| **Active %** | Active divided by Sales, as a percentage. | Shown for Medicare. | Admins and Agency Owners choose visible columns. |
+| Product status columns | Counts policies in each product status. | Shown for supported non-Medicare products. | Admins and Agency Owners choose visible columns. |
+| **Spend** | Shows attributed spending. | Shown with dialer access and an eligible grouping. | Admins and Agency Owners choose visible columns. |
+| **Raw CPA** | Spend divided by Sales. | Same availability as Spend. | Admins and Agency Owners choose visible columns. |
+| **Effectuated CPA** | Spend divided by Effectuated. | Medicare, with spending available. | Admins and Agency Owners choose visible columns. |
+
+Spending columns are available when the first grouping is **Agency**, **Agent**, **Vendor**, **Month**, **Week**, or **Day**. Other groupings hide these columns.
+
+Products without a status template show **Breakdown** and **Sales**, plus spending columns where available. Individual agent accounts have no **Agent** grouping or filter.
+
+The table customization control lets you select available columns. **Breakdown** and **Sales** remain fixed. In **Persistency**, the table uses monthly columns instead.
+
+[Build a sales report](/reports/building-reports) to change the scope, or [review persistency](/reports/persistency) to interpret monthly retention.

@@ -1,0 +1,90 @@
+{
+  "browserPlayback": "passed",
+  "clientNavigationCaptions": "passed; one track; repeated events retain the current caption selection",
+  "pageErrors": [],
+  "tutorials": [
+    {
+      "id": "account-setup",
+      "page": "getting-started/set-up-your-account",
+      "defaults": {
+        "controls": true,
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "paused": true,
+        "preload": "none"
+      },
+      "playback": {
+        "duration": 78.738,
+        "width": 1440,
+        "height": 1000,
+        "audioDecodedBytes": 25981,
+        "captionTracks": 1,
+        "cues": 19,
+        "captionMode": "showing"
+      },
+      "audioLevels": {
+        "meanDb": -18.2,
+        "peakDb": -2.8
+      }
+    },
+    {
+      "id": "prepare-your-agency",
+      "page": "workflows/set-up-your-agency",
+      "defaults": {
+        "controls": true,
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "paused": true,
+        "preload": "none"
+      },
+      "playback": {
+        "duration": 74.291,
+        "width": 1440,
+        "height": 1000,
+        "audioDecodedBytes": 23718,
+        "captionTracks": 1,
+        "cues": 19,
+        "captionMode": "showing"
+      },
+      "audioLevels": {
+        "meanDb": -17.4,
+        "peakDb": -2.9
+      }
+    },
+    {
+      "id": "invite-and-prepare-a-new-agent",
+      "page": "workflows/onboard-a-new-agent",
+      "defaults": {
+        "controls": true,
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "paused": true,
+        "preload": "none"
+      },
+      "playback": {
+        "duration": 88.835,
+        "width": 1440,
+        "height": 1000,
+        "audioDecodedBytes": 25825,
+        "captionTracks": 1,
+        "cues": 22,
+        "captionMode": "showing"
+      },
+      "audioLevels": {
+        "meanDb": -17.6,
+        "peakDb": -3
+      }
+    }
+  ],
+  "checkedAt": "2026-10-29T20:06:40.823926+00:00",
+  "mintValidate": "passed",
+  "mintBrokenLinks": "passed; zero broken links",
+  "missingMedia": [],
+  "gitDiffCheck": "passed",
+  "credentials": "not present in pending source or media",
+  "rawRecordings": "ignored",
+  "publication": "local preview only"
+}

@@ -1,0 +1,80 @@
+---
+title: "I can't sign in"
+description: "Recover access after a login, code, Google, password, or invitation error."
+keywords: ["login failed", "expired code", "Google login", "password reset", "signed out", "invitation"]
+---
+
+Open the cause that matches your message. Use the email address your Admin or Agency Owner added to PolicyDen.
+
+<AccordionGroup>
+  <Accordion title="My email or password isn't accepted">
+    **Why it happens**
+    - The credentials don't match, or repeated attempts temporarily limit sign-in.
+
+    **Fix it**
+
+    Check **Email** and **Password**. Follow any waiting time shown before trying again, or select **Forgot password?**.
+  </Accordion>
+  <Accordion title="My login code is missing or invalid">
+    **Why it happens**
+    - The code was entered incorrectly, expired, or was replaced by a newer code.
+    - **The code is invalid or has expired.** appears when the code can't be used.
+
+    **Fix it**
+
+    Check your spam folder. Select **Resend code** when the countdown ends, then enter the newest four-character code. Requesting another code invalidates the old one.
+
+    If you're returned to login, select **Login with code** and request a code again in that browser.
+  </Accordion>
+  <Accordion title="Google login failed or can't find my account">
+    **Why it happens**
+    - Google authentication didn't complete, or the Google email doesn't match an existing PolicyDen account.
+
+    **Fix it**
+
+    Retry **Login with Google** using your PolicyDen account email. For **No account found for this email address.**, ask your Admin or Agency Owner to confirm the email they invited.
+  </Accordion>
+  <Accordion title="My account is not active">
+    **Why it happens**
+    - Your account doesn't currently allow sign-in.
+
+    **Fix it**
+
+    For **Your account is not active. Please contact support.**, ask your Admin or Agency Owner to review your access. Individual account owners should email support@policyden.com.
+  </Accordion>
+  <Accordion title="I was signed out on another device">
+    **Why it happens**
+    - With single-session sign-in enabled, a new login signs out older sessions.
+    - **Keep me logged in** doesn't override that rule.
+
+    **Fix it**
+
+    Sign in on the device you want to use. Review [your sessions](/settings/sessions) if you don't recognize the other login.
+
+    For **Your account is signed in on another device. Sign in with your password to use it here.**, enter your password again.
+
+    {/* TODO: verify production enables single-session sign-in; auth.single_session defaults to true but can be overridden. */}
+  </Accordion>
+  <Accordion title="My password reset didn't work">
+    **Why it happens**
+    - A confirmation doesn't prove the email has an account. A reset link may be invalid or expired.
+
+    **Fix it**
+
+    Select **Forgot password?**, enter **Email**, and select **Send password reset link**. Check your inbox and spam folder.
+
+    Open the newest reset email. Enter **Password** and **Confirm password**, then select **Reset password**. Return to login with your new password.
+
+    {/* TODO: verify inactive-account reset feedback; the controller flashes error but the reset-request page receives only status. */}
+  </Accordion>
+  <Accordion title="My invitation link doesn't open setup">
+    **Why it happens**
+    - The invitation is incomplete or invalid, or your account is already active.
+
+    **Fix it**
+
+    Open the full link from the invitation email. If it returns to login, try [signing in](/getting-started/sign-in). Otherwise, ask the sender for a fresh invitation.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? Email support@policyden.com. Include your account email, agency, sign-in method, exact error, and when it happened. Never include your password or login code.

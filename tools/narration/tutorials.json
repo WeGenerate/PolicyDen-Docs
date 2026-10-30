@@ -1,0 +1,285 @@
+[
+  {
+    "id": "account-setup",
+    "page": "getting-started/set-up-your-account",
+    "title": "Set up your account",
+    "sourceRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+    "duration": 78.738,
+    "provider": "OpenAI",
+    "model": "gpt-realtime-2.1-mini",
+    "voice": "marin",
+    "aiNarration": true,
+    "scenes": [
+      {
+        "id": "profile",
+        "start": 0.0,
+        "end": 14.624349,
+        "narration": "Open the account setup link from your invitation. This example follows an invited agency Agent. In Your Profile, check your First Name and Last Name, then enter your Phone number. A profile photo is optional.",
+        "spokenSeconds": 13.9
+      },
+      {
+        "id": "birth-date",
+        "start": 14.624349,
+        "end": 23.541016,
+        "narration": "Select your Date of Birth. Use the year and month menus in the calendar, then choose the day.",
+        "spokenSeconds": 5.6
+      },
+      {
+        "id": "npn",
+        "start": 23.541016,
+        "end": 32.457683,
+        "narration": "Enter your National Producer Number in NPN. Check the required details, then select Continue to open Address.",
+        "spokenSeconds": 7.85
+      },
+      {
+        "id": "address",
+        "start": 32.457683,
+        "end": 44.873699,
+        "narration": "Enter Street and City. Choose your State and enter your ZIP Code. Here, the address is entered manually.",
+        "spokenSeconds": 7.55
+      },
+      {
+        "id": "password-step",
+        "start": 44.873699,
+        "end": 54.956382000000005,
+        "narration": "Select Continue. Invited agency Agents move to Create Password. Individual accounts may show an extra Licensing step before this screen.",
+        "spokenSeconds": 9.35
+      },
+      {
+        "id": "password",
+        "start": 54.956382000000005,
+        "end": 65.87304900000001,
+        "narration": "Enter a password that meets the displayed requirements, then enter the same value in Repeat Password. Check that all requirements are satisfied.",
+        "spokenSeconds": 8.4
+      },
+      {
+        "id": "finish",
+        "start": 65.87304900000001,
+        "end": 78.70573200000001,
+        "narration": "Select Finish to complete account setup. When the completion screen appears, select Go To Dashboard to open your account. Your dashboard is the starting point for your next tasks in PolicyDen.",
+        "spokenSeconds": 12.1
+      }
+    ],
+    "description": "Complete an invited agency Agent profile, address, and password, then open the dashboard.",
+    "audioMastering": {
+      "targetLufs": -17,
+      "truePeakDb": -3
+    },
+    "files": {
+      "video": "/videos/tutorials/account-setup.mp4",
+      "poster": "/images/tutorials/account-setup.png",
+      "captionsSource": "/videos/tutorials/account-setup.vtt"
+    },
+    "bytes": 1822954,
+    "encoding": {
+      "video": "h264",
+      "audio": "aac",
+      "width": 1440,
+      "height": 1000,
+      "sampleRate": 48000,
+      "fastStart": true
+    },
+    "audioLevels": {
+      "meanDb": -18.2,
+      "peakDb": -2.8
+    }
+  },
+  {
+    "id": "prepare-your-agency",
+    "page": "workflows/set-up-your-agency",
+    "title": "Prepare your agency",
+    "sourceRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+    "duration": 74.291,
+    "provider": "OpenAI",
+    "model": "gpt-realtime-2.1-mini",
+    "voice": "marin",
+    "aiNarration": true,
+    "scenes": [
+      {
+        "id": "agency",
+        "start": 0.0,
+        "end": 9.582683,
+        "narration": "Start in Settings. Open the agency menu to confirm Brightwater Health Partners and Maya Chen’s account. This walkthrough uses fictional agency data.",
+        "spokenSeconds": 8.85
+      },
+      {
+        "id": "products",
+        "start": 9.582683,
+        "end": 18.882683,
+        "narration": "Open Products. Review the active products your agency sells and check their carrier selections against the business your team will write.",
+        "spokenSeconds": 8.6
+      },
+      {
+        "id": "carriers",
+        "start": 18.882683,
+        "end": 27.29935,
+        "narration": "Open the carrier selector to inspect the available carriers. Check that the selected carriers match the business your agency writes.",
+        "spokenSeconds": 7.7
+      },
+      {
+        "id": "relationships",
+        "start": 27.29935,
+        "end": 38.299350000000004,
+        "narration": "Open Relationships. Review uplines, downlines, agents, and partnerships. Confirm the agencies your team works with and check any pending invitations.",
+        "spokenSeconds": 10.3
+      },
+      {
+        "id": "users",
+        "start": 38.299350000000004,
+        "end": 46.30035,
+        "narration": "Open Users to review teammates, roles, and account status. Use Add User when you are ready to invite someone.",
+        "spokenSeconds": 6.95
+      },
+      {
+        "id": "fields",
+        "start": 46.30035,
+        "end": 55.80035,
+        "narration": "Open Custom Fields. Review the existing sections and field types before deciding which additional information your team needs to collect.",
+        "spokenSeconds": 8.8
+      },
+      {
+        "id": "access",
+        "start": 55.80035,
+        "end": 64.80135,
+        "narration": "In Marketplace, open Manage Access on a queue. Review each agent’s eligibility and intended access before making assignments.",
+        "spokenSeconds": 7.85
+      },
+      {
+        "id": "wallet",
+        "start": 64.80135,
+        "end": 74.218017,
+        "narration": "Finally, review Wallet to check the balance, saved payment methods, and auto-recharge settings. Marketplace agencies use Wallet in place of Billing.",
+        "spokenSeconds": 8.7
+      }
+    ],
+    "description": "Review agency products, relationships, users, fields, marketplace access and wallet.",
+    "audioMastering": {
+      "targetLufs": -17,
+      "truePeakDb": -3
+    },
+    "files": {
+      "video": "/videos/tutorials/prepare-your-agency.mp4",
+      "poster": "/images/tutorials/prepare-your-agency.png",
+      "captionsSource": "/videos/tutorials/prepare-your-agency.vtt"
+    },
+    "bytes": 1927185,
+    "encoding": {
+      "video": "h264",
+      "audio": "aac",
+      "width": 1440,
+      "height": 1000,
+      "sampleRate": 48000,
+      "fastStart": true
+    },
+    "audioLevels": {
+      "meanDb": -17.4,
+      "peakDb": -2.9
+    }
+  },
+  {
+    "id": "invite-and-prepare-a-new-agent",
+    "page": "workflows/onboard-a-new-agent",
+    "title": "Invite and prepare a new agent",
+    "sourceRevision": "4d27ed3e05068175a290e4a7e4589ca2e0c5d308",
+    "duration": 88.835,
+    "provider": "OpenAI",
+    "model": "gpt-realtime-2.1-mini",
+    "voice": "marin",
+    "aiNarration": true,
+    "scenes": [
+      {
+        "id": "add-user",
+        "start": 0.0,
+        "end": 7.916667,
+        "narration": "In Users, choose Add User. We will prepare an invitation for Taylor Brooks using a fictional email address.",
+        "spokenSeconds": 7.2
+      },
+      {
+        "id": "identity",
+        "start": 7.916667,
+        "end": 17.416667,
+        "narration": "Enter the teammate’s first name, last name, and email. Check the spelling before continuing; the invitation is associated with this address.",
+        "spokenSeconds": 8.8
+      },
+      {
+        "id": "role",
+        "start": 17.416667,
+        "end": 24.457683,
+        "narration": "Choose Agent. The form now shows Sales Channel, Work Location, NPN, and Employment Type.",
+        "spokenSeconds": 6.25
+      },
+      {
+        "id": "employment",
+        "start": 24.457683,
+        "end": 34.007683,
+        "narration": "Review Telesales, select Remote, and enter the agent’s NPN. Check Employment Type; this example uses a contractor.",
+        "spokenSeconds": 8.85
+      },
+      {
+        "id": "invite",
+        "start": 34.007683,
+        "end": 43.008683,
+        "narration": "Choose Add User to create the invitation. Taylor appears as Pending while account setup is unfinished.",
+        "spokenSeconds": 6.15
+      },
+      {
+        "id": "profile",
+        "start": 43.008683,
+        "end": 52.925349999999995,
+        "narration": "Now open Priya Shah, an existing active agent. This is a separate profile demonstration. Taylor’s new invitation remains pending.",
+        "spokenSeconds": 9.2
+      },
+      {
+        "id": "training",
+        "start": 52.925349999999995,
+        "end": 64.508033,
+        "narration": "Under Details, review Employment: role, Training, sales channel, work location, and employment type. Training provides listen-only learning access when the dialer is enabled.",
+        "spokenSeconds": 10.85
+      },
+      {
+        "id": "licenses",
+        "start": 64.508033,
+        "end": 71.558033,
+        "narration": "Open Licensed States to review states for each product. Use the agent’s main agency when making changes.",
+        "spokenSeconds": 6.35
+      },
+      {
+        "id": "contracts",
+        "start": 71.558033,
+        "end": 79.808033,
+        "narration": "Open Contracts to review this existing agent’s carriers and relationships. Verify these details before the agent starts selling.",
+        "spokenSeconds": 7.55
+      },
+      {
+        "id": "access",
+        "start": 79.808033,
+        "end": 88.765716,
+        "narration": "In Marketplace, open Manage Access for the relevant queue. Review agent eligibility and intended access before making assignments.",
+        "spokenSeconds": 8.25
+      }
+    ],
+    "description": "Invite a fictional agent and review an existing agent’s licenses, employment and marketplace access.",
+    "audioMastering": {
+      "targetLufs": -17,
+      "truePeakDb": -3
+    },
+    "files": {
+      "video": "/videos/tutorials/invite-and-prepare-a-new-agent.mp4",
+      "poster": "/images/tutorials/invite-and-prepare-a-new-agent.png",
+      "captionsSource": "/videos/tutorials/invite-and-prepare-a-new-agent.vtt"
+    },
+    "bytes": 2465440,
+    "encoding": {
+      "video": "h264",
+      "audio": "aac",
+      "width": 1440,
+      "height": 1000,
+      "sampleRate": 48000,
+      "fastStart": true
+    },
+    "audioLevels": {
+      "meanDb": -17.6,
+      "peakDb": -3.0
+    }
+  }
+]

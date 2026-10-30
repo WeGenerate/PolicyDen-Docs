@@ -1,0 +1,70 @@
+---
+title: "Set up dispositions"
+description: "Create call outcomes and choose how they affect reporting and follow-up."
+keywords: ["disposition", "call outcome", "callback", "DNC", "disposition group"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer turned on.</Info>
+
+Give agents consistent outcomes to select after calls. Flags control reporting, callbacks, and Do Not Call ([DNC](/start/glossary)) handling.
+
+<Steps>
+  <Step title="Open disposition setup">
+    In **Dialer > Dispositions**, select **Add Disposition**.
+
+    <Frame>
+      <img src="/images/dialer/add-disposition-form.png" alt="Add Disposition form in the Dialer settings." />
+    </Frame>
+  </Step>
+  <Step title="Name the outcome">
+    Enter **Name** and, optionally, **Description**.
+  </Step>
+  <Step title="Choose outcome flags">
+    Turn on the flags that match this outcome. Review their effects before saving.
+  </Step>
+  <Step title="Choose the color">
+    Review **Color** after changing flags; flag changes can reset it.
+  </Step>
+  <Step title="Save the outcome">
+    Select **Add Disposition**. For later changes, open the outcome and select **Save Disposition**.
+  </Step>
+</Steps>
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| **Success** | Includes the outcome in success reporting. | Off | Admin, Agency Owner |
+| **Sale** | Counts the outcome as a sale in reports. | Off | Admin, Agency Owner |
+| **Final Status** | Keeps the contact out of the dialing queue. | Off | Admin, Agency Owner |
+| **DNC** | Adds the phone number to the DNC list. | Off | Admin, Agency Owner |
+| **Callback** | Marks a callback outcome. | Off | Admin, Agency Owner |
+
+{/* TODO: verify Callback scheduling: flag help requires a date and time, but WrapUpPanel has no scheduling control. */}
+
+For reusable sets, select **Add Group** in **Disposition Groups**, enter **Disposition Group Name**, and choose its outcomes. Select **Add Disposition Group**. Assign a group or individual outcomes in a [queue](/dialer/queues) or [campaign](/dialer/campaigns).
+
+## What you'll see
+
+Agents see the assigned outcomes during [call wrap-up](/calls/wrapping-up-calls).
+
+The dialer also supplies system outcomes: **IN_PROGRESS**, **CALLER_HUNGUP**, **ABANDONED**, **DROP**, **VOICEMAIL**, **ANSWERING_MACHINE**, **FAILED**, **NO_ANSWER**, **BUSY**, and **DNC**.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The name is already used">
+    Choose another name. Disposition names must be unique within your agency.
+  </Accordion>
+  <Accordion title="A system outcome cannot be edited">
+    System dispositions cannot be edited or deleted. Create an agency outcome when you need different behavior.
+  </Accordion>
+  <Accordion title="Agents cannot see the outcome">
+    Check the queue or campaign's assigned dispositions, then save the selection.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Manage DNC numbers" href="/dialer/dnc-numbers" />
+  <Card title="Configure queues" href="/dialer/queues" />
+</CardGroup>

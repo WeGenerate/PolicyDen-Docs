@@ -1,0 +1,82 @@
+---
+title: "Upload audio for calls"
+description: "Add MP3 files for waiting callers, hold music, and campaign messages."
+keywords: ["dialer", "audio library", "agency", "calls"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer enabled.</Info>
+
+Upload audio once, then select it in queues or campaigns.
+
+## Before you start
+
+- Prepare an MP3 file no larger than 25 MB.
+- Choose a name that explains its purpose.
+
+<Steps>
+<Step title="Open the library">
+  In **Dialer** → **Settings**, select **Audio Library**.
+</Step>
+<Step title="Open the upload form">
+  Select **Upload Audio File**.
+</Step>
+<Step title="Choose your audio">
+  Enter **Name**, then select the file area or drop your MP3 into it.
+</Step>
+<Step title="Upload the file">
+  Select **Upload Audio** and wait for the upload to finish.
+</Step>
+</Steps>
+<Frame>
+<img src="/images/dialer/audio-library.png" alt="Audio Library showing uploaded files and preview controls." />
+</Frame>
+
+## Use your audio
+
+| Location | Setting | Caller experience |
+| --- | --- | --- |
+| Queue routing | **Wait Audio** | Loops while waiting for an agent. |
+| Queue hold settings | **Hold Music** | Plays while on hold. |
+| Queue schedule | **After Hours Audio** | Plays before the call ends outside business hours. |
+| Campaign hold settings | **Hold Music** | Plays while on hold. |
+| Campaign hold settings | **Abandon Message** | Plays when a contact answers without an available agent. |
+
+## Change an existing file
+
+<Steps>
+<Step title="Open the file menu">
+  In the audio list, open the file’s menu and select **Edit**.
+</Step>
+<Step title="Update the audio">
+  Change **Name** or use the file area to choose a replacement MP3.
+</Step>
+<Step title="Save the change">
+  Select **Save**.
+</Step>
+</Steps>
+
+To remove a file, choose **Delete** from its menu and confirm **Delete Audio File**.
+
+<Warning>Audio deletion cannot be undone. Review queues and campaigns using the file before deleting it.</Warning>
+
+## What you'll see
+
+The library shows your file’s name, duration, size, preview control, and date.
+
+## If it didn’t work
+
+<AccordionGroup>
+<Accordion title="The file is rejected">
+  The upload form accepts MP3 files up to 25 MB.
+</Accordion>
+<Accordion title="The upload fails">
+  Check your connection and retry. Keep the form open until the upload finishes.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Set up queues" href="/dialer/queues">Review agents and incoming numbers.</Card>
+<Card title="Monitor calls" href="/dialer/live-monitor">Watch live activity.</Card>
+</CardGroup>

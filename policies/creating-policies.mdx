@@ -1,0 +1,101 @@
+---
+title: "Add a policy"
+description: "Record a policy through the Product, Contact, and Policy steps."
+keywords: ["add policy", "create policy", "enrollment", "writing agent"]
+---
+
+<Info>**Who can do this:** Agents, Admins, and Agency Owners with access to the policy.</Info>
+
+Record a policy and link it to a contact. Have the client's details and enrollment information ready before opening the form.
+
+## Before you start
+
+- Your agency needs an active product with policy fields configured.
+- Agents need a carrier mapped to their product and writing-agent record.
+- Have the enrollment code and any required plan number ready.
+
+## Choose the product and contact
+
+<Steps>
+  <Step title="Open the form">
+    In **Policies**, select **Add Policy**.
+    You can also start from **Add Policy** on a contact profile.
+  </Step>
+  <Step title="Select a product">
+    In **Select Product**, select the product to record.
+        This screen is skipped when only one product is active.
+<Frame caption="Add New Policy dialog showing the Product phase.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/policies/create-product.png" src="/videos/policies/create-product.mp4" aria-label="Add New Policy dialog showing the Product phase." />
+  <img className="hidden motion-reduce:block" src="/images/policies/create-product.png" alt="Add New Policy dialog showing the Product phase." />
+</Frame>
+  </Step>
+  <Step title="Find your contact">
+    In **Find a Contact**, enter the client's phone number and select **Check**.
+    This screen is skipped when you start from a contact profile.
+  </Step>
+  <Step title="Choose the contact">
+    Select **Continue** for the matching contact, or **Add New Contact** when the result says **Not Found**.
+    Use **Search Again** if the match is wrong.
+  </Step>
+  <Step title="Complete contact details">
+    In **Contact**, complete the required fields.
+        Check the contact's identity and address before continuing.
+        <Frame caption="Medicare contact form showing Mai Yilmaz’s basic and advanced details.">
+  <img src="/images/policies/create-contact.png" alt="Medicare contact form showing Mai Yilmaz’s basic and advanced details." />
+    </Frame>
+  </Step>
+  <Step title="Save contact details">
+    Select **Continue**.
+    The contact details are saved before you enter the policy.
+  </Step>
+</Steps>
+
+## Record the policy
+
+<Steps>
+  <Step title="Review existing policies">
+    If **Existing Policies** appears, review the records before selecting **Add New Policy**.
+    This screen is skipped for contacts without policies and when starting from a contact profile.
+  </Step>
+  <Step title="Complete policy details">
+    In **Policy**, enter the required product fields, including **Carrier** and the enrollment code.
+        Complete **Policy Type**, **Plan Number**, and **Writing Agent** when shown as required.
+
+  </Step>
+  <Step title="Save the policy">
+    Select **Add Policy**.
+    Wait for **Policy created** before closing the form.
+  </Step>
+</Steps>
+
+The enrollment field is **Enrollment Code** for Medicare and **Policy Number** for Life Insurance. Agents and individual agent accounts use their own writing-agent record automatically.
+
+## What you'll see
+
+The dialog closes, the policy list refreshes, and the linked contact becomes a client assigned to the writing agent.
+
+The sale date is today. The initial status is **Unknown** for Medicare and **Submitted** for Life Insurance.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="No active products found">
+    Ask an Admin to activate a product in [Products and carriers](/settings/products-and-carriers).
+  </Accordion>
+  <Accordion title="No fields configured">
+    An Admin must configure the product's policy fields in [Agency custom fields](/settings/agency-custom-fields).
+  </Accordion>
+  <Accordion title="Add Policy is unavailable">
+    Complete required fields. Admins must choose a writing agent when that field appears; individual agent accounts use their own agent.
+  </Accordion>
+  <Accordion title="The form reports a validation error">
+    Check highlighted fields. Enrollment codes must be unique within the agency and product. Ask an Admin to check unavailable carrier mappings.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review a policy" href="/policies/policy-profile" />
+  <Card title="Attach a plan" href="/policies/attaching-plans" />
+</CardGroup>

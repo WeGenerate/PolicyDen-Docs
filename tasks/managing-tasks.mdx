@@ -1,122 +1,71 @@
 ---
-title: "Manage tasks"
-description: "Create, edit, complete, reassign, and bulk-update tasks in PolicyDen."
-keywords: ["manage tasks", "create task", "complete task", "reassign task", "bulk tasks", "task attachments", "task comments"]
+title: "Update a task"
+description: "Change task progress, due dates, details, and linked contacts."
+keywords: ["edit task", "complete task", "archive task", "task status"]
 ---
 
-Create, edit, complete, reassign, and bulk-update tasks without leaving the Tasks page. Every action works inline on the list or from a task's detail page.
+import WhoEveryone from "/snippets/who-everyone.mdx";
 
-## Create a task
+<WhoEveryone />
+
+Keep task progress and details current as you work. Open an existing task from **Tasks** to make changes.
 
 <Steps>
-  <Step title="Open the Tasks page">
-    Click **Tasks** in the sidebar, then click **Add Task** in the top-right. The **Add Task** dialog opens.
+  <Step title="Find your task">
+    In **Tasks**, search by title or select **To Do**, **In Progress**, or **Done**.
   </Step>
-  <Step title="Fill in the details">
-    - **Title** — a short description of what needs to happen.
-    - **Description** — optional longer notes.
-    - **Due date** — when it's due.
-    - **Priority** — Low, Medium, or High.
-    - **Assigned to** — pick an Agent. Leave blank to assign later.
+  <Step title="Open the task">
+    Select the task title to open **Task Details**.
+
+    <Frame>
+      <img src="/images/tasks/manage-details.png" alt="Tasks workspace." />
+    </Frame>
   </Step>
-  <Step title="Attach files (optional)">
-    Drag files into the dialog, or click the attach button to pick from your computer.
+  <Step title="Change the status">
+    Select the status control and choose **To Do**, **In Progress**, or **Done**. The change saves immediately.
   </Step>
-  <Step title="Save">
-    Click **Create Task**. The new task appears at the top of the list.
+  <Step title="Update task timing">
+    Select the date control to change the due date. The change saves immediately.
+  </Step>
+  <Step title="Edit task details">
+    Select the title or description to enter your changes.
+  </Step>
+  <Step title="Save your text">
+    Select **Save** to keep title and description changes.
   </Step>
 </Steps>
 
-<Tip>
-  You can also create a task tied to a specific contact from that contact's profile. See [Contact profile](/contacts/contact-profile).
-</Tip>
+Admins and Agency Owners can also change the owner. Individual agent accounts do not show an owner picker.
 
-## Open a task
+To link the task to another contact, open its actions menu and select **Transfer To Contact**. Choose the contact, then select **Transfer**.
 
-Click the three-dot menu on the right of a row and choose **View**, or click **Task Details** from anywhere the task is linked. The task details page shows the title, description, attachments, comments, and a sidebar with status, due date, agent, priority, and creator.
+To remove a task, open its actions menu and select **Archive**. Review the confirmation before continuing.
 
-## Edit a task
+<Warning>**Archive** permanently deletes the task. It can't be undone.</Warning>
 
-You can edit most task fields in two places: inline on the list, or on the task details page.
+{/* TODO: verify the Archive confirmation wording; it describes archiving, but the action permanently deletes the task. */}
 
-<Tabs>
-  <Tab title="Inline on the list">
-    Click a cell — **Task Name**, **Due Date**, **Priority**, **Status**, or **Assigned To** — and edit the value. Your change saves as soon as you confirm the new value.
-  </Tab>
-  <Tab title="On the details page">
-    - **Double-click the title or description** to enter edit mode.
-    - Use the widgets under the description to change **due date**, **priority**, or **agent**.
-    - Click **Attach** to add a file.
-    - Click **Save** to commit your changes, or **Cancel** to discard them.
-  </Tab>
-</Tabs>
+## What you'll see
 
-## Complete a task
+The task shows its updated details and appears in the view matching its status.
 
-From the task details page, click **Mark As Done** in the bottom-right. The task moves to the Completed status and its title is struck through.
+## If it didn't work
 
-To reopen it, click **Reopen** in the same spot.
+<AccordionGroup>
+  <Accordion title="“No tasks found”">
+    Clear the search and filters, then select **All Tasks**. Agents see tasks assigned to them.
+  </Accordion>
+  <Accordion title="Changes did not save">
+    Title and description changes need **Save**. If another update fails, reopen the task to check its saved value.
+  </Accordion>
+  <Accordion title="Transfer is unavailable">
+    Choose a contact different from the task’s current contact. The **Transfer** button stays disabled until then.
+  </Accordion>
+</AccordionGroup>
 
-You can also change status inline on the list by clicking the status cell and picking a new value.
+## Next
 
-## Reassign a task
-
-- **Inline** — click the **Assigned To** cell on the list and pick a new Agent.
-- **On the details page** — use the Agent widget under the description.
-- **In bulk** — see [Bulk actions](#bulk-actions) below.
-
-## Add comments and attachments
-
-The task details page includes a **Comments** section so you and teammates can discuss the work without leaving PolicyDen. Drop files under the description to attach reference material.
-
-## Delete a task
-
-<Steps>
-  <Step title="Open the row menu">
-    On the Tasks list, click the three-dot menu on the right of the row.
-  </Step>
-  <Step title="Choose Delete">
-    Pick **Delete**. A confirmation dialog asks you to confirm.
-  </Step>
-  <Step title="Confirm">
-    Click **Delete**. The task is removed.
-  </Step>
-</Steps>
-
-<Warning>
-  Deleting a task is permanent — it can't be undone. If you want to keep the record, change the status to **Canceled** instead.
-</Warning>
-
-## Bulk actions
-
-Select two or more tasks with the checkboxes on the left of the list. A floating bar appears at the bottom of the screen with the available actions.
-
-| Action | What it does |
-| ------ | ------------ |
-| **Complete** | Marks every selected task as Completed. |
-| **Cancel** | Marks every selected task as Canceled. |
-| **Assign To** | Assigns every selected task to the Agent you pick. |
-| **Delete** | Permanently deletes every selected task. |
-
-Each action asks for confirmation before it runs. Selection clears once the action finishes.
-
-<Tip>
-  Select every task in the current view by clicking the header checkbox. Combine it with a filter — for example, **Assigned To = Dejan** + **Status = Open** — to reassign a teammate's open tasks in one go.
-</Tip>
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Pipeline" icon="columns-3" href="/pipeline/overview">
-    Move the contacts behind your tasks forward on the board.
-  </Card>
-  <Card title="Messages" icon="message-square" href="/messages/overview">
-    Text clients as you work through your follow-ups.
-  </Card>
-  <Card title="Meetings" icon="calendar" href="/meetings/overview">
-    Schedule meetings alongside your tasks.
-  </Card>
-  <Card title="Saved filters" icon="filter" href="/customization/saved-filters">
-    Save your most-used task views.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Create another task" href="/tasks/creating-tasks">Schedule the next action.</Card>
+  <Card title="Send a text" href="/messages/sending-texts">Follow up with the contact.</Card>
+</CardGroup>

@@ -1,0 +1,266 @@
+[
+  {
+    "id": "policies/overview-list",
+    "page": "policies/overview",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/policies/overview-list.png",
+    "alt": "Policies list with Add Policy highlighted."
+  },
+  {
+    "id": "policies/create-product",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Select Product"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-product.png",
+    "alt": "Add New Policy dialog showing the Product phase."
+  },
+  {
+    "id": "policies/create-contact",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/contacts/01a188d2-fbcf-702d-8ae4-64610e75e7ff/edit",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "click": {
+          "role": "radio",
+          "name": "Medicare"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Basic Details"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Continue"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-contact.png",
+    "alt": "Medicare contact form showing Mai Yilmaz\u2019s basic and advanced details."
+  },
+  {
+    "id": "policies/create-policy",
+    "page": "policies/creating-policies",
+    "persona": "agency-admin",
+    "url": "/contacts/01a188d2-fbcf-702d-8ae4-64610e75e7ff/edit",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      },
+      {
+        "click": {
+          "role": "radio",
+          "name": "Medicare"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Policy Info"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/create-policy.png",
+    "alt": "Add Policy for a fictional contact, showing the Medicare policy form.",
+    "blocker": "The current enrollment flow requires submitting contact details before the Policy phase. That write is outside the strictly allowlisted pipeline-move capture path; no list or contact form is substituted."
+  },
+  {
+    "id": "policies/profile-details",
+    "page": "policies/policy-profile",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "a[href*=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Status Log"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/profile-details.png",
+    "alt": "Policy profile showing policy details and the contact sidebar."
+  },
+  {
+    "id": "policies/status-log",
+    "page": "policies/status-history",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "a[href*=\"/policies/\"][href$=\"/edit\"] >> nth=0"
+        }
+      },
+      {
+        "click": {
+          "text": "Status Log"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/status-log.png",
+    "alt": "Policy profile with Status Log expanded."
+  },
+  {
+    "id": "policies/attach-dialog",
+    "page": "policies/attaching-plans",
+    "persona": "agency-admin",
+    "url": "/policies/01a188d2-fbe9-715c-a0d4-a5ec2cab5a8d/edit",
+    "before": [
+      {
+        "click": {
+          "css": "div:has(> h3:text-is(\"Plan\")) > button"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/attach-dialog.png",
+    "alt": "Edit Plan dialog showing the plan search field and inactive Attach Plan button."
+  },
+  {
+    "id": "policies/import-start",
+    "page": "policies/importing-policies",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "button:has(+ button:has-text(\"Add Policy\"))"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Import Policies"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/policies/import-start.png",
+    "alt": "Import Policies dialog at product selection."
+  },
+  {
+    "id": "policies/bulk-selected",
+    "page": "policies/bulk-actions",
+    "persona": "agency-admin",
+    "url": "/policies",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child [role=\"checkbox\"]"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/policies/bulk-selected.png",
+    "alt": "Policies list with selected rows and the bulk action bar visible."
+  }
+]

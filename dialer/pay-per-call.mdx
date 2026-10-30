@@ -1,0 +1,106 @@
+---
+title: "Accept calls from publishers"
+description: "Set publisher pricing, vendor limits, and availability rules."
+keywords: ["dialer", "pay per call", "agency", "calls"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer enabled.</Info>
+
+Configure how publishers check availability and send calls. Vendors can have pricing separate from the queue’s general availability ping.
+
+## Before you start
+
+- [Create a queue](/dialer/queues) and assign agents.
+- [Create vendors and tags](/dialer/vendors-and-tags).
+
+<Frame>
+<img src="/images/dialer/pay-per-call.png" alt="Queue list where you open publisher settings." />
+</Frame>
+
+<Steps>
+<Step title="Open queue billing">
+  In **Dialer** → **Queues**, open your queue and find **Billing**.
+</Step>
+<Step title="Set general pricing">
+  Turn on **Billable** if publishers use the general availability ping, then set pricing and caps.
+</Step>
+<Step title="Save billing settings">
+  Select **Save** in **Billing**.
+</Step>
+<Step title="Attach publishers">
+  In **Vendors**, select **Attach Vendors** and select your vendors.
+</Step>
+<Step title="Set vendor terms">
+  Choose **Payout**, enter pricing and limits, then select **Attach Vendor** (or **Attach N Vendors**).
+</Step>
+<Step title="Share the vendor endpoint">
+  Copy the vendor’s **Ping URL** for that publisher.
+</Step>
+</Steps>
+
+<Warning>Review prices before saving. Queue billing pays publishers using the general availability ping; attached vendors have their own pricing.</Warning>
+
+## Billing and limits
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| **Billable** | Enables payments through the general availability ping. | Off without a price | Admin, Agency Owner |
+| **Billable After** | Answered duration needed for billing; custom values allow 0–3,600 seconds. | Check your queue | Admin, Agency Owner |
+| **Price per Billable Call** | Amount paid per qualifying call; must exceed $0. | Unset | Admin, Agency Owner |
+| **Count Caps By** | **All answered calls** or **Billable calls only** count toward agent caps. | Billable calls only | Admin, Agency Owner |
+| **CPA Cap After** | Calls required today before an agent’s cost-per-acquisition cap applies. | Check your queue | Admin, Agency Owner |
+| Vendor **Payout** | **Per call** or **Per conversion**. | Per call | Admin, Agency Owner |
+| Vendor **Daily Cap** | Limits daily calls. | No cap | Admin, Agency Owner |
+| Vendor **Concurrency Cap** | Limits simultaneous calls. | No cap | Admin, Agency Owner |
+| Vendor **CPA Cap** | Limits cost per acquisition. | No cap | Admin, Agency Owner |
+
+For **Per call**, set **Price per Billable Call** and **Billable After**. For **Per conversion**, set **Price per Conversion**. Vendor menus offer **Pause**, **Activate**, and **Remove Vendor**.
+
+## Set availability rules
+
+<Steps>
+<Step title="Review the endpoint">
+  In **Availability Ping**, copy **Endpoint** and open **Show example request**.
+</Step>
+<Step title="Choose required data">
+  Under **Params**, review required fields and use **Add Tag** for custom tags.
+</Step>
+<Step title="Set agent reservation">
+  Choose **Agent Reservation**, then select **Save**.
+</Step>
+<Step title="Set rejection rules">
+  In **Bid Rules**, enable rules and select their matching values.
+</Step>
+<Step title="Save rejection rules">
+  Select **Save** in **Bid Rules**.
+</Step>
+</Steps>
+
+Missing required parameters reject a ping. **Agent Reservation** reserves an agent after an available response for the selected duration.
+
+**Reject By Disposition** checks prior call outcomes within **Within the Last**. **Reject By Policy Status** appears for supported queue products and checks selected statuses. **Reject Recently Billable** checks prior billable calls within the chosen period.
+
+## What you'll see
+
+Attached vendors show pricing, limits, status, and **Ping URL**.
+
+## If it didn’t work
+
+<AccordionGroup>
+<Accordion title="There are no vendors to attach">
+  Create a vendor on the **Vendors** page first.
+</Accordion>
+<Accordion title="A rule will not save">
+  Choose at least one disposition or policy status for the corresponding enabled rule.
+</Accordion>
+<Accordion title="Pings are rejected">
+  Check required parameters, bid rules, agent availability, queue hours, and vendor limits.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Set up queues" href="/dialer/queues">Review agents and incoming numbers.</Card>
+<Card title="Monitor calls" href="/dialer/live-monitor">Watch live activity.</Card>
+</CardGroup>

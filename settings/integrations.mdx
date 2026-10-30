@@ -1,0 +1,66 @@
+---
+title: "Connect agency integrations"
+description: "Connect enrollment platforms or Convoso and manage their connection status."
+keywords: ["integrations", "HealthSherpa", "Sunfire", "Convoso", "provider API key"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners, including Admins of individual agent accounts.</Info>
+
+Connect your agency's external tools from **Integrations**. Have the provider account or credentials ready before starting.
+
+## Connect a provider
+
+<Steps>
+  <Step title="Open Integrations">
+    In **Settings**, select **Integrations**.
+
+    <Frame>
+      <img src="/images/agency-settings/integrations.png" alt="Integrations page showing provider cards and connection controls." />
+    </Frame>
+  </Step>
+  <Step title="Choose a provider">
+    On the provider card, select **Connect**.
+  </Step>
+  <Step title="Complete provider setup">
+    Follow the provider's setup described here, then return to **Integrations**.
+  </Step>
+</Steps>
+
+**Health Sherpa:** Complete the authorization flow. Its card describes syncing Medicare enrollments and quotes. A connected agency can show **Enroll with HealthSherpa** on contacts; each user also needs HealthSherpa enabled.
+
+**Sunfire:** Enter **Partner ID** and **App ID**, then select **Save**. Its card describes syncing Medicare enrollments and quotes. **Set up SSO** opens single sign-on setup; submit the displayed credentials to Sunfire. The client secret appears only once; follow the dialog’s instructions to send it separately in encrypted email.
+
+{/* TODO: verify Sunfire single sign-on setup end to end; the current dialog generates credentials without supplying a redirect URI. */}
+
+**Convoso:** Enter **Authorization Token**, then select **Next**. Choose campaigns, select **Next**, choose statuses that count as sales, and select **Save**. Convoso supplies call activity and sales from those campaigns. Use **Configure** to revise the selection.
+
+Connected enrollment cards show **Webhook:** and, when available, **API Key:**. Use **Copy** to provide these to the named provider for two-way sync. This integration key is separate from [PolicyDen API keys](/api/manage-api-keys).
+
+{/* TODO: verify the exact enrollment and quote fields synced in each direction for Health Sherpa and Sunfire. */}
+
+## What you'll see
+
+Connected cards show **Active** or **Paused**; disconnected cards show **Not connected**.
+
+Turn off a connected card's switch to pause it. Select **Disconnect**, then confirm **Disconnect**, to remove the connection.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The connection wasn't completed">
+    Retry **Connect**. Health Sherpa authorization can be cancelled or fail before returning to PolicyDen.
+  </Accordion>
+  <Accordion title="Save or Next is unavailable">
+    Complete every required field. Convoso also requires at least one campaign and one sale status.
+  </Accordion>
+  <Accordion title="The enrollment button is disabled">
+    Ask an Admin to check your user integration settings. The tooltip says **HealthSherpa is not enabled for your account**.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Manage user profiles" href="/settings/user-profiles" />
+  <Card title="Manage PolicyDen API keys" href="/api/manage-api-keys" />
+</CardGroup>

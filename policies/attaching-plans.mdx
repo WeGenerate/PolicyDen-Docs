@@ -1,0 +1,70 @@
+---
+title: "Attach a plan"
+description: "Link a catalog plan to a policy and review the updated details."
+keywords: ["attach plan", "plan catalog", "edit plan", "plan number"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners on policies whose product includes a plan-number field.</Info>
+
+Attach a catalog plan from the policy profile. The client's ZIP code is needed to search available plans.
+
+## Before you start
+
+- Check the client's ZIP code on the linked contact.
+- Confirm the correct plan and carrier before attaching it.
+
+<Steps>
+  <Step title="Open the policy">
+    In **Policies**, select the policy number.
+  </Step>
+  <Step title="Open plan selection">
+    In **Plan**, select **Attach Plan**, or **Edit** if a plan is already attached.
+        <Frame caption="Edit Plan dialog showing the plan search field and inactive Attach Plan button.">
+  <img src="/images/policies/attach-dialog.png" alt="Edit Plan dialog showing the plan search field and inactive Attach Plan button." />
+    </Frame>
+  </Step>
+  <Step title="Find the plan">
+    In **Search available plans**, enter the plan's name or number.
+    The search uses the contact's ZIP code.
+  </Step>
+  <Step title="Select the result">
+    Select the matching plan from the results.
+    Check its details before confirming.
+  </Step>
+  <Step title="Attach the selection">
+    Select **Attach Plan**.
+    Wait for **Plan attached** before leaving the profile.
+  </Step>
+</Steps>
+
+## What you'll see
+
+The **Plan** card shows the selected plan, and the policy's plan number and carrier update to match it.
+
+Matching custom plan and premium fields can also update when your agency has configured them. Replacing a plan may fill previous-plan fields.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="ZIP Code Required">
+    Update the linked contact's ZIP code, then return to plan selection.
+  </Accordion>
+  <Accordion title="No Plans Found">
+    Check the search text and contact ZIP code. Entering a plan number manually does not select a catalog plan for attachment.
+  </Accordion>
+  <Accordion title="Attach Plan stays unavailable">
+    Select a catalog result first. Typed text alone is not a selected plan.
+  </Accordion>
+  <Accordion title="The edit control is missing">
+    Ask an Admin to attach the plan. The **Plan** card also depends on the product's configured fields.
+  </Accordion>
+</AccordionGroup>
+
+{/* TODO: verify intended plan-attachment permissions; the profile restricts attachment controls to admins while policy update access is broader. */}
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review a policy" href="/policies/policy-profile" />
+  <Card title="Add a policy" href="/policies/creating-policies" />
+</CardGroup>

@@ -1,0 +1,79 @@
+---
+title: "Monitor live calls"
+description: "Watch live activity and help agents during calls."
+keywords: ["dialer", "live monitor", "agency", "calls"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer enabled. Training agents have listen-only access. Individual agent accounts have no Live Monitor.</Info>
+
+Use Live Monitor to see agent activity and follow calls as they happen.
+
+<Steps>
+<Step title="Open live activity">
+  In **Dialer**, select **Live Monitor**.
+</Step>
+<Step title="Choose a view">
+  Select **Agents**, **Queues**, **States**, or **Campaigns**. **Queues** and **States** show inbound activity; **Campaigns** shows outbound activity.
+</Step>
+<Step title="Find an agent">
+  In **Agents**, find the agent you want to follow.
+</Step>
+<Step title="Start listening">
+  Select **Listen to agent** beside their name. You hear their current call or their next call automatically.
+</Step>
+<Step title="Stop following">
+  Select **Stop listening** when you finish.
+</Step>
+</Steps>
+<Frame>
+<img src="/images/dialer/live-monitor.png" alt="Live Monitor showing agent status and call activity." />
+</Frame>
+
+Use **Filter Direction** for inbound or outbound calls and **Filter Sources** for specific queues or campaigns. Select a queue or campaign name to view its agents.
+
+In **Agents** or **States**, use **Filter States** to narrow inbound activity by state. The state filter is hidden when you select outbound calls.
+
+The **States** view shows agent availability and call results by state. Select the agent count beside a named state to open **Agents** with that state selected. Switching to **Queues** or **Campaigns** clears the state filter.
+
+Admins see **Total Calls**, **Total Sales**, **Live Calls**, **Spend**, **CPA**, and **Agents Available**. Campaign stats also show **Connect Rate**, **Abandon Rate**, **Dialing Now**, and **Left To Dial**.
+
+The waiting-callers strip shows callers waiting for an agent. The status legend distinguishes under one minute, one to five minutes, and over five minutes. Cap warnings identify reached daily or CPA limits.
+
+## Help during a call
+
+| Control | Who hears you | Available to |
+| --- | --- | --- |
+| Listen | Nobody on the call | Admin, Agency Owner, Training agent |
+| Whisper | Only the agent | Admin, Agency Owner |
+| Barge | Everyone on the call | Admin, Agency Owner |
+
+While listening to an active call, select **Whisper to agent** or **Barge in** beside the agent. Select it again to return to listening.
+
+Admins and Agency Owners can use **End call** on an active call. **Reset agent** is available for eligible idle statuses. It pushes the agent offline and refreshes their page. Review and confirm the dialog before ending a call or resetting an agent.
+
+Training agents do not see summary stats, **Spend**, or **CPA** (cost per acquisition). They cannot whisper, barge, end calls, or reset agents.
+
+## What you'll see
+
+Agent status, caller, duration, and call source update in the live view.
+
+## If it didn’t work
+
+<AccordionGroup>
+<Accordion title="Nothing live right now">
+  The view fills as calls begin. If a search has no results, try another search.
+</Accordion>
+<Accordion title="Listening has not stopped">
+  If you still hear the call, stop listening from the dialer widget.
+</Accordion>
+<Accordion title="Controls are missing">
+  Training access is listen-only. Live Monitor also requires the dialer to be enabled for your agency.
+</Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+<Card title="Set up queues" href="/dialer/queues">Review agents and incoming numbers.</Card>
+<Card title="Monitor calls" href="/dialer/live-monitor">Watch live activity.</Card>
+</CardGroup>

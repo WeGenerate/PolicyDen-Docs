@@ -1,0 +1,65 @@
+---
+title: "Find a conversation"
+description: "Search contact message history and focus on unread replies."
+keywords: ["find messages", "unread", "search conversations", "inbox"]
+---
+
+import WhoEveryone from "/snippets/who-everyone.mdx";
+
+<WhoEveryone />
+
+Find a contact's existing text conversation in **Messages**. Search uses contact names and phone numbers, so start with the person you need.
+
+<Steps>
+  <Step title="Open the inbox">
+    In the navigation, select **Messages**.
+
+    <Frame>
+      <img src="/images/messages/find-inbox.png" alt="Messages workspace with the relevant control highlighted." />
+    </Frame>
+  </Step>
+  <Step title="Search for the contact">
+    In **Search Contacts**, enter a name or phone number.
+  </Step>
+  <Step title="Choose a message view">
+    Open **All Messages** and select **Unread** or **Read** to narrow the list.
+  </Step>
+  <Step title="Open the conversation">
+    Select the contact to read the thread. Opening it marks the messages as read.
+  </Step>
+</Steps>
+
+Use the sort control to switch between **Recent First** and **Oldest First**. Use the filter control for dates or policy details. Admins and Agency Owners can also filter by **Agent**.
+
+Select **Mark all as read** only when you intend to clear unread indicators. It may affect conversations outside the filters you see.
+
+{/* TODO: verify Mark all as read scope; the action does not apply the advanced list filters. */}
+
+The floating message button opens a compact inbox while you work elsewhere. Its conversation view supports the same text composer.
+
+{/* TODO: verify the intended use of Archived; the view exists, but no archive or restore control is rendered. */}
+
+## What you'll see
+
+The selected thread shows incoming replies, outgoing texts, attachments, and any automated messages.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="“No conversations found”">
+    Clear the search and filters, then select **All Messages**. The inbox includes only contacts with message history.
+  </Accordion>
+  <Accordion title="A new contact is missing">
+    Open the contact profile’s **Messages** tab to [send the first text](/messages/sending-texts).
+  </Accordion>
+  <Accordion title="“Failed to mark all messages as read”">
+    Check your connection and reopen the inbox. Review remaining unread indicators before trying again.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Reply by text" href="/messages/sending-texts">Continue the conversation.</Card>
+  <Card title="Troubleshoot texting" href="/fix/text-didnt-send">Resolve a failed message.</Card>
+</CardGroup>

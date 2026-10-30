@@ -1,94 +1,88 @@
 ---
-title: "Schedule meetings"
-description: "Book a new meeting with a contact — pick a date and time, add attendees, and share a meeting link."
-keywords: ["schedule meeting", "book meeting", "client appointment", "meeting link", "repeat meeting", "meeting attendees", "all-day meeting"]
+title: "Schedule a meeting"
+description: "Book a timed meeting for a contact and save its venue, date, and attendees."
+keywords: ["schedule meeting", "appointment", "meeting link", "attendees", "book meeting"]
 ---
 
-Schedule a meeting when you want to set time aside with a contact — a presentation, a quarterly review, or a follow-up call. Every meeting you schedule becomes part of the contact's record.
+<Info>**Who can do this:** Agents, Admins, and Agency Owners who can open the contact.</Info>
 
-## Prerequisites
+Schedule a meeting from a contact's profile or pipeline card. Have the venue or meeting link and the appointment time ready.
 
-- The contact you're meeting with needs to exist. See [Create a contact](/contacts/creating-contacts) if you haven't added them yet.
-- If it's a video meeting, have the link ready to paste. If it's in-person, have the address.
-
-## Schedule from a contact
+## Create the meeting
 
 <Steps>
-  <Step title="Open the contact">
-    Go to **Contacts**, open the person you're meeting with, and select the **Activities** tab on their profile.
+  <Step title="Open the meeting form">
+    In the contact header, select the calendar icon with the **Add Meeting** tooltip.
+
+        From a pipeline card, select the plus icon, then **Meeting** under **Add Activity**.
+<Frame caption="Add Meeting form showing the title, venue controls, date, times, and daily schedule.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/meetings/schedule-form.png" src="/videos/meetings/schedule-form.mp4" aria-label="Add Meeting form showing the title, venue controls, date, times, and daily schedule." />
+  <img className="hidden motion-reduce:block" src="/images/meetings/schedule-form.png" alt="Add Meeting form showing the title, venue controls, date, times, and daily schedule." />
+</Frame>
   </Step>
-  <Step title="Start a meeting">
-    Click the add-activity control and choose **Meeting**. The meeting details page opens for the new session.
+  <Step title="Name the meeting">
+    Enter **Meeting Title**. Use **Add Description...** for an optional agenda.
   </Step>
-  <Step title="Fill in the basics">
-    - **Title** — double-click to name the meeting.
-    - **Description** — double-click to add an agenda or notes.
-    - **Meeting link or location** — paste a video link, or type an address.
+  <Step title="Set the venue">
+    Choose **Location** or **Meeting Link**, then enter the address or link in the displayed field.
   </Step>
-  <Step title="Set the date and time">
-    Use the **date** widget to pick a day. Use the **start** and **end** time pickers to set the window. Leave both times empty if it's an all-day event.
+  <Step title="Choose the date">
+    Open the date control and select today or a future date.
   </Step>
-  <Step title="Choose how often it repeats">
-    Open the **repeat** widget and pick **Does not repeat**, **Daily**, **Weekly**, or **Monthly**.
+  <Step title="Set both times">
+    Use **Starts** and **Ends** to choose the appointment's start and end times.
   </Step>
-  <Step title="Add attendees">
-    Open the **attendees** widget and pick the teammates who should be there.
+  <Step title="Choose a repeat setting">
+    Use the repeat control to select **No repeat**, **Daily**, **Weekly**, or **Monthly**.
   </Step>
-  <Step title="Save">
-    Click **Save** in the bottom-right. The meeting is attached to the contact and appears on their activity timeline.
+  <Step title="Create the appointment">
+    Select **Create Meeting**.
   </Step>
 </Steps>
 
-## Schedule from a pipeline card
+The daily schedule helps you compare the appointment with your other meetings. Drag its timed block to adjust the times. On mobile, select the arrow tab at the form's right edge to open the schedule.
 
-You can also schedule directly from the pipeline board without opening the contact first.
+The schedule also offers **All Day**, which clears both times. To create a meeting successfully, keep both times filled in.
+{/* TODO: verify all-day creation: the form supports All Day but creation rejects missing start and end times. */}
+
+## Add attendees after creation
 
 <Steps>
-  <Step title="Open the pipeline">
-    Click **Pipeline** in the sidebar.
+  <Step title="Open the saved meeting">
+    In the contact's **Activities** tab, select the meeting in **Meetings**.
   </Step>
-  <Step title="Open the activity menu on a card">
-    Click the **+** icon on a contact's card, then choose **Meeting**.
+  <Step title="Choose your attendees">
+    In **Meeting Details**, select **Attendees** and choose the agency users to add.
   </Step>
-  <Step title="Fill in the meeting details">
-    The meeting details page opens the same way as above — title, description, link, date, time, repeat, and attendees.
-  </Step>
-  <Step title="Save">
-    Click **Save**.
+  <Step title="Save the attendee list">
+    Select **Save**.
   </Step>
 </Steps>
 
-## All-day meetings
+Add attendees here even if you selected them in **Add Meeting**; selections made during creation aren't saved.
+{/* TODO: verify attendee creation fix; Add Meeting currently omits selected attendees when saving. */}
 
-Leave both the **start time** and **end time** empty to make the meeting all-day. The schedule view on the side of the meeting details page shows an all-day banner across the top of the day instead of a specific slot.
+## What you'll see
 
-## Attachments
+The appointment appears in the contact's **Meetings** section with its title, date, times, and owner.
 
-Click the attach button under the meeting details to upload files — a slide deck, a benefits summary, or anything you want to have handy during the meeting.
+## If it didn't work
 
-## Tips
+<AccordionGroup>
+  <Accordion title="The form asks for a title or venue">
+    Enter a title and either a location or meeting link, then select **Create Meeting** again.
+  </Accordion>
+  <Accordion title="The form asks for a start or end time">
+    Fill in both **Starts** and **Ends**. The current create form won't save an all-day meeting.
+  </Accordion>
+  <Accordion title="I can't select a past date">
+    The date picker allows today and future dates. Choose an available date.
+  </Accordion>
+</AccordionGroup>
 
-<Tip>
-  Set a clear title that your teammates will recognize ("Medicare Advantage review — John Doe") rather than a generic one ("Call"). It makes your own schedule scannable and keeps the contact's record useful later.
-</Tip>
+## Next
 
-- If you need to follow up after the meeting, create a [task](/tasks/managing-tasks#create-a-task) on the same contact with the next step.
-- The meeting and any recordings of the related call appear under the contact's **Activities** tab so you can review context before the next touch.
-- Keep the meeting link with the meeting instead of sending it by SMS. You can always click it again from the details page.
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Meetings overview" icon="calendar" href="/meetings/overview">
-    See how meetings fit into a contact's record.
-  </Card>
-  <Card title="Manage tasks" icon="list-checks" href="/tasks/managing-tasks">
-    Create follow-ups that come out of the meeting.
-  </Card>
-  <Card title="Pipeline" icon="columns-3" href="/pipeline/overview">
-    Move the contact forward in your pipeline after the meeting.
-  </Card>
-  <Card title="Messages" icon="message-square" href="/messages/overview">
-    Confirm the meeting with an SMS to the contact.
-  </Card>
-</Columns>
+<CardGroup cols={2}>
+  <Card title="Review meeting details" href="/meetings/overview">Edit the appointment or review comments.</Card>
+  <Card title="Create a follow-up task" href="/tasks/creating-tasks">Plan what happens after the meeting.</Card>
+</CardGroup>

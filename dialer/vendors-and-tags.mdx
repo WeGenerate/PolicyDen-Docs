@@ -1,0 +1,76 @@
+---
+title: "Set up vendors and tags"
+description: "Identify call suppliers and label tracking fields for reporting."
+keywords: ["vendor", "tag", "publisher", "webhook", "tracking"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in agencies with the dialer turned on.</Info>
+
+Create vendors for your call suppliers and tags for tracking fields. Vendors identify the source; tags give incoming tracking values readable labels in reports.
+
+## Add a vendor
+
+<Steps>
+  <Step title="Open vendor setup">
+    In **Dialer > Vendors**, select **Add Vendor**.
+
+    <Frame>
+      <img src="/images/dialer/add-vendor-form.png" alt="Add Vendor form in the Dialer settings." />
+    </Frame>
+  </Step>
+  <Step title="Name the supplier">
+    Enter **Name**. Use a unique name your team will recognize.
+  </Step>
+  <Step title="Save the vendor">
+    Select **Add Vendor**. Open the vendor later to change its details and select **Save**.
+  </Step>
+</Steps>
+
+**Webhook** is optional. If your supplier needs one, use the address and method agreed with that supplier. The form offers supported call-detail placeholders.
+
+Assign vendors in the [queue setup](/dialer/queues). Review [pay-per-call settings](/dialer/pay-per-call) for supplier call handling.
+
+## Add a tracking tag
+
+<Steps>
+  <Step title="Open tag setup">
+    In **Dialer > Tags**, select **Add Tag**.
+
+    <Frame>
+      <img src="/images/dialer/add-tag-form.png" alt="Add Tag form in the Dialer settings." />
+    </Frame>
+  </Step>
+  <Step title="Enter the tracking key">
+    Enter **Key** using lowercase letters, numbers, and underscores, such as `publisher_id`.
+  </Step>
+  <Step title="Add a readable label">
+    Optionally enter **Label**, then select **Add Tag**. The label is used in reports.
+  </Step>
+</Steps>
+
+## What you'll see
+
+The vendor and tag appear in their respective lists, ready for your team's call-source setup.
+
+Open a tag to edit its label. Deleting a tag removes it from the list but keeps tracking data already attached to calls. Adding the same key again restores it.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The vendor name is already used">
+    Edit the existing vendor or use another name.
+  </Accordion>
+  <Accordion title="The tag key is rejected">
+    Keys can contain up to 64 lowercase letters, numbers, or underscores. Reserved keys and existing keys are not accepted.
+  </Accordion>
+  <Accordion title="The webhook will not save">
+    Check the address supplied by your vendor and the validation message beside **Webhook**.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Configure queues" href="/dialer/queues" />
+  <Card title="Review pay-per-call settings" href="/dialer/pay-per-call" />
+</CardGroup>

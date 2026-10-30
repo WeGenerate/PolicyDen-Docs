@@ -1,0 +1,45 @@
+---
+title: "Understand wallet transactions"
+description: "Identify deposits, charges, refunds, and receipts in your wallet history."
+keywords: ["transactions", "receipt", "charges", "refund", "deposit"]
+---
+
+<Info>**Who can do this:** Admins and Agency Owners in accounts that use the marketplace, including individual agent accounts.</Info>
+
+**Transactions** in **Settings > Agency > Wallet** shows money entering and leaving your wallet. [Add funds](/settings/wallet-funds) to make a deposit.
+
+## Transaction controls
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| Search | Matches number, description, queue name, or caller phone. | Empty | Admins and Agency Owners |
+| Type filter | Limits rows to Deposits, Auto-recharges, Charges, Refunds, or Credits. | All types | Admins and Agency Owners |
+| Receipt | Opens an available card-payment receipt in a new tab. | Shown on eligible rows | Admins and Agency Owners |
+
+## Read the columns
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| Number | Identifies the transaction for support. | Recorded number | Read-only |
+| Date | Shows when the transaction was recorded. | Recorded date | Read-only |
+| Type | Identifies the kind of balance change. | Recorded type | Read-only |
+| Details | Shows the description and available queue, caller number, and duration. | Recorded details | Read-only |
+| Amount | Shows money added with a green plus, or deducted with a minus. | Recorded amount | Read-only |
+| Balance | Shows the balance after this transaction. | Recorded balance | Read-only |
+
+## Transaction types
+
+| Setting | What it does | Default | Who can change it |
+| --- | --- | --- | --- |
+| Deposits | Records a manual card payment, described as Funds added. | Per successful deposit | Created through an Admin or Agency Owner's payment |
+| Auto-recharges | Records an automatic card top-up. | Per successful recharge | Controlled in Auto-Recharge |
+| Charges | Deducts money; marketplace calls show Billable call. | Per recorded charge | Read-only |
+| Refunds | Returns money from an earlier charge. | When issued | Read-only |
+| Credits | Adds an account credit. | When issued | Read-only |
+
+Refund and credit rows are balance adjustments; this page provides no action to create them.
+{/* TODO: verify whether daily Telco Usage charges should be explained here, including their pricing. */}
+
+More rows load as you scroll. **No transactions yet**, or **No deposits yet**, means no rows match. Clear search and select **All types** to broaden results.
+
+A **Receipt** icon appears only when a receipt is associated with the payment. If unavailable, try again later or [contact support](/fix/wallet-and-payments).

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "settings/profile",
+    "page": "settings/profile",
+    "persona": "agency-agent-field",
+    "url": "/settings/profile?tab=details",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/settings/profile-overview.png",
+    "alt": "Profile Details tab with the Personal section."
+  },
+  {
+    "id": "settings/password",
+    "page": "settings/password",
+    "persona": "agency-agent-field",
+    "url": "/settings/profile?tab=security",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/settings/password-overview.png",
+    "alt": "Profile Security tab with the Password section."
+  },
+  {
+    "id": "settings/sessions",
+    "page": "settings/sessions",
+    "persona": "agency-agent-field",
+    "url": "/settings/profile?tab=sessions",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/settings/sessions-overview.png",
+    "alt": "Profile Sessions tab with sign-in history."
+  },
+  {
+    "id": "settings/credentials",
+    "page": "settings/credentials",
+    "persona": "agency-agent-field",
+    "url": "/settings/profile?tab=credentials",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/credentials-overview.png",
+    "alt": "Profile Credentials tab with Add highlighted."
+  },
+  {
+    "id": "settings/licensed-states-and-contracts",
+    "page": "settings/licensed-states-and-contracts",
+    "persona": "field-agent",
+    "url": "/settings/profile?tab=licenses",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "tab",
+          "name": "Licensed States"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/licensed-states-and-contracts-overview.png",
+    "alt": "Individual profile with Licensed States highlighted."
+  },
+  {
+    "id": "settings/users-and-roles",
+    "page": "settings/users-and-roles",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add User"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/users-and-roles-overview.png",
+    "alt": "Agency Users page with Add User highlighted."
+  },
+  {
+    "id": "settings/import-users",
+    "page": "settings/import-users",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Import Users"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/settings/import-users-overview.png",
+    "alt": "Import Users dialog with the invitation switch."
+  },
+  {
+    "id": "settings/user-profiles",
+    "page": "settings/user-profiles",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child td:first-child"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "tab",
+          "name": "Details"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Details"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "tab",
+          "name": "Details"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/user-profiles-overview.png",
+    "alt": "User profile with the Details tab highlighted."
+  },
+  {
+    "id": "settings/user-access-and-security",
+    "page": "settings/user-access-and-security",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child td:first-child"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "tab",
+          "name": "Security"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Security"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "tab",
+          "name": "Security"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/settings/user-access-and-security-overview.png",
+    "alt": "User profile with the Security tab highlighted."
+  }
+]

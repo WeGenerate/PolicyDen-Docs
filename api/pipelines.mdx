@@ -1,0 +1,164 @@
+---
+title: "Pipelines"
+description: "Read your agency's deal pipelines and stages, and use stage ids to place contacts on the board."
+keywords: ["api", "pipelines", "pipeline stages", "pipeline_stage_id", "deal board"]
+---
+
+Examples describe fictional Brightwater Health Partners data. Replace `DEMO-` placeholders with returned IDs before sending requests. Numeric IDs are illustrative. UUID fields require valid returned UUIDs.
+
+Use the pipelines endpoints to read your agency's pipelines and their stages. You need a stage id to add a contact to a pipeline or move it between stages through the [contacts endpoints](/api/contacts).
+
+All examples use `{BASE_URL}`, which already ends in `/v1`. Copy it from the **API Keys** screen. See [Authentication](/api/authentication) for headers.
+
+{/* TODO: verify — production API domain for {BASE_URL} */}
+
+<ParamField header="Authorization" type="string" required>
+Bearer API key with the endpoint's required scope.
+</ParamField>
+
+## Endpoints
+
+| Method | Path | Scope |
+| ------ | ---- | ----- |
+| `GET` | `/pipelines` | `pipelines:list` |
+| `GET` | `/pipelines/{id}` | `pipelines:view` |
+
+A pipeline id that isn't in your agency returns `404`.
+
+<ParamField query="page" type="integer" default="1">
+Page number, starting at 1. Applies to list requests.
+</ParamField>
+
+<ParamField query="per_page" type="integer" default="25">
+Rows per page, from 1 to 100. Applies to list requests.
+</ParamField>
+
+## List pipelines
+
+`GET /pipelines` returns your agency's pipelines, oldest first. The list is paginated with `page` and `per_page`. See [Pagination, filtering and sorting](/api/pagination-filtering-and-sorting).
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/pipelines" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+## Get a pipeline
+
+`GET /pipelines/{id}` returns one pipeline with its stages.
+
+<RequestExample>
+
+```bash
+curl "{BASE_URL}/pipelines/2" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json"
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": 2,
+    "name": "Medicare Sales",
+    "stages": [
+      { "id": 12, "pipeline_id": 2, "name": "Qualified", "position": 0, "contacts_count": 14 },
+      { "id": 13, "pipeline_id": 2, "name": "Contact Made", "position": 1, "contacts_count": 6 },
+      { "id": 14, "pipeline_id": 2, "name": "Proposal Made", "position": 2, "contacts_count": 3 }
+    ],
+    "created_at": "2026-09-01T13:30:00.000000Z",
+    "updated_at": "2026-09-01T13:30:00.000000Z"
+  }
+}
+```
+
+</ResponseExample>
+
+## Response fields
+
+<ResponseField name="id">
+Pipeline id.
+</ResponseField>
+
+<ResponseField name="name">
+Pipeline name.
+</ResponseField>
+
+<ResponseField name="stages">
+The pipeline's stages in board order, left to right.
+</ResponseField>
+
+<ResponseField name="stages[].id">
+Stage id. Use it as `pipeline_stage_id`.
+</ResponseField>
+
+<ResponseField name="stages[].pipeline_id">
+The pipeline the stage belongs to.
+</ResponseField>
+
+<ResponseField name="stages[].name">
+Stage name.
+</ResponseField>
+
+<ResponseField name="stages[].position">
+Position on the board, starting at `0`.
+</ResponseField>
+
+<ResponseField name="stages[].contacts_count">
+Number of contacts in the stage.
+</ResponseField>
+
+<ResponseField name="created_at">
+ISO 8601.
+</ResponseField>
+
+<ResponseField name="updated_at">
+ISO 8601.
+</ResponseField>
+
+## Place a contact in a stage
+
+Send a stage id as `pipeline_stage_id` when you [create or update a contact](/api/contacts):
+
+- On create, the contact is added to that stage.
+- On update, the contact moves to that stage within the stage's pipeline. Its stages in other pipelines stay as they are. If you leave `pipeline_stage_id` out, the contact's stages don't change.
+
+A contact can be in one stage per pipeline. The contact's current stages appear in its `pipeline_stages` field.
+
+<RequestExample>
+
+```bash
+curl -X PUT "{BASE_URL}/contacts/DEMO-CONTACT" \
+  -H "Authorization: Bearer pd_your_api_key" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "phone": "305-555-0199",
+    "status": "prospect",
+    "pipeline_stage_id": 13
+  }'
+```
+
+</RequestExample>
+
+<Warning>
+  `PUT /contacts/{id}` clears omitted contact details such as email and addresses. The example above is shortened. Send the contact's full record, as described in [Update a contact](/api/contacts#update-a-contact).
+</Warning>
+
+A stage id that doesn't belong to one of your agency's pipelines returns `422`.
+
+You can't create, rename or reorder pipelines or stages through the API. Admins do that in the app. See [Configure your pipeline](/pipeline/configuring-pipeline).
+
+## Related
+
+- [Pipeline overview](/pipeline/overview) for how agents work the board in the app.
+- [Contacts](/api/contacts) for the full create and update reference.

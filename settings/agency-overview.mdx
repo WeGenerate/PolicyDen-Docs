@@ -1,80 +1,30 @@
 ---
-title: "Agency settings overview"
-description: "A tour of everything you can configure for your agency, from users and products to billing."
-keywords: ["agency settings", "admin settings", "agency configuration", "agency owner", "setup order", "admin hub"]
+title: "Explore agency settings"
+description: "Find the settings for your agency, team, products, and connected tools."
+keywords: ["agency settings", "admin", "setup", "configuration"]
 ---
 
-Agency settings is the Admin-only hub for everything that shapes how your team works in PolicyDen. Use it to invite users, set up the products you sell, define custom fields, manage SMS numbers and templates, and keep billing current.
+Agency settings control your products, carrier relationships, team access, and connected tools. Open **Settings** from the sidebar’s **Management** group; **Relationships** opens first.
 
 <Frame>
-  <img src="/images/agency-settings-overview.png" alt="Agency settings side navigation with Products, Users, Custom Fields, Billing, SMS Numbers, and Roles & Permissions links" />
+  <img src="/images/agency-settings/overview.png" alt="Agency settings open on Relationships, with the Agency navigation visible." />
 </Frame>
 
-<Info>
-  Agency settings are visible to users with the **Admin** or **Agency Owner** role. Agents don't see these pages.
-</Info>
+## What you can do here
 
-## Open agency settings
+<CardGroup cols={2}>
+  <Card title="Products and carriers" href="/settings/products-and-carriers">Choose what your agency sells and assign carriers.</Card>
+  <Card title="Relationships" href="/settings/relationships">Manage uplines, downlines, agents, partnerships, and referrals.</Card>
+  <Card title="Users and API Keys" href="/settings/users-and-roles">Manage team access. For connected applications, open [API Keys](/api/manage-api-keys).</Card>
+  <Card title="Custom Fields and Task Templates" href="/settings/agency-custom-fields">Build record forms. Manage [Task Templates](/settings/task-templates) from Tasks; they aren't listed in the settings navigation.</Card>
+  <Card title="Integrations" href="/settings/integrations">Connect enrollment platforms and Convoso.</Card>
+  <Card title="Billing and Wallet" href="/settings/billing">Manage invoices and cards. Marketplace agencies use [Wallet](/settings/wallet) instead.</Card>
+</CardGroup>
 
-Click your avatar in the sidebar to switch into the Settings panel, then pick any item under **Agency**.
+## Who sees what
 
-## What lives where
+Admins and Agency Owners can open agency settings. Agents use their [personal settings](/settings/profile) for their own details.
 
-<Columns cols={2}>
-  <Card title="Users and roles" icon="users" href="/settings/users-and-roles">
-    Invite teammates, assign roles, and deactivate users who leave.
-  </Card>
-  <Card title="Products and carriers" icon="package" href="/settings/products-and-carriers">
-    Add the product lines you sell and the carriers you write through.
-  </Card>
-  <Card title="Custom fields" icon="sliders-horizontal" href="/settings/agency-custom-fields">
-    Design the forms your team fills out on contacts and policies.
-  </Card>
-  <Card title="SMS numbers" icon="phone" href="/settings/sms-numbers">
-    Provision and manage the numbers your team texts from.
-  </Card>
-  <Card title="Templates" icon="file-text" href="/settings/templates">
-    Create reusable email and SMS templates to send to clients.
-  </Card>
-  <Card title="Billing" icon="credit-card" href="/settings/billing">
-    Manage payment methods and pay your monthly invoices.
-  </Card>
-</Columns>
+Individual agent accounts have Admin rights, but don't show **Users** or **API Keys**. Their own profiles include **Licensed States** and **Contracts**.
 
-## A typical setup order
-
-If you're setting up a new agency, work through the admin sections in this order:
-
-<Steps>
-  <Step title="Invite your team">
-    Add each teammate under [Users and roles](/settings/users-and-roles) so they can sign in and start working.
-  </Step>
-  <Step title="Add products and carriers">
-    Decide which product lines and carriers you write under [Products and carriers](/settings/products-and-carriers). This drives the options available on every policy.
-  </Step>
-  <Step title="Configure custom fields">
-    Use [Custom fields](/settings/agency-custom-fields) to add any contact or policy fields your team tracks beyond the defaults.
-  </Step>
-  <Step title="Set up messaging">
-    Provision an [SMS number](/settings/sms-numbers) and create reusable [templates](/settings/templates) for your team to send.
-  </Step>
-  <Step title="Configure the pipeline">
-    Set up the stages your Agents will work contacts through on the board. See [Configure the pipeline](/pipeline/configuring-pipeline).
-  </Step>
-  <Step title="Add billing details">
-    Add a card and confirm your invoices under [Billing](/settings/billing).
-  </Step>
-</Steps>
-
-## Your personal account
-
-Agency settings control the whole team. To update your own name, photo, email, or password, see:
-
-<Columns cols={2}>
-  <Card title="Your profile" icon="user" href="/settings/profile">
-    Avatar, name, and email.
-  </Card>
-  <Card title="Password" icon="lock" href="/settings/password">
-    Change your sign-in password.
-  </Card>
-</Columns>
+Agencies using the marketplace see **Wallet**. Other agencies see **Billing**. Use the section shown for your agency.

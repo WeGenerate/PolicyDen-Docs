@@ -1,0 +1,119 @@
+[
+  {
+    "id": "dialer/overview",
+    "page": "dialer/overview",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/overview.png",
+    "alt": "Dialer navigation beside the agency queue list."
+  },
+  {
+    "id": "dialer/queues",
+    "page": "dialer/queues",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/queues.png",
+    "alt": "Queue list showing the agency\u2019s queues and their status."
+  },
+  {
+    "id": "dialer/queue-routing-and-hours",
+    "page": "dialer/queue-routing-and-hours",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/queue-routing-and-hours.png",
+    "alt": "Queue list where you open a queue to change routing."
+  },
+  {
+    "id": "dialer/audio-library",
+    "page": "dialer/audio-library",
+    "persona": "agency-admin",
+    "url": "/dialer/audio-files",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/audio-library.png",
+    "alt": "Audio Library showing uploaded files and preview controls."
+  },
+  {
+    "id": "dialer/phone-numbers",
+    "page": "dialer/phone-numbers",
+    "persona": "agency-admin",
+    "url": "/dialer/phone-numbers",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Number"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/phone-numbers.png",
+    "alt": "Add Number form showing number type, area code, and purchasing options."
+  },
+  {
+    "id": "dialer/live-monitor",
+    "page": "dialer/live-monitor",
+    "persona": "agency-admin",
+    "url": "/dialer/live-monitor",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/live-monitor.png",
+    "alt": "Live Monitor showing agent status and call activity."
+  },
+  {
+    "id": "dialer/pay-per-call",
+    "page": "dialer/pay-per-call",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/dialer/pay-per-call.png",
+    "alt": "Queue list where you open publisher settings."
+  }
+]

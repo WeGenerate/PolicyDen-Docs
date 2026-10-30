@@ -1,0 +1,939 @@
+[
+  {
+    "id": "workflows/work-a-new-lead-1",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Contact"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "label": "Phone"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/workflows/work-a-new-lead-1.png",
+    "alt": "Add New Contact dialog with the Phone field highlighted."
+  },
+  {
+    "id": "workflows/work-a-new-lead-2",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/work-a-new-lead-2.png",
+    "alt": "Reach the lead: current workspace and navigation."
+  },
+  {
+    "id": "workflows/work-a-new-lead-3",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [],
+    "capture": {
+      "type": "loop",
+      "steps": [
+        {
+          "click": {
+            "role": "button",
+            "name": "Add Task"
+          }
+        },
+        {
+          "waitFor": {
+            "role": "dialog"
+          }
+        },
+        {
+          "waitFor": {
+            "ms": 800
+          }
+        }
+      ],
+      "maxSeconds": 8
+    },
+    "output": "videos/workflows/work-a-new-lead-3.mp4",
+    "alt": "Open the Add Task dialog to record a follow-up."
+  },
+  {
+    "id": "workflows/work-a-new-lead-4",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "url": "/policies",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Policy"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/workflows/work-a-new-lead-4.png",
+    "alt": "Record the policy: Add Policy control highlighted."
+  },
+  {
+    "id": "workflows/work-a-new-lead-5",
+    "page": "workflows/work-a-new-lead",
+    "persona": "agency-agent-field",
+    "url": "/pipelines",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/work-a-new-lead-5.png",
+    "alt": "Update the pipeline: current workspace and navigation."
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-1",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/follow-up-with-your-book-1.png",
+    "alt": "Review the week’s tasks: current workspace and navigation."
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-2",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "waitFor": {
+          "css": "tbody tr a[href*=\"/contacts/\"]"
+        }
+      },
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Activities"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/follow-up-with-your-book-2.png",
+    "alt": "Check appointments: current workspace and navigation."
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-3",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "url": "/messages",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/follow-up-with-your-book-3.png",
+    "alt": "Continue conversations: current workspace and navigation."
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-4",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "url": "/policies",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/follow-up-with-your-book-4.png",
+    "alt": "Review policy progress: current workspace and navigation."
+  },
+  {
+    "id": "workflows/follow-up-with-your-book-5",
+    "page": "workflows/follow-up-with-your-book",
+    "persona": "agency-agent-field",
+    "url": "/tasks",
+    "before": [],
+    "capture": {
+      "type": "loop",
+      "steps": [
+        {
+          "click": {
+            "role": "button",
+            "name": "Add Task"
+          }
+        },
+        {
+          "waitFor": {
+            "role": "dialog"
+          }
+        },
+        {
+          "waitFor": {
+            "ms": 800
+          }
+        }
+      ],
+      "maxSeconds": 8
+    },
+    "output": "videos/workflows/follow-up-with-your-book-5.mp4",
+    "alt": "Open the Add Task dialog to record a follow-up."
+  },
+  {
+    "id": "workflows/run-a-dialer-shift-1",
+    "page": "workflows/run-a-dialer-shift",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "css": "button:has(span[title=\"Offline\"]), button:has(span[title=\"Paused\"]), button:has(span[title=\"Available\"])"
+        }
+      }
+    ],
+    "capture": {
+      "type": "loop",
+      "steps": [
+        {
+          "click": {
+            "css": "button:has(span[title=\"Offline\"]), button:has(span[title=\"Paused\"]), button:has(span[title=\"Available\"])"
+          }
+        },
+        {
+          "waitFor": {
+            "text": "Set your status"
+          }
+        },
+        {
+          "waitFor": {
+            "ms": 800
+          }
+        },
+        {
+          "press": {
+            "key": "Escape"
+          }
+        }
+      ],
+      "maxSeconds": 5
+    },
+    "output": "videos/workflows/run-a-dialer-shift-1.mp4",
+    "alt": "Prepare to take calls: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
+  },
+  {
+    "id": "workflows/run-a-dialer-shift-2",
+    "page": "workflows/run-a-dialer-shift",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Incoming Call"
+        }
+      },
+      {
+        "click": {
+          "css": "button:has-text(\"Incoming Call\")"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "button",
+          "name": "Accept"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Accept"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/workflows/run-a-dialer-shift-2.png",
+    "alt": "Take the call: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
+  },
+  {
+    "id": "workflows/run-a-dialer-shift-3",
+    "page": "workflows/run-a-dialer-shift",
+    "persona": "agency-agent-telesales",
+    "url": "/dashboard",
+    "before": [
+      {
+        "waitFor": {
+          "role": "button",
+          "name": "Wrap Up"
+        }
+      }
+    ],
+    "capture": {
+      "type": "loop",
+      "steps": [
+        {
+          "click": {
+            "role": "button",
+            "name": "Wrap Up"
+          }
+        },
+        {
+          "waitFor": {
+            "text": "How did the call go?"
+          }
+        },
+        {
+          "waitFor": {
+            "ms": 800
+          }
+        },
+        {
+          "press": {
+            "key": "Escape"
+          }
+        }
+      ],
+      "maxSeconds": 5
+    },
+    "output": "videos/workflows/run-a-dialer-shift-3.mp4",
+    "alt": "Finish and record the outcome: current workspace and navigation.",
+    "blocker": "HandleInertiaRequests::isDialerEnabled requires a configured voice provider as well as agency.dialer_enabled. Demo provider credentials are intentionally absent; actual phone controls and call states cannot render safely."
+  },
+  {
+    "id": "workflows/run-a-dialer-shift-4",
+    "page": "workflows/run-a-dialer-shift",
+    "persona": "agency-agent-telesales",
+    "url": "/tasks",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Task"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "crop": {
+        "role": "dialog"
+      },
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/run-a-dialer-shift-4.png",
+    "alt": "Plan callbacks: Add Task control highlighted."
+  },
+  {
+    "id": "workflows/run-a-dialer-shift-5",
+    "page": "workflows/run-a-dialer-shift",
+    "persona": "agency-agent-telesales",
+    "url": "/dialer/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/run-a-dialer-shift-5.png",
+    "alt": "Review the shift: current workspace and navigation."
+  },
+  {
+    "id": "workflows/buy-and-work-marketplace-leads-1",
+    "page": "workflows/buy-and-work-marketplace-leads",
+    "persona": "field-agent",
+    "url": "/agency-settings/wallet",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Funds"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/workflows/buy-and-work-marketplace-leads-1.png",
+    "alt": "Fund the wallet: Add Funds control highlighted."
+  },
+  {
+    "id": "workflows/buy-and-work-marketplace-leads-2",
+    "page": "workflows/buy-and-work-marketplace-leads",
+    "persona": "field-agent",
+    "url": "/marketplace",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/buy-and-work-marketplace-leads-2.png",
+    "alt": "Choose queue access: current workspace and navigation."
+  },
+  {
+    "id": "workflows/buy-and-work-marketplace-leads-3",
+    "page": "workflows/buy-and-work-marketplace-leads",
+    "persona": "field-agent",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/buy-and-work-marketplace-leads-3.png",
+    "alt": "Work incoming calls: current workspace and navigation."
+  },
+  {
+    "id": "workflows/buy-and-work-marketplace-leads-4",
+    "page": "workflows/buy-and-work-marketplace-leads",
+    "persona": "field-agent",
+    "url": "/agency-settings/wallet",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/buy-and-work-marketplace-leads-4.png",
+    "alt": "Check charges and balance: Transactions control highlighted."
+  },
+  {
+    "id": "workflows/set-up-your-solo-account-1",
+    "page": "workflows/set-up-your-solo-account",
+    "persona": "field-agent",
+    "url": "/settings/profile",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-solo-account-1.png",
+    "alt": "Complete your profile: current workspace and navigation."
+  },
+  {
+    "id": "workflows/set-up-your-solo-account-2",
+    "page": "workflows/set-up-your-solo-account",
+    "persona": "field-agent",
+    "url": "/agency-settings/products",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Product"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-solo-account-2.png",
+    "alt": "Set up products and carriers: Add Product control highlighted."
+  },
+  {
+    "id": "workflows/set-up-your-solo-account-3",
+    "page": "workflows/set-up-your-solo-account",
+    "persona": "field-agent",
+    "url": "/settings/profile?tab=licenses",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-solo-account-3.png",
+    "alt": "Set licenses and contracts: current workspace and navigation."
+  },
+  {
+    "id": "workflows/set-up-your-solo-account-4",
+    "page": "workflows/set-up-your-solo-account",
+    "persona": "field-agent",
+    "url": "/marketplace",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-solo-account-4.png",
+    "alt": "Prepare marketplace calls: current workspace and navigation."
+  },
+  {
+    "id": "workflows/set-up-your-solo-account-5",
+    "page": "workflows/set-up-your-solo-account",
+    "persona": "field-agent",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Contact"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "label": "Phone"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/workflows/set-up-your-solo-account-5.png",
+    "alt": "Add New Contact dialog with the Phone field highlighted."
+  },
+  {
+    "id": "workflows/set-up-your-agency-1",
+    "page": "workflows/set-up-your-agency",
+    "persona": "agency-admin",
+    "url": "/agency-settings/relationships",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-agency-1.png",
+    "alt": "Review agency settings: current workspace and navigation."
+  },
+  {
+    "id": "workflows/set-up-your-agency-2",
+    "page": "workflows/set-up-your-agency",
+    "persona": "agency-admin",
+    "url": "/agency-settings/products",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Add Product"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-agency-2.png",
+    "alt": "Set products and relationships: Add Product control highlighted."
+  },
+  {
+    "id": "workflows/set-up-your-agency-3",
+    "page": "workflows/set-up-your-agency",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add User"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "label": "Role"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/workflows/set-up-your-agency-3.png",
+    "alt": "Add User dialog with the Role field highlighted."
+  },
+  {
+    "id": "workflows/set-up-your-agency-4",
+    "page": "workflows/set-up-your-agency",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-agency-4.png",
+    "alt": "Prepare calling access: current workspace and navigation."
+  },
+  {
+    "id": "workflows/set-up-your-agency-5",
+    "page": "workflows/set-up-your-agency",
+    "persona": "billing-owner",
+    "url": "/agency-settings/billing",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Payment Methods"
+        }
+      },
+      {
+        "waitFor": {
+          "ms": 1500
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-agency-5.png",
+    "alt": "Cedar Grove Benefits Billing page showing subscription settings, Payment Methods and invoices.",
+    "blocker": "Ordinary fictional agency reaches Billing, but GET /agency-settings/billing/settings returns 403: route is restricted by routes/super-admin.php. Billing displays fallback totals and a load error. No authorization changes or substitute Wallet screenshot."
+  },
+  {
+    "id": "workflows/set-up-your-agency-6",
+    "page": "workflows/set-up-your-agency",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/set-up-your-agency-6.png",
+    "alt": "Send agents their starting point: current workspace and navigation."
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-1",
+    "page": "workflows/onboard-a-new-agent",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add User"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "label": "Role"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/workflows/onboard-a-new-agent-1.png",
+    "alt": "Add User dialog with the Role field highlighted."
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-2",
+    "page": "workflows/onboard-a-new-agent",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "fill": {
+          "placeholder": "Search",
+          "value": "Tom Becker"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Tom Becker"
+        }
+      },
+      {
+        "click": {
+          "css": "tbody tr:first-child td:first-child"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Details"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Employment"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/onboard-a-new-agent-2.png",
+    "alt": "Check how they work: current workspace and navigation."
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-3",
+    "page": "workflows/onboard-a-new-agent",
+    "persona": "agency-admin",
+    "url": "/agency-settings/users",
+    "before": [
+      {
+        "fill": {
+          "placeholder": "Search",
+          "value": "Tom Becker"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Tom Becker"
+        }
+      },
+      {
+        "click": {
+          "css": "tbody tr:first-child td:first-child"
+        }
+      },
+      {
+        "click": {
+          "role": "tab",
+          "name": "Licensed States"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Select states"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/onboard-a-new-agent-3.png",
+    "alt": "Set licenses and contracts: current workspace and navigation."
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-4",
+    "page": "workflows/onboard-a-new-agent",
+    "persona": "agency-admin",
+    "url": "/dialer/queues",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/onboard-a-new-agent-4.png",
+    "alt": "Assign call access: current workspace and navigation."
+  },
+  {
+    "id": "workflows/onboard-a-new-agent-5",
+    "page": "workflows/onboard-a-new-agent",
+    "persona": "agency-admin",
+    "url": "/dialer/live-monitor",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/onboard-a-new-agent-5.png",
+    "alt": "Prepare practice and handoff: current workspace and navigation."
+  },
+  {
+    "id": "workflows/review-team-performance-1",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/dashboard",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/review-team-performance-1.png",
+    "alt": "Start with the dashboard: current workspace and navigation."
+  },
+  {
+    "id": "workflows/review-team-performance-2",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/dashboard",
+    "before": [
+      {
+        "scroll": {
+          "role": "link",
+          "name": "Open Live View"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "link",
+          "name": "Open Live View"
+        }
+      ],
+      "badges": false,
+      "crop": {
+        "css": ".performance-table"
+      }
+    },
+    "output": "images/workflows/review-team-performance-2.png",
+    "alt": "Open the live leaderboard: Open Live View control highlighted."
+  },
+  {
+    "id": "workflows/review-team-performance-3",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/review-team-performance-3.png",
+    "alt": "Break down policy results: current workspace and navigation."
+  },
+  {
+    "id": "workflows/review-team-performance-4",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/dialer/reports",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/review-team-performance-4.png",
+    "alt": "Compare call results: current workspace and navigation."
+  },
+  {
+    "id": "workflows/review-team-performance-5",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/dialer/live-monitor",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/review-team-performance-5.png",
+    "alt": "Choose live coaching: current workspace and navigation."
+  },
+  {
+    "id": "workflows/review-team-performance-6",
+    "page": "workflows/review-team-performance",
+    "persona": "agency-admin",
+    "url": "/compliance",
+    "before": [],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/workflows/review-team-performance-6.png",
+    "alt": "Review compliance concerns: current workspace and navigation."
+  }
+]

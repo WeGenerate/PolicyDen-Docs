@@ -1,0 +1,134 @@
+[
+  {
+    "id": "pipeline/overview-board",
+    "page": "pipeline/overview",
+    "persona": "agency-admin",
+    "url": "/pipelines",
+    "before": [
+      {
+        "waitFor": {
+          "role": "button",
+          "name": "Add Deal"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/pipeline/overview-board.png",
+    "alt": "Pipelines board showing stage columns, deal cards, and the pipeline name dropdown."
+  },
+  {
+    "id": "pipeline/drag-deal",
+    "page": "pipeline/managing-deals",
+    "persona": "agency-admin",
+    "url": "/pipelines",
+    "before": [
+      {
+        "waitFor": {
+          "css": ".pipeline-card"
+        }
+      }
+    ],
+    "capture": {
+      "type": "loop",
+      "steps": [],
+      "maxSeconds": 5
+    },
+    "output": "videos/pipeline/drag-deal.mp4",
+    "poster": "videos/pipeline/drag-deal.png",
+    "webm": "videos/pipeline/drag-deal.webm",
+    "todo": "Capture schema has no drag action. Capture agent must record the first .pipeline-card moving to a different [data-stage-id] column; do not publish a static loop."
+  },
+  {
+    "id": "pipeline/configure-stages",
+    "page": "pipeline/configuring-pipeline",
+    "persona": "agency-admin",
+    "url": "/pipelines",
+    "before": [
+      {
+        "click": {
+          "css": "div.flex.items-center.justify-between.gap-4.rounded-lg > div:last-child > button:nth-last-child(2)"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog",
+          "name": "Configure Pipeline"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "crop": {
+        "role": "dialog"
+      },
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Save Pipeline"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/pipeline/configure-stages.png",
+    "alt": "Configure Pipeline dialog showing the pipeline name, stage rows, and Save Pipeline button."
+  },
+  {
+    "id": "meetings/overview-details",
+    "page": "meetings/overview",
+    "persona": "agency-admin",
+    "url": "/meetings/1/edit",
+    "before": [
+      {
+        "waitFor": {
+          "text": "Medicare 101 consultation"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/meetings/overview-details.png",
+    "alt": "Meeting Details showing the venue, date, time, attendees control, and daily schedule sidebar."
+  },
+  {
+    "id": "meetings/schedule-form",
+    "page": "meetings/scheduling-meetings",
+    "persona": "agency-admin",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
+        }
+      },
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Meeting"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/meetings/schedule-form.png",
+    "alt": "Add Meeting form showing the title, venue controls, date, times, and daily schedule."
+  }
+]

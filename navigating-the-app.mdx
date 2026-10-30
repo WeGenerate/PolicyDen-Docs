@@ -1,100 +1,44 @@
 ---
-title: "Navigating the app"
-description: "A tour of the PolicyDen sidebar, top bar, and shortcuts."
-keywords: ["navigation", "sidebar", "top bar", "quick add", "app tour", "keyboard shortcuts", "getting around"]
+title: "Find your way around"
+description: "Find your work, account settings, calls, and notifications."
+keywords: ["navigation", "sidebar", "menu", "dashboard", "profile"]
 ---
 
-PolicyDen uses a single consistent layout across every page. Once you know where each control lives, you can move between contacts, policies, and conversations without thinking about it.
+The sidebar takes you to your work. The header keeps call tools and notifications within reach as you move between pages.
 
-Every role sees the same layout. Admins and Agency Owners get extra items in the **Management** section of the sidebar and on the [Settings](/settings/agency-overview) tab.
+<Frame caption="Use the sidebar to move between your daily tasks.">
+  <img src="/images/getting-started/navigation-overview.png" alt="PolicyDen dashboard with the main sidebar and header visible." />
+</Frame>
 
-## The sidebar
+## What you can do here
 
-The sidebar on the left is your primary navigation. Hover the left edge of the screen to open it, or click the pin icon to keep it open.
+<CardGroup cols={2}>
+  <Card title="Work your contacts" href="/contacts/overview">Open Contacts, Policies, Pipelines, and Tasks from the sidebar.</Card>
+  <Card title="Review your dashboard" href="/dashboard/overview">Check your activity and sales.</Card>
+  <Card title="Ask Atlas" href="/atlas/overview">Open Atlas from the sidebar.</Card>
+  <Card title="Handle calls" href="/calls/overview">Use the header call tools and your available dialer pages.</Card>
+  <Card title="Read messages" href="/messages/overview">Open Messages or use the floating Messages panel outside that page.</Card>
+  <Card title="Check notifications" href="/getting-started/notifications-and-alerts">Open the bell in the header.</Card>
+</CardGroup>
 
-### Main
+## Keep the sidebar handy
 
-Pages you use every day:
+Move your pointer to the left edge to reveal a collapsed sidebar. Select **Toggle Sidebar** to pin or unpin it.
 
-- **Atlas** — your AI assistant.
-- **Dashboard** — sales, renewals, and team metrics.
-- **Contacts** — every lead and client.
-- **Policies** — every policy written by your agency.
-- **Pipeline** — a Kanban view of your book.
-- **Tasks** — follow-ups for you and your team.
-- **Messages** — SMS conversations with contacts.
+For Admins and Agency Owners, **Settings** and **Dialer** open separate sidebar panels. Select the panel's back arrow to return.
 
-### Management
+Open the agency menu to reach **Profile** or **Sign Out**. Admins and Agency Owners open their name submenu to reach **Profile**.
 
-Visible to Admins only:
+## Who sees what
 
-- **Reporting** — deeper cuts of sales and production.
-- More admin tools, depending on your agency's configuration.
+| Account or role | What changes |
+| --- | --- |
+| Agent | With the dialer enabled, **Call Log** and **Reporting** appear under **Main**. |
+| Admin or Agency Owner | **Management** includes **Reporting** and **Settings**; **Dialer** requires the dialer to be enabled. |
+| Individual agent account | You have Admin rights, but **Users** and **API Keys** are absent. |
+| Marketplace agency | **Wallet** replaces **Billing** in Settings. **Marketplace** also requires Admin rights and the dialer. |
+| Agency with Medicare products | Admins and Agency Owners see **Compliance**. |
 
-## The top bar
+Agent **Reporting** opens call reports; Admin **Reporting** opens agency reports. See [call reports](/calls/reporting) or [agency reports](/reports/overview).
 
-Every page has a top bar with a few common controls.
-
-| Control | What it does |
-| ------- | ------------ |
-| **Breadcrumbs** | Show where you are and let you jump back up. |
-| **Search** | Jump to any contact by name, phone, or email. |
-| **Add new** | Quick-create a contact, policy, task, or meeting from anywhere. |
-| **Calls widget** | Place or receive calls without leaving the page. |
-| **Notifications** | New messages, assignments, and mentions. |
-| **Agency switcher** | Switch between agencies you belong to. |
-
-## Lists, filters, and saved filters
-
-Contacts, policies, and tasks all share the same table UI.
-
-- **Search** at the top filters by name, email, or phone.
-- **Filters** let you narrow the list by status, stage, assigned Agent, and custom fields.
-- **Columns** are customizable — add or remove columns from the column picker.
-- **Sort** by any column by clicking its header.
-- **Saved filters** let you save the filter, sort, and columns as a named view you can reuse or share. See [Saved filters](/customization/saved-filters).
-
-## The profile layout
-
-Contacts and policies share a profile layout:
-
-- **Overview** on top with identifying info and quick actions.
-- **Tabs** below for related data — **Activities** for the combined timeline, plus per-type views: **Policies**, **Tasks**, **Docs**, **Notes**, **Comments**, and **History**. See [Contact profile](/contacts/contact-profile) for the full breakdown.
-
-## Keyboard and click shortcuts
-
-- **Click a contact's name** anywhere in the app to open the profile.
-- **Click a phone number** to start a call from the calls widget.
-- **Hover a row** to reveal inline actions like delete or assign.
-- **Right-click a column header** to customize the column or change sort.
-
-## Multi-agency users
-
-If you work with more than one agency:
-
-- Use the **agency switcher** in the top-left to change context.
-- Data is scoped to the active agency — contacts, policies, reports, and settings only show that agency.
-- Settings you change apply only to the active agency.
-
-## Need help?
-
-<Card title="Email support" icon="mail" href="mailto:support@policyden.com">
-  Reach the PolicyDen team directly for questions, feedback, or bug reports.
-</Card>
-
-## What's next
-
-<Columns cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Step through your first contact, policy, and task.
-  </Card>
-  <Card title="Contacts" icon="users" href="/contacts/overview">
-    Work the contact list, filters, and profiles.
-  </Card>
-  <Card title="Pipeline" icon="columns-3" href="/pipeline/overview">
-    See your book as a Kanban board.
-  </Card>
-  <Card title="Atlas" icon="sparkles" href="/atlas/overview">
-    Ask your AI assistant questions about your agency.
-  </Card>
-</Columns>
+For Training and Remote differences, see [I can't see a feature](/fix/cant-see-a-feature).

@@ -1,0 +1,64 @@
+---
+title: "Edit contact details"
+description: "Update a contact\u2019s information and confirm each change."
+keywords: ["edit contact", "change phone", "update email", "client address"]
+---
+
+import WhoEveryone from "/snippets/who-everyone.mdx";
+
+<WhoEveryone />
+
+Update contact information directly in the profile’s **Contact Details** panel. Confirm each field separately to save your changes.
+
+<Steps>
+  <Step title="Open the contact profile">
+    In **Contacts**, select the contact’s name.
+  </Step>
+  <Step title="Expand contact details">
+    Open **Contact Details** if the panel is collapsed.
+
+    <Frame caption="Find editable information in Contact Details.">
+      <img src="/images/contacts/editing-details.png" alt="Contact profile with the Contact Details panel highlighted." />
+    </Frame>
+  </Step>
+  <Step title="Choose the field">
+    Select the current value beside **Phone**, **Email**, or another field you want to change.
+
+    Expand **Physical Address** or **Mailing Address** to edit address fields.
+  </Step>
+  <Step title="Enter the new value">
+    Replace the current value with the correct information.
+  </Step>
+  <Step title="Confirm the change">
+    Select the checkmark beside the edited field to save it.
+
+    For text fields, you can also press Enter. Select the cross to cancel a text change.
+  </Step>
+</Steps>
+
+<Note>Admins and Agency Owners can change the assigned **Agent** from this panel.</Note>
+
+## What you'll see
+
+A **Contact updated** message confirms the save, and the profile displays the new value.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="The change wasn’t saved">
+    Confirm the edited field with its checkmark. Moving away from a text field doesn’t save a changed value.
+  </Accordion>
+  <Accordion title="Update failed appears">
+    Read the validation message, correct the value, and confirm it again. If the request failed, retry when your connection returns.
+  </Accordion>
+  <Accordion title="Required information is still missing">
+    Review **Missing Required Information** and complete the fields it lists. Your agency can require additional fields.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Review the contact profile" href="/contacts/contact-profile" />
+  <Card title="Understand custom fields" href="/customization/custom-fields" />
+</CardGroup>

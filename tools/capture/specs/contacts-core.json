@@ -1,0 +1,166 @@
+[
+  {
+    "id": "contacts/overview-list",
+    "page": "contacts/overview",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "waitFor": {
+          "placeholder": "Search"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/contacts/overview-list.png",
+    "alt": "Full Contacts window showing the filter bar and contact list."
+  },
+  {
+    "id": "contacts/filtering-status",
+    "page": "contacts/filtering-contacts",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Status"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Include"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/contacts/filtering-status.png",
+    "alt": "Contacts with the Status filter open, showing Include and Exclude."
+  },
+  {
+    "id": "contacts/creating-search",
+    "page": "contacts/creating-contacts",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "role": "button",
+          "name": "Add Contact"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/contacts/creating-search.png",
+    "alt": "Add New Contact dialog with the Phone field and Search button."
+  },
+  {
+    "id": "contacts/profile-overview",
+    "page": "contacts/contact-profile",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Contact Details"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false
+    },
+    "output": "images/contacts/profile-overview.png",
+    "alt": "Full contact profile showing its tabs, action buttons, and Contact Details panel."
+  },
+  {
+    "id": "contacts/editing-details",
+    "page": "contacts/editing-contact-details",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "tbody tr:first-child a[href*=\"/contacts/\"][href$=\"/edit\"]"
+        }
+      },
+      {
+        "waitFor": {
+          "text": "Contact Details"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [
+        {
+          "role": "button",
+          "name": "Contact Details"
+        }
+      ],
+      "badges": false
+    },
+    "output": "images/contacts/editing-details.png",
+    "alt": "Contact profile with the Contact Details panel highlighted."
+  },
+  {
+    "id": "contacts/exporting-options",
+    "page": "contacts/exporting-contacts",
+    "persona": "agency-agent-field",
+    "url": "/contacts",
+    "before": [
+      {
+        "click": {
+          "css": "button:has(svg path[d=\"M7 8.75V2.11166\"])"
+        }
+      },
+      {
+        "waitFor": {
+          "role": "dialog"
+        }
+      }
+    ],
+    "capture": {
+      "type": "screenshot",
+      "scope": "page",
+      "highlight": [],
+      "badges": false,
+      "crop": {
+        "role": "dialog"
+      }
+    },
+    "output": "images/contacts/exporting-options.png",
+    "alt": "Export Contacts dialog showing Type, CSV format, and Fields."
+  }
+]

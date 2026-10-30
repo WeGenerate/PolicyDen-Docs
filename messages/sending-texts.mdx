@@ -1,0 +1,68 @@
+---
+title: "Send a text"
+description: "Send a contact a text or attachment and review it in their conversation."
+keywords: ["send text", "SMS", "attachment", "contact message"]
+---
+
+import WhoEveryone from "/snippets/who-everyone.mdx";
+
+<WhoEveryone />
+
+Send a text from an existing conversation or a contact's **Messages** tab. Your agency needs an active texting number provisioned by PolicyDen support.
+
+## Before you start
+
+- Check the contact's phone number.
+- Keep the text within 500 characters.
+- Attach no more than 10 files, totaling no more than 5 MB.
+
+<Steps>
+  <Step title="Open the contact">
+    In **Messages**, select the contact’s conversation. For a new conversation, open the contact profile’s **Messages** tab.
+
+<Frame caption="Conversation with a fictional client, message history, and the Send Message field.">
+  <video className="w-full rounded-xl motion-reduce:hidden" autoPlay muted loop playsInline controls preload="metadata" poster="/images/messages/send-conversation.png" src="/videos/messages/send-conversation.mp4" aria-label="Conversation with a fictional client, message history, and the Send Message field." />
+  <img className="hidden motion-reduce:block" src="/images/messages/send-conversation.png" alt="Conversation with a fictional client, message history, and the Send Message field." />
+</Frame>
+  </Step>
+  <Step title="Enter your message">
+    In **Send Message...**, enter the text you want to send.
+  </Step>
+  <Step title="Add optional attachments">
+    Select the paperclip to attach files, if needed. You can send files with or without text.
+  </Step>
+  <Step title="Send the message">
+    Select **Send**. The message appears in the conversation.
+  </Step>
+</Steps>
+
+When available, the contact-card control offers **Attach Agency vCard**, **Attach Agent vCard**, or **Attach Business Card**. These add contact details or a business-card image.
+
+The agency option appears when your agency has a vCard set up. Agent cards and business-card images come from the agent's profile.
+
+{/* TODO: verify card-only sending; selecting a contact card alone does not enable Send. Include text or a file attachment. */}
+
+## What you'll see
+
+Your outgoing message appears in the thread with its sending status; appearing there does not by itself confirm delivery.
+
+## If it didn't work
+
+<AccordionGroup>
+  <Accordion title="Send is disabled">
+    Enter text or attach a file. Selecting only a contact card does not enable **Send**.
+  </Accordion>
+  <Accordion title="The message failed">
+    Open [My text didn’t send](/fix/text-didnt-send) for the exact error and next action.
+  </Accordion>
+  <Accordion title="The conversation will not load">
+    For **Failed to load messages**, reopen the conversation and check your connection.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Find conversations" href="/messages/finding-conversations">Review replies and unread messages.</Card>
+  <Card title="Create a follow-up task" href="/tasks/creating-tasks">Track the next action.</Card>
+</CardGroup>
