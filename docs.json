@@ -13,7 +13,8 @@
     "dark": "/images/favicon.png"
   },
   "appearance": {
-    "default": "light"
+    "default": "light",
+    "strict": true
   },
   "icons": {
     "library": "lucide"
