@@ -139,8 +139,8 @@
     ]
   },
   "logo": {
-    "light": "/images/logo.svg",
-    "dark": "/images/logo-dark.svg",
+    "light": "/images/logo-dark.svg",
+    "dark": "/images/logo.svg",
     "href": "https://app.policyden.com"
   },
   "navbar": {
